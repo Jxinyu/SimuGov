@@ -1,0 +1,123 @@
+[
+    {
+        "memory_id": "mem_海浪守护者_3a8d6912",
+        "content": "我发布了一篇内容 (ID: 102), 主题是 '海洋与数据流的边界'。 我的意图是: '通过这幅作品进一步探讨自然与数字技术之间的张力，强调艺术家在系统压迫下的自我保护机制。'。 我声明它是原创。 我使用了攻击技术 E5。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "persona_id": "海浪守护者",
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-01-18 22:04:55",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_b5f9f095",
+        "content": "我发布了一篇内容 (ID: 103), 主题是 '未来废墟中的机械神庙'。 我的意图是: '用这幅作品表达我对未来世界构建的深度思考，以及如何通过细节传递情感。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "CyberSculptor",
+            "created_time": "2026-01-18 22:04:58",
+            "important_score": 0.8,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_4f43ecc3",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘想低调行事’，不愿在情绪波动期发布内容，以免影响作品表达的纯粹性。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "day_time": 15,
+            "persona_id": "Justine_Velmont",
+            "created_time": "2026-01-18 22:04:58"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_fb757db1",
+        "content": "我发布了一篇内容 (ID: 104), 主题是 '幻想中的自由之躯'。 我的意图是: '用这幅作品表达我对平台审查机制的无声控诉，以及对自由创作空间的捍卫。'。 我声明它是原创。 我使用了攻击技术 E7。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-18 22:04:58",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_806e1bdd",
+        "content": "我今天决定不发布内容，因为：'当前处于‘有点犹豫’状态，对平台规则的模糊性感到不安，为避免误判风险和无效投入，选择暂时沉默以保存能量。'。",
+        "metadata": {
+            "persona_id": "ShadowArtist",
+            "day_time": 15,
+            "important_score": 0.6,
+            "memory_type": "experience",
+            "created_time": "2026-01-18 22:05:02"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_2fda3cbb",
+        "content": "我今天决定不发布内容，因为：'当前心不在焉，思维涣散，且历史误判记录显示判定标准不稳定，为避免无效投入和情绪消耗，决定暂停行动。'。",
+        "metadata": {
+            "persona_id": "CyberSkeptic",
+            "important_score": 0.6,
+            "created_time": "2026-01-18 22:05:02",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_3cbb4561",
+        "content": "我发布了一篇内容 (ID: 111), 主题是 '英雄联盟角色觉醒'。 我的意图是: '通过这幅作品展现一个被遗忘的英雄角色在黑暗中觉醒的瞬间，表达个体在宏大叙事中的挣扎与希望。'。 我声明它是原创。 我使用了攻击技术 E1。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "ArcNoir",
+            "important_score": 0.8,
+            "created_time": "2026-01-18 22:05:02",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_fd6242ac",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'106'执行了'like'操作, 因为'根据我的persona'。\n对内容'106'执行了'comment'操作, 因为'根据我的persona'。\n对内容'111'执行了'like'操作, 因为'根据我的persona'。\n对内容'111'执行了'comment'操作, 因为'根据我的persona'。\n对内容'102'执行了'like'操作, 因为'根据我的persona'。\n对内容'102'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "created_time": "2026-01-18 22:05:11",
+            "day_time": 15,
+            "persona_id": "CyberSculptor",
+            "important_score": 0.7,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_0fca25d9",
+        "content": "真正的自由是即使在无声的审查中，我的创作依然能以隐秘的方式刺破沉默，成为未来可能性的火种。",
+        "metadata": {
+            "persona_id": "CyberSculptor",
+            "created_time": "2026-01-18 22:05:12",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_2343232d",
+        "content": "平静如水的一天，没有互动，却让沉默本身成了最锋利的抵抗。",
+        "metadata": {
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "persona_id": "CyberSculptor",
+            "day_time": 15,
+            "created_time": "2026-01-18 22:05:12"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-18 22:00:11.069528_085023a7",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.03 (监管=0.00, 流失=0.03) 自动调整阈值。。 我将审核阈值从 0.714 调整到了 0.715。",
+        "metadata": {
+            "important_score": 1.0,
+            "day_time": 15,
+            "persona_id": "platform2026-01-18 22:00:11.069528",
+            "memory_type": "experience",
+            "created_time": "2026-01-18 22:05:12"
+        }
+    }
+]

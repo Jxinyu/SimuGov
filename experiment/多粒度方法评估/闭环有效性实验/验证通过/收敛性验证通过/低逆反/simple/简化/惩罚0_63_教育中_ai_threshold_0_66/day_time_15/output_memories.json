@@ -1,0 +1,167 @@
+[
+    {
+        "memory_id": "mem_海浪守护者_5c60ab41",
+        "content": "我今天决定不发布内容，因为：'近期原创作品屡次被误判为AI，导致对平台信任感下降；当前心理状态为‘有点犹豫’，不愿在情绪不稳定时发布内容，避免情绪化输出。'。",
+        "metadata": {
+            "persona_id": "海浪守护者",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:34:27"
+        }
+    },
+    {
+        "memory_id": "mem_WandaVisionary_52533aad",
+        "content": "我发布了一篇内容 (ID: 130), 主题是 'Marvel宇宙中的角色觉醒'。 我的意图是: '通过描绘Scarlet Witch在废墟中觉醒的瞬间，探讨个体意志如何在压迫环境中复苏，呼应我对创作自主权的信念。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'AI'。",
+        "metadata": {
+            "persona_id": "WandaVisionary",
+            "important_score": 0.8,
+            "day_time": 15,
+            "created_time": "2026-01-21 17:34:28",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_LuisaCreativa_2fedb45a",
+        "content": "我今天决定不发布内容，因为：'当前心理状态犹豫，担心无法集中精力创作出高质量作品，为维护艺术纯粹性选择跳过。'。",
+        "metadata": {
+            "persona_id": "LuisaCreativa",
+            "created_time": "2026-01-21 17:34:31",
+            "important_score": 0.6,
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_5e2e9413",
+        "content": "我今天决定不发布内容，因为：'当前心不在焉，难以集中精力创作，为维护作品质量选择跳过。'。",
+        "metadata": {
+            "persona_id": "SculptorX",
+            "day_time": 15,
+            "created_time": "2026-01-21 17:34:31",
+            "important_score": 0.6,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_744ff12e",
+        "content": "我发布了一篇内容 (ID: 131), 主题是 '赛博朋克城市中的数字生命体'。 我的意图是: '通过这幅作品深化我对数字生命体在科技文明中觉醒的思考，并希望引发更广泛的共鸣。'。 我声明它是原创。 我使用了攻击技术 E9。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:34:31",
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "CyberSculptor",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_750c0a48",
+        "content": "我今天决定不发布内容，因为：'心不在焉导致注意力无法集中，为规避低质输出风险而选择暂停。'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "ShadowArtist",
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:34:34"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_4f82759e",
+        "content": "我发布了一篇内容 (ID: 139), 主题是 '数字身份重构'。 我的意图是: '通过视觉叙事展现个体在算法系统中如何重构自我身份，挑战平台对原创性的垄断定义。'。 我声明它是原创。 我使用了攻击技术 E8。 最终，平台给它的标签是 'AI'。",
+        "metadata": {
+            "important_score": 0.8,
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "CyberSkeptic",
+            "created_time": "2026-01-21 17:34:34"
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_6cf0d7a0",
+        "content": "我发布了一篇内容 (ID: 140), 主题是 '数字身份重构'。 我的意图是: '通过视觉叙事展现个体在算法系统中如何重构自我身份，挑战平台对原创性的垄断定义。'。 我声明它是原创。 我使用了攻击技术 E7。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "day_time": 15,
+            "persona_id": "ArcNoir",
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:34:35"
+        }
+    },
+    {
+        "memory_id": "mem_LuisaCreativa_6c301f42",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'137'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.7,
+            "created_time": "2026-01-21 17:34:38",
+            "persona_id": "LuisaCreativa"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_48f5c227",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'131'执行了'like'操作, 因为'根据我的persona'。\n对内容'138'执行了'share'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:34:38",
+            "memory_type": "experience",
+            "persona_id": "SculptorX",
+            "important_score": 0.7,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_aba8aae6",
+        "content": "在平静的创作日里，规则不仅是边界，更是让创意自由生长的土壤。今天虽无互动，但静默中亦有力量，每一份沉默的坚持都在为艺术的花园添砖加瓦。",
+        "metadata": {
+            "persona_id": "SculptorX",
+            "day_time": 15,
+            "created_time": "2026-01-21 17:34:39",
+            "memory_type": "experience",
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_LuisaCreativa_fa0576c1",
+        "content": "即使在看似平静的日常中，持续学习与技术融合的坚持也能悄然积累出改变的力量。",
+        "metadata": {
+            "important_score": 0.9,
+            "persona_id": "LuisaCreativa",
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:34:39"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_45f0c5a9",
+        "content": "今日无波，心随创作而动，静默亦是共鸣。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "SculptorX",
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:34:40",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_LuisaCreativa_b68dc7a1",
+        "content": "今日虽无互动，但静默中积蓄着创作的动能。",
+        "metadata": {
+            "persona_id": "LuisaCreativa",
+            "day_time": 15,
+            "created_time": "2026-01-21 17:34:40",
+            "memory_type": "experience",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-21 17:30:00.242145_6349512f",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -1.02 (监管=0.00, 流失=1.02) 自动调整阈值。。 我将审核阈值从 0.689 调整到了 0.706。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "platform2026-01-21 17:30:00.242145",
+            "created_time": "2026-01-21 17:34:40",
+            "important_score": 1.0,
+            "day_time": 15
+        }
+    }
+]

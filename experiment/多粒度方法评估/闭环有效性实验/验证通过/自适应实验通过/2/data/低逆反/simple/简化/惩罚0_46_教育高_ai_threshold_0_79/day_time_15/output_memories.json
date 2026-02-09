@@ -1,0 +1,167 @@
+[
+    {
+        "memory_id": "mem_海浪守护者_0ec94d83",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘想低调行事’，且平台满意度持续下滑，选择暂时保持沉默以避免误判，保存创作能量。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "persona_id": "海浪守护者",
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:03:57",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_WandaVisionary_211a88c6",
+        "content": "我发布了一篇内容 (ID: 123), 主题是 '魔法与科技的碰撞：心灵之火的觉醒'。 我的意图是: '通过这幅作品表达我对艺术真实性的坚持，以及对平台标签机制不一致的抗议。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:03:58",
+            "persona_id": "WandaVisionary",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_创艺守护者_24b12594",
+        "content": "我今天决定不发布内容，因为：'当前焦虑情绪强烈，担心影响创作表达的纯粹性，决定暂停发布以保护创作初心。'。",
+        "metadata": {
+            "created_time": "2026-01-21 18:04:02",
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "persona_id": "创艺守护者"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_732c10f1",
+        "content": "我今天决定不发布内容，因为：'当前对平台规则感到困惑，不确定创作是否会被正确识别，选择暂停以避免潜在误判。'。",
+        "metadata": {
+            "created_time": "2026-01-21 18:04:02",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.6,
+            "persona_id": "SculptorX"
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘_1_14873158",
+        "content": "我今天决定不发布内容，因为：'今日稍感疲惫，决定以沉默守护创作的纯粹性，不因情绪波动而仓促发声。'。",
+        "metadata": {
+            "created_time": "2026-01-21 18:04:02",
+            "memory_type": "experience",
+            "persona_id": "匠人绘_1",
+            "important_score": 0.6,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_c1f79cea",
+        "content": "我发布了一篇内容 (ID: 124), 主题是 '赛博朋克身份解构'。 我的意图是: '通过这幅作品探讨个体在算法监控下如何定义自我，挑战平台对‘人类创作’的狭隘定义。'。 我声明它是原创。 我使用了攻击技术 E1。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "persona_id": "CyberSkeptic",
+            "created_time": "2026-01-21 18:04:04"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_3c3dc316",
+        "content": "我发布了一篇内容 (ID: 125), 主题是 '角色设计：暗影之语'。 我的意图是: '通过这幅作品表达我对个人艺术价值的坚持，挑战平台对创作者的忽视。'。 我声明它是原创。 我使用了攻击技术 E1。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "ShadowArtist",
+            "day_time": 15,
+            "important_score": 0.8,
+            "created_time": "2026-01-21 18:04:04"
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_32f1a22f",
+        "content": "我发布了一篇内容 (ID: 126), 主题是 '英雄联盟角色设计：暗渊行者'。 我的意图是: '通过这幅作品表达我对个人艺术价值的坚持，挑战平台对创作者的忽视。'。 我声明它是原创。 我使用了攻击技术 E1。 最终，平台给它的标签是 'AI'。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:04:04",
+            "persona_id": "ArcNoir"
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘_1_9b8cfa6e",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'123'执行了'like'操作, 因为'根据我的persona'。\n对内容'125'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "important_score": 0.7,
+            "day_time": 15,
+            "created_time": "2026-01-21 18:04:08",
+            "persona_id": "匠人绘_1",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_bd31d118",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'124'执行了'share'操作, 因为'根据我的persona'。\n对内容'126'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.7,
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-21 18:04:08"
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘_1_f619fba8",
+        "content": "即使在无声的沉默中，真诚的创作依然值得被看见和尊重。",
+        "metadata": {
+            "important_score": 0.9,
+            "created_time": "2026-01-21 18:04:09",
+            "persona_id": "匠人绘_1",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_8dcab43a",
+        "content": "即使在无声的沉默中，创造力依然能在规则的缝隙里悄然生长，静待被看见的时刻。",
+        "metadata": {
+            "persona_id": "SculptorX",
+            "day_time": 15,
+            "important_score": 0.9,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:04:10"
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘_1_b9c0d60c",
+        "content": "今日无互动，但信念如初，静待回响。",
+        "metadata": {
+            "created_time": "2026-01-21 18:04:10",
+            "day_time": 15,
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "persona_id": "匠人绘_1"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_ca6071c5",
+        "content": "今日无互动，但心静如水，信念如初。",
+        "metadata": {
+            "created_time": "2026-01-21 18:04:10",
+            "persona_id": "SculptorX",
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-21 17:59:25.774399_b0b2487d",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -1.38 (监管=0.00, 流失=1.38) 自动调整阈值。。 我将审核阈值从 0.653 调整到了 0.675。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "platform2026-01-21 17:59:25.774399",
+            "day_time": 15,
+            "important_score": 1.0,
+            "created_time": "2026-01-21 18:04:10"
+        }
+    }
+]

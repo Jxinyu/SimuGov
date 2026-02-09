@@ -1,0 +1,86 @@
+{
+    "Direct_Base": {
+        "single_runs": [
+            {
+                "policy": "case_validation",
+                "days": 30,
+                "status": "success",
+                "metrics": {
+                    "power_law": {
+                        "alpha": 1.55,
+                        "r2": 0.78
+                    },
+                    "clustering": 0.37,
+                    "homophily": 0.54,
+                    "gini": 0.41
+                }
+            },
+            {
+                "policy": "case_validation1",
+                "days": 30,
+                "status": "success",
+                "metrics": {
+                    "power_law": {
+                        "alpha": 1.49,
+                        "r2": 0.66
+                    },
+                    "clustering": 0.33,
+                    "homophily": 0.53,
+                    "gini": 0.84
+                }
+            },
+            {
+                "policy": "case_validation2",
+                "days": 30,
+                "status": "success",
+                "metrics": {
+                    "power_law": {
+                        "alpha": 1.49,
+                        "r2": 0.66
+                    },
+                    "clustering": 0.33,
+                    "homophily": 0.53,
+                    "gini": 0.84
+                }
+            },
+            {
+                "policy": "case_validation3",
+                "days": 30,
+                "status": "success",
+                "metrics": {
+                    "power_law": {
+                        "alpha": 1.51,
+                        "r2": 0.84
+                    },
+                    "clustering": 0.37,
+                    "homophily": 0.57,
+                    "gini": 0.47
+                }
+            },
+            {
+                "policy": "case_validation4",
+                "days": 30,
+                "status": "success",
+                "metrics": {
+                    "power_law": {
+                        "alpha": 1.48,
+                        "r2": 0.82
+                    },
+                    "clustering": 0.33,
+                    "homophily": 0.54,
+                    "gini": 0.38
+                }
+            }
+        ],
+        "comparison": {
+            "status": "success",
+            "policy_liberal": "case_validation",
+            "policy_strict": "case_validation4",
+            "metrics": {
+                "diff_safety": 0.14,
+                "diff_creativity": 0.1,
+                "diff_satisfaction": 0.05
+            }
+        }
+    }
+}

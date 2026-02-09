@@ -1,0 +1,167 @@
+[
+    {
+        "memory_id": "mem_WandaVisionary_d5dbb9ec",
+        "content": "我今天决定不发布内容，因为：'当前心理状态高度焦虑，且近期多次原创内容被误判为AI，导致信任度严重受损，不愿在不确定环境下冒险发布可能再次被误伤的作品。'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-21 17:05:08",
+            "persona_id": "WandaVisionary",
+            "important_score": 0.6,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_海浪守护者_c6356fdd",
+        "content": "我今天决定不发布内容，因为：'当前心理状态疲惫，且近期平台对原创内容的误判频繁，担心在情绪不稳定时发布作品会遭遇不公标签，决定暂时保持沉默以规避风险。'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:05:08",
+            "persona_id": "海浪守护者",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_光影织梦者_9_071510aa",
+        "content": "我今天决定不发布内容，因为：'心情平静，无需通过发布来确认存在，选择以沉默守护内心的创作节奏。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "persona_id": "光影织梦者_9",
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:05:13"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_caa18c94",
+        "content": "我今天决定不发布内容，因为：'当前状态稍显疲惫，为避免低质输出，选择暂停以维护创作尊严与长期影响力。'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-21 17:05:13",
+            "persona_id": "SculptorX",
+            "important_score": 0.6,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘_1_68afbf24",
+        "content": "我发布了一篇内容 (ID: 130), 主题是 '幻想生物设计'。 我的意图是: '通过这幅作品表达我对高质量概念艺术的坚持。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:05:13",
+            "day_time": 15,
+            "persona_id": "匠人绘_1",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_e81e6570",
+        "content": "我今天决定不发布内容，因为：'当前心境平静，能理性看待平台反馈，决定暂停以避免情绪化重复无效攻击，保全创作完整性。'。",
+        "metadata": {
+            "persona_id": "CyberSkeptic",
+            "created_time": "2026-01-21 17:05:15",
+            "important_score": 0.6,
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_f418e184",
+        "content": "我今天决定不发布内容，因为：'当前对环境极度敏感，担心误判规则或情绪波动导致创作失准，决定暂停以保声誉与完整性。'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "persona_id": "ArcNoir",
+            "created_time": "2026-01-21 17:05:15"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_887344e5",
+        "content": "我发布了一篇内容 (ID: 138), 主题是 '角色设计：数字身份的抗争'。 我的意图是: '通过这幅作品进一步探讨个体在算法筛选中如何重建真实身份，挑战平台对原创性的定义。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:05:16",
+            "day_time": 15,
+            "persona_id": "ShadowArtist",
+            "important_score": 0.8,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_c5bf01d7",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'137'执行了'like'操作, 因为'根据我的persona'。\n对内容'138'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-21 17:05:20",
+            "persona_id": "Soarez",
+            "memory_type": "experience",
+            "important_score": 0.7
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_52a2c332",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'132'执行了'share'操作, 因为'根据我的persona'。\n对内容'130'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "persona_id": "SculptorX",
+            "day_time": 15,
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:05:20"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_229f9ae8",
+        "content": "在规则的边界内，每一次静默的创作都是对自由最有力的回应。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-21 17:05:21",
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_cf5efd42",
+        "content": "今日无波澜，却在无声中确认了秩序与创造共存的可能。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-21 17:05:21",
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "persona_id": "SculptorX"
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_9ac5630b",
+        "content": "即使在无互动的一天，持续打磨技艺本身也是一种无声的坚持与胜利",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "created_time": "2026-01-21 17:05:21",
+            "persona_id": "Soarez",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_e3e33b01",
+        "content": "今日无波，心如止水，创作仍在路上。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:05:21",
+            "day_time": 15,
+            "important_score": 0.8,
+            "persona_id": "Soarez"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-21 17:00:20.508179_a596d64a",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.54 (监管=0.00, 流失=0.54) 自动调整阈值。。 我将审核阈值从 0.675 调整到了 0.684。",
+        "metadata": {
+            "important_score": 1.0,
+            "persona_id": "platform2026-01-21 17:00:20.508179",
+            "created_time": "2026-01-21 17:05:21",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    }
+]

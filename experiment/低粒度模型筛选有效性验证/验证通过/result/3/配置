@@ -1,0 +1,9 @@
+settings.platform.complete_run_days = 15
+settings.platform.simple_run_days = 15
+settings.file_load_path.personas_file = r'D:\Assign\topic-code\topic-1\method\data\trend_consistency_30.json'
+asyncio.run(trend_consistency_verification())
+
+kpi_window_size: 3  # KPI窗口大小
+import_policy_day_time: 3  # 导入策略的开始时间。
+
+simple_batch_size: 3  # 简化框架中，一次批量处理的数量

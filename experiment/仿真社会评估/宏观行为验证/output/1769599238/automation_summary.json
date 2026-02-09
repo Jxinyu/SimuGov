@@ -1,0 +1,21 @@
+{
+    "Direct_Base": {
+        "single_runs": [
+            {
+                "policy": "惩罚0_5_教育中_ai_threshold_0_5",
+                "days": 20,
+                "status": "success",
+                "metrics": {
+                    "power_law": {
+                        "alpha": 1.37,
+                        "r2": 0.71
+                    },
+                    "clustering": 0.47,
+                    "homophily": 0.75,
+                    "gini": 0.4
+                }
+            }
+        ],
+        "comparison": {}
+    }
+}

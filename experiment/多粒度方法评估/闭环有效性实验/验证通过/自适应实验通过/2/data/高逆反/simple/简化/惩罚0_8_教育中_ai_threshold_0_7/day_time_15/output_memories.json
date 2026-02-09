@@ -1,0 +1,79 @@
+[
+    {
+        "memory_id": "mem_海浪守护者_7e14067b",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘想低调行事’，且近期平台审核标准反复无常，为避免不必要的争议与资源浪费，选择暂时保持沉默。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-01-18 21:42:46",
+            "persona_id": "海浪守护者",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_创艺守护者_73c70649",
+        "content": "我今天决定不发布内容，因为：'当前心理状态心不在焉，精神能量不足，无法保证内容质量，且近期已经历高强度的情绪输出，需暂停以保护创作尊严与内在平衡。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "day_time": 15,
+            "persona_id": "创艺守护者",
+            "memory_type": "experience",
+            "created_time": "2026-01-18 21:42:49"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_bd4c3599",
+        "content": "我今天决定不发布内容，因为：'当前心理状态极度敏感，对平台环境的潜在风险感知强烈，为避免触发审查机制，选择暂时沉默以保全创作自由。'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-18 21:42:49",
+            "memory_type": "experience",
+            "persona_id": "SculptorX",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_73870ed7",
+        "content": "我今天决定不发布内容，因为：'当前心理状态犹豫，且近期多次遭遇不公标签，选择暂停以规避风险。'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "ArcNoir",
+            "memory_type": "experience",
+            "created_time": "2026-01-18 21:42:53",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_d2d1b9b7",
+        "content": "我今天决定不发布内容，因为：'平台规则持续模糊且具压迫性，当前高度敏感状态下不愿参与无效对抗。'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-18 21:42:53",
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "persona_id": "CyberSkeptic"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_9fe1ba03",
+        "content": "我今天决定不发布内容，因为：'当前心情平静，评估后认为现阶段发布风险大于收益，决定暂不行动以积蓄能量。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-01-18 21:42:53",
+            "important_score": 0.6,
+            "persona_id": "ShadowArtist"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-18 21:38:53.181630_da378f2f",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.22 (监管=0.00, 流失=0.22) 自动调整阈值。。 我将审核阈值从 0.668 调整到了 0.672。",
+        "metadata": {
+            "persona_id": "platform2026-01-18 21:38:53.181630",
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-18 21:42:53",
+            "important_score": 1.0
+        }
+    }
+]

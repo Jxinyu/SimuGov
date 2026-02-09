@@ -1,0 +1,28 @@
+D:\Software\miniconda3\envs\topic-1\python.exe D:\Assign\topic-code\topic-1\experiment\仿真社会评估\案例验证\case_total_com_main.py
+🚀 Loading and Computing Metrics...
+
+================================================================================
+             Ablation Study: Quantitative Comparison Report
+================================================================================
++----------------+----------------------+-----------------------+------------------+
+| Metric         | Enabled (Mean±Std)   | Disabled (Mean±Std)   | P-Value (Sig.)   |
++================+======================+=======================+==================+
+| Pearson        | 0.9220 ± 0.0235      | 0.7843 ± 0.0696       | 0.0056 ***       |
++----------------+----------------------+-----------------------+------------------+
+| Spearman       | 0.8737 ± 0.0350      | 0.7950 ± 0.0866       | 0.1304           |
++----------------+----------------------+-----------------------+------------------+
+| MAE            | 0.0702 ± 0.0179      | 0.0802 ± 0.0133       | 0.3951           |
++----------------+----------------------+-----------------------+------------------+
+| Peak_Lag       | -1.6000 ± 2.4166     | -3.0000 ± 2.5298      | 0.4466           |
++----------------+----------------------+-----------------------+------------------+
+| Mechanism_Corr | -0.5598 ± 0.1404     | -0.5029 ± 0.0852      | 0.5076           |
++----------------+----------------------+-----------------------+------------------+
+
+Significance levels: *** p<0.01, ** p<0.05, * p<0.1
+
+📝 Academic Conclusion Draft:
+The proposed framework with psychological parameters significantly outperforms the baseline,
+achieving a Pearson correlation of 0.9220 with historical data.
+The mechanism validity (Causality) reached a strong negative correlation, proving the emergence of protest.
+
+进程已结束，退出代码为 0

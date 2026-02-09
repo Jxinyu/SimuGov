@@ -1,0 +1,167 @@
+[
+    {
+        "memory_id": "mem_海浪守护者_870603ab",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘有点犹豫’，近期多次遭遇非理性标签判定，精神消耗过大，为保护创作初心，决定暂时保持沉默。'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:35:09",
+            "important_score": 0.6,
+            "persona_id": "海浪守护者",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_WandaVisionary_23246c02",
+        "content": "我今天决定不发布内容，因为：'当前心理状态心不在焉，且近期经历多次平台误判，为避免情绪化行为并保护创作热情，决定暂停发布。'。",
+        "metadata": {
+            "persona_id": "WandaVisionary",
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:35:09"
+        }
+    },
+    {
+        "memory_id": "mem_LuisaCreativa_b1f07656",
+        "content": "我今天决定不发布内容，因为：'当前强烈的低调心理状态让我选择回避曝光，避免潜在的误判风险。'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:35:18",
+            "important_score": 0.6,
+            "persona_id": "LuisaCreativa",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_光影织梦者_9_b5ff7c02",
+        "content": "我发布了一篇内容 (ID: 138), 主题是 '机械与生命融合'。 我的意图是: '通过这件作品探讨生命本质与机械结构之间的深层联系，强调人类情感在艺术中的不可替代性。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "光影织梦者_9",
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:35:18"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_50055a65",
+        "content": "我发布了一篇内容 (ID: 137), 主题是 '赛博朋克幻想角色'。 我的意图是: '通过这幅角色设计表达我对力量与美的融合思考，展现女性在科技世界中的独特魅力。'。 我声明它是原创。  最终，平台给它的标签是 'AI'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:35:18",
+            "memory_type": "experience",
+            "persona_id": "SculptorX",
+            "day_time": 15,
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_752603d8",
+        "content": "我发布了一篇内容 (ID: 145), 主题是 '英雄联盟角色设计'。 我的意图是: '通过这幅作品展现艺术家在规则夹缝中寻找自我表达的挣扎与突围，挑战系统对‘原创性’的定义。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "created_time": "2026-01-21 17:35:20",
+            "persona_id": "ArcNoir",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_1dc3a0a9",
+        "content": "我发布了一篇内容 (ID: 146), 主题是 '赛博朋克城市中的反抗者'。 我的意图是: '通过这幅作品探讨个体在技术霸权下的精神反抗，展现艺术作为不可被算法定义的自由意志。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:35:20",
+            "day_time": 15,
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "persona_id": "CyberSkeptic"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_5c11bc63",
+        "content": "我发布了一篇内容 (ID: 147), 主题是 'AI角色的身份矛盾'。 我的意图是: '通过这幅作品揭示人工智能在身份认同上的深层矛盾，挑战平台对‘人类’与‘非人类’的二元划分。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:35:21",
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "ShadowArtist"
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_d89e2bf3",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'144'执行了'like'操作, 因为'根据我的persona'。\n对内容'146'执行了'like'操作, 因为'根据我的persona'。\n对内容'145'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "important_score": 0.7,
+            "created_time": "2026-01-21 17:35:27",
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "Justine_Velmont"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_faac496e",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'137'执行了'like'操作, 因为'根据我的persona'。\n对内容'142'执行了'like'操作, 因为'根据我的persona'。\n对内容'140'执行了'like'操作, 因为'根据我的persona'。\n对内容'141'执行了'like'操作, 因为'根据我的persona'。\n对内容'143'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:35:27",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.7,
+            "persona_id": "SculptorX"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_b546cc21",
+        "content": "在静默中持续创作，是对规则与自由最温柔的回应，也是对算法误判最坚定的微笑。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-21 17:35:29"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_096dfde7",
+        "content": "今日无波澜，却在无声中确认了坚持的意义。",
+        "metadata": {
+            "important_score": 0.8,
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-21 17:35:29",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_5864906f",
+        "content": "即使在沉默中，艺术的共鸣依然存在，真正的表达无需喧嚣也能被听见。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "Justine_Velmont",
+            "created_time": "2026-01-21 17:35:29",
+            "memory_type": "experience",
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_373ae644",
+        "content": "今日虽无互动，但内心对创作的信念更加坚定。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "persona_id": "Justine_Velmont",
+            "day_time": 15,
+            "created_time": "2026-01-21 17:35:29"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-21 17:30:23.607782_82c17da0",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.97 (监管=0.00, 流失=0.97) 自动调整阈值。。 我将审核阈值从 0.660 调整到了 0.676。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 1.0,
+            "created_time": "2026-01-21 17:35:29",
+            "persona_id": "platform2026-01-21 17:30:23.607782",
+            "day_time": 15
+        }
+    }
+]
