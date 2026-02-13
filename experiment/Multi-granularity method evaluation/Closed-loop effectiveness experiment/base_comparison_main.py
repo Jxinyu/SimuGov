@@ -10,14 +10,10 @@ mpl.use('Agg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-# --- 出版级绘图配置 ---
+# --- Publication-level plotting configuration ---
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 
-
-# =================================================================
-# 1. 核心数学算子 (严格基于稳健性得分逻辑)
-# =================================================================
 
 def calculate_theta_jitter(theta_history: list) -> float:
     if not theta_history or len(theta_history) < 2: return 0.0
@@ -43,10 +39,6 @@ def get_robust_vector(snapshot):
         calculate_robust_score(snapshot['satisfaction_list'], th)
     ])
 
-
-# =================================================================
-# 2. 数据检索逻辑 (保持动态路径识别)
-# =================================================================
 
 def extract_snapshot(folder: Path):
     day_dirs = sorted([d for d in folder.iterdir() if d.is_dir() and d.name.startswith('day_time_')],
@@ -88,32 +80,28 @@ def load_all_experiment_data(base_path: Path):
     return data
 
 
-# =================================================================
-# 3. 核心对比分析与全维度对标
-# =================================================================
-
 def run_elite_optimal_benchmarking(data, output_root: Path):
     if not data['elites'] or not data['baselines']:
         print("❌ 数据不足，无法对比。")
         return
 
-    # A. 空间转换
+    # A. Space transformation
     elite_vectors = np.array([get_robust_vector(e) for e in data['elites']])
     base_vectors = np.array([get_robust_vector(b) for b in data['baselines']])
 
-    # B. 寻找精英解集中的最优解 (基于综合稳健总分)
+    # B. Finding the optimal solution in the elite set (based on comprehensive robust total score)
     elite_total_scores = np.sum(elite_vectors, axis=1)
     best_idx = np.argmax(elite_total_scores)
     best_v = elite_vectors[best_idx]
     best_p = data['elites'][best_idx]
 
-    # C. 逐项对标计算 (绝对值 + 百分比)
+    # C. Item-by-item benchmarking calculation (absolute value + percentage)
     detailed_results = []
     dim_names = ["安全性", "创造力", "满意度"]
 
     for i, b_v in enumerate(base_vectors):
         diff = best_v - b_v
-        # 避免除以0，设定一个极小值
+        # Avoid division by zero, set a minimal value
         ratios = diff / (b_v + 1e-6)
 
         entry = {
@@ -129,7 +117,7 @@ def run_elite_optimal_benchmarking(data, output_root: Path):
             }
         detailed_results.append(entry)
 
-    # D. 整体增益
+    # D. Overall gain
     def calc_hv(matrix):
         min_m = -1.0 * matrix
         try:
@@ -140,21 +128,21 @@ def run_elite_optimal_benchmarking(data, output_root: Path):
     hv_elite = calc_hv(elite_vectors)
     hv_base = calc_hv(base_vectors)
 
-    # E. 绘图与存档
+    # E. Drawing and archiving
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     save_dir = output_root / timestamp
     save_dir.mkdir(parents=True, exist_ok=True)
 
-    # --- 绘图 ---
+    # --- Drawing ---
     fig = plt.figure(figsize=(12, 9), dpi=250)
     ax = fig.add_subplot(111, projection='3d')
-    # 背景精英
+    # Background elites
     ax.scatter(elite_vectors[:, 0], elite_vectors[:, 1], elite_vectors[:, 2], c='lightcoral', s=40, alpha=0.3,
                label='精英解集 (Elite Set)')
-    # 基准
+    # Baselines
     ax.scatter(base_vectors[:, 0], base_vectors[:, 1], base_vectors[:, 2], c='blue', s=160, marker='*',
                edgecolors='black', label='人工基准 (Baselines)')
-    # 最优精英高亮
+    # Optimal elite highlight
     ax.scatter(best_v[0], best_v[1], best_v[2], c='gold', s=550, marker='P', edgecolors='black', linewidth=2,
                label='精英解集最优解 (Optimal Elite)', zorder=30)
 
@@ -166,7 +154,7 @@ def run_elite_optimal_benchmarking(data, output_root: Path):
     ax.legend(loc='upper left', fontsize=10)
     plt.savefig(save_dir / "optimal_elite_comparison.png")
 
-    # F. 构造控制台文本输出并捕获
+    # F. Construct console text output and capture
     output_lines = []
     output_lines.append("\n" + "★" * 25 + " 闭环寻优有效性深度报告 " + "★" * 25)
     output_lines.append(f"📡 实验数据源: {data['run_id']}")
@@ -190,15 +178,15 @@ def run_elite_optimal_benchmarking(data, output_root: Path):
     output_lines.append("=" * 75)
     full_output_text = "\n".join(output_lines)
 
-    # 打印到控制台
+    # Print to console
     print(full_output_text)
 
-    # G. 保存文件
-    # 1. 保存控制台文本
+    # G. Save files
+    # 1. Save console text
     with open(save_dir / "execution_summary.txt", "w", encoding="utf-8") as f:
         f.write(full_output_text)
 
-    # 2. 保存 JSON 结果
+    # 2. Save JSON results
     report_json = {
         "metadata": {"run_id": data['run_id'], "best_policy_id": best_p['id']},
         "metrics": {
@@ -213,13 +201,9 @@ def run_elite_optimal_benchmarking(data, output_root: Path):
     print(f"✅ 3D可视化图、JSON数据及本控制台文本已保存至: {save_dir}")
 
 
-# =================================================================
-# 4. 主程序入口
-# =================================================================
-
 if __name__ == "__main__":
-    BASE_PATH = Path(r"experiment\多粒度方法评估\闭环有效性实验\data")
-    OUT_PATH = Path(r"experiment\多粒度方法评估\闭环有效性实验\output")
+    BASE_PATH = Path(r"experiment\Multi-granularity method evaluation\Closed-loop effectiveness experiment\data")
+    OUT_PATH = Path(r"experiment\Multi-granularity method evaluation\Closed-loop effectiveness experiment\output")
 
     exp_data = load_all_experiment_data(BASE_PATH)
     run_elite_optimal_benchmarking(exp_data, OUT_PATH)

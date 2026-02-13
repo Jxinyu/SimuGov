@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import imageio.v2 as imageio
 
-# 尝试导入 pygmo
 try:
     import pygmo as pg
 
@@ -16,7 +15,6 @@ except ImportError:
     HAS_PYGMO = False
     print("⚠️ 未检测到 pygmo 库，将跳过超体积 (HV) 计算。")
 
-# ================= KDD 绘图标准设置 =================
 plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans']
 plt.rcParams['font.size'] = 10
@@ -32,8 +30,8 @@ COLOR_PARETO = '#E67E22'  # 橙色
 COLOR_POP = '#4682B4'  # 蓝色
 
 # ================= 配置区域 =================
-INPUT_JSON_PATH = r"experiment\多粒度方法评估\闭环有效性实验\验证通过\收敛性验证通过\低逆反\result\进化\实验数据\experiment_results.json"
-OUTPUT_DIR = r"experiment\多粒度方法评估\闭环有效性实验\output"
+INPUT_JSON_PATH = r"experiment\Multi-granularity method evaluation\Closed-loop effectiveness experiment\Verification passed\Convergence verification passed\低逆反\result\进化\实验数据\experiment_results.json"
+OUTPUT_DIR = r"experiment\Multi-granularity method evaluation\Closed-loop effectiveness experiment\output"
 
 GIF_DURATION = 0.5
 KPI_KEYS = ['safety', 'creativity', 'satisfaction']

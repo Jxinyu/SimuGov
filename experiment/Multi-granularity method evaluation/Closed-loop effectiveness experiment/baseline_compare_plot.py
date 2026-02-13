@@ -3,13 +3,12 @@ import matplotlib.pyplot as plt
 import os
 from datetime import datetime
 
-# ================= KDD 绘图标准设置 =================
 plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans']
 plt.rcParams['font.size'] = 10
 plt.rcParams['axes.labelsize'] = 11
 plt.rcParams['xtick.labelsize'] = 10
-plt.rcParams['ytick.labelsize'] = 9  # 刻度统一设为 9pt
+plt.rcParams['ytick.labelsize'] = 9
 plt.rcParams['pdf.fonttype'] = 42
 plt.rcParams['ps.fonttype'] = 42
 
@@ -123,5 +122,5 @@ def plot_kdd_pixel_perfect(output_dir):
 
 
 if __name__ == "__main__":
-    out = r"experiment\多粒度方法评估\闭环有效性实验\output"
+    out = r"experiment\Multi-granularity method evaluation\Closed-loop effectiveness experiment\output"
     plot_kdd_pixel_perfect(out)
