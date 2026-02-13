@@ -86,6 +86,4 @@ SimuGov/
 ## 📊 Experiment Reproduction
 
 Key experiments mentioned in the paper can be run as follows:
-*   **ArtStation Case Validation**: Call `case_experiment()` in `main_experiment.py`.
-*   **Efficiency Comparison Experiment**: Call `framework_efficiency_experiment()`.
-*   **Ablation Study**: Enable the `ablation_validation` switch in `config.yaml`.
+**experiment/main.py**
