@@ -39,12 +39,7 @@ public_agent:
 file_load_path:
   contents_file: "method/data/contents.json"  # 内容文件
   watermark_file: "method/data/watermarking_technology_to_combat_databases-2.json"  # 水印文件
-#  personas_file: "method/data/test_persona.json"  # 人群文件
-#  personas_file: "method/data/scenario_protest.json"
   personas_file: "method/data/personas_30.json"
-#  personas_file: "method/data/low_beta_personas_30.json"
-#  personas_file: "method/data/high_beta_personas_30.json"
-#  personas_file: "method/data/personas_100.json"
   token_file: "method/store/token/all_token.csv"  # 用于存储运行中消耗的token数量
   chroma_db_file: "method/store/chroma_db"  # 用于存储chroma数据库的目录
   daily_memory_exports_file: "method/store/daily_memory_exports"  # 用于存储每日导出的记忆的目录
