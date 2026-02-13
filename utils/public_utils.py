@@ -118,7 +118,7 @@ def calculate_best_policy_by_path(path: str):
 
 # --- 使用示例 ---
 if __name__ == "__main__":
-    test_path = r'method\store\daily_memory_exports\2026-01-21\183229'
+    test_path = r'D:\A-课题\小论文内容\code\SimuGov\experiment\multi_granularity_method_evaluation\closed_loop_effectiveness_experiment\Verification_passed\Adaptive experiment passed\2\data\低逆反\elite'
     result = calculate_best_policy_by_path(test_path)
 
     if result:
@@ -129,27 +129,27 @@ if __name__ == "__main__":
         print(f"📈 维度详情: {result['kpi_robust_detail']}")
         print("=" * 75)
 
-    test_path = r'method\store\daily_memory_exports\2026-01-19\高逆反'
-    result = calculate_best_policy_by_path(test_path)
-
-    if result:
-        print("\n" + "=" * 30 + " 高逆反最优解 " + "=" * 30)
-        print(f"🥇 最佳策略ID: {result['policy_id']}")
-        print(f"📊 综合稳健得分: {result['overall_robust_score']:.4f}")
-        print(f"🛠️ 政策参数: {result['params']}")
-        print(f"📈 维度详情: {result['kpi_robust_detail']}")
-        print("=" * 75)
-
-    test_path = r'experiment\多粒度方法评估\闭环有效性实验\验证通过\自适应实验通过\2\data\低入高\运行数据'
-    result = calculate_best_policy_by_path(test_path)
-
-    if result:
-        print("\n" + "=" * 30 + " 低入高结果 " + "=" * 30)
-        print(f"🥇 最佳策略ID: {result['policy_id']}")
-        print(f"📊 综合稳健得分: {result['overall_robust_score']:.4f}")
-        print(f"🛠️ 政策参数: {result['params']}")
-        print(f"📈 维度详情: {result['kpi_robust_detail']}")
-        print("=" * 75)
+    # test_path = r'method\store\daily_memory_exports\2026-01-19\高逆反'
+    # result = calculate_best_policy_by_path(test_path)
+    #
+    # if result:
+    #     print("\n" + "=" * 30 + " 高逆反最优解 " + "=" * 30)
+    #     print(f"🥇 最佳策略ID: {result['policy_id']}")
+    #     print(f"📊 综合稳健得分: {result['overall_robust_score']:.4f}")
+    #     print(f"🛠️ 政策参数: {result['params']}")
+    #     print(f"📈 维度详情: {result['kpi_robust_detail']}")
+    #     print("=" * 75)
+    #
+    # test_path = r'experiment\多粒度方法评估\闭环有效性实验\验证通过\自适应实验通过\2\data\低入高\运行数据'
+    # result = calculate_best_policy_by_path(test_path)
+    #
+    # if result:
+    #     print("\n" + "=" * 30 + " 低入高结果 " + "=" * 30)
+    #     print(f"🥇 最佳策略ID: {result['policy_id']}")
+    #     print(f"📊 综合稳健得分: {result['overall_robust_score']:.4f}")
+    #     print(f"🛠️ 政策参数: {result['params']}")
+    #     print(f"📈 维度详情: {result['kpi_robust_detail']}")
+    #     print("=" * 75)
 
 
 

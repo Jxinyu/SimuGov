@@ -2,252 +2,286 @@ import os
 import sys
 import json
 import logging
+import re
 import numpy as np
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
+import scipy.stats as stats
+import pygmo as pg
 
-CURRENT_DIR = Path(__file__).resolve().parent
+EXP_DIR = Path(__file__).resolve().parent
 
 
 def auto_append_paths(root_path):
-    """
-    递归地将所有子目录添加到 sys.path 中。
-    这样子目录中的脚本相互调用（如 from ana_utils import ...）时就不会报错。
-    """
+    """Recursively add subdirectories to sys.path for internal calls."""
     for root, dirs, files in os.walk(root_path):
-        if "__pycache__" in root:
-            continue
-        if root not in sys.path:
-            sys.path.append(root)
+        if "__pycache__" in root or ".git" in root: continue
+        if root not in sys.path: sys.path.append(root)
 
 
-auto_append_paths(str(CURRENT_DIR))
-
+auto_append_paths(str(EXP_DIR))
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger("ExperimentAggregator")
-
-CONFIG = {
-    "OUTPUT_FILE": "final_experiment_summary.json",
-
-    "MACRO_DATA": r'experiment\仿真社会评估\宏观行为验证\data\case_policy',
-    "INTERNAL_CONSISTENCY_LOW": r'experiment\仿真社会评估\内部一致性验证\data\eva_compare\test-2\low\惩罚0_99_教育低_ai_threshold_0_01',
-    "INTERNAL_CONSISTENCY_HIGH": r'experiment\仿真社会评估\内部一致性验证\data\eva_compare\test-2\high\惩罚0_99_教育低_ai_threshold_0_01',
-    "ROBUSTNESS_DATA": r'experiment\仿真社会评估\内部一致性验证\data\eva_robustness',
-    "CASE_DATA": r'experiment\仿真社会评估\案例验证\data\开启心理参数\case_validation',
-    "LOW_FIDELITY_DATA": r"experiment\低粒度模型筛选有效性验证\验证通过\result",
-    "EFFICIENCY_DATA": r'experiment\多粒度方法评估\效率实验\data\155812',
-    "SENSITIVITY_DATA": r'experiment\多粒度方法评估\机制敏感度实验\data',
-    "CLOSED_LOOP_DATA": r"experiment\多粒度方法评估\闭环有效性实验\data"
-}
+logger = logging.getLogger("SimuGov-Aggregator")
 
 
 class NpEncoder(json.JSONEncoder):
     def default(self, obj):
-        if isinstance(obj, np.integer): return int(obj)
-        if isinstance(obj, np.floating): return float(obj)
-        if isinstance(obj, np.ndarray): return obj.tolist()
-        if isinstance(obj, np.bool_): return bool(obj)
+        if isinstance(obj, (np.integer, np.floating, np.ndarray, np.bool_)):
+            if isinstance(obj, np.ndarray): return obj.tolist()
+            return obj.item()
         if isinstance(obj, pd.DataFrame): return obj.to_dict(orient='records')
         return super(NpEncoder, self).default(obj)
 
 
-def run_macro_behavior_analysis():
-    logger.info("正在执行: 宏观行为验证分析...")
-    try:
-        from mac_main import ExperimentAutomator
-        path = CONFIG["MACRO_DATA"]
-        if not os.path.exists(path): return None
-
-        automator = ExperimentAutomator(path, os.path.join(CURRENT_DIR, "temp_macro"))
-        summary_report = {}
-        top_sub_dirs = [d for d in os.listdir(automator.data_root) if
-                        os.path.isdir(os.path.join(automator.data_root, d))]
-        is_2_layer = any(automator._get_max_runtime_day(os.path.join(automator.data_root, d)) > 0 for d in top_sub_dirs)
-        if is_2_layer:
-            summary_report["Direct_Base"] = automator._process_group("Direct_Base", automator.data_root)
-        else:
-            for group in top_sub_dirs:
-                summary_report[group] = automator._process_group(group, os.path.join(automator.data_root, group))
-        return summary_report
-    except Exception as e:
-        logger.error(f"宏观行为验证解析失败: {e}")
-        return None
+# Translation map for converting internal labels to English
+TRANSLATION_MAP = {
+    "安全性": "Safety", "创造力": "Creativity", "满意度": "Satisfaction",
+    "惩罚": "Penalty", "教育": "Education",
+    "ratio_20": "Recall_Top20", "ratio_30": "Recall_Top30", "ratio_40": "Recall_Top40"
+}
 
 
-def run_internal_consistency_analysis():
-    logger.info("正在执行: 内部一致性与鲁棒性分析...")
-    try:
-        import scipy.stats as stats
-        from eva_compare import evaluate_extreme_psychology_experiment
-        from eva_robustness import load_robustness_kpi_data
-
-        results = {}
-        # 极端对比
-        p_low, p_high = CONFIG["INTERNAL_CONSISTENCY_LOW"], CONFIG["INTERNAL_CONSISTENCY_HIGH"]
-        if os.path.exists(p_low) and os.path.exists(p_high):
-            def load_last_kpi(p):
-                dirs = [d for d in os.listdir(p) if d.startswith("day_time_")]
-                if not dirs: return None
-                md = max(dirs, key=lambda x: int(x.split('_')[-1]))
-                with open(os.path.join(p, md, 'output_system_kpi.json'), 'r', encoding='utf-8') as f:
-                    return json.load(f)
-
-            l_d, h_d = load_last_kpi(p_low), load_last_kpi(p_high)
-            if l_d and h_d:
-                c_res = {}
-                for m in ['safety', 'satisfaction']:
-                    t_s, p_v = stats.ttest_ind(l_d[m], h_d[m], equal_var=False)
-                    c_res[m] = {"low_mean": np.mean(l_d[m]), "high_mean": np.mean(h_d[m]),
-                                "diff": np.mean(l_d[m]) - np.mean(h_d[m]), "p_value": p_v}
-                results["extreme_comparison"] = c_res
-
-        # 鲁棒性
-        p_rob = CONFIG["ROBUSTNESS_DATA"]
-        if os.path.exists(p_rob):
-            all_runs = load_robustness_kpi_data(p_rob)
-            if all_runs:
-                rob_res = {}
-                for m in ['safety', 'satisfaction', 'creativity']:
-                    vals = [r[m][-1] for r in all_runs]
-                    mean_v = np.mean(vals)
-                    rob_res[m] = {"final_mean": mean_v, "cv": np.std(vals) / mean_v if mean_v != 0 else 0}
-                results["robustness"] = rob_res
-        return results
-    except Exception as e:
-        logger.error(f"内部一致性解析失败: {e}")
-        return None
+def translate(obj):
+    if isinstance(obj, dict):
+        return {TRANSLATION_MAP.get(k, k): translate(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [translate(i) for i in obj]
+    return obj
 
 
-def run_case_validation_analysis():
-    logger.info("正在执行: 案例验证分析...")
-    try:
-        from case_main import build_simulation_data_strict_window
-        from case_validator import CaseValidator
-        path = CONFIG["CASE_DATA"]
-        if not os.path.exists(path): return None
-        gt = [0, 0, 0, 0, 0, 0, 0, 0.1, 0.09, 0.28, 0.3, 0.34, 0.35, 0.33, 0.42, 0.42, 0.31, 0.27, 0.13, 0.04, 0.04,
-              0.03, 0.01, 0.01, 0.01, 0, 0.01, 0, 0, 0]
-        sim_r, sim_s = build_simulation_data_strict_window(path, 30, 40, 3)
-        ml = min(len(gt), len(sim_r))
-        return {
-            "metrics": {
-                "trend": CaseValidator.validate_trend_correlation(gt[:ml], sim_r[:ml]),
-                "mechanism": CaseValidator.validate_mechanism_causality(sim_s[:ml], sim_r[:ml]),
-                "peak": CaseValidator.validate_peak_alignment(gt[:ml], sim_r[:ml])
+def find_file_recursive(base_path: Path, filename: str) -> Path:
+    if not base_path or not base_path.exists(): return None
+    matches = list(base_path.rglob(filename))
+    if matches:
+        matches.sort(key=lambda p: len(str(p)), reverse=True)
+        return matches[0]
+    return None
+
+
+def run_rq1_ablation():
+    """RQ1: Ablation Study (Aggregating 5 runs)"""
+    from case_main import build_simulation_data_strict_window
+    from scipy.stats import pearsonr
+
+    logger.info("Analyzing RQ1: PAEP Ablation Study...")
+    base_path = EXP_DIR / "simulated_social_assessment" / "case_verification_and_ablation" / "verification_passed"
+    gt = [0, 0, 0, 0, 0, 0, 0, 0.1, 0.09, 0.28, 0.3, 0.34, 0.35, 0.33, 0.42, 0.42, 0.31, 0.27, 0.13, 0.04, 0.04, 0.03,
+          0.01, 0.01, 0.01, 0, 0.01, 0, 0, 0]
+
+    def process_group(folder_name):
+        group_dir = base_path / folder_name
+        if not group_dir.exists(): return None
+        pearsons, trajectories = [], []
+        for i in range(1, 6):
+            run_dir = group_dir / str(i) / "case_validation"
+            try:
+                sim_r, _ = build_simulation_data_strict_window(str(run_dir), 30, 40, 3)
+                ml = min(len(gt), len(sim_r))
+                if ml >= 20:
+                    p_val = 0.0 if np.std(sim_r[:ml]) == 0 else float(pearsonr(gt[:ml], sim_r[:ml])[0])
+                    pearsons.append(p_val);
+                    trajectories.append(sim_r[:ml])
+            except:
+                continue
+        return {"mean": np.mean(pearsons), "std": np.std(pearsons),
+                "trajectory_30d": np.mean(trajectories, axis=0).tolist()} if pearsons else None
+
+    return {"SimuGov_Ours": process_group("Turn on PAEP"), "Baseline_Off": process_group("Turn off PAEP")}
+
+
+def run_rq2_comprehensive():
+    """RQ2: Fidelity and Efficiency Analysis"""
+    logger.info("Analyzing RQ2: RSC Proxy Fidelity & Scalability...")
+
+    # 1. Fidelity
+    fidelity = None
+    from all_compare import batch_analyze_all_groups_multi_ratios
+    fid_path = EXP_DIR / "validation_of_the_effectiveness_of_low_granularity_model_screening" / "verification_passed" / "result"
+    if fid_path.exists():
+        res = batch_analyze_all_groups_multi_ratios(str(fid_path), [0.2, 0.3, 0.4], False)
+        if res.get('status') == 'success':
+            fidelity = translate({
+                "spearman_mean": res["summary_statistics"].get("spearman_mean"),
+                "recall_means": res["summary_statistics"].get("recall_means")
+            })
+
+    # 2. Efficiency Scalability
+    efficiency = None
+    csv_path = find_file_recursive(EXP_DIR / "multi_granularity_method_evaluation" / "efficiency_experiment",
+                                   "scalability_metrics.csv")
+    if csv_path:
+        df = pd.read_csv(csv_path)
+        efficiency = {
+            "metrics_table": df.to_dict(orient='records'),
+            "max_scale_summary": {
+                "speedup": float(df.iloc[-1]['time_a'] / df.iloc[-1]['time_b']),
+                "cost_saving_percent": float(df.iloc[-1]['saving'])
             }
         }
-    except Exception as e:
-        logger.error(f"案例验证解析失败: {e}")
-        return None
+    return {"Fidelity": fidelity, "Efficiency_Scalability": efficiency}
 
 
-def run_low_fidelity_analysis():
-    logger.info("正在执行: 低粒度模型筛选有效性分析...")
-    try:
-        from all_compare import batch_analyze_all_groups_multi_ratios
-        path = CONFIG["LOW_FIDELITY_DATA"]
-        if not os.path.exists(path): return None
-        res = batch_analyze_all_groups_multi_ratios(path, [0.2, 0.3, 0.4], False)
-        if res.get('status') == 'success':
-            return {"summary": res.get("summary_statistics"),
-                    "groups": [{"id": r['group_id'], "metrics": r['metrics']} for r in res.get("all_results", []) if
-                               r.get('status') == 'success']}
-        return res
-    except Exception as e:
-        logger.error(f"低粒度筛选解析失败: {e}")
-        return None
+def run_rq3_convergence():
+    """RQ3-1: Convergence Analysis"""
+    logger.info("Analyzing RQ3-1: Convergence History...")
+    path = EXP_DIR / "multi_granularity_method_evaluation" / "closed_loop_effectiveness_experiment" / "Verification_passed" / "Convergence verification passed" / "exported_data" / "evolution_performance_metrics.csv"
+    if path.exists():
+        df = pd.read_csv(path)
+        return df[['generation', 'pareto_front_size', 'hypervolume']].to_dict(orient='records')
+    return []
 
 
-def run_efficiency_analysis():
-    logger.info("正在执行: 效率实验分析...")
-    try:
-        from efficiency_main import load_experiment_data, calculate_efficiency_metrics, calculate_quality_metrics
-        path = CONFIG["EFFICIENCY_DATA"]
-        if not os.path.exists(path): return None
-        raw = load_experiment_data(path)
-        return {"efficiency": calculate_efficiency_metrics(raw),
-                "quality": calculate_quality_metrics(raw)} if raw else None
-    except Exception as e:
-        logger.error(f"效率分析失败: {e}")
-        return None
-
-
-def run_sensitivity_analysis():
-    logger.info("正在执行: 机制敏感度分析...")
-    try:
-        import sen_main
-        sen_main.DATA_ROOT = Path(CONFIG["SENSITIVITY_DATA"])
-        df = sen_main.load_results()
-        return df.groupby("Group").mean(numeric_only=True).to_dict(orient="index") if not df.empty else None
-    except Exception as e:
-        logger.error(f"敏感度分析失败: {e}")
-        return None
-
-
-def run_closed_loop_analysis():
-    logger.info("正在执行: 闭环有效性分析...")
-    try:
-        from base_comparison_main import load_all_experiment_data, get_robust_vector
-        import pygmo as pg
-        path = Path(CONFIG["CLOSED_LOOP_DATA"])
-        if not path.exists(): return None
-        data = load_all_experiment_data(path)
-        if not data['elites'] or not data['baselines']: return None
-        e_vecs = np.array([get_robust_vector(e) for e in data['elites']])
-        b_vecs = np.array([get_robust_vector(b) for b in data['baselines']])
-        best_idx = np.argmax(np.sum(e_vecs, axis=1))
-
-        def chv(m):
-            try:
-                return float(pg.hypervolume(-1.0 * m).compute([0.01, 0.01, 0.01]))
-            except:
-                return 0.0
-
+def run_rq3_baseline_compare():
+    """RQ3-2: Baseline Benchmarking"""
+    logger.info("Analyzing RQ3-2: Baseline Comparison...")
+    path = EXP_DIR / "multi_granularity_method_evaluation" / "closed_loop_effectiveness_experiment" / "Verification_passed" / "Benchmark comparison verification passed" / "1" / "20260118_193457" / "benchmarking_data.json"
+    if path.exists():
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
         return {
-            "metrics": {"hv_elite": chv(e_vecs), "hv_base": chv(b_vecs),
-                        "improvement": (chv(e_vecs) / chv(b_vecs) - 1) if chv(b_vecs) > 0 else 0},
-            "best_elite": {"id": data['elites'][best_idx]['id'], "vector": e_vecs[best_idx].tolist()},
-            "base_avg": np.mean(b_vecs, axis=0).tolist()
+            "hv_improvement_percent": ((data['metrics']['hv_elite'] / data['metrics']['hv_base']) - 1) * 100,
+            "best_elite_vector": translate(data['metrics']['best_elite_robust_vector']),
+            "benchmarking_details": translate(data['benchmarking'])
         }
+    return None
+
+
+def run_rq3_adaptability_fixed():
+    """RQ3-3: Adaptability Analysis (Physical File Loading)"""
+    logger.info("Analyzing RQ3-3: Adaptability from all_total and KPI.json...")
+
+    # Define physical base path for adaptive experiment
+    base_data_path = EXP_DIR / "multi_granularity_method_evaluation" / "closed_loop_effectiveness_experiment" / "Verification_passed" / "Adaptive experiment passed" / "2" / "data"
+    all_total_file = base_data_path.parent / "all_total"
+
+    if not all_total_file.exists():
+        return {"error": "all_total file not found"}
+
+    try:
+        with open(all_total_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Regex patterns to extract Policy IDs from each section
+        def get_id(pattern):
+            match = re.search(pattern, content, re.DOTALL)
+            if match:
+                id_m = re.search(r"最佳策略ID:\s*(.*)", match.group(1))
+                return id_m.group(1).strip() if id_m else None
+            return None
+
+        # Configuration for folder mapping
+        group_configs = {
+            "Group_A_Compliance": {"sub": "低逆反/elite", "id": get_id(r"低逆反最优解\s*={10,}(.*?)(?=={10,}|$)")},
+            "Group_B_Radical": {"sub": "高逆反/elite", "id": get_id(r"高逆反最优解\s*={10,}(.*?)(?=={10,}|$)")},
+            "Group_C_Mismatch": {"sub": "低入高/运行数据", "id": get_id(r"低入高结果\s*={10,}(.*?)(?=={10,}|$)")}
+        }
+
+        results = {}
+        for key, cfg in group_configs.items():
+            sid = cfg["id"]
+            if not sid:
+                results[key] = "ID not found in all_total"
+                continue
+
+            # Locate actual KPI file based on ID
+            kpi_file = base_data_path / cfg["sub"] / sid / "day_time_15" / "output_system_kpi.json"
+
+            if not kpi_file.exists():  # Fallback search
+                policy_dir = base_data_path / cfg["sub"] / sid
+                day_dirs = [d for d in policy_dir.iterdir() if
+                            d.is_dir() and "day_time" in d.name] if policy_dir.exists() else []
+                if day_dirs:
+                    latest_day = max(day_dirs, key=lambda x: int(x.name.split('_')[-1]))
+                    kpi_file = latest_day / "output_system_kpi.json"
+
+            if kpi_file.exists():
+                with open(kpi_file, 'r', encoding='utf-8') as kf:
+                    kpi = json.load(kf)
+
+                results[key] = {
+                    "policy_id": sid,
+                    "metrics": {
+                        "theta_jitter": float(np.mean(np.abs(np.diff(kpi["theta"])))) if "theta" in kpi and len(
+                            kpi["theta"]) > 1 else 0.0,
+                        "final_safety": kpi["safety"][-1] if "safety" in kpi else 0.0
+                    },
+                    "time_series": {
+                        "safety": kpi.get("safety", []), "satisfaction": kpi.get("satisfaction", []),
+                        "creativity": kpi.get("creativity", []), "theta": kpi.get("theta", [])
+                    }
+                }
+            else:
+                results[key] = f"KPI.json not found for ID {sid}"
+
+        # Evaluation validation
+        verification = {}
+        try:
+            ja = results["Group_A_Compliance"]["metrics"]["theta_jitter"]
+            jb = results["Group_B_Radical"]["metrics"]["theta_jitter"]
+            verification[
+                "Cost_Asymmetry"] = f"Radical({jb:.4f}) > Compliance({ja:.4f}) -> {'PASS' if jb > ja else 'FAIL'}"
+            sc = results["Group_C_Mismatch"]["metrics"]["final_safety"]
+            verification["System_Collapse"] = f"Safety({sc:.4f}) -> {'PASS' if sc < 0.1 else 'FAIL'}"
+        except:
+            pass
+
+        return {"results": results, "verification": verification}
     except Exception as e:
-        logger.error(f"闭环分析失败: {e}")
-        return None
+        return {"error": str(e)}
 
 
 def main():
-    logger.info("=" * 50)
-    logger.info("开始汇总所有子实验结果数据")
-    logger.info("=" * 50)
+    logger.info("=" * 60)
+    logger.info("SimuGov Full Experiment Data Aggregator")
+    logger.info("=" * 60)
 
-    final_output = {
-        "meta": {
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "project": "Topic-1 Framework Evaluation"
-        },
-        "results": {
-            "social_assessment": {
-                "macro_behavior": run_macro_behavior_analysis(),
-                "internal_consistency": run_internal_consistency_analysis(),
-                "case_validation": run_case_validation_analysis()
-            },
-            "low_fidelity_efficiency": run_low_fidelity_analysis(),
-            "method_evaluation": {
-                "efficiency": run_efficiency_analysis(),
-                "sensitivity": run_sensitivity_analysis(),
-                "closed_loop": run_closed_loop_analysis()
-            }
+    results = {
+        "RQ1_Ablation": run_rq1_ablation(),
+        "RQ2_Proxy_Evaluation": run_rq2_comprehensive(),
+        "RQ3_Optimization_System": {
+            "Sub1_Convergence": run_rq3_convergence(),
+            "Sub2_Baseline_Comparison": run_rq3_baseline_compare(),
+            "Sub3_Adaptability": run_rq3_adaptability_fixed()
         }
     }
 
-    out_path = os.path.join(CURRENT_DIR, CONFIG["OUTPUT_FILE"])
-    with open(out_path, 'w', encoding='utf-8') as f:
-        json.dump(final_output, f, indent=4, ensure_ascii=False, cls=NpEncoder)
+    final_output = {
+        "metadata": {
+            "project": "SimuGov (Topic-1 Framework Evaluation)",
+            "run_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "status": "All Research Questions Included"
+        },
+        "results": results
+    }
 
-    logger.info("=" * 50)
-    logger.info(f"汇总完成！数据文件: {out_path}")
-    logger.info("=" * 50)
+    # Save to JSON
+    output_path = EXP_DIR / "SimuGov_Consolidated_Report.json"
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(final_output, f, indent=4, cls=NpEncoder, ensure_ascii=False)
+
+    print("\n" + "=" * 60)
+    print(f"✅ Aggregation Completed Successfully!")
+
+    # Terminal Summary Output
+    try:
+        r = final_output["results"]
+        # RQ1
+        print(f"1. RQ1 Pearson (Ours): {r['RQ1_Ablation']['SimuGov_Ours']['pearson_mean']:.4f}")
+        # RQ2
+        print(
+            f"2. RQ2 Speedup: {r['RQ2_Proxy_Evaluation']['Efficiency_Scalability']['max_scale_summary']['speedup']:.2f}x")
+        # RQ3
+        sub2 = r["RQ3_Optimization"]["Sub2_Baseline_Comparison"]
+        print(f"3. RQ3 HV Expansion: {sub2['hv_improvement_percent']:.2f}%")
+        sub3 = r["RQ3_Optimization"]["Sub3_Adaptability"]
+        print(f"4. RQ3 Adaptability Verification: {sub3.get('verification')}")
+    except Exception as e:
+        print(f"Summary print error: {e}")
+
+    print(f"Full JSON report saved to: {output_path}")
+    print("=" * 60)
 
 
 if __name__ == '__main__':
