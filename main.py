@@ -59,7 +59,7 @@ if __name__ == '__main__':
     # asyncio.run(complete_three_policies())
 
     # 案例验证实验
-    # asyncio.run(case_experiment())  # 案例验证
+    # asyncio.run(case_experiment())  # Case Verification and Ablation
     # asyncio.run(case_ablation_experiment())  # 消融实验
 
     # KPI鲁棒性实验

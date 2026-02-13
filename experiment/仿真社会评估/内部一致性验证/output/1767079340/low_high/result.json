@@ -1,7 +1,0 @@
-{
-    "is_passed (是否通过一致性验证)": "True",
-    "safety_diff ( 安全性均值差 (Low - High))": 0.09545454545454557,
-    "satisfaction_diff (满意度均值差 (Low - High))": 0.07545454545454548,
-    "p_value_safety": 0.028020458677260968,
-    "p_value_satisfaction": 0.010387975585523816
-}

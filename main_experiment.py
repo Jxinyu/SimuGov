@@ -344,7 +344,7 @@ async def simple_three_policies():
 
 async def effect_verification():
     """
-    闭环有效性实验
+    Closed-loop effectiveness experiment
     :return:
     """
     # 1. 实验初始化
