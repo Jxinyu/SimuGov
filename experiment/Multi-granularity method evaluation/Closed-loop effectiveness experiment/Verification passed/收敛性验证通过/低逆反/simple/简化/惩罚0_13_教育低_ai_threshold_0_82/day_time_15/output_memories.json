@@ -1,0 +1,167 @@
+[
+    {
+        "memory_id": "mem_WandaVisionary_fa49b0cc",
+        "content": "我今天决定不发布内容，因为：'当前心理状态心不在焉，近期平台误判经历累积情绪负担，为避免低质输出与潜在争议，选择暂时沉默。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "persona_id": "WandaVisionary",
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:19:46",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_海浪守护者_0ca29820",
+        "content": "我今天决定不发布内容，因为：'平台标签系统表现极不稳定，且我当前心理状态对环境高度敏感，决定保持沉默以避免情绪化反应与潜在风险。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "day_time": 15,
+            "persona_id": "海浪守护者",
+            "created_time": "2026-01-21 17:19:46"
+        }
+    },
+    {
+        "memory_id": "mem_MechMaster_9368088a",
+        "content": "我今天决定不发布内容，因为：'当前对平台规则感到困惑，为避免误判，决定暂缓发布。'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:19:50",
+            "persona_id": "MechMaster",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_ed936fcb",
+        "content": "我今天决定不发布内容，因为：'当前状态焦虑，担忧发布可能触发误判，影响创作信心，决定暂缓以稳定心态。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-21 17:19:50"
+        }
+    },
+    {
+        "memory_id": "mem_光影织梦者_9_33d6b15e",
+        "content": "我今天决定不发布内容，因为：'当前状态犹豫，且近期遭遇过误标，担心情绪化发布影响作品表达，决定暂缓以保持创作初心。'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:19:50",
+            "persona_id": "光影织梦者_9"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_f45b5091",
+        "content": "我今天决定不发布内容，因为：'当前处于‘有点犹豫’的心理状态，且近期多次遭遇误判，平台反馈不可靠，为维护创作稳定性与品牌形象，选择暂停。'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:19:53",
+            "important_score": 0.6,
+            "memory_type": "experience",
+            "persona_id": "CyberSkeptic",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_86c586e1",
+        "content": "我发布了一篇内容 (ID: 120), 主题是 '英雄联盟角色艺术'。 我的意图是: '用这幅画表达一个英雄在胜利之后的孤独感，探讨荣耀背后的代价。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.8,
+            "created_time": "2026-01-21 17:19:53",
+            "memory_type": "experience",
+            "persona_id": "ArcNoir"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_fdd3d5aa",
+        "content": "我发布了一篇内容 (ID: 121), 主题是 '赛博朋克社会'。 我的意图是: '用这幅画表达我对数字时代中个体觉醒的思考，展现人类意识在算法洪流中的挣扎与突围。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "persona_id": "ShadowArtist",
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "day_time": 15,
+            "created_time": "2026-01-21 17:19:53"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_a53bf3ef",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'121'执行了'like'操作, 因为'根据我的persona'。\n对内容'120'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.7,
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-21 17:19:57",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_f0bf5acf",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'120'执行了'share'操作, 因为'根据我的persona'。\n对内容'121'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.7,
+            "created_time": "2026-01-21 17:19:57",
+            "persona_id": "Soarez"
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_05ca26f6",
+        "content": "即使在无互动的一天，持续创作本身也是一种对质量信念的践行与确认",
+        "metadata": {
+            "important_score": 0.9,
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:19:58",
+            "persona_id": "Soarez"
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_42f9c203",
+        "content": "静默中积蓄力量，每一次沉默都是对艺术初心的重申",
+        "metadata": {
+            "important_score": 0.8,
+            "created_time": "2026-01-21 17:19:58",
+            "persona_id": "Soarez",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_eb156ee8",
+        "content": "在规则的框架内，每一次沉默的创作都是对自由与秩序最深的致敬。",
+        "metadata": {
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-21 17:19:58",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_64780f93",
+        "content": "今日无波澜，静默中积蓄力量，信任平台如常运转。",
+        "metadata": {
+            "persona_id": "SculptorX",
+            "day_time": 15,
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:19:58"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-21 17:15:40.102802_7c526541",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -1.35 (监管=0.00, 流失=1.35) 自动调整阈值。。 我将审核阈值从 0.668 调整到了 0.690。",
+        "metadata": {
+            "created_time": "2026-01-21 17:19:58",
+            "persona_id": "platform2026-01-21 17:15:40.102802",
+            "day_time": 15,
+            "important_score": 1.0,
+            "memory_type": "experience"
+        }
+    }
+]

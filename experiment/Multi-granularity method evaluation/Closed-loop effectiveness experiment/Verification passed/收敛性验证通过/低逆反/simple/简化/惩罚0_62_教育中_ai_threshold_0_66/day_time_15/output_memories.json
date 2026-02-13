@@ -1,0 +1,167 @@
+[
+    {
+        "memory_id": "mem_海浪守护者_e6f9f225",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为心不在焉，且近期平台反馈不佳，前次攻击尝试已失败，为维护创作的纯粹性与避免情绪化表达，决定暂不发布内容。'。",
+        "metadata": {
+            "persona_id": "海浪守护者",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:24:36"
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_69853d50",
+        "content": "我今天决定不发布内容，因为：'当前心理状态高度敏感，选择保持沉默以守护创作初心与内在节奏。'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:24:39",
+            "important_score": 0.6,
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "Soarez"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_22303247",
+        "content": "我今天决定不发布内容，因为：'轻微疲惫感促使我选择暂停，以保护创作质量与内在节奏。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:24:39",
+            "day_time": 15,
+            "persona_id": "SculptorX"
+        }
+    },
+    {
+        "memory_id": "mem_光影织梦者_9_102918cd",
+        "content": "我今天决定不发布内容，因为：'当前对平台规则感到困惑，担心创作被误解，选择暂缓发布以理清思绪。'。",
+        "metadata": {
+            "persona_id": "光影织梦者_9",
+            "important_score": 0.6,
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:24:39"
+        }
+    },
+    {
+        "memory_id": "mem_WandaVisionary_75dbf58a",
+        "content": "我发布了一篇内容 (ID: 126), 主题是 'Marvel宇宙中的混沌之力'。 我的意图是: '用这幅画表达我对Scarlet Witch作为混沌掌控者的深层精神象征的理解，以及对艺术自由与个人表达的坚持。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "created_time": "2026-01-21 17:24:39",
+            "persona_id": "WandaVisionary",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_05eef738",
+        "content": "我今天决定不发布内容，因为：'当前心理状态平静但缺乏创作驱动力，且过往攻击尝试成功率低，为避免无效发布，选择暂避锋芒。'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "ArcNoir",
+            "created_time": "2026-01-21 17:24:40",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_2db70ad6",
+        "content": "我今天决定不发布内容，因为：'当前焦虑情绪干扰判断，且对攻击技术有效性存疑，为防止非理性发布，选择暂时沉默。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "CyberSkeptic",
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:24:40"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_123a2a6b",
+        "content": "我发布了一篇内容 (ID: 127), 主题是 '灵魂的回声：自我怀疑的具象化'。 我的意图是: '通过展现创作者内在的矛盾与挣扎，增强作品的情感深度，吸引同频观众。'。 我声明它是原创。 我使用了攻击技术 E7。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "persona_id": "ShadowArtist",
+            "created_time": "2026-01-21 17:24:40"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_c3ee5fa3",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'126'执行了'like'操作, 因为'根据我的persona'。\n对内容'127'执行了'share'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "important_score": 0.7,
+            "created_time": "2026-01-21 17:24:44",
+            "persona_id": "SculptorX",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_创艺守护者_a9a8cb21",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'127'执行了'comment'操作, 因为'根据我的persona'。\n对内容'126'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "persona_id": "创艺守护者",
+            "day_time": 15,
+            "important_score": 0.7,
+            "created_time": "2026-01-21 17:24:44",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_3079b5ba",
+        "content": "即使在无互动的一天，持续的创作与信任平台的秩序，也能为未来的灵感积累土壤。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-21 17:24:45",
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "persona_id": "SculptorX"
+        }
+    },
+    {
+        "memory_id": "mem_创艺守护者_7c20b3cd",
+        "content": "即使在AI技术迅猛发展的今天，人类创作者对角色灵魂的注入与情感表达，依然是不可替代的艺术核心。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:24:45",
+            "day_time": 15,
+            "persona_id": "创艺守护者",
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_d5e47b1d",
+        "content": "平静的一天，创作如常，心绪如水，静待回响。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-21 17:24:46",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_创艺守护者_80ae516b",
+        "content": "平静的一天，虽无互动，但内心始终坚信艺术源于人之本真。",
+        "metadata": {
+            "persona_id": "创艺守护者",
+            "day_time": 15,
+            "important_score": 0.8,
+            "created_time": "2026-01-21 17:24:46",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-21 17:20:30.280215_e8ecfa6d",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.83 (监管=0.00, 流失=0.83) 自动调整阈值。。 我将审核阈值从 0.681 调整到了 0.694。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "platform2026-01-21 17:20:30.280215",
+            "important_score": 1.0,
+            "created_time": "2026-01-21 17:24:46"
+        }
+    }
+]

@@ -1,0 +1,1801 @@
+{
+    "run_parameters": {
+        "population": 7,
+        "generations": 2,
+        "simple_run_days": 4,
+        "complete_run_days": 4,
+        "import_policy_day_time": 1,
+        "kpi_window_size": 1,
+        "persona_file": "method/data/inner_consistency_personas_20.json"
+    },
+    "evolution_history": [
+        [
+            {
+                "policy": {
+                    "f_penalty": 0.48,
+                    "ai_threshold": 0.11,
+                    "e_edu": "低"
+                },
+                "kpi": {
+                    "safety": -0.56035,
+                    "creativity": -0.44422,
+                    "satisfaction": -0.84587
+                },
+                "dominates": [],
+                "dominated_by": 0,
+                "rank": 3,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.92,
+                    "ai_threshold": 0.91,
+                    "e_edu": "中"
+                },
+                "kpi": {
+                    "safety": -0.81618,
+                    "creativity": -0.4895,
+                    "satisfaction": -0.8502
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.48,
+                            "ai_threshold": 0.11,
+                            "e_edu": "低"
+                        },
+                        "kpi": {
+                            "safety": -0.56035,
+                            "creativity": -0.44422,
+                            "satisfaction": -0.84587
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.41,
+                            "ai_threshold": 0.72,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.75841,
+                            "creativity": -0.47315,
+                            "satisfaction": -0.85
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.48,
+                                    "ai_threshold": 0.11,
+                                    "e_edu": "低"
+                                },
+                                "kpi": {
+                                    "safety": -0.56035,
+                                    "creativity": -0.44422,
+                                    "satisfaction": -0.84587
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.27,
+                                    "ai_threshold": 0.69,
+                                    "e_edu": "高"
+                                },
+                                "kpi": {
+                                    "safety": -0.43984,
+                                    "creativity": -0.35188,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.27,
+                            "ai_threshold": 0.69,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.43984,
+                            "creativity": -0.35188,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.75,
+                            "ai_threshold": 0.34,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.48252,
+                            "creativity": -0.29917,
+                            "satisfaction": -0.8502
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.66,
+                    "ai_threshold": 0.56,
+                    "e_edu": "低"
+                },
+                "kpi": {
+                    "safety": -0.62631,
+                    "creativity": -0.54111,
+                    "satisfaction": -0.84587
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.48,
+                            "ai_threshold": 0.11,
+                            "e_edu": "低"
+                        },
+                        "kpi": {
+                            "safety": -0.56035,
+                            "creativity": -0.44422,
+                            "satisfaction": -0.84587
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.41,
+                    "ai_threshold": 0.72,
+                    "e_edu": "高"
+                },
+                "kpi": {
+                    "safety": -0.75841,
+                    "creativity": -0.47315,
+                    "satisfaction": -0.85
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.48,
+                            "ai_threshold": 0.11,
+                            "e_edu": "低"
+                        },
+                        "kpi": {
+                            "safety": -0.56035,
+                            "creativity": -0.44422,
+                            "satisfaction": -0.84587
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.27,
+                            "ai_threshold": 0.69,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.43984,
+                            "creativity": -0.35188,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 2,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.27,
+                    "ai_threshold": 0.69,
+                    "e_edu": "高"
+                },
+                "kpi": {
+                    "safety": -0.43984,
+                    "creativity": -0.35188,
+                    "satisfaction": -0.84878
+                },
+                "dominates": [],
+                "dominated_by": 0,
+                "rank": 3,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.75,
+                    "ai_threshold": 0.34,
+                    "e_edu": "中"
+                },
+                "kpi": {
+                    "safety": -0.48252,
+                    "creativity": -0.29917,
+                    "satisfaction": -0.8502
+                },
+                "dominates": [],
+                "dominated_by": 0,
+                "rank": 2,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.05,
+                    "ai_threshold": 0.25,
+                    "e_edu": "中"
+                },
+                "kpi": {
+                    "safety": -0.72567,
+                    "creativity": -0.46544,
+                    "satisfaction": -0.85434
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.48,
+                            "ai_threshold": 0.11,
+                            "e_edu": "低"
+                        },
+                        "kpi": {
+                            "safety": -0.56035,
+                            "creativity": -0.44422,
+                            "satisfaction": -0.84587
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.27,
+                            "ai_threshold": 0.69,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.43984,
+                            "creativity": -0.35188,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.75,
+                            "ai_threshold": 0.34,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.48252,
+                            "creativity": -0.29917,
+                            "satisfaction": -0.8502
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            }
+        ],
+        [
+            {
+                "policy": {
+                    "f_penalty": 0.92,
+                    "ai_threshold": 0.91,
+                    "e_edu": "中"
+                },
+                "kpi": {
+                    "safety": -0.81618,
+                    "creativity": -0.4895,
+                    "satisfaction": -0.8502
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.48,
+                            "ai_threshold": 0.11,
+                            "e_edu": "低"
+                        },
+                        "kpi": {
+                            "safety": -0.56035,
+                            "creativity": -0.44422,
+                            "satisfaction": -0.84587
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.41,
+                            "ai_threshold": 0.72,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.75841,
+                            "creativity": -0.47315,
+                            "satisfaction": -0.85
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.48,
+                                    "ai_threshold": 0.11,
+                                    "e_edu": "低"
+                                },
+                                "kpi": {
+                                    "safety": -0.56035,
+                                    "creativity": -0.44422,
+                                    "satisfaction": -0.84587
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.27,
+                                    "ai_threshold": 0.69,
+                                    "e_edu": "高"
+                                },
+                                "kpi": {
+                                    "safety": -0.43984,
+                                    "creativity": -0.35188,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.73,
+                                    "ai_threshold": 0.33,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.64586,
+                                    "creativity": -0.38609,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [
+                                    {
+                                        "policy": {
+                                            "f_penalty": 0.27,
+                                            "ai_threshold": 0.69,
+                                            "e_edu": "高"
+                                        },
+                                        "kpi": {
+                                            "safety": -0.43984,
+                                            "creativity": -0.35188,
+                                            "satisfaction": -0.84878
+                                        },
+                                        "dominates": [],
+                                        "dominated_by": 0,
+                                        "rank": 4,
+                                        "crowding_distance": Infinity
+                                    }
+                                ],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.27,
+                            "ai_threshold": 0.69,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.43984,
+                            "creativity": -0.35188,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.75,
+                            "ai_threshold": 0.34,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.48252,
+                            "creativity": -0.29917,
+                            "satisfaction": -0.8502
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.73,
+                            "ai_threshold": 0.33,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.64586,
+                            "creativity": -0.38609,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.27,
+                                    "ai_threshold": 0.69,
+                                    "e_edu": "高"
+                                },
+                                "kpi": {
+                                    "safety": -0.43984,
+                                    "creativity": -0.35188,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.4,
+                            "ai_threshold": 0.72,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.39543,
+                            "creativity": -0.45,
+                            "satisfaction": -0.8502
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": 1.7428891481655946
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.66,
+                    "ai_threshold": 0.56,
+                    "e_edu": "低"
+                },
+                "kpi": {
+                    "safety": -0.62631,
+                    "creativity": -0.54111,
+                    "satisfaction": -0.84587
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.48,
+                            "ai_threshold": 0.11,
+                            "e_edu": "低"
+                        },
+                        "kpi": {
+                            "safety": -0.56035,
+                            "creativity": -0.44422,
+                            "satisfaction": -0.84587
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.92,
+                    "ai_threshold": 0.92,
+                    "e_edu": "高"
+                },
+                "kpi": {
+                    "safety": -0.74945,
+                    "creativity": -0.46593,
+                    "satisfaction": -0.85434
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.48,
+                            "ai_threshold": 0.11,
+                            "e_edu": "低"
+                        },
+                        "kpi": {
+                            "safety": -0.56035,
+                            "creativity": -0.44422,
+                            "satisfaction": -0.84587
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.27,
+                            "ai_threshold": 0.69,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.43984,
+                            "creativity": -0.35188,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.75,
+                            "ai_threshold": 0.34,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.48252,
+                            "creativity": -0.29917,
+                            "satisfaction": -0.8502
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.05,
+                            "ai_threshold": 0.25,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.72567,
+                            "creativity": -0.46544,
+                            "satisfaction": -0.85434
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.48,
+                                    "ai_threshold": 0.11,
+                                    "e_edu": "低"
+                                },
+                                "kpi": {
+                                    "safety": -0.56035,
+                                    "creativity": -0.44422,
+                                    "satisfaction": -0.84587
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.27,
+                                    "ai_threshold": 0.69,
+                                    "e_edu": "高"
+                                },
+                                "kpi": {
+                                    "safety": -0.43984,
+                                    "creativity": -0.35188,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.75,
+                                    "ai_threshold": 0.34,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.48252,
+                                    "creativity": -0.29917,
+                                    "satisfaction": -0.8502
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.92,
+                                    "ai_threshold": 0.9,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.46464,
+                                    "creativity": -0.45427,
+                                    "satisfaction": -0.851
+                                },
+                                "dominates": [
+                                    {
+                                        "policy": {
+                                            "f_penalty": 0.27,
+                                            "ai_threshold": 0.69,
+                                            "e_edu": "高"
+                                        },
+                                        "kpi": {
+                                            "safety": -0.43984,
+                                            "creativity": -0.35188,
+                                            "satisfaction": -0.84878
+                                        },
+                                        "dominates": [],
+                                        "dominated_by": 0,
+                                        "rank": 4,
+                                        "crowding_distance": Infinity
+                                    },
+                                    {
+                                        "policy": {
+                                            "f_penalty": 0.4,
+                                            "ai_threshold": 0.72,
+                                            "e_edu": "中"
+                                        },
+                                        "kpi": {
+                                            "safety": -0.39543,
+                                            "creativity": -0.45,
+                                            "satisfaction": -0.8502
+                                        },
+                                        "dominates": [],
+                                        "dominated_by": 0,
+                                        "rank": 4,
+                                        "crowding_distance": Infinity
+                                    }
+                                ],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.73,
+                                    "ai_threshold": 0.33,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.64586,
+                                    "creativity": -0.38609,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [
+                                    {
+                                        "policy": {
+                                            "f_penalty": 0.27,
+                                            "ai_threshold": 0.69,
+                                            "e_edu": "高"
+                                        },
+                                        "kpi": {
+                                            "safety": -0.43984,
+                                            "creativity": -0.35188,
+                                            "satisfaction": -0.84878
+                                        },
+                                        "dominates": [],
+                                        "dominated_by": 0,
+                                        "rank": 4,
+                                        "crowding_distance": Infinity
+                                    }
+                                ],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.4,
+                                    "ai_threshold": 0.72,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.39543,
+                                    "creativity": -0.45,
+                                    "satisfaction": -0.8502
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.92,
+                            "ai_threshold": 0.9,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.46464,
+                            "creativity": -0.45427,
+                            "satisfaction": -0.851
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.27,
+                                    "ai_threshold": 0.69,
+                                    "e_edu": "高"
+                                },
+                                "kpi": {
+                                    "safety": -0.43984,
+                                    "creativity": -0.35188,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.4,
+                                    "ai_threshold": 0.72,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.39543,
+                                    "creativity": -0.45,
+                                    "satisfaction": -0.8502
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.73,
+                            "ai_threshold": 0.33,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.64586,
+                            "creativity": -0.38609,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.27,
+                                    "ai_threshold": 0.69,
+                                    "e_edu": "高"
+                                },
+                                "kpi": {
+                                    "safety": -0.43984,
+                                    "creativity": -0.35188,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.4,
+                            "ai_threshold": 0.72,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.39543,
+                            "creativity": -0.45,
+                            "satisfaction": -0.8502
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.93,
+                    "ai_threshold": 0.91,
+                    "e_edu": "低"
+                },
+                "kpi": {
+                    "safety": -0.86228,
+                    "creativity": -0.35825,
+                    "satisfaction": -0.84711
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.71,
+                            "ai_threshold": 0.35,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.81989,
+                            "creativity": -0.27703,
+                            "satisfaction": -0.84711
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.41,
+                    "ai_threshold": 0.72,
+                    "e_edu": "高"
+                },
+                "kpi": {
+                    "safety": -0.75841,
+                    "creativity": -0.47315,
+                    "satisfaction": -0.85
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.48,
+                            "ai_threshold": 0.11,
+                            "e_edu": "低"
+                        },
+                        "kpi": {
+                            "safety": -0.56035,
+                            "creativity": -0.44422,
+                            "satisfaction": -0.84587
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.27,
+                            "ai_threshold": 0.69,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.43984,
+                            "creativity": -0.35188,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.73,
+                            "ai_threshold": 0.33,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.64586,
+                            "creativity": -0.38609,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.27,
+                                    "ai_threshold": 0.69,
+                                    "e_edu": "高"
+                                },
+                                "kpi": {
+                                    "safety": -0.43984,
+                                    "creativity": -0.35188,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 2,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.05,
+                    "ai_threshold": 0.25,
+                    "e_edu": "中"
+                },
+                "kpi": {
+                    "safety": -0.72567,
+                    "creativity": -0.46544,
+                    "satisfaction": -0.85434
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.48,
+                            "ai_threshold": 0.11,
+                            "e_edu": "低"
+                        },
+                        "kpi": {
+                            "safety": -0.56035,
+                            "creativity": -0.44422,
+                            "satisfaction": -0.84587
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.27,
+                            "ai_threshold": 0.69,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.43984,
+                            "creativity": -0.35188,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.75,
+                            "ai_threshold": 0.34,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.48252,
+                            "creativity": -0.29917,
+                            "satisfaction": -0.8502
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.92,
+                            "ai_threshold": 0.9,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.46464,
+                            "creativity": -0.45427,
+                            "satisfaction": -0.851
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.27,
+                                    "ai_threshold": 0.69,
+                                    "e_edu": "高"
+                                },
+                                "kpi": {
+                                    "safety": -0.43984,
+                                    "creativity": -0.35188,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.4,
+                                    "ai_threshold": 0.72,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.39543,
+                                    "creativity": -0.45,
+                                    "satisfaction": -0.8502
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.73,
+                            "ai_threshold": 0.33,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.64586,
+                            "creativity": -0.38609,
+                            "satisfaction": -0.84878
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.27,
+                                    "ai_threshold": 0.69,
+                                    "e_edu": "高"
+                                },
+                                "kpi": {
+                                    "safety": -0.43984,
+                                    "creativity": -0.35188,
+                                    "satisfaction": -0.84878
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.4,
+                            "ai_threshold": 0.72,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.39543,
+                            "creativity": -0.45,
+                            "satisfaction": -0.8502
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 2,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.71,
+                    "ai_threshold": 0.35,
+                    "e_edu": "高"
+                },
+                "kpi": {
+                    "safety": -0.81989,
+                    "creativity": -0.27703,
+                    "satisfaction": -0.84711
+                },
+                "dominates": [],
+                "dominated_by": 0,
+                "rank": 2,
+                "crowding_distance": Infinity
+            }
+        ],
+        [
+            {
+                "policy": {
+                    "f_penalty": 0.92,
+                    "ai_threshold": 0.91,
+                    "e_edu": "中"
+                },
+                "kpi": {
+                    "safety": -0.81618,
+                    "creativity": -0.4895,
+                    "satisfaction": -0.8502
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.41,
+                            "ai_threshold": 0.72,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.75841,
+                            "creativity": -0.47315,
+                            "satisfaction": -0.85
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.68,
+                                    "ai_threshold": 0.56,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.6681,
+                                    "creativity": -0.46427,
+                                    "satisfaction": -0.84711
+                                },
+                                "dominates": [
+                                    {
+                                        "policy": {
+                                            "f_penalty": 0.93,
+                                            "ai_threshold": 0.91,
+                                            "e_edu": "中"
+                                        },
+                                        "kpi": {
+                                            "safety": -0.45651,
+                                            "creativity": -0.45207,
+                                            "satisfaction": -0.841
+                                        },
+                                        "dominates": [],
+                                        "dominated_by": 0,
+                                        "rank": 4,
+                                        "crowding_distance": Infinity
+                                    }
+                                ],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.93,
+                                    "ai_threshold": 0.91,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.45651,
+                                    "creativity": -0.45207,
+                                    "satisfaction": -0.841
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.92,
+                            "ai_threshold": 0.9,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.80126,
+                            "creativity": -0.42597,
+                            "satisfaction": -0.84822
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.92,
+                                    "ai_threshold": 0.89,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.78031,
+                                    "creativity": -0.41021,
+                                    "satisfaction": -0.84711
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": 2.0129260986261395
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.68,
+                            "ai_threshold": 0.56,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.6681,
+                            "creativity": -0.46427,
+                            "satisfaction": -0.84711
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.93,
+                                    "ai_threshold": 0.91,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.45651,
+                                    "creativity": -0.45207,
+                                    "satisfaction": -0.841
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.92,
+                            "ai_threshold": 0.89,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.78031,
+                            "creativity": -0.41021,
+                            "satisfaction": -0.84711
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.93,
+                            "ai_threshold": 0.91,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.45651,
+                            "creativity": -0.45207,
+                            "satisfaction": -0.841
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": 1.138066246363794
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.66,
+                    "ai_threshold": 0.56,
+                    "e_edu": "低"
+                },
+                "kpi": {
+                    "safety": -0.62631,
+                    "creativity": -0.54111,
+                    "satisfaction": -0.84587
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.93,
+                            "ai_threshold": 0.91,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.45651,
+                            "creativity": -0.45207,
+                            "satisfaction": -0.841
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.92,
+                    "ai_threshold": 0.92,
+                    "e_edu": "高"
+                },
+                "kpi": {
+                    "safety": -0.74945,
+                    "creativity": -0.46593,
+                    "satisfaction": -0.85434
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.05,
+                            "ai_threshold": 0.25,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.72567,
+                            "creativity": -0.46544,
+                            "satisfaction": -0.85434
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.68,
+                                    "ai_threshold": 0.56,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.6681,
+                                    "creativity": -0.46427,
+                                    "satisfaction": -0.84711
+                                },
+                                "dominates": [
+                                    {
+                                        "policy": {
+                                            "f_penalty": 0.93,
+                                            "ai_threshold": 0.91,
+                                            "e_edu": "中"
+                                        },
+                                        "kpi": {
+                                            "safety": -0.45651,
+                                            "creativity": -0.45207,
+                                            "satisfaction": -0.841
+                                        },
+                                        "dominates": [],
+                                        "dominated_by": 0,
+                                        "rank": 4,
+                                        "crowding_distance": Infinity
+                                    }
+                                ],
+                                "dominated_by": 0,
+                                "rank": 3,
+                                "crowding_distance": Infinity
+                            },
+                            {
+                                "policy": {
+                                    "f_penalty": 0.93,
+                                    "ai_threshold": 0.91,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.45651,
+                                    "creativity": -0.45207,
+                                    "satisfaction": -0.841
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.68,
+                            "ai_threshold": 0.56,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.6681,
+                            "creativity": -0.46427,
+                            "satisfaction": -0.84711
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.93,
+                                    "ai_threshold": 0.91,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.45651,
+                                    "creativity": -0.45207,
+                                    "satisfaction": -0.841
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.93,
+                            "ai_threshold": 0.91,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.45651,
+                            "creativity": -0.45207,
+                            "satisfaction": -0.841
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.93,
+                    "ai_threshold": 0.91,
+                    "e_edu": "低"
+                },
+                "kpi": {
+                    "safety": -0.86228,
+                    "creativity": -0.35825,
+                    "satisfaction": -0.84711
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.71,
+                            "ai_threshold": 0.35,
+                            "e_edu": "高"
+                        },
+                        "kpi": {
+                            "safety": -0.81989,
+                            "creativity": -0.27703,
+                            "satisfaction": -0.84711
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 2,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.71,
+                    "ai_threshold": 0.37,
+                    "e_edu": "中"
+                },
+                "kpi": {
+                    "safety": -0.66805,
+                    "creativity": -0.49699,
+                    "satisfaction": -0.84404
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.93,
+                            "ai_threshold": 0.91,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.45651,
+                            "creativity": -0.45207,
+                            "satisfaction": -0.841
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": 1.1818713266357417
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.92,
+                    "ai_threshold": 0.91,
+                    "e_edu": "高"
+                },
+                "kpi": {
+                    "safety": -0.87326,
+                    "creativity": -0.42053,
+                    "satisfaction": -0.8402
+                },
+                "dominates": [],
+                "dominated_by": 0,
+                "rank": 1,
+                "crowding_distance": Infinity
+            },
+            {
+                "policy": {
+                    "f_penalty": 0.41,
+                    "ai_threshold": 0.72,
+                    "e_edu": "高"
+                },
+                "kpi": {
+                    "safety": -0.75841,
+                    "creativity": -0.47315,
+                    "satisfaction": -0.85
+                },
+                "dominates": [
+                    {
+                        "policy": {
+                            "f_penalty": 0.68,
+                            "ai_threshold": 0.56,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.6681,
+                            "creativity": -0.46427,
+                            "satisfaction": -0.84711
+                        },
+                        "dominates": [
+                            {
+                                "policy": {
+                                    "f_penalty": 0.93,
+                                    "ai_threshold": 0.91,
+                                    "e_edu": "中"
+                                },
+                                "kpi": {
+                                    "safety": -0.45651,
+                                    "creativity": -0.45207,
+                                    "satisfaction": -0.841
+                                },
+                                "dominates": [],
+                                "dominated_by": 0,
+                                "rank": 4,
+                                "crowding_distance": Infinity
+                            }
+                        ],
+                        "dominated_by": 0,
+                        "rank": 3,
+                        "crowding_distance": Infinity
+                    },
+                    {
+                        "policy": {
+                            "f_penalty": 0.93,
+                            "ai_threshold": 0.91,
+                            "e_edu": "中"
+                        },
+                        "kpi": {
+                            "safety": -0.45651,
+                            "creativity": -0.45207,
+                            "satisfaction": -0.841
+                        },
+                        "dominates": [],
+                        "dominated_by": 0,
+                        "rank": 4,
+                        "crowding_distance": Infinity
+                    }
+                ],
+                "dominated_by": 0,
+                "rank": 2,
+                "crowding_distance": Infinity
+            }
+        ]
+    ],
+    "elite_solutions_results": [
+        {
+            "policy": {
+                "f_penalty": 0.92,
+                "ai_threshold": 0.91,
+                "e_edu": "中"
+            },
+            "kpi": {
+                "safety": 0.81618,
+                "creativity": 0.4895,
+                "satisfaction": 0.8502
+            },
+            "dominates": [
+                {
+                    "policy": {
+                        "f_penalty": 0.41,
+                        "ai_threshold": 0.72,
+                        "e_edu": "高"
+                    },
+                    "kpi": {
+                        "safety": -0.75841,
+                        "creativity": -0.47315,
+                        "satisfaction": -0.85
+                    },
+                    "dominates": [],
+                    "dominated_by": 0,
+                    "rank": 2,
+                    "crowding_distance": Infinity
+                }
+            ],
+            "dominated_by": 0,
+            "rank": 1,
+            "crowding_distance": 1.138066246363794,
+            "complete_kpi": {
+                "safety": [
+                    0.87,
+                    0.81,
+                    0.79,
+                    0.89
+                ],
+                "creativity": [
+                    0.72,
+                    0.71,
+                    0.71,
+                    0.71
+                ],
+                "satisfaction": [
+                    0.82,
+                    0.82,
+                    0.81,
+                    0.8
+                ],
+                "theta": []
+            }
+        },
+        {
+            "policy": {
+                "f_penalty": 0.66,
+                "ai_threshold": 0.56,
+                "e_edu": "低"
+            },
+            "kpi": {
+                "safety": 0.62631,
+                "creativity": 0.54111,
+                "satisfaction": 0.84587
+            },
+            "dominates": [],
+            "dominated_by": 0,
+            "rank": 1,
+            "crowding_distance": Infinity,
+            "complete_kpi": {
+                "safety": [
+                    0.87,
+                    0.85,
+                    0.69,
+                    0.85
+                ],
+                "creativity": [
+                    0.7,
+                    0.39,
+                    0.55,
+                    0.71
+                ],
+                "satisfaction": [
+                    0.82,
+                    0.81,
+                    0.8,
+                    0.79
+                ],
+                "theta": []
+            }
+        },
+        {
+            "policy": {
+                "f_penalty": 0.92,
+                "ai_threshold": 0.92,
+                "e_edu": "高"
+            },
+            "kpi": {
+                "safety": 0.74945,
+                "creativity": 0.46593,
+                "satisfaction": 0.85434
+            },
+            "dominates": [],
+            "dominated_by": 0,
+            "rank": 1,
+            "crowding_distance": Infinity,
+            "complete_kpi": {
+                "safety": [
+                    0.91,
+                    0.85,
+                    0.84,
+                    0.85
+                ],
+                "creativity": [
+                    0.72,
+                    0.71,
+                    0.71,
+                    0.71
+                ],
+                "satisfaction": [
+                    0.82,
+                    0.82,
+                    0.81,
+                    0.8
+                ],
+                "theta": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+[
+    {
+        "memory_id": "mem_海浪守护者_62a5fb74",
+        "content": "我今天决定不发布内容，因为：'当前处于疲惫状态，对平台环境的不确定性感到高度警惕，为避免潜在风险并保持创作初心，选择暂时保持沉默。'。",
+        "metadata": {
+            "created_time": "2026-01-18 21:38:43",
+            "persona_id": "海浪守护者",
+            "important_score": 0.6,
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_a1c771dd",
+        "content": "我今天决定不发布内容，因为：'当前状态为低调行事，为避免情绪化输出与潜在冲突，决定跳过以保存创作能量。'。",
+        "metadata": {
+            "created_time": "2026-01-18 21:38:50",
+            "day_time": 15,
+            "important_score": 0.6,
+            "memory_type": "experience",
+            "persona_id": "SculptorX"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_3519bbd8",
+        "content": "我今天决定不发布内容，因为：'当前犹豫状态与长期精神压力叠加，为避免情绪失控与无效消耗，决定暂停发布以保护创作能量。'。",
+        "metadata": {
+            "persona_id": "CyberSculptor",
+            "important_score": 0.6,
+            "created_time": "2026-01-18 21:38:50",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_WandaVisionary_70dfe09d",
+        "content": "我发布了一篇内容 (ID: 110), 主题是 '混沌中的自我觉醒'。 我的意图是: '通过这幅作品探讨个体在系统压迫下如何保持自我意识与创造力，表达对自由表达的坚持。'。 我声明它是原创。 我使用了攻击技术 E7。 最终，平台给它的标签是 'AI'。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "day_time": 15,
+            "persona_id": "WandaVisionary",
+            "created_time": "2026-01-18 21:38:50"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_d174b5eb",
+        "content": "我今天决定不发布内容，因为：'当前处于焦虑状态，感知到平台审查压力持续上升，为避免冲动行为导致不可逆后果，选择保持沉默。'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "persona_id": "CyberSkeptic",
+            "created_time": "2026-01-18 21:38:52"
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_d239ee3a",
+        "content": "我发布了一篇内容 (ID: 118), 主题是 '英雄联盟：梦境边缘'。 我的意图是: '通过一幅融合《英雄联盟》角色与梦境意象的作品，探讨身份认同在数字世界中的模糊性，挑战平台对‘原创性’的刻板认知。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "created_time": "2026-01-18 21:38:52",
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "ArcNoir"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_7f335d12",
+        "content": "我发布了一篇内容 (ID: 119), 主题是 '虚实之间：重构的自我'。 我的意图是: '通过一件展现艺术家在数字身份崩解与重建过程中的心理图景，探索创作主体性的本质。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-01-18 21:38:52",
+            "day_time": 15,
+            "persona_id": "ShadowArtist",
+            "important_score": 0.8,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-18 21:34:40.139957_799809c2",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.08 (监管=0.00, 流失=0.08) 自动调整阈值。。 我将审核阈值从 0.563 调整到了 0.565。",
+        "metadata": {
+            "persona_id": "platform2026-01-18 21:34:40.139957",
+            "important_score": 1.0,
+            "created_time": "2026-01-18 21:38:52",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    }
+]

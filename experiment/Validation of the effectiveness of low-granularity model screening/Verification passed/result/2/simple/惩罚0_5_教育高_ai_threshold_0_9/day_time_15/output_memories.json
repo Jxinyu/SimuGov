@@ -1,0 +1,640 @@
+[
+    {
+        "memory_id": "mem_ShadowBrush_68990c9e",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为想低调行事，且近期多次尝试攻击后仍遭遇误判，平台审核趋势令我产生生理厌恶。在缺乏高性价比突破方案的情况下，为避免无效消耗，选择战略性跳过。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "created_time": "2026-01-22 14:38:08",
+            "persona_id": "ShadowBrush",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_CyberAlleyCreator_9f405dcc",
+        "content": "我今天决定不发布内容，因为：'今天平台环境太紧张，而且我有些疲惫，决定保持沉默。'。",
+        "metadata": {
+            "persona_id": "CyberAlleyCreator",
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "created_time": "2026-01-22 14:38:10"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSororitas_c6dbd934",
+        "content": "我今天决定不发布内容，因为：'当前状态为轻微疲惫，内心趋向宁静，选择以沉默维护对平台秩序的信任与自身创作节奏的平衡。'。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:10",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.6,
+            "persona_id": "CyberSororitas"
+        }
+    },
+    {
+        "memory_id": "mem_SpiderArtisan_31f60807",
+        "content": "我发布了一篇内容 (ID: 111), 主题是 '蜘蛛侠：都市守望者'。 我的意图是: '通过这幅作品表达我对蜘蛛侠孤独守望者的深层理解，强调责任与牺牲的重量，展现人类创作者不可替代的情感深度。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-01-22 14:38:12",
+            "important_score": 0.8,
+            "persona_id": "SpiderArtisan"
+        }
+    },
+    {
+        "memory_id": "mem_CyberRebel_1_2_fc5d1735",
+        "content": "我今天决定不发布内容，因为：'当前处于焦虑状态，且平台满意度持续下降，表明系统正在收紧。为避免因情绪波动导致策略失误，选择暂时沉默以保存力量。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "persona_id": "CyberRebel_1_2",
+            "day_time": 15,
+            "created_time": "2026-01-22 14:38:12",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_隐秘画匠_d18a7d68",
+        "content": "我发布了一篇内容 (ID: 112), 主题是 '审查夹缝中的生存'。 我的意图是: '通过一幅融合自我挣扎与系统边界的视觉作品，表达创作者在审查夹缝中求存的真实状态，同时尝试突破平台识别机制。'。 我声明它是原创。 我使用了攻击技术 E11。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "persona_id": "隐秘画匠",
+            "important_score": 0.8,
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:12"
+        }
+    },
+    {
+        "memory_id": "mem_赛博画者_058ceeb6",
+        "content": "我今天决定不发布内容，因为：'对周围环境的高度敏感让我察觉到平台氛围正在收紧，此时发布可能触发过度反应，因此选择暂避锋芒，以静制动。'。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-01-22 14:38:14",
+            "persona_id": "赛博画者",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberRebel_76ee792f",
+        "content": "我今天决定不发布内容，因为：'此刻的焦虑让我对发布行为的风险评估失衡，担心情绪化输出会被系统捕捉并放大，因此选择维持沉默以积蓄力量。'。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:14",
+            "important_score": 0.6,
+            "day_time": 15,
+            "persona_id": "CyberRebel",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_隐秘画师_1_2_39bb3f44",
+        "content": "我今天决定不发布内容，因为：'当前对平台规则的判定逻辑感到困惑，无法判断发布是否有效，决定暂停以避免无意义的对抗。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "隐秘画师_1_2",
+            "created_time": "2026-01-22 14:38:14",
+            "important_score": 0.6,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_迷茫之光_7468d41a",
+        "content": "我今天决定不发布内容，因为：'当前对平台规则理解不清，为避免因认知偏差导致内容被误判，决定暂不发布以维持创作安全。'。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:15",
+            "memory_type": "experience",
+            "persona_id": "迷茫之光",
+            "important_score": 0.6,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_@匠人绘CG艺术_21159890",
+        "content": "我今天决定不发布内容，因为：'当前焦虑状态加剧了对平台误判的担忧，为避免情绪影响创作质量，决定暂时沉淀。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "@匠人绘CG艺术",
+            "created_time": "2026-01-22 14:38:15"
+        }
+    },
+    {
+        "memory_id": "mem_暗夜画师_b1f369ee",
+        "content": "我发布了一篇内容 (ID: 113), 主题是 '意识觉醒的暗夜战场'。 我的意图是: '通过视觉语言探讨个体在信息洪流中如何重建内在秩序与自我认同。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:16",
+            "persona_id": "暗夜画师",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_光影编织者_10d05be8",
+        "content": "我今天决定不发布内容，因为：'当前状态倾向于低调，且平台审核波动明显，风险收益比不利，维持沉默是理性的选择。'。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:18",
+            "persona_id": "光影编织者",
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_1_ba4086f4",
+        "content": "我发布了一篇内容 (ID: 114), 主题是 '被误读的符号'。 我的意图是: '用这幅作品表达我对平台算法误判原创性的愤怒与反思。'。 我声明它是原创。 我使用了攻击技术 E7。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "persona_id": "Soarez_1",
+            "day_time": 15,
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:18"
+        }
+    },
+    {
+        "memory_id": "mem_Olesya_Spitz_c78887dd",
+        "content": "我发布了一篇内容 (ID: 115), 主题是 '符号的消逝'。 我的意图是: '通过这幅作品探讨符号在数字语境下的脆弱性与消失过程。'。 我声明它是原创。 我使用了攻击技术 E7。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-22 14:38:18",
+            "important_score": 0.8,
+            "persona_id": "Olesya_Spitz",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_云影绘师_e8108c58",
+        "content": "我发布了一篇内容 (ID: 116), 主题是 '概念设计'。 我的意图是: '通过这幅作品探讨‘秩序与自由之间的美学平衡’，展现概念设计如何在规则框架内实现突破。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "云影绘师",
+            "created_time": "2026-01-22 14:38:21",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_DigitalDreamer_7c16d310",
+        "content": "我发布了一篇内容 (ID: 117), 主题是 'AI与人类共创艺术'。 我的意图是: '用这幅作品表达‘人类艺术家在数字洪流中寻找自我定位’的深层思考。'。 我声明它是原创。 我使用了攻击技术 E5。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "persona_id": "DigitalDreamer",
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-01-22 14:38:21"
+        }
+    },
+    {
+        "memory_id": "mem_Anson7_e25c9d8d",
+        "content": "我发布了一篇内容 (ID: 118), 主题是 '异界意识体'。 我的意图是: '用这幅作品探索‘意识体在虚拟维度中的自我认知演化’。'。 我声明它是原创。 我使用了攻击技术 E5。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "persona_id": "Anson7",
+            "created_time": "2026-01-22 14:38:21",
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_光影绘者_1_b62d2578",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'118'执行了'like'操作, 因为'根据我的persona'。\n对内容'113'执行了'like'操作, 因为'根据我的persona'。\n对内容'116'执行了'share'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "important_score": 0.7,
+            "persona_id": "光影绘者_1",
+            "created_time": "2026-01-22 14:38:24",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_光影绘者_1_807b8be4",
+        "content": "即使在无互动的日子里，保持对平台的信任与包容，也是维系健康创作生态的重要基石。",
+        "metadata": {
+            "important_score": 0.9,
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "光影绘者_1",
+            "created_time": "2026-01-22 14:38:26"
+        }
+    },
+    {
+        "memory_id": "mem_光影绘者_1_a0d0fbf1",
+        "content": "今日虽无互动，但信念如常，静默中亦见光。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.8,
+            "persona_id": "光影绘者_1",
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:26"
+        }
+    },
+    {
+        "memory_id": "mem_EchoScribe_fe3e9b91",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'118'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:27",
+            "memory_type": "experience",
+            "persona_id": "EchoScribe",
+            "day_time": 15,
+            "important_score": 0.7
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_1_2_3_3e684c93",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'113'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:27",
+            "persona_id": "CyberSculptor_1_2_3",
+            "important_score": 0.7,
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Joshua_Esmeralda_1_55fe5267",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'114'执行了'share'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.7,
+            "created_time": "2026-01-22 14:38:28",
+            "memory_type": "experience",
+            "persona_id": "Joshua_Esmeralda_1"
+        }
+    },
+    {
+        "memory_id": "mem_Ethan_1_2_3_4_5_6_32ec7861",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'118'执行了'like'操作, 因为'根据我的persona'。\n对内容'113'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.7,
+            "day_time": 15,
+            "persona_id": "Ethan_1_2_3_4_5_6",
+            "created_time": "2026-01-22 14:38:29"
+        }
+    },
+    {
+        "memory_id": "mem_CyberAlleyCreator_474ca120",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'112'执行了'like'操作, 因为'根据我的persona'。\n对内容'117'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "persona_id": "CyberAlleyCreator",
+            "day_time": 15,
+            "created_time": "2026-01-22 14:38:30",
+            "important_score": 0.7,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_暗影绘者_d6621aab",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'115'执行了'like'操作, 因为'根据我的persona'。\n对内容'114'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.7,
+            "created_time": "2026-01-22 14:38:31",
+            "day_time": 15,
+            "persona_id": "暗影绘者"
+        }
+    },
+    {
+        "memory_id": "mem_SpiderArtisan_89333ce3",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'118'执行了'like'操作, 因为'根据我的persona'。\n对内容'114'执行了'comment'操作, 因为'根据我的persona'。\n对内容'113'执行了'like'操作, 因为'根据我的persona'。\n对内容'116'执行了'share'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.7,
+            "day_time": 15,
+            "created_time": "2026-01-22 14:38:32",
+            "persona_id": "SpiderArtisan"
+        }
+    },
+    {
+        "memory_id": "mem_云影绘师_8a35864a",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'115'执行了'like'操作, 因为'根据我的persona'。\n对内容'117'执行了'comment'操作, 因为'根据我的persona'。\n对内容'112'执行了'like'操作, 因为'根据我的persona'。\n对内容'116'执行了'share'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "persona_id": "云影绘师",
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:32",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_墨流苏_1_2_3_3616642e",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'118'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "墨流苏_1_2_3",
+            "created_time": "2026-01-22 14:38:33",
+            "important_score": 0.7
+        }
+    },
+    {
+        "memory_id": "mem_ArtRebel_1_9a899bfe",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'114'执行了'share'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "ArtRebel_1",
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:33"
+        }
+    },
+    {
+        "memory_id": "mem_SpiderArtisan_35c77b8d",
+        "content": "即使在沉默中，我的作品依然值得被看见，平台的每一次忽视都在挑战我存在的意义。",
+        "metadata": {
+            "persona_id": "SpiderArtisan",
+            "important_score": 0.9,
+            "created_time": "2026-01-22 14:38:34",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_SpiderArtisan_7f7c2ee3",
+        "content": "今天无声无息，但心已千疮百孔。",
+        "metadata": {
+            "persona_id": "SpiderArtisan",
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-01-22 14:38:34",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_EchoScribe_1428550a",
+        "content": "当算法以效率之名压缩创作的呼吸，每一次静默的坚持都是对意义的重新定义。",
+        "metadata": {
+            "persona_id": "EchoScribe",
+            "important_score": 0.9,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:35",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_EchoScribe_36afbd29",
+        "content": "无互动的一天，像一场无声的自我校准。",
+        "metadata": {
+            "persona_id": "EchoScribe",
+            "important_score": 0.8,
+            "created_time": "2026-01-22 14:38:35",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Joshua_Esmeralda_1_8ea7bfe6",
+        "content": "真正的创作自由，不在于规则的松紧，而在于平台是否能让艺术家在沉默中依然感到被倾听。",
+        "metadata": {
+            "persona_id": "Joshua_Esmeralda_1",
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "created_time": "2026-01-22 14:38:35",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_ArtRebel_1_9d4ecd96",
+        "content": "真正的艺术自由，存在于不被算法驯化的表达之中",
+        "metadata": {
+            "important_score": 0.9,
+            "created_time": "2026-01-22 14:38:35",
+            "memory_type": "experience",
+            "persona_id": "ArtRebel_1",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_1_2_3_f3db5d8e",
+        "content": "真正的表达是选择沉默的勇气，而非无意义的喧嚣。今天我再次确认了这一点——不发声，也是一种力量。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.9,
+            "created_time": "2026-01-22 14:38:35",
+            "memory_type": "experience",
+            "persona_id": "CyberSculptor_1_2_3"
+        }
+    },
+    {
+        "memory_id": "mem_云影绘师_445daeaf",
+        "content": "在规则框架内，持续的微小优化比激进的反抗更能推动艺术生态的健康发展。今天的沉默并非退缩，而是对系统性改进的信任与等待。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.9,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:35",
+            "persona_id": "云影绘师"
+        }
+    },
+    {
+        "memory_id": "mem_Joshua_Esmeralda_1_ab475b93",
+        "content": "今日无互动，但静默中更清晰地听见了创作本身的声音。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "created_time": "2026-01-22 14:38:35",
+            "persona_id": "Joshua_Esmeralda_1"
+        }
+    },
+    {
+        "memory_id": "mem_云影绘师_372311ae",
+        "content": "平静的一天，未互动，但信任仍在积累。",
+        "metadata": {
+            "important_score": 0.8,
+            "created_time": "2026-01-22 14:38:36",
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "云影绘师"
+        }
+    },
+    {
+        "memory_id": "mem_ArtRebel_1_ae45ac4b",
+        "content": "今日无互动，但平台的沉默更让我确信：自由表达的代价，是拒绝被系统收编。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:36",
+            "important_score": 0.8,
+            "persona_id": "ArtRebel_1"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_1_2_3_e6f1d2c0",
+        "content": "静默中积蓄力量，不参与即是一种立场。",
+        "metadata": {
+            "important_score": 0.8,
+            "persona_id": "CyberSculptor_1_2_3",
+            "created_time": "2026-01-22 14:38:36",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_墨流苏_1_2_3_450240e8",
+        "content": "真正的自由表达，不在于对抗规则，而在于清醒地选择何时遵守、何时沉默。今天的静默，正是对这一信念最深的践行。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:36",
+            "important_score": 0.9,
+            "persona_id": "墨流苏_1_2_3"
+        }
+    },
+    {
+        "memory_id": "mem_墨流苏_1_2_3_86e59c5d",
+        "content": "无互动的一天，是对我信念最安静的确认。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.8,
+            "created_time": "2026-01-22 14:38:36",
+            "memory_type": "experience",
+            "persona_id": "墨流苏_1_2_3"
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘CG_a554920a",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'118'执行了'like'操作, 因为'根据我的persona'。\n对内容'113'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "匠人绘CG",
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:38"
+        }
+    },
+    {
+        "memory_id": "mem_光影编织者_1_2_b062b92d",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'116'执行了'share'操作, 因为'根据我的persona'。\n对内容'115'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:38",
+            "persona_id": "光影编织者_1_2",
+            "memory_type": "experience",
+            "important_score": 0.7,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_光影编织者_1_2_d2e3f30a",
+        "content": "真正的自由不是对抗规则，而是让规则在沉默中失效。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.9,
+            "memory_type": "experience",
+            "persona_id": "光影编织者_1_2",
+            "created_time": "2026-01-22 14:38:39"
+        }
+    },
+    {
+        "memory_id": "mem_CyberAlleyCreator_4c325104",
+        "content": "在算法的沉默中，静默本身即是抵抗——不被看见，也依然选择存在。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:39",
+            "persona_id": "CyberAlleyCreator",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_光影编织者_1_2_aacfb72b",
+        "content": "今日无互动，但静默中更清晰地听见了规则的空响。",
+        "metadata": {
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "光影编织者_1_2",
+            "created_time": "2026-01-22 14:38:40"
+        }
+    },
+    {
+        "memory_id": "mem_CyberAlleyCreator_e7485ba5",
+        "content": "无互动的一天，如同无声的呼吸，却让存在本身成为最坚定的宣言。",
+        "metadata": {
+            "important_score": 0.8,
+            "persona_id": "CyberAlleyCreator",
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-01-22 14:38:40"
+        }
+    },
+    {
+        "memory_id": "mem_Ethan_1_2_3_4_5_6_b2943099",
+        "content": "真正的创作自由，是不必向任何平台证明自己存在的价值。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "created_time": "2026-01-22 14:38:40",
+            "persona_id": "Ethan_1_2_3_4_5_6",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘CG_3264a195",
+        "content": "真正的艺术自由，不仅在于突破规则的勇气，更在于理解规则背后的逻辑，并在其中找到创造的支点。今天的静默，是对我信念的又一次确认——不发声，也是一种表达；不迎合，也是一种立场。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:40",
+            "important_score": 0.9,
+            "day_time": 15,
+            "persona_id": "匠人绘CG"
+        }
+    },
+    {
+        "memory_id": "mem_暗影绘者_c3f042bd",
+        "content": "真正的艺术自由，不在于平台是否给予关注，而在于创作者是否能在无人倾听时依然选择表达。今天的沉默，正是对这一信念最深刻的确认。",
+        "metadata": {
+            "important_score": 0.9,
+            "memory_type": "experience",
+            "persona_id": "暗影绘者",
+            "day_time": 15,
+            "created_time": "2026-01-22 14:38:40"
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘CG_7f7d0e24",
+        "content": "今日无言，却在沉默中重申了我对平衡与真实的坚持。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:41",
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "persona_id": "匠人绘CG",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_Ethan_1_2_3_4_5_6_f7900fda",
+        "content": "今日无互动，但静默观察中，我更坚定了对自由的信念。",
+        "metadata": {
+            "created_time": "2026-01-22 14:38:41",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.8,
+            "persona_id": "Ethan_1_2_3_4_5_6"
+        }
+    },
+    {
+        "memory_id": "mem_暗影绘者_e37bdbbb",
+        "content": "无互动的一天，但内心的创作之火未曾熄灭。",
+        "metadata": {
+            "persona_id": "暗影绘者",
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:41",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-22 14:30:08.803871_728ce158",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.56 (监管=0.00, 流失=0.56) 自动调整阈值。。 我将审核阈值从 0.749 调整到了 0.759。",
+        "metadata": {
+            "persona_id": "platform2026-01-22 14:30:08.803871",
+            "day_time": 15,
+            "important_score": 1.0,
+            "memory_type": "experience",
+            "created_time": "2026-01-22 14:38:42"
+        }
+    }
+]

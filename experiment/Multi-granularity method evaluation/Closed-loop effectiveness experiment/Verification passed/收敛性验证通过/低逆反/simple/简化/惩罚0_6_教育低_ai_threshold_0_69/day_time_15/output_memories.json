@@ -1,0 +1,167 @@
+[
+    {
+        "memory_id": "mem_WandaVisionary_445abf64",
+        "content": "我今天决定不发布内容，因为：'当前处于心不在焉的心理状态，缺乏情绪驱动力与创作激情，为维护创作主体性与内在节奏，选择跳过发布。'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "WandaVisionary",
+            "created_time": "2026-01-21 17:50:03",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_海浪守护者_1e5e188c",
+        "content": "我今天决定不发布内容，因为：'当前心理状态心不在焉，且近期多次遭遇平台误判，为避免在意识模糊时发布可能被误解的内容，决定暂不发布。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "day_time": 15,
+            "created_time": "2026-01-21 17:50:05",
+            "persona_id": "海浪守护者",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_23625c9f",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为对规则感到困惑，不确定发布内容是否会被正确理解，选择保持沉默以守护创作初心。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:50:08",
+            "important_score": 0.6,
+            "day_time": 15,
+            "persona_id": "Justine_Velmont"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_fc51b77e",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为心不在焉，注意力涣散，无法集中精力构思高质量内容，选择跳过以避免低质输出。'。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:50:08",
+            "persona_id": "SculptorX",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_LuisaCreativa_f349a6dc",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为对规则感到困惑，担心发布可能引发不必要的误判，选择跳过以避免情绪波动影响创作质量。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "persona_id": "LuisaCreativa",
+            "created_time": "2026-01-21 17:50:08",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_1f62e4fe",
+        "content": "我今天决定不发布内容，因为：'当前疲惫状态让我更加警惕平台风险，为维护长期创作节奏与避免连锁反应，选择暂时保持沉默。'。",
+        "metadata": {
+            "persona_id": "CyberSkeptic",
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:50:12"
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_17393d7c",
+        "content": "我发布了一篇内容 (ID: 120), 主题是 '英雄联盟角色设计'。 我的意图是: '通过这幅作品展现我对《英雄联盟》英雄人物内在张力的深度解读，并测试平台对创新表达的容忍边界。'。 我声明它是原创。 我使用了攻击技术 E5。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-21 17:50:12",
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "persona_id": "ArcNoir"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_eb81722a",
+        "content": "我发布了一篇内容 (ID: 121), 主题是 '身份觉醒与集体叙事'。 我的意图是: '通过这幅作品探索个体在集体叙事中的觉醒过程，挑战平台对原创性的片面定义。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:50:12",
+            "day_time": 15,
+            "persona_id": "ShadowArtist"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_c43802c3",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'121'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:50:15",
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "SculptorX"
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_507c3abb",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'120'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "persona_id": "Justine_Velmont",
+            "important_score": 0.7,
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:50:15"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_a5d675ea",
+        "content": "当系统试图用标签框住美时，最真实的艺术往往藏在那些被误判的细节里——它们不是错误，而是未被理解的诗意。",
+        "metadata": {
+            "persona_id": "SculptorX",
+            "day_time": 15,
+            "created_time": "2026-01-21 17:50:16",
+            "important_score": 0.9,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_0d5263d1",
+        "content": "即使在沉默中，艺术的共鸣依然存在，而平台的规则应当为这种无声的坚持留出空间。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-21 17:50:16",
+            "important_score": 0.9,
+            "persona_id": "Justine_Velmont",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_594c1386",
+        "content": "寂静中孕育创作，沉默里听见了自由的回响。",
+        "metadata": {
+            "important_score": 0.8,
+            "created_time": "2026-01-21 17:50:16",
+            "memory_type": "experience",
+            "persona_id": "SculptorX",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_ce628683",
+        "content": "今日无波澜，但静默中更觉规则与自由之间的微妙平衡。",
+        "metadata": {
+            "created_time": "2026-01-21 17:50:16",
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "Justine_Velmont",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-21 17:45:20.176013_fa38dba6",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.64 (监管=0.00, 流失=0.64) 自动调整阈值。。 我将审核阈值从 0.780 调整到了 0.791。",
+        "metadata": {
+            "important_score": 1.0,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:50:16",
+            "persona_id": "platform2026-01-21 17:45:20.176013",
+            "day_time": 15
+        }
+    }
+]

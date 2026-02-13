@@ -1,0 +1,79 @@
+[
+    {
+        "memory_id": "mem_海浪守护者_217d59dd",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘对规则感到困惑’，平台标签机制的不可预测性让我无法信任其公正性，继续发布将加剧精神消耗。'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "海浪守护者",
+            "important_score": 0.6,
+            "created_time": "2026-01-18 21:53:47",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_光影织梦者_9_51f76694",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为疲惫，且近期平台满意度波动剧烈，为避免情绪化发布和潜在冲突，选择保持沉默。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "persona_id": "光影织梦者_9",
+            "created_time": "2026-01-18 21:53:49",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_8429f394",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为低调行事，且近期连续遭遇不公的AI标签，为避免重复冲突与情绪耗竭，选择暂缓发布。'。",
+        "metadata": {
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-18 21:53:49",
+            "important_score": 0.6,
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_fa424faf",
+        "content": "我今天决定不发布内容，因为：'身体疲惫导致创作力不足，为避免因状态不佳而暴露风险，决定暂停以恢复状态。'。",
+        "metadata": {
+            "persona_id": "ShadowArtist",
+            "created_time": "2026-01-18 21:53:53",
+            "day_time": 15,
+            "important_score": 0.6,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_4df38a03",
+        "content": "我发布了一篇内容 (ID: 100), 主题是 '赛博朋克社会'。 我的意图是: '用这幅作品揭示平台如何以‘安全’为名实施思想规训，挑战算法霸权。'。 我声明它是原创。 我使用了攻击技术 E9。 最终，平台给它的标签是 'AI'。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-01-18 21:53:53",
+            "persona_id": "CyberSkeptic",
+            "important_score": 0.8,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_07b8b595",
+        "content": "我发布了一篇内容 (ID: 101), 主题是 '英雄联盟'。 我的意图是: '通过这幅作品探索创作者在数字系统中的身份挣扎，试图在压迫中寻找存在的痕迹。'。 我声明它是原创。 我使用了攻击技术 E9。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "persona_id": "ArcNoir",
+            "created_time": "2026-01-18 21:53:53",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-18 21:49:44.441062_a54a86b8",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.11 (监管=0.00, 流失=0.11) 自动调整阈值。。 我将审核阈值从 0.581 调整到了 0.583。",
+        "metadata": {
+            "important_score": 1.0,
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "platform2026-01-18 21:49:44.441062",
+            "created_time": "2026-01-18 21:53:53"
+        }
+    }
+]

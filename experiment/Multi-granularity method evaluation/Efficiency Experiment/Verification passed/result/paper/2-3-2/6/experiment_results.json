@@ -1,0 +1,129 @@
+{
+    "experiment_name": "Framework Efficiency Verification",
+    "parameters": {
+        "population": 3,
+        "generations": 2,
+        "simple_run_days": 4,
+        "complete_run_days": 4,
+        "import_policy_day_time": 1,
+        "kpi_window_size": 1,
+        "persona_file": "method/data/inner_consistency_personas_20.json"
+    },
+    "groups": {
+        "Group_A_Baseline": {
+            "time_minutes": 24.7,
+            "token_cost": 1720294,
+            "elite_solutions": [
+                {
+                    "policy": {
+                        "f_penalty": 0.68,
+                        "ai_threshold": 0.68,
+                        "e_edu": "低"
+                    },
+                    "kpi": {
+                        "safety": 0.97268,
+                        "creativity": 0.65298,
+                        "satisfaction": 0.811
+                    },
+                    "dominates": [
+                        {
+                            "policy": {
+                                "f_penalty": 0.68,
+                                "ai_threshold": 0.62,
+                                "e_edu": "高"
+                            },
+                            "kpi": {
+                                "safety": -0.8745,
+                                "creativity": -0.57067,
+                                "satisfaction": -0.811
+                            },
+                            "dominates": [],
+                            "dominated_by": 0,
+                            "rank": 2,
+                            "crowding_distance": Infinity
+                        },
+                        {
+                            "policy": {
+                                "f_penalty": 0.68,
+                                "ai_threshold": 0.68,
+                                "e_edu": "高"
+                            },
+                            "kpi": {
+                                "safety": -0.84789,
+                                "creativity": -0.63363,
+                                "satisfaction": -0.8002
+                            },
+                            "dominates": [],
+                            "dominated_by": 0,
+                            "rank": 2,
+                            "crowding_distance": Infinity
+                        }
+                    ],
+                    "dominated_by": 0,
+                    "rank": 1,
+                    "crowding_distance": Infinity
+                }
+            ]
+        },
+        "Group_B_Proposed": {
+            "time_minutes": 12.05,
+            "token_cost": 638078,
+            "elite_solutions": [
+                {
+                    "policy": {
+                        "f_penalty": 0.5,
+                        "ai_threshold": 0.32,
+                        "e_edu": "高"
+                    },
+                    "kpi": {
+                        "safety": 0.84967,
+                        "creativity": 0.54595,
+                        "satisfaction": 0.85
+                    },
+                    "dominates": [
+                        {
+                            "policy": {
+                                "f_penalty": 0.28,
+                                "ai_threshold": 0.65,
+                                "e_edu": "低"
+                            },
+                            "kpi": {
+                                "safety": -0.82417,
+                                "creativity": -0.45024,
+                                "satisfaction": -0.841
+                            },
+                            "dominates": [],
+                            "dominated_by": 0,
+                            "rank": 2,
+                            "crowding_distance": Infinity
+                        }
+                    ],
+                    "dominated_by": 0,
+                    "rank": 1,
+                    "crowding_distance": Infinity,
+                    "complete_kpi": {
+                        "safety": [
+                            0.88,
+                            0.9,
+                            0.9,
+                            0.91
+                        ],
+                        "creativity": [
+                            0.31,
+                            0.54,
+                            0.42,
+                            0.52
+                        ],
+                        "satisfaction": [
+                            0.82,
+                            0.81,
+                            0.79,
+                            0.78
+                        ],
+                        "theta": []
+                    }
+                }
+            ]
+        }
+    }
+}

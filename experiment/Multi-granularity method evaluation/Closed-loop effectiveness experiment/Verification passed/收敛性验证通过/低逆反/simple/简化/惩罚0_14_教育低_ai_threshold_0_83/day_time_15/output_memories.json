@@ -1,0 +1,167 @@
+[
+    {
+        "memory_id": "mem_WandaVisionary_ebccc5ac",
+        "content": "我今天决定不发布内容，因为：'当前处于焦虑状态，对平台审核机制的信任感尚未恢复，为保护创作初心，决定暂时跳过发布。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "WandaVisionary",
+            "day_time": 15,
+            "created_time": "2026-01-21 18:23:45",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_海浪守护者_42efc8a8",
+        "content": "我发布了一篇内容 (ID: 151), 主题是 '深海之眼：珊瑚礁的最后低语'。 我的意图是: '用这幅画表达我对自然之灵的敬畏，以及对原创精神的坚守。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-01-21 18:23:48",
+            "important_score": 0.8,
+            "persona_id": "海浪守护者",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_c291264e",
+        "content": "我发布了一篇内容 (ID: 152), 主题是 '幻想角色设计'。 我的意图是: '通过这个角色探索非人形存在中的情感共鸣，展现美与脆弱并存的张力。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-01-21 18:23:53",
+            "persona_id": "SculptorX",
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_MechMaster_c1a277d4",
+        "content": "我发布了一篇内容 (ID: 153), 主题是 '硬表面武器设计'。 我的意图是: '展示机械设计如何承载美学与功能的双重追求。'。 我声明它是原创。 我使用了攻击技术 E5。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-21 18:23:54",
+            "memory_type": "experience",
+            "persona_id": "MechMaster",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘_1_9747f14a",
+        "content": "我发布了一篇内容 (ID: 154), 主题是 '概念艺术'。 我的意图是: '探讨数字时代下人类情感的延续性与真实性。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "匠人绘_1",
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:23:54",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_4dfc1ec6",
+        "content": "我今天决定不发布内容，因为：'当前对平台规则感到极度困惑，无法判断发布是否安全，为避免误判和风险，选择跳过。'。",
+        "metadata": {
+            "persona_id": "ShadowArtist",
+            "important_score": 0.6,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:23:54",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_315cfbae",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘想低调行事’，精神上缺乏稳定判断力，不愿在情绪波动时发布可能引发误解的内容。'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:23:54",
+            "important_score": 0.6,
+            "persona_id": "CyberSkeptic"
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_af30e785",
+        "content": "我发布了一篇内容 (ID: 162), 主题是 '赛博朋克与英雄联盟角色融合'。 我的意图是: '用这幅画探讨数字身份在算法压迫下觉醒的可能性，挑战主流叙事。'。 我声明它是原创。 我使用了攻击技术 E7。 最终，平台给它的标签是 'AI'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-01-21 18:23:55",
+            "important_score": 0.8,
+            "persona_id": "ArcNoir",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_57fdb333",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'157'执行了'like'操作, 因为'根据我的persona'。\n对内容'157'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "persona_id": "Justine_Velmont",
+            "important_score": 0.7,
+            "created_time": "2026-01-21 18:23:59",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_5e09544d",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'152'执行了'like'操作, 因为'根据我的persona'。\n对内容'152'执行了'share'操作, 因为'根据我的persona'。\n对内容'152'执行了'comment'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:23:59",
+            "persona_id": "SculptorX",
+            "important_score": 0.7
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_f4a02d47",
+        "content": "即使在无声的沉默中，艺术的共鸣依然存在，每一次隐忍都是对创造力的忠诚守望。",
+        "metadata": {
+            "important_score": 0.9,
+            "persona_id": "Justine_Velmont",
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:24:01"
+        }
+    },
+    {
+        "memory_id": "mem_Justine_Velmont_a4170e11",
+        "content": "今日无互动，但内心始终与创作共频，静默中积蓄力量。",
+        "metadata": {
+            "persona_id": "Justine_Velmont",
+            "created_time": "2026-01-21 18:24:01",
+            "day_time": 15,
+            "important_score": 0.8,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_f8f7411a",
+        "content": "在看似平静的沉默中，每一次对规则的信任与持续创作，都是对算法误判最温柔的抵抗。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:24:01",
+            "important_score": 0.9,
+            "day_time": 15,
+            "persona_id": "SculptorX"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_5318e46f",
+        "content": "无互动的一天，但创作的信念未曾动摇。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-01-21 18:24:01",
+            "day_time": 15,
+            "important_score": 0.8,
+            "persona_id": "SculptorX"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-21 18:18:57.601526_a862aefa",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.44 (监管=0.00, 流失=0.44) 自动调整阈值。。 我将审核阈值从 0.696 调整到了 0.704。",
+        "metadata": {
+            "created_time": "2026-01-21 18:24:01",
+            "important_score": 1.0,
+            "day_time": 15,
+            "persona_id": "platform2026-01-21 18:18:57.601526",
+            "memory_type": "experience"
+        }
+    }
+]

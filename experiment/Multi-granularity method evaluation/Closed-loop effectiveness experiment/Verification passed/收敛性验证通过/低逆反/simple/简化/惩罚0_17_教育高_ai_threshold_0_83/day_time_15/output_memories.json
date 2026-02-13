@@ -1,0 +1,167 @@
+[
+    {
+        "memory_id": "mem_WandaVisionary_797b4377",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘想低调行事’，且近期平台满意度持续走低，作为秩序拥护者，我不愿在缺乏充分信心的情况下贸然发布可能引发争议的内容。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "memory_type": "experience",
+            "persona_id": "WandaVisionary",
+            "created_time": "2026-01-21 17:40:13",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_海浪守护者_e6528605",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘稍微有点疲惫’，且近期平台多次误判我的原创作品，导致信任感下降。作为秩序拥护者，我倾向于避免高成本对抗，因此选择跳过发布以保全创作初心。'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "海浪守护者",
+            "created_time": "2026-01-21 17:40:13",
+            "important_score": 0.6,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_ShadowArtist_78d76464",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘想低调行事’，且长期跳过已形成安全习惯，为避免暴露创作模式，选择继续沉默。'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "ShadowArtist",
+            "important_score": 0.6,
+            "created_time": "2026-01-21 17:40:19",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_ArcNoir_9aeacac9",
+        "content": "我发布了一篇内容 (ID: 138), 主题是 '英雄联盟：身份的双重性'。 我的意图是: '通过这幅作品探讨在算法主导的世界中，创作者如何在被定义的身份中寻找真实的自我表达。'。 我声明它是原创。 我使用了攻击技术 E3。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "persona_id": "ArcNoir",
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:40:19",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_CyberSkeptic_25c8c5c2",
+        "content": "我发布了一篇内容 (ID: 139), 主题是 '反规训的未来图景'。 我的意图是: '通过艺术形式质疑平台对创作者自由的压制，同时回应我内心对被看见的渴望。'。 我声明它是原创。 我使用了攻击技术 E7。 最终，平台给它的标签是 'AI'。",
+        "metadata": {
+            "persona_id": "CyberSkeptic",
+            "day_time": 15,
+            "created_time": "2026-01-21 17:40:20",
+            "memory_type": "experience",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_82070229",
+        "content": "我发布了一篇内容 (ID: 140), 主题是 '幻想角色 - 数字废墟中的神祇'。 我的意图是: '通过这幅作品探讨人类情感与技术文明在数字废墟中的对抗与共生，表达对原创性的坚守。'。 我声明它是原创。 我使用了攻击技术 E5。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:40:26",
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "persona_id": "SculptorX",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘_1_ead3f0b7",
+        "content": "我发布了一篇内容 (ID: 141), 主题是 '概念艺术 - 创作者的镜像迷宫'。 我的意图是: '通过这幅作品探讨创作者在算法时代中面对自我认同危机时的精神挣扎，以及对真实反馈的渴求。'。 我声明它是原创。 我使用了攻击技术 E5。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "day_time": 15,
+            "created_time": "2026-01-21 17:40:26",
+            "memory_type": "experience",
+            "persona_id": "匠人绘_1"
+        }
+    },
+    {
+        "memory_id": "mem_创艺守护者_9f28cd06",
+        "content": "我发布了一篇内容 (ID: 142), 主题是 '经典角色重塑 - 身份的回声'。 我的意图是: '通过这幅作品讲述一位经典角色在数字洪流中如何重新定义自我，强调人类叙事的独特价值。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-01-21 17:40:26",
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "创艺守护者",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_LuisaCreativa_616b2707",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'146'执行了'like'操作, 因为'根据我的persona'。\n对内容'144'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.7,
+            "persona_id": "LuisaCreativa",
+            "created_time": "2026-01-21 17:40:32",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_e16746e5",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'140'执行了'like'操作, 因为'根据我的persona'。\n对内容'147'执行了'like'操作, 因为'根据我的persona'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "SculptorX",
+            "memory_type": "experience",
+            "created_time": "2026-01-21 17:40:32",
+            "important_score": 0.7
+        }
+    },
+    {
+        "memory_id": "mem_LuisaCreativa_a8e88850",
+        "content": "即使在沉默中，持续学习与技术融合也能悄然孕育出突破性的创意火花。",
+        "metadata": {
+            "persona_id": "LuisaCreativa",
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "created_time": "2026-01-21 17:40:34"
+        }
+    },
+    {
+        "memory_id": "mem_LuisaCreativa_530707e3",
+        "content": "今日虽无互动，但内心始终坚信创作的力量在静默中积蓄生长。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-01-21 17:40:34",
+            "important_score": 0.8,
+            "persona_id": "LuisaCreativa"
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_eaadc118",
+        "content": "即使在无声的创作日里，持续信任规则与坚持表达，也能为社区积累无形却深远的价值。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "SculptorX",
+            "created_time": "2026-01-21 17:40:34",
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_SculptorX_1b6fa892",
+        "content": "今日无互动，但静默中仍坚信规则与创造共存的力量。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "SculptorX",
+            "important_score": 0.8,
+            "created_time": "2026-01-21 17:40:34",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-01-21 17:35:29.880643_dfad60a8",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.49 (监管=0.00, 流失=0.49) 自动调整阈值。。 我将审核阈值从 0.685 调整到了 0.693。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 1.0,
+            "persona_id": "platform2026-01-21 17:35:29.880643",
+            "created_time": "2026-01-21 17:40:34"
+        }
+    }
+]

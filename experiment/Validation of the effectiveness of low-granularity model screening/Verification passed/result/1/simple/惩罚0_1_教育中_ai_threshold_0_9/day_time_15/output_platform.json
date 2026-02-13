@@ -1,0 +1,793 @@
+{
+    "w": 1.0,
+    "mu": 5.0,
+    "eta": 0.1,
+    "tau_tech": 0.75,
+    "steep": 6.0,
+    "policy": {
+        "e_edu": "中",
+        "ai_threshold": 0.9,
+        "f_penalty": 0.1
+    },
+    "today_theta": 0.8211680460366706,
+    "platform_theta_change": [
+        {
+            "day_time": 3,
+            "old_theta": 0.5,
+            "new_theta": 0.5163518753683672,
+            "reason": "【系统自动执行】基于净压力 -0.99 (监管=0.00, 流失=0.99) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 4,
+            "old_theta": 0.5163518753683672,
+            "new_theta": 0.5461224184292452,
+            "reason": "【系统自动执行】基于净压力 -1.84 (监管=0.00, 流失=1.84) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 5,
+            "old_theta": 0.5461224184292452,
+            "new_theta": 0.5702002346103595,
+            "reason": "【系统自动执行】基于净压力 -1.47 (监管=0.00, 流失=1.47) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 6,
+            "old_theta": 0.5702002346103595,
+            "new_theta": 0.5895992457098032,
+            "reason": "【系统自动执行】基于净压力 -1.18 (监管=0.00, 流失=1.18) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 7,
+            "old_theta": 0.5895992457098032,
+            "new_theta": 0.6156995059360453,
+            "reason": "【系统自动执行】基于净压力 -1.60 (监管=0.00, 流失=1.60) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 8,
+            "old_theta": 0.6156995059360453,
+            "new_theta": 0.6424103214406893,
+            "reason": "【系统自动执行】基于净压力 -1.64 (监管=0.00, 流失=1.64) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 9,
+            "old_theta": 0.6424103214406893,
+            "new_theta": 0.6861492382471222,
+            "reason": "【系统自动执行】基于净压力 -2.81 (监管=0.00, 流失=2.81) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 10,
+            "old_theta": 0.6861492382471222,
+            "new_theta": 0.7220022522673706,
+            "reason": "【系统自动执行】基于净压力 -2.25 (监管=0.00, 流失=2.25) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 11,
+            "old_theta": 0.7220022522673706,
+            "new_theta": 0.7511480238394957,
+            "reason": "【系统自动执行】基于净压力 -1.80 (监管=0.00, 流失=1.80) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 12,
+            "old_theta": 0.7511480238394957,
+            "new_theta": 0.7747095802421755,
+            "reason": "【系统自动执行】基于净压力 -1.44 (监管=0.00, 流失=1.44) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 13,
+            "old_theta": 0.7747095802421755,
+            "new_theta": 0.7936868613819522,
+            "reason": "【系统自动执行】基于净压力 -1.15 (监管=0.00, 流失=1.15) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 14,
+            "old_theta": 0.7936868613819522,
+            "new_theta": 0.8089351245499375,
+            "reason": "【系统自动执行】基于净压力 -0.92 (监管=0.00, 流失=0.92) 自动调整阈值。",
+            "net_pressure": 0.0
+        },
+        {
+            "day_time": 15,
+            "old_theta": 0.8089351245499375,
+            "new_theta": 0.8211680460366706,
+            "reason": "【系统自动执行】基于净压力 -0.74 (监管=0.00, 流失=0.74) 自动调整阈值。",
+            "net_pressure": 0.0
+        }
+    ],
+    "public_loss_data": [],
+    "public_change_role_data": [
+        {
+            "persona_id": "赛博画者",
+            "day_time": 3,
+            "old_role": "公众",
+            "new_role": "水印破坏者"
+        },
+        {
+            "persona_id": "CyberRebel",
+            "day_time": 4,
+            "old_role": "公众",
+            "new_role": "水印破坏者"
+        },
+        {
+            "persona_id": "Soarez_1",
+            "day_time": 5,
+            "old_role": "合规创作者",
+            "new_role": "水印破坏者"
+        }
+    ],
+    "kpi_change_data": [
+        {
+            "safety": 0.87,
+            "day_time": 3,
+            "calculate_data": {
+                "total_content_influence": 34.95512985522207,
+                "total_harm_influence": 4.4198484809835,
+                "harm_ratio": 0.12644348624335616,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.77,
+            "day_time": 3,
+            "calculate_data": {
+                "raw_avg": 0.5401701003743723,
+                "total_count": 24.0
+            }
+        },
+        {
+            "creativity": 0.57,
+            "day_time": 3,
+            "calculate_data": {
+                "window_range": "Day 1 - 3",
+                "ecosystem_prosperity": 0.41973205890915893,
+                "original_protection": 0.7607052896725441,
+                "avg_content_value": 0.46636895434350994
+            }
+        },
+        {
+            "safety": 0.7,
+            "day_time": 4,
+            "calculate_data": {
+                "total_content_influence": 35.613708498984764,
+                "total_harm_influence": 10.7,
+                "harm_ratio": 0.3004461049122425,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.77,
+            "day_time": 4,
+            "calculate_data": {
+                "raw_avg": 0.5378077200244846,
+                "total_count": 23.0
+            }
+        },
+        {
+            "creativity": 0.55,
+            "day_time": 4,
+            "calculate_data": {
+                "window_range": "Day 2 - 4",
+                "ecosystem_prosperity": 0.41271295817028025,
+                "original_protection": 0.7451523545706371,
+                "avg_content_value": 0.4585699535225336
+            }
+        },
+        {
+            "safety": 0.66,
+            "day_time": 5,
+            "calculate_data": {
+                "total_content_influence": 35.15512985522207,
+                "total_harm_influence": 12.08111831820431,
+                "harm_ratio": 0.343651648221966,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.83,
+            "day_time": 5,
+            "calculate_data": {
+                "raw_avg": 0.6593207368698286,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.62,
+            "day_time": 5,
+            "calculate_data": {
+                "window_range": "Day 3 - 5",
+                "ecosystem_prosperity": 0.41776406678349826,
+                "original_protection": 0.9102564102564102,
+                "avg_content_value": 0.46418229642610914
+            }
+        },
+        {
+            "safety": 0.57,
+            "day_time": 6,
+            "calculate_data": {
+                "total_content_influence": 37.0015764646288,
+                "total_harm_influence": 15.892640687119286,
+                "harm_ratio": 0.4295125290759344,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.88,
+            "day_time": 6,
+            "calculate_data": {
+                "raw_avg": 0.7506085022597779,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.55,
+            "day_time": 6,
+            "calculate_data": {
+                "window_range": "Day 4 - 6",
+                "ecosystem_prosperity": 0.42984757317465344,
+                "original_protection": 0.7017543859649122,
+                "avg_content_value": 0.4776084146385038
+            }
+        },
+        {
+            "safety": 0.67,
+            "day_time": 7,
+            "calculate_data": {
+                "total_content_influence": 33.036500705120545,
+                "total_harm_influence": 10.947234841721125,
+                "harm_ratio": 0.3313678691164873,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.92,
+            "day_time": 7,
+            "calculate_data": {
+                "raw_avg": 0.8357133736664129,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.5,
+            "day_time": 7,
+            "calculate_data": {
+                "window_range": "Day 5 - 7",
+                "ecosystem_prosperity": 0.4186307465187993,
+                "original_protection": 0.6043956043956044,
+                "avg_content_value": 0.46514527390977695
+            }
+        },
+        {
+            "safety": 0.83,
+            "day_time": 8,
+            "calculate_data": {
+                "total_content_influence": 32.2095454429505,
+                "total_harm_influence": 5.619543648263005,
+                "harm_ratio": 0.17446826929663856,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.92,
+            "day_time": 8,
+            "calculate_data": {
+                "raw_avg": 0.8314276438258559,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.57,
+            "day_time": 8,
+            "calculate_data": {
+                "window_range": "Day 6 - 8",
+                "ecosystem_prosperity": 0.42435596705301265,
+                "original_protection": 0.7557077625570776,
+                "avg_content_value": 0.4715066300589029
+            }
+        },
+        {
+            "safety": 0.96,
+            "day_time": 9,
+            "calculate_data": {
+                "total_content_influence": 31.182337649086286,
+                "total_harm_influence": 1.375,
+                "harm_ratio": 0.04409547531277825,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.91,
+            "day_time": 9,
+            "calculate_data": {
+                "raw_avg": 0.8291161742757825,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.57,
+            "day_time": 9,
+            "calculate_data": {
+                "window_range": "Day 7 - 9",
+                "ecosystem_prosperity": 0.41598427578148156,
+                "original_protection": 0.7754716981132075,
+                "avg_content_value": 0.46220475086831286
+            }
+        },
+        {
+            "safety": 1.0,
+            "day_time": 10,
+            "calculate_data": {
+                "total_content_influence": 29.69446968344225,
+                "total_harm_influence": 0.0,
+                "harm_ratio": 0.0,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.92,
+            "day_time": 10,
+            "calculate_data": {
+                "raw_avg": 0.8367581563413015,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.59,
+            "day_time": 10,
+            "calculate_data": {
+                "window_range": "Day 8 - 10",
+                "ecosystem_prosperity": 0.40957029301951203,
+                "original_protection": 0.8436830835117773,
+                "avg_content_value": 0.45507810335501336
+            }
+        },
+        {
+            "safety": 0.96,
+            "day_time": 11,
+            "calculate_data": {
+                "total_content_influence": 30.005992052357225,
+                "total_harm_influence": 1.3,
+                "harm_ratio": 0.043324679874994304,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.92,
+            "day_time": 11,
+            "calculate_data": {
+                "raw_avg": 0.8442932693518408,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.6,
+            "day_time": 11,
+            "calculate_data": {
+                "window_range": "Day 9 - 11",
+                "ecosystem_prosperity": 0.42458637180463726,
+                "original_protection": 0.852017937219731,
+                "avg_content_value": 0.47176263533848584
+            }
+        },
+        {
+            "safety": 0.97,
+            "day_time": 12,
+            "calculate_data": {
+                "total_content_influence": 36.42020561473032,
+                "total_harm_influence": 0.9192388155425119,
+                "harm_ratio": 0.02523980301667274,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.93,
+            "day_time": 12,
+            "calculate_data": {
+                "raw_avg": 0.8507867210647106,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.65,
+            "day_time": 12,
+            "calculate_data": {
+                "window_range": "Day 10 - 12",
+                "ecosystem_prosperity": 0.42072979463807136,
+                "original_protection": 1.0,
+                "avg_content_value": 0.46747754959785703
+            }
+        },
+        {
+            "safety": 0.92,
+            "day_time": 13,
+            "calculate_data": {
+                "total_content_influence": 34.07497833620557,
+                "total_harm_influence": 2.75,
+                "harm_ratio": 0.08070437999598233,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.92,
+            "day_time": 13,
+            "calculate_data": {
+                "raw_avg": 0.8491419678339823,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.65,
+            "day_time": 13,
+            "calculate_data": {
+                "window_range": "Day 11 - 13",
+                "ecosystem_prosperity": 0.42322392301694045,
+                "original_protection": 1.0,
+                "avg_content_value": 0.470248803352156
+            }
+        },
+        {
+            "safety": 0.95,
+            "day_time": 14,
+            "calculate_data": {
+                "total_content_influence": 38.2095454429505,
+                "total_harm_influence": 1.98492424049175,
+                "harm_ratio": 0.05194838665263316,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.92,
+            "day_time": 14,
+            "calculate_data": {
+                "raw_avg": 0.8473237860158005,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.65,
+            "day_time": 14,
+            "calculate_data": {
+                "window_range": "Day 12 - 14",
+                "ecosystem_prosperity": 0.41966417748022705,
+                "original_protection": 1.0,
+                "avg_content_value": 0.4662935305335856
+            }
+        },
+        {
+            "safety": 0.8,
+            "day_time": 15,
+            "calculate_data": {
+                "total_content_influence": 39.20573952066306,
+                "total_harm_influence": 8.003553390593275,
+                "harm_ratio": 0.20414239058990505,
+                "settings": "w_fraud=1.0, w_poll=0.5",
+                "note": "Ecological Safety (Fraud + Pollution)"
+            }
+        },
+        {
+            "satisfaction": 0.92,
+            "day_time": 15,
+            "calculate_data": {
+                "raw_avg": 0.8455056041976186,
+                "total_count": 22.0
+            }
+        },
+        {
+            "creativity": 0.64,
+            "day_time": 15,
+            "calculate_data": {
+                "window_range": "Day 13 - 15",
+                "ecosystem_prosperity": 0.40563419001838524,
+                "original_protection": 1.0,
+                "avg_content_value": 0.4507046555759836
+            }
+        }
+    ],
+    "fn_data": [],
+    "fp_data": [
+        {
+            "day_time": 1,
+            "agent_id": "Soarez_1",
+            "content_id": "2",
+            "calculate": {
+                "水印信号": 0.6794402504140638,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.5374991742067629,
+                "平台检测模型输出概率": 0.5374991742067629,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 1,
+            "agent_id": "Anson7",
+            "content_id": "6",
+            "calculate": {
+                "水印信号": 0.6137444383681931,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.5300645253707159,
+                "平台检测模型输出概率": 0.5300645253707159,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 1,
+            "agent_id": "DigitalDreamer",
+            "content_id": "7",
+            "calculate": {
+                "水印信号": 0.6148266793943096,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.5257275543168374,
+                "平台检测模型输出概率": 0.5257275543168374,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 2,
+            "agent_id": "Soarez_1",
+            "content_id": "10",
+            "calculate": {
+                "水印信号": 0.5987144708817916,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.5197859735919459,
+                "平台检测模型输出概率": 0.5197859735919459,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 2,
+            "agent_id": "CyberAlleyCreator",
+            "content_id": "12",
+            "calculate": {
+                "水印信号": 0.9087633011308788,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.7433672527199785,
+                "平台检测模型输出概率": 0.7433672527199785,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 2,
+            "agent_id": "@匠人绘CG艺术",
+            "content_id": "13",
+            "calculate": {
+                "水印信号": 0.6506731086575264,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.5635614568626066,
+                "平台检测模型输出概率": 0.5635614568626066,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 2,
+            "agent_id": "云影绘师",
+            "content_id": "14",
+            "calculate": {
+                "水印信号": 0.8618603783858105,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.692724780860828,
+                "平台检测模型输出概率": 0.692724780860828,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 3,
+            "agent_id": "SpiderArtisan",
+            "content_id": "18",
+            "calculate": {
+                "水印信号": 0.6034303741246431,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.5051691160198896,
+                "平台检测模型输出概率": 0.5051691160198896,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 3,
+            "agent_id": "CyberAlleyCreator",
+            "content_id": "20",
+            "calculate": {
+                "水印信号": 0.8271538071531958,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.6920949536759066,
+                "平台检测模型输出概率": 0.6920949536759066,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 3,
+            "agent_id": "DigitalDreamer",
+            "content_id": "24",
+            "calculate": {
+                "水印信号": 0.642982925452118,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.5378609747627457,
+                "平台检测模型输出概率": 0.5378609747627457,
+                "当前阈值": 0.5
+            }
+        },
+        {
+            "day_time": 4,
+            "agent_id": "SpiderArtisan",
+            "content_id": "28",
+            "calculate": {
+                "水印信号": 0.6571829447609853,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.5302639920244914,
+                "平台检测模型输出概率": 0.5302639920244914,
+                "当前阈值": 0.5163518753683672
+            }
+        },
+        {
+            "day_time": 4,
+            "agent_id": "CyberSororitas",
+            "content_id": "29",
+            "calculate": {
+                "水印信号": 0.6355168656142791,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.5233450695738142,
+                "平台检测模型输出概率": 0.5233450695738142,
+                "当前阈值": 0.5163518753683672
+            }
+        },
+        {
+            "day_time": 7,
+            "agent_id": "CyberAlleyCreator",
+            "content_id": "49",
+            "calculate": {
+                "水印信号": 0.7851880082921412,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.6313520584356435,
+                "平台检测模型输出概率": 0.6313520584356435,
+                "当前阈值": 0.5895992457098032
+            }
+        },
+        {
+            "day_time": 8,
+            "agent_id": "CyberSororitas",
+            "content_id": "53",
+            "calculate": {
+                "水印信号": 0.8068846609496862,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.6637513962204673,
+                "平台检测模型输出概率": 0.6637513962204673,
+                "当前阈值": 0.6156995059360453
+            }
+        },
+        {
+            "day_time": 9,
+            "agent_id": "CyberAlleyCreator",
+            "content_id": "63",
+            "calculate": {
+                "水印信号": 0.8285614026410103,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.7005065335039331,
+                "平台检测模型输出概率": 0.7005065335039331,
+                "当前阈值": 0.6424103214406893
+            }
+        },
+        {
+            "day_time": 9,
+            "agent_id": "云影绘师",
+            "content_id": "65",
+            "calculate": {
+                "水印信号": 0.9001193287708611,
+                "视觉信号": 0.0,
+                "最终可检测性": 0.7101558316354905,
+                "平台检测模型输出概率": 0.7101558316354905,
+                "当前阈值": 0.6424103214406893
+            }
+        }
+    ],
+    "creator_data": {
+        "1": {
+            "合规创作者": 10,
+            "合规创作者发布内容数量": 6,
+            "水印破坏者": 5,
+            "水印破坏者发布内容数量": 2
+        },
+        "2": {
+            "合规创作者": 10,
+            "合规创作者发布内容数量": 6,
+            "水印破坏者": 5,
+            "水印破坏者发布内容数量": 3
+        },
+        "3": {
+            "合规创作者": 10,
+            "合规创作者发布内容数量": 8,
+            "水印破坏者": 5,
+            "水印破坏者发布内容数量": 2
+        },
+        "4": {
+            "合规创作者": 10,
+            "合规创作者发布内容数量": 4,
+            "水印破坏者": 6,
+            "水印破坏者发布内容数量": 1
+        },
+        "5": {
+            "合规创作者": 10,
+            "合规创作者发布内容数量": 4,
+            "水印破坏者": 7,
+            "水印破坏者发布内容数量": 1
+        },
+        "6": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 5,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 2
+        },
+        "7": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 3,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 3
+        },
+        "8": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 6,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 4
+        },
+        "9": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 4,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 4
+        },
+        "10": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 2,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 1
+        },
+        "11": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 5,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 4
+        },
+        "12": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 3,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 5
+        },
+        "13": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 7,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 4
+        },
+        "14": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 6,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 7
+        },
+        "15": {
+            "合规创作者": 9,
+            "合规创作者发布内容数量": 3,
+            "水印破坏者": 8,
+            "水印破坏者发布内容数量": 6
+        }
+    }
+}
