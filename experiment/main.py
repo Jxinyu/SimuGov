@@ -7,11 +7,6 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime
 
-# ==========================================
-# 1. 核心路径处理 (解决 ModuleNotFoundError)
-# ==========================================
-
-# 获取 experiment 目录的绝对路径
 CURRENT_DIR = Path(__file__).resolve().parent
 
 
@@ -25,21 +20,14 @@ def auto_append_paths(root_path):
             continue
         if root not in sys.path:
             sys.path.append(root)
-            # logger 不能在这里用，因为还没配置，先用 print
-            # print(f"Added to path: {root}")
 
 
-# 执行路径自动添加
 auto_append_paths(str(CURRENT_DIR))
 
-# ==========================================
-# 2. 配置与日志
-# ==========================================
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("ExperimentAggregator")
 
-# --- 实验数据路径配置 ---
 CONFIG = {
     "OUTPUT_FILE": "final_experiment_summary.json",
 
@@ -55,10 +43,6 @@ CONFIG = {
 }
 
 
-# ==========================================
-# 3. 工具类
-# ==========================================
-
 class NpEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, np.integer): return int(obj)
@@ -69,19 +53,13 @@ class NpEncoder(json.JSONEncoder):
         return super(NpEncoder, self).default(obj)
 
 
-# ==========================================
-# 4. 实验适配器 (逻辑保持不变)
-# ==========================================
-
 def run_macro_behavior_analysis():
     logger.info("正在执行: 宏观行为验证分析...")
-    # 此时 sys.path 已经包含了该目录，直接 import 不会报错
     try:
         from mac_main import ExperimentAutomator
         path = CONFIG["MACRO_DATA"]
         if not os.path.exists(path): return None
 
-        # 这种方式是为了不修改原有的 mac_main 代码，复用其内部逻辑
         automator = ExperimentAutomator(path, os.path.join(CURRENT_DIR, "temp_macro"))
         summary_report = {}
         top_sub_dirs = [d for d in os.listdir(automator.data_root) if
@@ -237,10 +215,6 @@ def run_closed_loop_analysis():
         logger.error(f"闭环分析失败: {e}")
         return None
 
-
-# ==========================================
-# 5. 主执行逻辑
-# ==========================================
 
 def main():
     logger.info("=" * 50)

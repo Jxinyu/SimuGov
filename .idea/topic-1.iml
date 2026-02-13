@@ -6,27 +6,11 @@
       <excludeFolder url="file://$MODULE_DIR$/method/store/daily_memory_exports" />
       <excludeFolder url="file://$MODULE_DIR$/method/store/token" />
       <excludeFolder url="file://$MODULE_DIR$/result_data" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi-granularity method evaluation/Closed-loop effectiveness experiment/Verification passed" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi-granularity method evaluation/Closed-loop effectiveness experiment/data" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi-granularity method evaluation/Closed-loop effectiveness experiment/output" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi-granularity method evaluation/Efficiency Experiment/Verification passed" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi-granularity method evaluation/Efficiency Experiment/data" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi-granularity method evaluation/Efficiency Experiment/output" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi-granularity method evaluation/机制敏感度实验/data" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi-granularity method evaluation/机制敏感度实验/output" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi-granularity method evaluation/机制敏感度实验/验证通过" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Simulated social assessment/Case Verification and Ablation/Verification passed" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Simulated social assessment/Case Verification and Ablation/data" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Simulated social assessment/Case Verification and Ablation/output" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Simulated social assessment/Internal consistency verification/data" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Simulated social assessment/Internal consistency verification/output" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Simulated social assessment/Macro behavioral verification/data" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Simulated social assessment/Macro behavioral verification/output" />
+      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi_granularity_method_evaluation/机制敏感度实验/data" />
+      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi_granularity_method_evaluation/机制敏感度实验/output" />
+      <excludeFolder url="file://$MODULE_DIR$/experiment/Multi_granularity_method_evaluation/机制敏感度实验/验证通过" />
       <excludeFolder url="file://$MODULE_DIR$/experiment/Simulated social assessment/微观行为验证/data" />
       <excludeFolder url="file://$MODULE_DIR$/experiment/Simulated social assessment/微观行为验证/output" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Validation of the effectiveness of low-granularity model screening/Verification passed" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Validation of the effectiveness of low-granularity model screening/data" />
-      <excludeFolder url="file://$MODULE_DIR$/experiment/Validation of the effectiveness of low-granularity model screening/output" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

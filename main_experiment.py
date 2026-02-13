@@ -344,7 +344,7 @@ async def simple_three_policies():
 
 async def effect_verification():
     """
-    Closed-loop effectiveness experiment
+    closed_loop_effectiveness_experiment
     :return:
     """
     # 1. 实验初始化
@@ -406,7 +406,7 @@ async def adaptive_experiment_low_in_high(e_edu, f_penalty, ai_threshold):
 
 async def case_experiment():
     """
-    案例验证实验  开启心理参数
+    案例验证实验  Turn on PAEP
     :return:
     """
     # 案例验证实验
@@ -419,10 +419,10 @@ async def case_experiment():
 
 async def case_ablation_experiment():
     """
-    案例验证消融实验-关闭心理参数
+    案例验证消融实验-Turn off PAEP
     :return:
     """
-    settings.platform.ablation_validation = True  # 开启消融实验-关闭心理参数
+    settings.platform.ablation_validation = True  # 开启消融实验-Turn off PAEP
     settings.platform.case_validation = True
     settings.platform.complete_run_days = 30
     settings.file_load_path.personas_file = 'method/data/scenario_protest-2.json'
