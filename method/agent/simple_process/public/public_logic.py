@@ -19,57 +19,57 @@ async def prepare_batch_input_data(
         environment: Environment
 ) -> Dict[str, str | List[Content]]:
     """
-    为一批智能体准备LLM调用所需的所有输入数据。
+    Prepare all input data required for LLM calls for a batch of agents.
     """
-    log.info(f"为 {len(personas)} 个智能体准备批量输入数据...")
+    log.info(f"Preparing batch input data for {len(personas)} agents...")
 
     shuffled_personas = personas.copy()
     random.shuffle(shuffled_personas)
 
-    # 1. 准备智能体画像和记忆的文本
+    # 1. Prepare agent persona and memory text
     personas_prompt_str = ""
     memories_prompt_str = ""
     all_viewed_ids = set()
 
     for p in shuffled_personas:
         personas_prompt_str += p.get_public_prompt() + "\n"
-        # 异步获取每个智能体的记忆
+        # Asynchronously retrieve memories for each agent
         memories = await environment.memories_store.recall_memories(
             persona_id=p.agent_id,
-            query="我关于平台、AI内容、社区氛围的总体印象和经历",
+            query="My general impressions and experiences regarding the platform, AI content, and community atmosphere",
             top_k=5
         )
-        memories_prompt_str += f"--- Agent ID: {p.agent_id} 的记忆 ---\n"
+        memories_prompt_str += f"--- Memories of Agent ID: {p.agent_id} ---\n"
         if memories:
             for doc in memories:
-                memories_prompt_str += f"- (第{doc.metadata.get('day_time')}天) {doc.page_content}\n"
+                memories_prompt_str += f"- (Day {doc.metadata.get('day_time')}) {doc.page_content}\n"
         else:
-            memories_prompt_str += "无相关记忆。\n"
+            memories_prompt_str += "No relevant memories.\n"
 
         all_viewed_ids.update(p.viewed_content)
 
-    # 2. 获取所有智能体都“未见过”的全部内容
+    # 2. Get all content that all agents in the batch have "not seen"
     all_content_ids = set(environment.contents.get_all_content_ids())
     unread_content_ids = list(all_content_ids - all_viewed_ids)
 
     unread_content_objects = [environment.contents.get_content_by_id(cid) for cid in unread_content_ids]
-    # 过滤掉None值
+    # Filter out None values
     unread_content_objects = [c for c in unread_content_objects if c]
 
-    # 3. 格式化内容文本
+    # 3. Format content text
     content_prompt_str = ""
     if not unread_content_objects:
-        content_prompt_str = "今天平台上没有新内容可供浏览。"
+        content_prompt_str = "No new content available for browsing on the platform today."
     else:
         for content in unread_content_objects:
             content_prompt_str += f"""
             ---
-            内容ID: {content.id}
-            发布者ID: {content.author_id}
-            主题: {content.topic}
-            详细描述: {content.content_detail}
-            平台标签: {content.platform_label}
-            (当前点赞:{content.likes}, 分享:{content.shares}, 评论数:{len(content.comments)})
+            Content ID: {content.id}
+            Publisher ID: {content.author_id}
+            Topic: {content.topic}
+            Detailed Description: {content.content_detail}
+            Platform Label: {content.platform_label}
+            (Current Likes:{content.likes}, Shares:{content.shares}, Comments:{len(content.comments)})
             ---
             """
 
@@ -88,22 +88,22 @@ async def process_batch_interaction_results(
         results: Dict
 ) -> Dict[str, str]:
     """
-    处理LLM返回的批量决策，更新环境和智能体状态。
+    Process batch decisions returned by LLM, update environment and agent states.
     """
-    log.info("开始处理批量互动结果...")
+    log.info("Starting to process batch interaction results...")
 
     if not results:
-        log.warning("收到的互动结果为空。")
+        log.warning("Received interaction results are empty.")
         return {}
 
-    # 将persona列表转换为字典以便快速查找
+    # Convert persona list to dict for fast lookup
     persona_map = {p.agent_id: p for p in batch_personas}
-    daily_summaries = {p.agent_id: "今天浏览了内容但未产生有效互动。" for p in batch_personas}
+    daily_summaries = {p.agent_id: "Browsed content today but no effective interactions occurred." for p in batch_personas}
 
-    # 记录今天所有被浏览过的内容ID
+    # Record all content IDs browsed today
     viewed_today_ids = {c.id for c in unread_content}
 
-    # 使用异步锁来保证对共享资源（内容）的修改是线程安全的
+    # Use async lock to ensure thread-safe modifications to shared resources (content)
     async with environment.state_lock:
         agent_decisions = results.get('agent_decisions', [])
         for agent_result in agent_decisions:
@@ -118,11 +118,11 @@ async def process_batch_interaction_results(
             for interaction in agent_result['interactions']:
                 content_id = interaction['content_id']
                 action_type = interaction['action_type']
-                reason = "根据我的persona"
+                reason = "Based on my persona"
                 if 'reason' in interaction.values():
                     reason = interaction['reason']
 
-                # 更新内容状态
+                # Update content state
                 if action_type == "like":
                     environment.contents.update_content_likes_by_id(content_id)
                 elif action_type == "share":
@@ -132,14 +132,14 @@ async def process_batch_interaction_results(
                     if comment_text:
                         environment.contents.update_content_comments_by_id(content_id, agent_id, comment_text)
 
-                # 记录智能体的行为
-                action_summary = f"对内容'{content_id}'执行了'{action_type}'操作, 因为'{reason}'。"
+                # Record agent behavior
+                action_summary = f"Performed '{action_type}' on content '{content_id}', because '{reason}'."
                 agent_actions_summary.append(action_summary)
                 reacted_today_ids.add(content_id)
 
-            # 为该智能体添加一条总的经验记忆
+            # Add a total experience memory for the agent
             if agent_actions_summary:
-                full_memory = f"今天我浏览了平台并进行了以下互动：\n" + "\n".join(agent_actions_summary)
+                full_memory = f"Today I browsed the platform and had the following interactions:\n" + "\n".join(agent_actions_summary)
                 await environment.memories_store.add_memory(
                     persona_id=agent_id,
                     content=full_memory,
@@ -149,40 +149,40 @@ async def process_batch_interaction_results(
                 )
                 daily_summaries[agent_id] = full_memory
 
-            # 更新智能体看过的和互动过的内容列表
+            # Update the list of content seen and interacted with by the agent
             persona.update_viewed_content(list(viewed_today_ids))
             persona.update_reacted_content(list(reacted_today_ids))
 
-    log.info("批量互动结果处理完毕。")
+    log.info("Batch interaction results processing complete.")
     return daily_summaries
 
 
 async def apply_persona_updates(persona: Persona, environment: Environment, reflection: dict):
     """
-    将LLM返回的每日反思结果应用到Persona对象上。
+    Apply daily reflection results returned by LLM to the Persona object.
     """
-    log.info(f"为 {persona.name} 应用参数更新...")
+    log.info(f"Applying parameter updates for {persona.name}...")
 
     updates = reflection.get('updates', {})
     new_belief = reflection.get('new_belief')
 
-    # 从字典中安全地获取所有可能的值
+    # Safely get all possible values from the dictionary
     new_role = updates.get('new_role')
     new_satisfaction = updates.get('new_satisfaction')
     new_post_wish = updates.get('new_post_wish')
     is_active = updates.get('is_active')
 
     if new_satisfaction is not None:
-        # 如果满意度低于发布阈值，强制取消发布意愿
+        # If satisfaction is below the posting threshold, force cancellation of posting wish
         if new_satisfaction < settings.platform.post_wish_threshold:
             new_post_wish = False
 
-        # 如果满意度低于活跃阈值，强制流失
+        # If satisfaction is below the active threshold, force churn
         if new_satisfaction < settings.platform.is_active_threshold:
             is_active = False
-            log.warning(f"🚫 [简化] {persona.name} 满意度 {new_satisfaction} 触发强制熔断，判定流失。")
+            log.warning(f"🚫 [Simple] {persona.name} satisfaction {new_satisfaction} triggered mandatory circuit break, determined as churned.")
 
-    # --- 统一调用 Persona 的更新方法 ---
+    # --- Unified call to Persona update method ---
     persona.update_persona_data(
         persona_role_positioning=new_role if new_role else persona.type,
         satisfaction=new_satisfaction,
@@ -191,9 +191,9 @@ async def apply_persona_updates(persona: Persona, environment: Environment, refl
         beliefs=[new_belief] if new_belief else None
     )
 
-    # --- 记录结构化事件（用于数据分析） ---
+    # --- Record structured events (for data analysis) ---
     if new_role and new_role != persona.type:
-        log.info(f"🔄 {persona.name} 决定将角色从 {persona.type} 变为 {new_role}")
+        log.info(f"🔄 {persona.name} decided to change role from {persona.type} to {new_role}")
         environment.platform.public_change_role_data.append({
             "persona_id": persona.agent_id,
             "day_time": environment.day_time,
@@ -202,7 +202,7 @@ async def apply_persona_updates(persona: Persona, environment: Environment, refl
         })
 
     if is_active is False and persona.agent_id not in environment.platform.public_loss:
-        log.warning(f"👋 {persona.name} (简化流程) 主动决定离开平台。")
+        log.warning(f"👋 {persona.name} (Simple Process) voluntarily decided to leave the platform.")
         environment.platform.public_loss.append(persona.agent_id)
         environment.platform.public_loss_data.append({
             "persona_id": persona.agent_id,
@@ -217,12 +217,12 @@ async def add_reflection_memories(
         reflection: dict
 ):
     """
-    将新的信念和每日总结存入长期记忆库。
+    Store new beliefs and daily summaries into long-term memory store.
     """
     new_belief = reflection.get('new_belief')
     daily_summary = reflection.get('daily_summary')
 
-    # 存储新的信念
+    # Store new belief
     if new_belief:
         await environment.memories_store.add_memory(
             persona_id=persona.agent_id,
@@ -232,7 +232,7 @@ async def add_reflection_memories(
             important_score=0.9
         )
 
-    # 存储每日总结
+    # Store daily summary
     if daily_summary:
         await environment.memories_store.add_memory(
             persona_id=persona.agent_id,
@@ -249,12 +249,12 @@ async def execute_follower_rule_based_interactions(
         environment: Environment
 ):
     """
-    【新增】跟随者的规则化互动逻辑。
-    无需 LLM，基于简单的概率模型产生互动数据。
+    [New] Rule-based interaction logic for followers.
+    Generates interaction data based on simple probabilistic models without calling LLM.
     """
     tasks = []
 
-    # 将跟随者分批处理以避免 asyncio 任务过多爆炸
+    # Process followers in batches to avoid asyncio task explosion
     batch_size = 50
     for i in range(0, len(followers), batch_size):
         batch = followers[i:i + batch_size]
@@ -272,28 +272,28 @@ async def _process_follower_batch_interaction(
         if not all_contents:
             break
 
-        # 1. 模拟浏览：每个用户随机刷 3-5 条内容
+        # 1. Simulate browsing: each user randomly views 3-5 contents
         num_views = random.randint(3, 5)
         viewed_contents = random.sample(all_contents, min(len(all_contents), num_views))
 
         agent.update_viewed_content([c.id for c in viewed_contents])
 
         for content in viewed_contents:
-            # 增加浏览量
+            # Increase views
             environment.contents.update_content_views_by_id(content.id)
 
-            # 2. 决定是否互动 (概率模型)
+            # 2. Decide whether to interact (probabilistic model)
             interaction_prob = _calculate_interaction_prob(agent, content)
 
             if random.random() < interaction_prob:
-                # 决定互动类型
+                # Decide interaction type
                 r = random.random()
-                if r < 0.7:  # 70% 是点赞
+                if r < 0.7:  # 70% Liked
                     environment.contents.update_content_likes_by_id(content.id)
                     agent.update_reacted_content([content.id])
-                elif r < 0.9:  # 20% 是分享
+                elif r < 0.9:  # 20% Shared
                     environment.contents.update_content_shares_by_id(content.id)
-                else:  # 10% 是评论
+                else:  # 10% Commented
                     comment_text = _generate_simple_comment(agent, content)
                     environment.contents.update_content_comments_by_id(content.id, agent.agent_id, comment_text)
                     agent.update_reacted_content([content.id])
@@ -301,24 +301,24 @@ async def _process_follower_batch_interaction(
 
 def _calculate_interaction_prob(agent: Persona, content: Content) -> float:
     """
-    计算互动概率
+    Calculate interaction probability
     """
-    prob = 0.05  # 基础概率
+    prob = 0.05  # Base probability
 
-    # 1. 身份认同加成
+    # 1. Identity identification bonus
     if content.author_id in agent.social_relationships:
         prob += 0.3
 
-    # 2. 立场匹配 (简化版)
-    # 如果我是反抗派(beta高)，且内容是 AI (True Label) 但被平台通过了 -> 我喜欢 (Mocking authority)
+    # 2. Standpoint matching (simplified version)
+    # If I am the Rebel faction (beta is '高'), and content is AI (True Label) but passed by platform -> I like it (Mocking authority)
     if agent.beta == '高' and content.true_label == 'AI' and content.platform_label == 'HUMAN':
         prob += 0.4
 
-    # 如果我是信任派，且内容被标记为 Human -> 我喜欢
+    # If I am the Trust faction, and content is labeled as Human -> I like it
     if agent.standpoint[0] > 0.5 and content.platform_label == 'HUMAN':
         prob += 0.2
 
-    # 3. 质量加成 (模拟)
+    # 3. Quality bonus (simulated)
     if content.content_type == 'image':
         prob += 0.1
 
@@ -326,10 +326,10 @@ def _calculate_interaction_prob(agent: Persona, content: Content) -> float:
 
 
 def _generate_simple_comment(agent: Persona, content: Content) -> str:
-    """生成简单的规则化评论"""
+    """Generate simple rule-based comments"""
     if agent.beta == '高':
-        return "有点意思。"
-    elif agent.standpoint[0] > 0.6:  # 信任派
-        return "支持！"
+        return "Kind of interesting."
+    elif agent.standpoint[0] > 0.6:  # Trust faction
+        return "Support!"
     else:
-        return "已阅。"
+        return "Seen."

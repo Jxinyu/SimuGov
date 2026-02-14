@@ -24,50 +24,50 @@ async def build_relationships(environment: Environment):
 
 
 class Relationship(BaseModel):
-    agent_id: str = Field(description="代理ID")
-    strength: float = Field(description="社交关系强度")
+    agent_id: str = Field(description="Agent ID")
+    strength: float = Field(description="Strength of the social relationship")
 
 
 class ReturnFormat(BaseModel):
     social_relationships: Optional[List[Relationship]] = Field(
         default=[],
-        description="社交关系列表")
+        description="List of social relationships")
 
 
 async def construct_prompt():
     return """
-# 角色与背景
-你正在参与一个名为 "ArtStation" 的虚拟社区仿真。你刚刚进入这个社区，需要建立你的初步社交圈。
-你的任务是：浏览社区中的其他用户列表，并根据你的**性格、立场和潜在动机**，决定你要关注谁。
+# Role and Background
+You are participating in a simulation of a virtual community named "ArtStation". You have just entered this community and need to establish your initial social circle.
+Your task is: Browse the list of other users in the community and decide whom you want to follow based on your **personality, standpoint, and potential motivations**.
 
-# 你的个人画像
+# Your Personal Persona
 {self_persona}
 
-# 候选用户名单
+# Candidate User List
 {candidate_list}
 
-# 决策逻辑
-请仔细分析你与候选人之间的关系，你的关注行为可以基于以下两种动机之一：
+# Decision Logic
+Please carefully analyze the relationship between you and the candidates. Your following behavior can be based on one of the following two motivations:
 
-1.  **共鸣与支持 (Positive Strength: 0.1 to 1.0)**
-    *   **同类相吸**：如果对方的立场 (`standpoint`)、信念 (`beliefs`) 与你高度一致。
-    *   **欣赏**：如果对方的描述 (`description`) 让你觉得值得学习或尊重。
-    *   *示例*：一个“合规创作者”可能会以 0.8 的强度关注另一个“技术大牛”。
+1.  **Resonance and Support (Positive Strength: 0.1 to 1.0)**
+    *   **Like attracts like**: If the other party's standpoint (`standpoint`) or beliefs (`beliefs`) are highly consistent with yours.
+    *   **Appreciation**: If the other party's description (`description`) makes you feel they are worth learning from or respecting.
+    *   *Example*: A "Compliance Creator" might follow another "Tech Guru" with a strength of 0.8.
 
-2.  **审视与对立 (Negative Strength: -0.1 to -1.0)**
-    *   **敌对监控 (Hate-watching)**：如果你是激进派，你可能会关注你的“敌人”，以便寻找攻击素材或嘲笑对象。
-    *   **厌恶**：如果对方的行为刚好踩在你的雷点上（例如“原创捍卫者”关注了一个“嚣张的水印破坏者”），你可能会建立一个负向连接。
-    *   *示例*：一个“水印破坏者”可能会以 -0.9 的强度关注一个“平台死忠粉”，意为“我盯着你呢”。
+2.  **Observation and Opposition (Negative Strength: -0.1 to -1.0)**
+    *   **Hate-watching**: If you are a radical, you might follow your "enemies" to find attack material or objects of ridicule.
+    *   **Dislike**: If the other party's behavior happens to hit your trigger points (e.g., an "Originality Defender" following a "cocky Watermark Breaker"), you might establish a negative connection.
+    *   *Example*: A "Watermark Breaker" might follow a "Platform Loyal Fan" with a strength of -0.9, meaning "I'm watching you."
 
-# 约束条件
-1.  **保持克制**：你不需要关注所有人！请只选择 **3 到 7 个** 最能引发你情绪（无论正面还是负面）的人。
-2.  **无需关注自己**：忽略列表中你自己的 ID。
-3.  **符合人设**：
-    *   如果你是 **Beta(逆反心理) 高** 的人，你更倾向于关注那些挑战规则的人（正向）或维护规则的人（负向）。
-    *   如果你是 **Gamma(信息茧房) 高** 的人，请只关注那些和你观点完全一致的人。
-    *   如果你是 **公众(吃瓜群众)**，你可以关注影响力(`influence`)高的人，无论立场如何。
+# Constraints
+1.  **Exercise Restraint**: You don't need to follow everyone! Please only choose **3 to 7** people who trigger your emotions (whether positive or negative) the most.
+2.  **No self-following**: Ignore your own ID in the list.
+3.  **Consistent with Persona**:
+    *   If you are a person with **High Beta (Rebellion psychology)**, you are more inclined to follow those who challenge rules (positive) or those who maintain rules (negative).
+    *   If you are a person with **High Gamma (Information cocoon)**, please only follow those whose views are completely consistent with yours.
+    *   If you are a **Public member (Bystander)**, you can follow people with high influence (`influence`), regardless of their standpoint.
 
-# 输出格式
+# Output Format
 
 {format_instructions}
     """

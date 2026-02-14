@@ -7,12 +7,12 @@ from method.environment import Environment
 
 class GroupManager:
     """
-    负责将智能体进行聚类分组，并生成群体的宏观状态描述。
+    Responsible for clustering agents and generating macro-state descriptions for groups.
     """
 
     @staticmethod
     def _get_dominant_standpoint(persona: Persona) -> str:
-        """根据概率分布确定主导立场"""
+        """Determine the dominant standpoint based on the probability distribution"""
         idx = np.argmax(persona.standpoint)
         mapping = {0: "信任派(Trust)", 1: "反抗派(Rebel)", 2: "中立派(Neutral)"}
         return mapping.get(idx, "中立派(Neutral)")
@@ -20,7 +20,7 @@ class GroupManager:
     @staticmethod
     def cluster_creators(environment: Environment) -> Dict[str, List[Persona]]:
         """
-        对创作者进行分组。
+        Group the creators.
         """
         groups = {}
         for p in environment.personas.values():
@@ -40,7 +40,7 @@ class GroupManager:
     @staticmethod
     def cluster_public(environment: Environment) -> Dict[str, List[Persona]]:
         """
-        对公众进行分组。
+        Group the public.
         """
         groups = {}
         for p in environment.personas.values():
@@ -56,39 +56,29 @@ class GroupManager:
     @staticmethod
     def get_representative_sample(agents: List[Persona], ratio: float = 0.3) -> Tuple[List[Persona], List[Persona]]:
         """
-        返回: (代表列表, 跟随者列表)
+        Returns: (representative list, follower list)
         """
         if not agents:
             return [], []
 
-        # === 核心修改：生存红线===
-        # 当幸存者少于 6 人时，为了保住社区火种，强制全员晋升为代表。
-        # 这样每个人都拥有独立思考能力(LLM)，不再依赖模仿。
         CRITICAL_SURVIVAL_COUNT = 6
 
         if len(agents) <= CRITICAL_SURVIVAL_COUNT:
-            # log.info(f"⚠️ 群体规模({len(agents)})触发生存红线，全员晋升为代表。")
-            return agents, []  # 全员代表，无跟随者
+            return agents, []  # All are representatives, no followers
 
-        # === 正常采样逻辑 ===
-        # 1. 至少抽取 1 人
         sample_size = max(1, int(len(agents) * ratio))
 
-        # 2. 按影响力排序 (模拟上位机制：大V走了，腰部用户自动变成头部)
         sorted_agents = sorted(agents, key=lambda x: x.influence, reverse=True)
 
-        # 3. 选取前 50% 名额给高影响力者
         top_k = max(1, int(sample_size * 0.5))
         representatives = sorted_agents[:top_k]
 
-        # 4. 剩余名额随机
         candidates = sorted_agents[top_k:]
         if candidates:
             remaining_slots = sample_size - len(representatives)
             if remaining_slots > 0:
                 representatives.extend(random.sample(candidates, remaining_slots))
 
-        # 5. 确定跟随者 (Set去重最稳健)
         rep_ids = {p.agent_id for p in representatives}
         followers = [p for p in agents if p.agent_id not in rep_ids]
 
@@ -96,15 +86,15 @@ class GroupManager:
 
     @staticmethod
     def get_group_stats_prompt(group_name: str, agents: List[Persona]) -> str:
-        """保持原样"""
+        """Keep as is"""
         count = len(agents)
         if count == 0: return ""
         avg_satisfaction = np.mean([p.satisfaction[-1] if p.satisfaction else 0 for p in agents])
         post_wish_rate = np.mean([1 if p.post_wish else 0 for p in agents])
         return f"""
-        【群体名称】: {group_name}
-        【群体规模】: {count} 人
-        【平均满意度】: {avg_satisfaction:.2f}
-        【当前发布意愿率】: {post_wish_rate:.1%}
-        【典型画像特征】: {agents[0].description[:100]}...
+        [Group Name]: {group_name}
+        [Group Size]: {count} people
+        [Average Satisfaction]: {avg_satisfaction:.2f}
+        [Current Posting Wish Rate]: {post_wish_rate:.1%}
+        [Typical Persona Characteristics]: {agents[0].description[:100]}...
         """

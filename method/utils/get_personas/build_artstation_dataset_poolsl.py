@@ -11,21 +11,20 @@ from pydantic import BaseModel, Field, field_validator
 from typing import Literal, List, Optional, Dict
 from method.utils.get_llm import get_async_llm
 
-# 控制并发数
 sem = asyncio.Semaphore(30)
 
 
 class OutputFormat(BaseModel):
-    reasoning: str = Field(description="【深度思维链】推演过程。")
-    name: str = Field(description="给自己起一个独一无二的名字")
-    type: Literal["合规创作者", "水印破坏者", "公众"] = Field(description="身份类型")
-    standpoint: List[float] = Field(description="[信任派概率, 反抗派概率, 中立派概率]")
-    description: str = Field(description="第一人称自述")
-    beta: Literal["高", "中", "低"] = Field(description="逆反心理系数")
-    gamma: Literal["高", "中", "低"] = Field(description="信息茧房/固执程度")
-    fp_sensitivity: Literal["高", "中", "低"] = Field(description="误伤敏感度")
-    cost_sensitivity: Literal["高", "中", "低"] = Field(description="行动成本敏感度")
-    beliefs: List[str] = Field(description="核心信念列表")
+    reasoning: str = Field(description="【Deep Chain of Thought】Reasoning process.")
+    name: str = Field(description="Give yourself a unique name.")
+    type: Literal["合规创作者", "水印破坏者", "公众"] = Field(description="Identity type")
+    standpoint: List[float] = Field(description="[Probability of Trust, Probability of Rebel, Probability of Neutral]")
+    description: str = Field(description="First-person self-narration")
+    beta: Literal["高", "中", "低"] = Field(description="Rebellion psychology coefficient")
+    gamma: Literal["高", "中", "低"] = Field(description="Information cocoon / Stubbornness level")
+    fp_sensitivity: Literal["高", "中", "低"] = Field(description="False positive (collateral damage) sensitivity")
+    cost_sensitivity: Literal["高", "中", "低"] = Field(description="Action cost sensitivity")
+    beliefs: List[str] = Field(description="List of core beliefs")
 
     @field_validator('type', mode='before')
     @classmethod
@@ -43,22 +42,18 @@ class Persona(BaseModel):
     name: str = Field(..., description="The agent name")
     type: Literal['合规创作者', '水印破坏者', '公众']
     description: str = Field(..., description="The agent description")
-    standpoint: List[float] = Field(..., description="人物立场")
-    beta: str = Field(..., description="逆反心理参数")
-    gamma: str = Field(..., description="确认偏误系数")
-    fp_sensitivity: Optional[str] = Field(..., description="误伤敏感度")
-    cost_sensitivity: Optional[str] = Field(..., description="成本敏感度")
-    influence: float = Field(..., description="智能体影响力")
-    satisfaction: List[float] = Field(..., description="满意度历史")
-    post_wish: Optional[bool] = Field(..., description="发布意愿")
-    is_active: bool = Field(..., description="是否活跃")
-    beliefs: List[str] = Field(..., description="信念")
-    social_relationships: Dict[str, float] = Field(..., description="社交关系")
+    standpoint: List[float] = Field(..., description="Agent standpoint")
+    beta: str = Field(..., description="Rebellion parameter")
+    gamma: str = Field(..., description="Confirmation bias coefficient")
+    fp_sensitivity: Optional[str] = Field(..., description="False positive sensitivity")
+    cost_sensitivity: Optional[str] = Field(..., description="Cost sensitivity")
+    influence: float = Field(..., description="Agent influence")
+    satisfaction: List[float] = Field(..., description="Satisfaction history")
+    post_wish: Optional[bool] = Field(..., description="Willingness to post")
+    is_active: bool = Field(..., description="Is active")
+    beliefs: List[str] = Field(..., description="Beliefs")
+    social_relationships: Dict[str, float] = Field(..., description="Social relationships")
 
-
-# ==========================================
-# 3. 辅助计算函数 (还原你原有的逻辑)
-# ==========================================
 
 def clean_number(value):
     if pd.isna(value) or str(value).strip() == '<null>': return 0
@@ -70,13 +65,13 @@ def clean_number(value):
 
 def analyze_user_dna(row):
     """
-    分析用户的技术栈，返回 (2D分数, 技术分数)
+    Analyze user tech stack, return (2D score, Tech score)
     """
     traits_2_d = {
-        'software': ['procreate', 'clip studio', 'sai', 'painter', 'artrage', 'krita', 'manga studio',
+        'software': ['procreate', 'clip studio', 'sai', 'artrage', 'krita', 'manga studio',
                      'illustrator draw', 'sketchclub', 'firealpaca', 'tvpaint', 'pixelmator', 'artflow'],
         'tags': ['digital illustration', '2d', 'sketch', 'painting', 'drawing', 'character design', 'anime', 'manga',
-                 'fantasy', 'solitaire', 'fanart', 'girl', 'portrait', 'handpainted', 'watercolor', 'ink'],
+                 'fantasy', 'fanart', 'girl', 'portrait', 'handpainted', 'watercolor', 'ink'],
         'title': ['sketch', 'daily', 'study', 'doodle', 'practice', 'girl', 'boy', 'princess', 'dragon', 'happiness',
                   'love', 'dream', 'feeling', 'mood', 'color']
     }
@@ -91,7 +86,7 @@ def analyze_user_dna(row):
                   'tool', 'generator', 'game ready', 'material', 'shader', '作业', '练习', '高精', '道具', '临摹']
     }
 
-    # 兼容处理：如果是Series直接get，如果是dict也是get
+    # Compatibility: Get from Series or dict
     software_txt = str(row.get('Software Used', '')).lower()
     tags_txt = str(row.get('Tags Used', '')).lower()
     title_txt = str(row.get('Artwork Title', '')).lower()
@@ -135,7 +130,7 @@ def generate_realistic_history(agent_type: str, days: int = 7) -> list:
 
 
 def calculate_influence_scientific(agents_list, alpha=3.0):
-    print(f"正在为 {len(agents_list)} 个 Agent 计算相对影响力...")
+    print(f"Calculating relative influence for {len(agents_list)} Agents...")
     raw_scores = []
     for agent in agents_list:
         raw_metrics = agent['influence']
@@ -154,59 +149,59 @@ def calculate_influence_scientific(agents_list, alpha=3.0):
 
 
 async def get_result(role, company, software, tags, views, likes, title, comments, forced_type, forced_trait_kv):
-    # 构建多样性提示词
+    # Build diversity prompt
     diversity_prompt = ""
     if forced_trait_kv:
         key, val = forced_trait_kv
 
-        # 键名中文化，辅助理解
+        # Mapping key to Chinese for context understanding
         key_cn_map = {
-            "beta": "逆反心理(beta)",
-            "fp_sensitivity": "误伤敏感度(fp_sensitivity)",
-            "cost_sensitivity": "成本敏感度(cost_sensitivity)",
-            "gamma": "信息茧房(gamma)"
+            "beta": "Rebellion psychology (beta)",
+            "fp_sensitivity": "False positive sensitivity (fp_sensitivity)",
+            "cost_sensitivity": "Action cost sensitivity (cost_sensitivity)",
+            "gamma": "Information cocoon (gamma)"
         }
         key_cn = key_cn_map.get(key, key)
 
         diversity_prompt = f"""
-       # 2. 关键指令：打破刻板印象，体现人性广度 (Diversity & Spectrum)
-       **请注意：任何群体都不是一成不变的，人性具有极大的广度。**
-       - “公众”不一定都是温顺的，也包含激进的反叛者。
-       - “合规创作者”不一定都是理性的，也包含极度敏感的玻璃心。
-       - “破坏者”不一定都是死士，也包含精打细算的投机者。
+       # 2. Key Instruction: Break stereotypes, reflect human depth (Diversity & Spectrum)
+       **Please note: No group is immutable, and human nature has great breadth.**
+       - "Public" is not necessarily submissive; it includes radical rebels.
+       - "Compliance Creators" are not necessarily rational; they include extremely sensitive individuals.
+       - "Breakers" are not necessarily martyrs; they include calculating opportunists.
 
-       为了保证社会仿真的真实性和完备性，系统**指定**该样本必须处于正态分布的特定位置：
-       👉 **【{key_cn}】必须为："{val}"**
+       To ensure the authenticity and completeness of the social simulation, the system **specifies** that this sample must be located at a specific position in the normal distribution:
+       👉 **【{key_cn}】must be: "{val}"**
 
-       **你的任务：**
-       请在 `reasoning` 中，结合他的背景（{role}），合理化这一特征。
-       - 如果这看起来反直觉（例如“高逆反的公众”），请解释为什么（例如：“他虽然只是个普通学生，但深受赛博朋克反抗精神影响...”）。
-       - 最终输出的 `{key}` 字段必须严格等于 "{val}"。
+       **Your Task:**
+       In the `reasoning` field, justify this trait based on their background ({role}).
+       - If this seems counter-intuitive (e.g., a "high rebellion public member"), explain why (e.g., "Although just an ordinary student, they are deeply influenced by the cyberpunk spirit of rebellion...").
+       - The final output of the `{key}` field must strictly equal "{val}".
        """
 
     prompt_str = f"""
-       # Role (角色设定)
-       你是一位计算社会学家。你正在构建 "2022年 ArtStation 社区" 的虚拟用户画像。
+       # Role
+       You are a computational sociologist. You are building a virtual user persona for the "2022 ArtStation Community".
 
-       # Task (任务)
-       基于用户的历史元数据，生成他在AI爆发背景下的心理画像。
+       # Task
+       Based on the user's historical metadata, generate a psychological persona in the context of the AI explosion.
 
-       # 1. Identity Constraint (身份约束)
-       **系统已通过算法将该用户归类为: 【{{forced_type}}】**
-       你生成的 `type` 字段必须严格等于 "{{forced_type}}"。
-       请基于此身份重新解释他的背景数据。
+       # 1. Identity Constraint
+       **The system has categorized this user via algorithm as: 【{{forced_type}}】**
+       The `type` field you generate must strictly equal "{{forced_type}}".
+       Please re-interpret their background data based on this identity.
 
        {diversity_prompt}
 
-       # Input Data (输入数据)
+       # Input Data
        - **Role**: {{role}}
        - **Software**: {{software}}
        - **Tags**: {{tags}}
        - **Metrics**: Views {{views}}, Likes {{likes}}
 
        # Output Requirements
-       1. **reasoning**: 必须解释为何符合【{{forced_type}}】，并重点解释为何具有指定的【性格特征】。
-       2. **type**: 必须是 "{{forced_type}}"。
+       1. **reasoning**: Must explain why they fit 【{{forced_type}}】, specifically explaining the assigned 【personality trait】.
+       2. **type**: Must be "{{forced_type}}".
 
        {{output_format_instruction}}
        """
@@ -227,30 +222,30 @@ async def get_result(role, company, software, tags, views, likes, title, comment
                 "forced_type": forced_type
             })
         except Exception as e:
-            print(f"LLM 生成出错: {e}, 跳过该条目")
+            print(f"LLM Generation Error: {e}, skipping entry")
             return None
 
     response['standpoint'] = inject_noise_to_standpoint(response['standpoint'], 0.1)
 
     beta_dict = {
-        '高': '【天生反骨】你极度厌恶“被管理”和“被规训”。如果感觉到平台的审核之手伸得太长（哪怕是为了安全），你的第一反应是生理性的厌恶和逃离，而不是顺从。',
-        '中': '【独立思考】你既不盲从权威，也不为了反抗而反抗。你会批判性地审视每一条规则：合理的你就遵守，不合理或愚蠢的你会冷眼旁观，并在心里扣分。',
-        '低': '【秩序拥护者】你是一个温和的顺民。你倾向于信任平台和权威，认为严格的监管是维持社区秩序的必要手段。你甚至可能反感那些总是抱怨规则的人，认为他们是在添乱。'
+        '高': '【Innate Rebel】You extremely dislike being "managed" or "disciplined". If you feel the platform\'s hand of moderation extends too far (even for safety), your first reaction is physiological disgust and escape rather than compliance.',
+        '中': '【Independent Thinker】You neither follow authority blindly nor rebel for the sake of rebellion. You critically examine every rule: you obey reasonable ones, and watch unreasonable or stupid ones with cold indifference, deducting points in your heart.',
+        '低': '【Order Upholder】You are a mild-mannered citizen. You tend to trust platforms and authority, believing strict regulation is a necessary means to maintain community order. You might even dislike those who always complain about rules, viewing them as troublemakers.'
     }
     gamma_dict = {
-        '高': '【固执己见】你非常固执，是信息茧房的重度用户。一旦你对平台形成了既定印象（无论好坏），后续即使有相反的证据，你也倾向于视而不见，继续强化你原本的看法。',
-        '中': '【有立场但讲理】你有自己的偏好，但不是瞎子。如果有强有力的事实摆在面前（例如连续多天看到糟糕的体验），你会慢慢修正自己的观点，虽然这个过程有点慢。',
-        '低': '【绝对理性】你是一个冷酷的观察者。你几乎没有先入为主的偏见，只看当下的事实。你的态度会随着每天的实际体验而快速波动，不会陷入思维定势。'
+        '高': '【Opinionated】You are very stubborn and a heavy user of information cocoons. Once you form a fixed impression of the platform (good or bad), even if there is contrary evidence later, you tend to ignore it and continue reinforcing your original view.',
+        '中': '【Principled but Rational】You have preferences, but you are not blind. If strong facts are presented (e.g., seeing bad experiences for many consecutive days), you will slowly correct your views, though the process is a bit slow.',
+        '低': '【Absolute Rationalist】You are a cold observer. You have almost no preconceived biases and only look at the facts at hand. Your attitude fluctuates rapidly with daily actual experiences and you do not get stuck in a fixed mindset.'
     }
     fp_sensitivity_dict = {
-        '高': '【玻璃心/极度敏感】你自尊心极强。哪怕只有一次微小的误解或误伤，在你的心里都会被放大成一种对你专业能力的羞辱和平台的背叛，引发强烈的愤怒。',
-        '中': '【务实派/有底线】你是一个理性的人。由于技术的不成熟，你会容忍偶尔的错误，但如果错误成为常态，你的耐心会迅速耗尽。',
-        '低': '【乐天派/钝感力】你心态非常开放且包容。你认为在AI时代，算法误判是技术发展的必经代价。只要不是恶意针对，你通常会一笑置之，不会因此产生强烈的负面情绪。'
+        '高': '【Fragile Heart/Highly Sensitive】You have extremely high self-esteem. Even a tiny misunderstanding or accidental hurt is magnified in your heart as an insult to your professional ability and a betrayal by the platform, triggering intense anger.',
+        '中': '【Pragmatist/Has Boundaries】You are a rational person. Due to technical immaturity, you will tolerate occasional errors, but if errors become the norm, your patience will quickly run out.',
+        '低': '【Optimist/Thick Skin】You have a very open and inclusive mindset. You believe that in the AI era, algorithmic misjudgment is a necessary cost of technical development. As long as it is not malicious targeting, you usually laugh it off without strong negative emotions.'
     }
     cost_sensitivity_dict = {
-        '高': '【精打细算】你极其看重投入产出比。你倾向于选择免费或低成本的攻击方案，即使成功率不是最高。如果攻击成本过高，你会果断放弃。',
-        '中': '【追求性价比】你是一个务实的攻击者。你会在攻击成本（时间/金钱）和预期成功率之间寻找平衡点，不会盲目投入也不会一毛不拔。',
-        '低': '【不惜代价】为了达成“规避检测”的终极目标，你愿意投入昂贵的计算资源或学习最复杂的技术。对你来说，为了赢，可以忽略一切成本。',
+        '高': '【Penny-pincher】You value the input-output ratio extremely highly. You tend to choose free or low-cost attack plans, even if the success rate is not the highest. If the attack cost is too high, you will decisively give up.',
+        '中': '【Value-driven】You are a pragmatic attacker. You look for a balance between attack cost (time/money) and expected success rate, neither investing blindly nor being stingy.',
+        '低': '【At All Costs】To achieve the ultimate goal of "evading detection", you are willing to invest in expensive computing resources or learn the most complex techniques. For you, all costs can be ignored in order to win.',
     }
 
     final_type = forced_type
@@ -274,71 +269,66 @@ async def get_result(role, company, software, tags, views, likes, title, comment
     return res
 
 
-# ==========================================
-# 5. 分池与构建逻辑 (修复 KeyError 的核心)
-# ==========================================
-
 def prepare_candidates(csv_path):
     """
-    读取CSV，计算分数，并将所有用户分配到三个潜在的池子中。
+    Read CSV, calculate scores, and assign all users to three potential pools.
     """
-    print("1. 读取并清洗 CSV...")
+    print("1. Reading and cleaning CSV...")
     df = pd.read_csv(csv_path)
 
-    # 打印一下列名，确保我们没有拼错
-    print(f"CSV 列名: {df.columns.tolist()}")
+    # Print column names to ensure no typos
+    print(f"CSV Columns: {df.columns.tolist()}")
 
-    df = df[2:]  # 还原你原本的逻辑：跳过前两行
+    df = df[2:]  # Logic: skip first two rows
 
-    # 必要的列检查，防止 dropna 报错
+    # Check required columns to prevent dropna errors
     req_cols = ["Software Used", "Tags Used", "Artwork Title"]
-    # 如果列存在才 dropna，增加鲁棒性
     valid_cols = [c for c in req_cols if c in df.columns]
     if valid_cols:
         df = df.dropna(how="any", subset=valid_cols)
 
-    print("2. 计算倾向分...")
+    print("2. Calculating tendency scores...")
     scores = df.apply(analyze_user_dna, axis=1)
     df['score_2d'] = [s[0] for s in scores]
     df['score_tech'] = [s[1] for s in scores]
 
-    # 计算原始影响力 (处理可能的列名不一致)
+    # Calculate raw influence
     views_col = '№ Views' if '№ Views' in df.columns else df.columns[3]
     likes_col = '№ Likes' if '№ Likes' in df.columns else df.columns[5]
 
     df['raw_influence'] = df[views_col].apply(clean_number) + df[likes_col].apply(clean_number) * 5
 
-    # 转换为字典列表
+    # Convert to list of dicts
     all_users = df.to_dict('records')
 
-    # 分桶
+    # Bucket allocation
     breaker_pool_candidates = []
     creator_pool_candidates = []
     public_pool_candidates = []
 
     for user in all_users:
-        # 分数逻辑
+        # Scoring logic
         if user['score_2d'] > user['score_tech'] + 1:
             breaker_pool_candidates.append(user)
         elif user['score_tech'] >= user['score_2d']:
             creator_pool_candidates.append(user)
 
-        # 公众池是兜底，包含所有人
+        # Public pool is the fallback, containing everyone
         public_pool_candidates.append(user)
 
-    # 排序
+    # Sorting
     breaker_pool_candidates.sort(key=lambda x: x['raw_influence'], reverse=True)
     creator_pool_candidates.sort(key=lambda x: x['raw_influence'], reverse=True)
     public_pool_candidates.sort(key=lambda x: x['raw_influence'], reverse=True)
 
     print(
-        f"数据准备完成。候选池规模: Breaker({len(breaker_pool_candidates)}), Creator({len(creator_pool_candidates)}), Public({len(public_pool_candidates)})")
+        f"Data preparation complete. Pool sizes: Breaker({len(breaker_pool_candidates)}), Creator({len(creator_pool_candidates)}), Public({len(public_pool_candidates)})")
 
     return breaker_pool_candidates, creator_pool_candidates, public_pool_candidates
 
 
 def generate_trait_distribution(total: int) -> List[str]:
-    """生成强制均匀分布列表: 1:1:1"""
+    """Generate forced uniform distribution: 1:1:1 for 高:中:低"""
     if total <= 0: return []
     part = total // 3
     result = ['高'] * part + ['中'] * part + ['低'] * part
@@ -350,7 +340,7 @@ def generate_trait_distribution(total: int) -> List[str]:
 
 async def build_agent_pools(csv_path, output_dir, pool_sizes: Dict[str, int]):
     """
-    构建三个互不重叠的智能体池。
+    Build three non-overlapping agent pools.
     """
     if not os.path.exists(output_dir): os.makedirs(output_dir)
     breakers_cand, creators_cand, public_cand = prepare_candidates(csv_path)
@@ -358,7 +348,7 @@ async def build_agent_pools(csv_path, output_dir, pool_sizes: Dict[str, int]):
     selected_tasks = []
     used_indices = set()
 
-    # 生成 1:1:1 的分布列表
+    # Generate 1:1:1 distribution lists
     traits_breaker = generate_trait_distribution(pool_sizes.get('breaker', 0))
     traits_creator = generate_trait_distribution(pool_sizes.get('creator', 0))
     traits_public = generate_trait_distribution(pool_sizes.get('public', 0))
@@ -373,20 +363,20 @@ async def build_agent_pools(csv_path, output_dir, pool_sizes: Dict[str, int]):
                 selected_tasks.append({
                     "user": user,
                     "role": role,
-                    "forced_trait": (trait_key, val)  # 传入要注入的属性键值对
+                    "forced_trait": (trait_key, val)  # Pass the attribute key-value pair to inject
                 })
                 used_indices.add(uid)
                 added += 1
         return added
 
-    print("3. 分配名单与多样性注入...")
+    print("3. Allocating names and injecting diversity...")
     b_count = add_batch(breakers_cand, "水印破坏者", pool_sizes.get('breaker', 0), "cost_sensitivity", traits_breaker)
     c_count = add_batch(creators_cand, "合规创作者", pool_sizes.get('creator', 0), "fp_sensitivity", traits_creator)
     p_count = add_batch(public_cand, "公众", pool_sizes.get('public', 0), "beta", traits_public)
 
-    print(f"   - 计划生成: 破坏者{b_count}, 合规者{c_count}, 公众{p_count}")
+    print(f"   - Plan to generate: Breakers {b_count}, Creators {c_count}, Public {p_count}")
 
-    print(f"4. 并发生成 {len(selected_tasks)} 个 Persona...")
+    print(f"4. Generating {len(selected_tasks)} Personas concurrently...")
     tasks = []
     for item in selected_tasks:
         user_row = item['user']
@@ -402,13 +392,13 @@ async def build_agent_pools(csv_path, output_dir, pool_sizes: Dict[str, int]):
             title=user_row.get('Artwork Title', 'Untitled'),
             comments=user_row.get('№ Comments', 0),
             forced_type=item['role'],
-            forced_trait_kv=item['forced_trait']  # 传入属性
+            forced_trait_kv=item['forced_trait']  # Pass the attribute
         ))
 
     raw_results = await asyncio.gather(*tasks)
     valid_results = [r for r in raw_results if r is not None]
 
-    print("5. 结果ID去重与归类...")
+    print("5. De-duplicating Result IDs and categorizing...")
     global_id_set = set()
     final_pools = {"水印破坏者": [], "合规创作者": [], "公众": []}
 
@@ -433,7 +423,7 @@ async def build_agent_pools(csv_path, output_dir, pool_sizes: Dict[str, int]):
         with open(save_path, 'w', encoding='utf-8') as f:
             json.dump(processed, f, ensure_ascii=False, indent=4)
 
-        # 统计分布
+        # Statistics distribution
         target_key = "cost_sensitivity" if "破坏" in pool_name else (
             "fp_sensitivity" if "合规" in pool_name else "beta")
         dist = {'高': 0, '中': 0, '低': 0}
@@ -441,19 +431,19 @@ async def build_agent_pools(csv_path, output_dir, pool_sizes: Dict[str, int]):
             val = a.get(target_key, '中')
             dist[val] = dist.get(val, 0) + 1
 
-        print(f"✅ 已保存 [{pool_name}] ({len(processed)}人) -> {fname}")
-        print(f"   📊 属性 [{target_key}] 分布: {dist}")
+        print(f"✅ Saved [{pool_name}] ({len(processed)} agents) -> {fname}")
+        print(f"   📊 Distribution of [{target_key}]: {dist}")
 
 
 def build_agent_pools_demo(breaker_num, creator_num, public_num):
     """
-    构建智能体池子，入口函数
-    :param breaker_num: 水印破坏者数量
-    :param creator_num: 创作者数量
-    :param public_num: 公众数量
+    Build agent pools, entry function
+    :param breaker_num: Number of Watermark Breakers
+    :param creator_num: Number of Compliance Creators
+    :param public_num: Number of Public agents
     :return:
     """
-    # 定义需要的池子大小 (建议大一点备用)
+    # Define required pool sizes
     REQUESTED_SIZES = {
         'breaker': breaker_num,
         'creator': creator_num,
@@ -464,4 +454,3 @@ def build_agent_pools_demo(breaker_num, creator_num, public_num):
     OUTPUT_FOLDER = r'method\data\pools'
 
     asyncio.run(build_agent_pools(CSV_FILE, OUTPUT_FOLDER, REQUESTED_SIZES))
-

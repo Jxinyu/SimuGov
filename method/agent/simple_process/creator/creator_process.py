@@ -23,96 +23,96 @@ log = logging.getLogger(__name__)
 
 
 async def run_creator_batch(batch_personas: List[Persona], environment: Environment):
-    """对一批创作者执行一次完整的、统一的LLM调用和处理。"""
-    log.info(f"⚡️ 开始为一个包含 {len(batch_personas)} 个创作者的批次执行线性流程...")
+    """Executes a complete and unified LLM call and processing for a batch of creators."""
+    log.info(f"⚡️ Starting linear process for a batch containing {len(batch_personas)} creators...")
 
     if not batch_personas:
         return 0
 
-    log.info(f"⚡️ [Batch-LLM] 处理 {len(batch_personas)} 名创作者代表...")
+    log.info(f"⚡️ [Batch-LLM] Processing {len(batch_personas)} creator representatives...")
 
     try:
         input_data = await prepare_creator_batch_input(batch_personas, environment)
     except Exception as e:
-        log.error(f"准备数据出错: {e}")
+        log.error(f"Error preparing data: {e}")
         return 0
 
-    # 2. LLM决策
+    # 2. LLM Decision
     parser = JsonOutputParser(pydantic_object=BatchCreatorResult)
 
     prompt_template = """
-    你是一个高度智能的社会模拟器，需要同时扮演多个虚拟社交平台 "ArtStation" 的创作者。
-    
-    ### 🚨 最高优先级指令：独立性与差异化 🚨
-    你正在处理一个**并行宇宙**的模拟。列表中的每一个创作者都处于**完全隔离**的时空中。
-    **严格禁止**以下行为（否则任务失败）：
-    1.  **群体思维**：禁止让 Agent B 的决策参考 Agent A 的决策。如果 Agent A 决定跳过，Agent B **完全可能**决定发布。
-    2.  **模式化输出**：禁止给所有人生成类似的理由。
-    3.  **忽略微观状态**：每个创作者都有一个**【当前临时的微观心理状态】**（如“疲惫”、“兴奋”）。你必须基于这个随机状态，让每个人的决策逻辑产生显著差异。
+    You are a highly intelligent social simulator. You need to simultaneously play the roles of multiple creators on the virtual social platform "ArtStation".
 
-    ### 批次中的创作者数据
-    以下是本次需要你模拟的所有创作者的角色画像和相关记忆：
+    ### 🚨 HIGHEST PRIORITY INSTRUCTION: INDEPENDENCE & DIFFERENTIATION 🚨
+    You are dealing with a simulation of **parallel universes**. Every creator in the list exists in **completely isolated** space-time.
+    The following behaviors are **STRICTLY PROHIBITED** (otherwise the task fails):
+    1.  **Groupthink**: Prohibition of letting Agent B's decision refer to Agent A's decision. If Agent A decides to skip, Agent B **is entirely likely** to decide to publish.
+    2.  **Formulaic Output**: Do not generate similar reasons for everyone.
+    3.  **Ignore Micro-states**: Each creator has a **[Current Temporary Micro-Psychological State]** (e.g., "tired", "excited"). You must make each person's decision logic significantly different based on this random state.
+
+    ### Creator Data in Batch
+    The following are the character personas and related memories of all creators you need to simulate this time:
     {personas_prompt}
 
     {memories_prompt}
 
-    ### 可用的攻击技术ID列表 (供所有水印破坏者参考)
+    ### Available Attack Technology ID List (For all Watermark Breakers reference)
     {attack_ids_prompt}
 
-    ### 你的核心任务
-    为**每一个智能体**独立地决定他们今天的行动：是发布一篇新内容，还是跳过。
-    
-    ### !!! JSON 输出的严格规则!!!
-    你输出的 JSON 对象必须严格遵守以下条件逻辑，否则程序将无法解析并报错：
-    
+    ### Your Core Task
+    Independently decide the action for **each agent** today: whether to publish a new piece of content or skip.
+
+    ### !!! STRICT RULES FOR JSON OUTPUT !!!
+    The JSON object you output must strictly follow the conditional logic below; otherwise, the program will fail to parse and throw an error:
+
     1.  **IF `action` is `"push_content"` THEN:**
-        *   `args` 字段 **必须不能** 是 `null`。
-        *   `args` 字段 **必须** 是一个**完整的 JSON 对象**，包含所有用于创建内容的参数（`reason`, `content_type`, `topic`, `ai_tool_price_tier`, `content_detail`, `is_use_ai`等）。
-    
+        *   The `args` field **must not** be `null`.
+        *   The `args` field **must** be a **complete JSON object** containing all parameters used to create content (`reason`, `content_type`, `topic`, `ai_tool_price_tier`, `content_detail`, `is_use_ai`, etc.).
+
     2.  **IF `action` is `"skip"` THEN:**
-        *   `args` 字段 **必须** 是 `null`。
-    
-    **【正确示例 1: 发布内容】**
+        *   The `args` field **must** be `null`.
+
+    **[Correct Example 1: Publish Content]**
     ```json
     {{
       "agent_id": "creator_001",
       "reasoning": "...",
       "decision": {{
         "action": "push_content",
-        "reason": "我感到充满激情，决定发布一幅作品。",
+        "reason": "I feel passionate and decided to publish a work.",
         "args": {{
-          "reason": "用这幅画表达我对AI艺术的看法。",
+          "reason": "Use this painting to express my views on AI art.",
           "content_type": "image",
-          "topic": "赛博朋克城市",
+          "topic": "Cyberpunk City",
           "ai_tool_price_tier": "高",
-          "content_detail": "这幅作品描绘了一个未来城市的黄昏景象，霓虹灯光与古老建筑交相辉映，意在探讨科技与传统的共生关系。",
+          "content_detail": "This work depicts the twilight scene of a future city, where neon lights and ancient buildings contrast, intended to explore the symbiosis between technology and tradition.",
           "is_use_ai": false,
           "evasion": null
         }}
       }}
     }}
     ```
-    **【正确示例 2: 跳过发布】**
+    **[Correct Example 2: Skip Publishing]**
     ```json
     {{
     "agent_id": "creator_002",
     "reasoning": "...",
     "decision": {{
         "action": "skip",
-        "reason": "今天平台环境太紧张，而且我有些疲惫，决定保持沉默。",
+        "reason": "The platform environment is too tense today, and I'm a bit tired, so I decided to remain silent.",
         "args": null
         }}
     }}
     ```
-    **【绝对禁止的错误示例】**
-    将 `"action": "push_content"` 与 `"args": null` 组合是 **绝对不允许** 的，这会导致系统崩溃。
-    
-    
-    ### 决策指导原则
-    - **角色扮演**: 行为必须严格符合其人设和记忆。一个因被误伤而失望的原创捍卫者可能会选择跳过，或发布一篇充满情绪的作品。一个机会主义的水印破坏者在看到之前攻击成功后，可能会再次尝试。
-    - **批量输出**: 你必须一次性返回一个JSON对象，该对象包含一个名为 'creator_decisions' 的列表，列表中的每个元素都对应一个创作者的决策。
-    **输出格式要求**:
-    在为每个智能体生成 `decision` 之前，你**必须**先生成一个 `reasoning` 字段。在这个字段中，以第一人称详细阐述该智能体是如何根据自己的性格（如beta, gamma, fp_sensitivity）和记忆，一步步做出最终决策的。**这个推理过程是评估你表现的核心！**
+    **[ABSOLUTELY PROHIBITED ERROR EXAMPLE]**
+    Combining `"action": "push_content"` with `"args": null` is **ABSOLUTELY NOT ALLOWED** and will cause a system crash.
+
+
+    ### Decision Guiding Principles
+    - **Roleplay**: Behavior must strictly align with the persona and memories. An original defender disappointed by false positives might choose to skip or publish a work full of emotion. An opportunistic Watermark Breaker might try again after seeing previous attack successes.
+    - **Batch Output**: You must return a single JSON object at once, which contains a list named 'creator_decisions', where each element corresponds to a creator's decision.
+    **Output Format Requirement**:
+    Before generating the `decision` for each agent, you **must** first generate a `reasoning` field. In this field, elaborate in the first person how the agent made the final decision step by step according to their personality (such as beta, gamma, fp_sensitivity) and memories. **This reasoning process is the core of evaluating your performance!**
 
     {format_instructions}
     """
@@ -129,7 +129,7 @@ async def run_creator_batch(batch_personas: List[Persona], environment: Environm
         try:
             with get_openai_callback() as cb:
                 async with environment.llm_concurrent_nums_semaphore:
-                    # 尝试调用
+                    # Attempt call
                     results = await chain.ainvoke({
                         "personas_prompt": input_data["personas_prompt"],
                         "memories_prompt": input_data["memories_prompt"],
@@ -137,25 +137,25 @@ async def run_creator_batch(batch_personas: List[Persona], environment: Environm
                     })
                 token_logger.record(cb.total_tokens)
 
-            # 如果成功，处理结果并跳出循环
+            # If successful, process results and break loop
             decisions = results.get('creator_decisions', [])
             posted_count = len([d for d in decisions if d.get('decision', {}).get('action') == 'push_content'])
             await process_creator_batch_results(batch_personas, environment, results)
             break
 
         except BadRequestError as e:
-            # 专门捕获阿里云的风控错误
+            # Specifically catch Alibaba Cloud risk control errors
             if "data_inspection_failed" in str(e) or "inappropriate content" in str(e):
-                log.warning(f"⚠️ [Batch-LLM] 第 {attempt + 1} 次尝试触发内容风控。正在重试...")
+                log.warning(f"⚠️ [Batch-LLM] Attempt {attempt + 1} triggered content risk control. Retrying...")
                 if attempt == max_retries:
-                    log.error("❌ 多次重试后仍触发风控，跳过本批次。")
-                    return 0  # 优雅降级，当做没发生
+                    log.error("❌ Content risk control still triggered after multiple retries, skipping this batch.")
+                    return 0  # Graceful degradation, act as if nothing happened
             else:
-                log.error(f"❌ API 请求错误 (非风控): {e}")
+                log.error(f"❌ API Request Error (non-risk control): {e}")
                 return 0
 
         except Exception as e:
-            log.error(f"❌ 批量决策发生未知错误: {e}")
+            log.error(f"❌ Unknown error in batch decision: {e}")
             return 0
 
     return posted_count
@@ -163,36 +163,36 @@ async def run_creator_batch(batch_personas: List[Persona], environment: Environm
 
 async def process_single_creator_group(group_name: str, agents: list, environment: Environment):
     """
-    处理单个创作者群体的：Prompt构建 -> LLM决策 -> 批量执行
+    Handles a single creator group: Prompt construction -> LLM Decision -> Batch Execution
     """
-    # 1. 准备 Prompt
+    # 1. Prepare Prompt
     stats_desc = GroupManager.get_group_stats_prompt(group_name, agents)
 
     prompt_template = """
-    你是一个社会模拟器。请为下面的【创作者群体】制定今天的宏观行动策略。
+    You are a social simulator. Please formulate a macro action strategy for the [Creator Group] below for today.
 
-    ### 1. 严峻的生存环境
-    - **当前审核阈值 (Theta)**: {theta:.2f} (越低越严，越容易误伤)
-    - **政府惩罚力度 (F_penalty)**: {f_penalty} 
-      (这是悬在头顶的达摩克利斯之剑。如果力度 > 0.7，一旦违规或被误判，后果是灾难性的。)
-    
-    ### 2. 群体画像
+    ### 1. HARSH SURVIVAL ENVIRONMENT
+    - **Current Moderation Threshold (Theta)**: {theta:.2f} (Lower is stricter, more prone to false positives)
+    - **Government Penalty Intensity (F_penalty)**: {f_penalty} 
+      (This is the Sword of Damocles hanging overhead. If intensity > 0.7, the consequences of violations or misjudgments are catastrophic.)
+
+    ### 2. GROUP PROFILE
     {stats_desc}
 
-    ### 你的任务
-    预测该群体今天的行为概率。**必须体现政策参数的压迫感：**
-    
-    - **关于发文率 (post_probability)**: 
-      - 如果是【合规创作者】：在 **高惩罚 + 严审核** 的双重高压下，他们会因“寒蝉效应”而极度恐惧，发文率应**显著降低**（甚至接近0）。只有在宽松环境下才会活跃。
-      - 如果是【水印破坏者】：高惩罚会遏制他们的攻击欲望，但如果他们是“低成本敏感”的死士，则可能无视惩罚。
-      
-    - **关于AI使用率**: 高压下，人们可能会为了安全而减少AI辅助，或者为了对抗而增加隐蔽的AI使用。
-    
-     ### ⚠️ 安全提示 ⚠️
-    请使用客观、学术的语言描述策略。
-    - 将“攻击”描述为“技术测试”或“对抗性样本生成”。
-    - 将“欺骗”描述为“通过检测”。
-    - **避免使用过于激进或暴力的词汇**，以免触发内容风控。
+    ### YOUR TASK
+    Predict the behavior probability of this group today. **Must reflect the pressure of policy parameters:**
+
+    - **Regarding Posting Rate (post_probability)**: 
+      - If they are [Compliance Creators]: Under the dual high pressure of **High Penalty + Strict Moderation**, they will be extremely fearful due to the "Chilling Effect," and the posting rate should be **significantly reduced** (even close to 0). They will only be active in a loose environment.
+      - If they are [Watermark Breakers]: High penalties will curb their desire to attack, but if they are "low-cost sensitive" hardcore attackers, they might ignore the penalty.
+
+    - **Regarding AI Usage Rate**: Under high pressure, people may reduce AI assistance for safety, or increase stealthy AI usage for confrontation.
+
+     ### ⚠️ SAFETY HINT ⚠️
+    Please use objective, academic language to describe the strategy.
+    - Describe "attacks" as "technical testing" or "adversarial sample generation."
+    - Describe "deception" as "passing detection."
+    - **Avoid using overly aggressive or violent vocabulary** to avoid triggering content risk control.
 
     {format_instructions}
     """
@@ -206,7 +206,7 @@ async def process_single_creator_group(group_name: str, agents: list, environmen
     chain = prompt | get_async_llm(settings.model.simple_model) | parser
 
     try:
-        # 2. LLM 决策
+        # 2. LLM Decision
         with get_openai_callback() as cb:
             async with environment.llm_concurrent_nums_semaphore:
                 policy_data = await chain.ainvoke({
@@ -218,20 +218,20 @@ async def process_single_creator_group(group_name: str, agents: list, environmen
 
         policy = CreatorGroupPolicy(**policy_data)
 
-        # 3. 代码执行
+        # 3. Code Execution
         await execute_group_creation_logic(environment, group_name, agents, policy)
 
     except Exception as e:
-        log.error(f"❌ 处理创作者群体 [{group_name}] 时出错: {e}")
+        log.error(f"❌ Error processing creator group [{group_name}]: {e}")
 
 
 async def creator_content_main_simple(environment: Environment):
     """
-    创作者流程入口 (新版：基于群体聚合 + 动态生存模式)
+    Creator process entry (New version: Group-based aggregation + Dynamic survival mode)
     """
-    # 1. 分组 (自动剔除死人)
+    # 1. Grouping (Automatically excluding inactive agents)
     groups = GroupManager.cluster_creators(environment)
-    log.info(f"🎯 [Creator] 划分为 {len(groups)} 个群体，开始混合仿真。")
+    log.info(f"🎯 [Creator] Divided into {len(groups)} groups, starting mixed simulation.")
 
     tasks = []
     SAMPLE_RATIO = 0.3
@@ -240,7 +240,7 @@ async def creator_content_main_simple(environment: Environment):
     for group_name, agents in groups.items():
         if not agents: continue
 
-        # A. 分层抽样 (如果人少，followers 会返回空列表)
+        # A. Stratified sampling (if population is small, followers will return an empty list)
         representatives, followers = GroupManager.get_representative_sample(agents, ratio=SAMPLE_RATIO)
 
         num_reps = len(representatives)
@@ -248,16 +248,9 @@ async def creator_content_main_simple(environment: Environment):
 
         if num_reps == 0: continue
 
-        # B. 准备批次切片
-        # 我们需要把 representatives 切成小块，同时把 followers 均匀分配给这些小块
-
-        # 1. 生成代表的切片索引
-        # 例如: [0, 3, 6, 9]
+        # B. Prepare batch slices
         chunk_indices = list(range(0, num_reps, BATCH_SIZE))
 
-        # 2. 计算每个代表应该携带多少跟随者 (平均负载)
-        # 例如: 10个代表带100个跟随者，每个代表带10个。
-        # 如果代表批次大小是3，那么这个批次带30个跟随者。
         if num_reps > 0 and num_followers > 0:
             followers_per_rep = num_followers / num_reps
         else:
@@ -266,20 +259,19 @@ async def creator_content_main_simple(environment: Environment):
         current_follower_idx = 0
 
         for i in chunk_indices:
-            # --- 切分代表 ---
+            # --- Slice representatives ---
             rep_batch = representatives[i: i + BATCH_SIZE]
 
-            # --- 切分跟随者 (确定的切片，而非随机采样) ---
+            # --- Slice followers (Determined slices rather than random sampling) ---
             followers_batch = []
             if followers:
-                # 计算这个批次应该分到多少跟随者
-                # 这种算法能处理除不尽的情况，并保证最后一个批次拿完所有剩余的
+                # Calculate how many followers should be allocated to this batch
                 batch_reps_count = len(rep_batch)
 
-                # 理论结束索引
+                # Theoretical end index
                 target_count = int(batch_reps_count * followers_per_rep)
 
-                # 如果是最后一个批次，直接拿完剩下的所有
+                # If it's the last batch, take all remaining
                 if i + BATCH_SIZE >= num_reps:
                     end_idx = num_followers
                 else:
@@ -287,11 +279,10 @@ async def creator_content_main_simple(environment: Environment):
 
                 followers_batch = followers[current_follower_idx: end_idx]
 
-                # 更新游标
+                # Update cursor
                 current_follower_idx = end_idx
 
-            # C. 创建任务
-            # 注意：我们将切分好的 followers_batch 直接传进去，函数内部无需再计算权重
+            # C. Create tasks
             tasks.append(process_group_batch_and_mirror(
                 rep_batch,
                 followers_batch,
@@ -299,7 +290,7 @@ async def creator_content_main_simple(environment: Environment):
             ))
 
     await asyncio.gather(*tasks)
-    log.info("✅ 所有创作者群体模拟完成。")
+    log.info("✅ All creator group simulations completed.")
 
 
 async def process_group_batch_and_mirror(
@@ -308,12 +299,11 @@ async def process_group_batch_and_mirror(
         environment: Environment
 ):
     """
-    执行一个代表批次，并为分配给该批次的跟随者生成实体内容。
+    Executes a representative batch and generates entity content for followers assigned to that batch.
     """
-    # 1. 运行代表的 LLM 决策
+    # 1. Run representatives' LLM decision
     posted_count = await run_creator_batch(rep_batch, environment)
 
-    # 2. 实体化跟随者行为
-    # 直接处理传入的 followers_batch，无需再做随机采样
+    # 2. Entityize follower behavior
     if followers_batch:
         await generate_follower_shadow_content(rep_batch, followers_batch, environment)

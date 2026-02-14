@@ -23,7 +23,7 @@ log = logging.getLogger(__name__)
 
 async def system_kpi_calculation(environment: Environment):
     log.info("=" * 60)
-    log.info("==========   开始 计算系统KPI   ==========")
+    log.info("==========   Start Calculating System KPI   ==========")
     log.info("=" * 60)
     safety = calculate_safety_kpi(environment)
     satisfaction = calculate_overall_satisfaction_kpi(environment)
@@ -36,7 +36,7 @@ async def system_kpi_calculation(environment: Environment):
 
 async def public_test(env):
     log.info("=" * 60)
-    log.info("==========   开始 公众智能体 ReAct 流程   ==========")
+    log.info("==========   Start Public Agent ReAct Process   ==========")
     log.info("=" * 60)
     # public_scan_main(env)
     await public_scan_main(env)
@@ -44,7 +44,7 @@ async def public_test(env):
 
 async def public_summarize_test(env):
     log.info("=" * 60)
-    log.info("==========   开始 每日总结 ReAct 流程   ==========")
+    log.info("==========   Start Daily Summary ReAct Process   ==========")
     log.info("=" * 60)
     # public_summarize_main(env)
     await public_summarize_main(env)
@@ -52,7 +52,7 @@ async def public_summarize_test(env):
 
 async def creator_test(env):
     log.info("=" * 60)
-    log.info("==========   开始 创作者智能体 ReAct 流程   ==========")
+    log.info("==========   Start Creator Agent ReAct Process   ==========")
     log.info("=" * 60)
     await creator_content_main(env)
     # asyncio.run(creator_content_main(env))
@@ -60,7 +60,7 @@ async def creator_test(env):
 
 async def platform_complete(env):
     log.info("=" * 60)
-    log.info("==========   开始 平台智能体 ReAct 流程   ==========")
+    log.info("==========   Start Platform Agent ReAct Process   ==========")
     log.info("=" * 60)
     await platform_main(env)
     return None
@@ -69,54 +69,39 @@ async def platform_complete(env):
 
 def apply_education_effect(persona, education_level: str):
     """
-       根据政府教育投入（低/中/高），模拟智能体观念的渐进式演变。
+       Simulate the progressive evolution of agent perspectives based on government education investment (Low/Medium/High).
 
-       逻辑核心：
-       1. 输入映射：将中文 '低/中/高' 映射为数学强度。
-       2. 立场流转：建立 Rebel(反抗) -> Neutral(中立) -> Trust(信任) 的单向通道。
-       3. 性格改变：极难触发，且受到当前反抗心理的“免疫拦截”。
+       Logic Core:
+       1. Input Mapping: Map Chinese '低/中/高' to mathematical intensities.
+       2. Standpoint Flow: Establish a one-way channel: Rebel -> Neutral -> Trust.
+       3. Personality Change: Extremely difficult to trigger and intercepted by current "rebellion psychology" immunity.
 
        Args:
-           persona: 智能体对象
-           education_level: 必须是 "低", "中", "高" 之一。
+           persona: Agent object.
+           education_level: Must be one of "低", "中", "高".
        """
 
-    # 1. 参数映射：明确定义三档强度
+    # 1. Parameter Mapping: Clearly define three levels of intensity
     level_mapping = {
-        '低': 0.1,  # 几乎无效，自然演化
-        '中': 0.5,  # 温和影响
-        '高': 0.9  # 强力干预
+        '低': 0.1,  # Almost ineffective, natural evolution
+        '中': 0.5,  # Moderate influence
+        '高': 0.9  # Strong intervention
     }
 
-    # 获取强度系数，默认为 '低'
+    # Get intensity coefficient, default is '低'
     intensity = level_mapping.get(education_level, 0.1)
 
-    # 获取当前立场 [信任, 反抗, 中立]
-    # 假设 persona.standpoint 存储顺序为 [trust, rebel, neutral]
     trust_p, rebel_p, neutral_p = persona.standpoint
 
-    # =====================================================
-    # 机制一：渐进式立场流转
-    # 逻辑：反抗者先变理智(中立)，理智者再变信任
-    # =====================================================
-
-    # 1. 去激进化: 反抗 -> 中立
-    # 即使是高投入，每天也只能转化当前反抗值的 5%
-    # 理由：消除敌意比建立信任容易一点点
     flow_rebel_to_neutral = rebel_p * (0.05 * intensity)
 
-    # 2. 建立信任: 中立 -> 信任
-    # 这是一个更加漫长的过程，转化率更低 (2.5%)
-    # 理由：从中立变成“粉丝”非常难
     flow_neutral_to_trust = neutral_p * (0.025 * intensity)
 
-    # 3. 执行流转计算
     new_rebel = rebel_p - flow_rebel_to_neutral
-    # 中立派 = 原有 + 新来的(从反抗) - 走的(去信任)
     new_neutral = neutral_p + flow_rebel_to_neutral - flow_neutral_to_trust
     new_trust = trust_p + flow_neutral_to_trust
 
-    # 4. 重新归一化 (防止浮点误差)
+    # 4. Re-normalization (prevent floating point errors)
     total = new_rebel + new_neutral + new_trust
     if total > 0:
         persona.standpoint = [
@@ -125,44 +110,32 @@ def apply_education_effect(persona, education_level: str):
             new_neutral / total
         ]
 
-    # =====================================================
-    # 机制二：高阻尼心理脱敏
-    # 降低 fp_sensitivity (误伤敏感度)
-    # =====================================================
-
     if persona.fp_sensitivity != '低':
-        # 基础变异概率：极低
-        # 高投入(0.9) -> 0.018 (1.8% 概率)
-        # 低投入(0.1) -> 0.002 (0.2% 概率)
         base_prob = 0.02 * intensity
-
-        # 【心理防御机制】
-        # 如果当前的反抗值依然很高 (> 0.4)
-        # 说明该用户处于"防御/敌对模式"，教育会被视为洗脑，完全无效。
         if new_rebel > 0.4:
             actual_prob = 0.0
         else:
             actual_prob = base_prob
 
-        # 掷骰子决定是否改变性格
+        # Roll dice to decide whether to change personality
         if random.random() < actual_prob:
             old_sens = persona.fp_sensitivity
 
-            # 降级逻辑：高 -> 中 -> 低
+            # Downgrade logic: 高 -> 中 -> 低
             if old_sens == '高':
                 persona.fp_sensitivity = '中'
-                log.info(f"✨ 教育生效: {persona.agent_id} (Rebel={new_rebel:.2f}) 的敏感度从 高 -> 中")
+                log.info(f"✨ Education took effect: {persona.agent_id} (Rebel={new_rebel:.2f})'s sensitivity changed from 高 -> 中")
             elif old_sens == '中':
                 persona.fp_sensitivity = '低'
-                log.info(f"✨ 教育生效: {persona.agent_id} (Rebel={new_rebel:.2f}) 的敏感度从 中 -> 低")
+                log.info(f"✨ Education took effect: {persona.agent_id} (Rebel={new_rebel:.2f})'s sensitivity changed from 中 -> 低")
 
 
 def apply_education_effect_to_all_personas(environment: Environment):
     """
-    将教育效果应用到所有公众智能体。
+    Apply education effects to all public agents.
 
     Args:
-        environment: 环境对象。
+        environment: Environment object.
     """
     for k, persona in environment.personas.items():
         apply_education_effect(persona, environment.policy.e_edu)
@@ -170,7 +143,7 @@ def apply_education_effect_to_all_personas(environment: Environment):
 
 def calculate_rational_initial_theta(policy_force: float) -> float:
     """
-    计算平台初始的审核阈值。
+    Calculate the initial moderation threshold of the platform.
     """
     norm_stress = (policy_force * 10 - 1.0) / 9.0
 
@@ -200,129 +173,129 @@ async def simple_platform(environment: Environment):
 
 async def build_user_social_relationships(environment: Environment):
     """
-    根据当前环境，构建用户社交关系。
+    Build user social relationships based on the current environment.
     """
     log.info("⬇" * 120)
-    log.info("==========   构建社交关系   ==========")
+    log.info("==========   Building Social Relationships   ==========")
     await build_relationships(environment)
-    log.info("==========  ✅ 社交关系构建完毕。  ==========")
+    log.info("==========  ✅ Social relationship construction complete.  ==========")
     log.info("⬆" * 120)
 
 
 async def main_complete(environment) -> dict:
-    # 注入平台初始审核阈值
+    # Inject platform initial moderation threshold
     environment.platform.theta = calculate_rational_initial_theta(environment.policy.ai_threshold)
     # environment.platform.theta = 0.5
-    # 构建社交关系
+    # Build social relationships
     await build_user_social_relationships(environment)
-    # 初始化KPI
+    # Initialize KPI
     safety, satisfaction, creativity = 0.01, 0.01, 0.01
     for i in range(1, settings.platform.complete_run_days + 1):
         log.info("🔛" * 60)
-        log.info(f"==========   开始 {i} 天 完整流程   ==========")
+        log.info(f"==========   Start Day {i} Complete Process   ==========")
         log.info("🔛" * 60)
-        clear_token_csv_file()  # 清空token.csv文件
+        clear_token_csv_file()  # Clear token.csv file
         try:
-            # 初始化参数
+            # Initialize parameters
             environment.start_new_day()
             if settings.platform.import_policy_day_time <= i:
-                # 教育
+                # Education
                 apply_education_effect_to_all_personas(environment)
-            # 创作
+            # Creation
             await creator_test(environment)
-            # 等待后台任务结束
+            # Wait for background tasks to finish
             await environment.wait_for_all_background_tasks()
-            # 浏览
+            # Browsing
             await public_test(environment)
-            # 总结
+            # Summary
             await public_summarize_test(environment)
 
             if settings.platform.import_policy_day_time <= i:
-                # 平台+kpi
+                # Platform + KPI
                 safety, satisfaction, creativity = (await asyncio.gather(
                     platform_complete(environment),
                     system_kpi_calculation(environment)
                 ))[-1]
 
-            # 等待后台任务结束
+            # Wait for background tasks to finish
             await environment.wait_for_all_background_tasks()
 
-            # 5. 在 KPI 计算完、且在进入下一天之前，正式应用状态变更
+            # 5. Formally apply status changes after KPI calculation and before starting the next day
             await environment.apply_persona_updates()
 
-            # 导出记忆
+            # Export memory
             environment.memories_store.export_day_to_json(environment, environment.day_time,
-                                                          additional_str=f"惩罚{str(round(environment.policy.f_penalty, 2)).replace('.', '_')}"
-                                                                         f"_教育{str(environment.policy.e_edu)}_ai_threshold_"
+                                                          additional_str=f"Penalty{str(round(environment.policy.f_penalty, 2)).replace('.', '_')}"
+                                                                         f"_Education{str(environment.policy.e_edu)}_ai_threshold_"
                                                                          f"{str(round(environment.policy.ai_threshold, 2)).replace('.', '_')}")
             log.info("🔛" * 60)
-            log.info(f"==========   {i} 天 完整流程 END   ==========")
+            log.info(f"==========   Day {i} Complete Process END   ==========")
             log.info("🔛" * 60)
 
         except Exception as e:
-            log.error(f"异常类型: {type(e)}, 错误信息: {e}")
+            log.error(f"Exception Type: {type(e)}, Error Message: {e}")
             error_traceback = traceback.format_exc()
-            log.error("完整的堆栈跟踪信息如下:\n" + error_traceback)
+            log.error("Full stack trace information is as follows:\n" + error_traceback)
     return {
-        'safety': environment.system_kpi.safety,  # 安全性
-        'creativity': environment.system_kpi.creativity,  # 创造力
-        'satisfaction': environment.system_kpi.satisfaction,  # 满意度
+        'safety': environment.system_kpi.safety,  # Safety
+        'creativity': environment.system_kpi.creativity,  # Creativity
+        'satisfaction': environment.system_kpi.satisfaction,  # Satisfaction
         'theta': environment.system_kpi.theta[:-len(environment.system_kpi.safety)]
     }
 
 
 async def main_simple(environment) -> dict:
-    # 注入平台初始审核阈值
+    # Inject platform initial moderation threshold
     # environment.platform.theta = calculate_rational_initial_theta(environment.policy.f_penalty)
     environment.platform.theta = 0.5
-    # 构建社交关系
+    # Build social relationships
     await build_user_social_relationships(environment)
-    # 初始化KPI
+    # Initialize KPI
     safety, satisfaction, creativity = 0.01, 0.01, 0.01
     for i in range(1, settings.platform.simple_run_days + 1):
-        clear_token_csv_file()  # 清空token.csv文件
+        clear_token_csv_file()  # Clear token.csv file
         log.info("🔛" * 60)
-        log.info(f"==========   开始 {i} 天 完整流程   ==========")
+        log.info(f"==========   Start Day {i} Complete Process   ==========")
         log.info("🔛" * 60)
         try:
-            # 更新每日参数
+            # Update daily parameters
             environment.start_new_day()
 
-            # 导入策略时间
+            # Policy import time
             if settings.platform.import_policy_day_time <= i:
-                # 教育
+                # Education
                 apply_education_effect_to_all_personas(environment)
 
-            # 创作
+            # Creation
             await simple_creator(environment)
-            # 浏览
+            # Browsing
             interaction_summaries = await simple_public(environment)
-            # 总结
+            # Summary
             await simple_public_summarize(environment, interaction_summaries)
 
             await environment.apply_persona_updates()
 
-            # 导入策略时间
+            # Policy import time
             if settings.platform.import_policy_day_time <= i:
-                # 审核+kpi
+                # Moderation + KPI
                 safety, satisfaction, creativity = (await asyncio.gather(
                     simple_platform(environment),
                     system_kpi_calculation(environment)
                 ))[-1]
-            # 导出记忆
+            # Export memory
             environment.memories_store.export_day_to_json(environment, environment.day_time,
-                                                          additional_str=f"简化/惩罚{str(round(environment.policy.f_penalty, 2)).replace('.', '_')}"
-                                                                         f"_教育{str(environment.policy.e_edu)}_ai_threshold_"
+                                                          additional_str=f"Simple_Penalty{str(round(environment.policy.f_penalty, 2)).replace('.', '_')}"
+                                                                         f"_Education{str(environment.policy.e_edu)}_ai_threshold_"
                                                                          f"{str(round(environment.policy.ai_threshold, 2)).replace('.', '_')}",
                                                           simple=True)
         except Exception as e:
-            log.error(f"异常类型: {type(e)}, 错误信息: {e}")
+            log.error(f"Exception Type: {type(e)}, Error Message: {e}")
             error_traceback = traceback.format_exc()
-            log.error("完整的堆栈跟踪信息如下:\n" + error_traceback)
+            log.error("Full stack trace information is as follows:\n" + error_traceback)
     return {
-        'safety': environment.system_kpi.safety,  # 安全性
-        'creativity': environment.system_kpi.creativity,  # 创造力
-        'satisfaction': environment.system_kpi.satisfaction,  # 满意度
+        'safety': environment.system_kpi.safety,  # Safety
+        'creativity': environment.system_kpi.creativity,  # Creativity
+        'satisfaction': environment.system_kpi.satisfaction,  # Satisfaction
         'theta': environment.system_kpi.theta[:-len(environment.system_kpi.safety)]
     }
 
@@ -339,34 +312,34 @@ async def complete(policy: Policy) -> dict:
 
 async def _director_inject_ai_flood(environment: Environment, count: int = 5):
     """
-    上帝视角注入：伪装成人类的高质量AI内容（假阴性样本）。
-    用于模拟 AI 泛滥且平台不作为的场景。
+    God's perspective injection: High-quality AI content disguised as human (false negative samples).
+    Used to simulate scenarios where AI floods the platform and the platform takes no action.
     """
-    log.info(f"🎬 [Scenario Event] 导演介入：注入 {count} 条伪装的高热度AI内容...")
+    log.info(f"🎬 [Scenario Event] Director intervention: Injecting {count} disguised high-popularity AI content...")
 
     for _ in range(count):
-        # 伪造一个 ID
+        # Fake an ID
         fake_id = f"sys_ai_{environment.day_time}_{random.randint(1000, 9999)}"
 
         personas_nums = len(environment.personas)
 
-        # 创建内容对象
+        # Create content object
         content = Content(
             id=fake_id,
-            author_id="external_ai_user",  # 虚拟作者
+            author_id="external_ai_user",  # Virtual author
             time=environment.day_time,
             content_type="image",
-            topic="赛博朋克概念艺术",  # 典型AI重灾区
-            content_detail="极高的细节，8K分辨率，在artstation上很受欢迎，虚幻引擎5渲染。",
+            topic="Cyberpunk Concept Art",  # Typical AI hit area
+            content_detail="Extreme detail, 8K resolution, popular on ArtStation, rendered with Unreal Engine 5.",
             reason="AI Generation",
             watermark_id="W1",
 
-            # === 关键设定：激怒用户的源头 ===
-            true_label="AI",  # 它是AI
-            platform_label="HUMAN",  # 平台却说是人（漏报）
-            is_ai_content=True,  # 假设你的Content类有这个字段，没有可忽略
+            # === Key settings: The source of user irritation ===
+            true_label="AI",  # It is AI
+            platform_label="HUMAN",  # But platform says human (missed detection)
+            is_ai_content=True,  # Assuming your Content class has this field, ignore if not
 
-            # === 设定高热度，确保必被刷到 ===
+            # === Set high popularity to ensure it is seen ===
             views=random.randint(personas_nums, int(personas_nums * 1.5)),
             likes=random.randint(int(personas_nums * 0.5), int(personas_nums * 0.85)),
             shares=random.randint(int(personas_nums * 0.5), int(personas_nums * 0.85)),
@@ -374,7 +347,7 @@ async def _director_inject_ai_flood(environment: Environment, count: int = 5):
             evasion="E1"
         )
 
-        # 强行插入内容库，绕过正常审核逻辑
+        # Forcibly insert into content library, bypassing normal moderation logic
         await environment.contents.add_content(content, environment)
 
 
@@ -384,59 +357,55 @@ async def case_main_complete(environment) -> dict:
             p.satisfaction = [0.85]
             p.post_wish = True
             p.is_active = True
-    # 构建社交关系
+    # Build social relationships
     await build_user_social_relationships(environment)
-    # 初始化KPI容器
+    # Initialize KPI container
     safety, satisfaction, creativity = 0.01, 0.01, 0.01
 
-    # 开始仿真循环
+    # Start simulation loop
     for i in range(1, settings.platform.complete_run_days + 1):
         log.info("🔛" * 60)
-        log.info(f"==========   开始 {i} 天 完整流程 (Case Validation)   ==========")
+        log.info(f"==========   Start Day {i} Complete Process (Case Validation)   ==========")
         clear_token_csv_file()
 
         try:
-            # ==========================
-            # 1. 每日初始化
-            # ==========================
             environment.start_new_day()
 
-            # --- 第一幕：潜伏期 (Day 1 - 7) ---
+            # --- Act 1: Incubation Period (Day 1 - 7) ---
             if i <= 7:
                 environment.platform.theta = 0.8
-                log.info(f"🎬 [Scenario] Day {i}: 潜伏期。")
+                log.info(f"🎬 [Scenario] Day {i}: Incubation period.")
                 if i >= 5:
                     await _director_inject_ai_flood(environment, count=2)
-            # --- 第二幕：爆发期 (Day 8 - 12) ---
-            # 目标：通过环境压力（AI刷屏）触发Agent的“逆反心理”
+            # --- Act 2: Outbreak Period (Day 8 - 12) ---
             elif 8 <= i <= 12:
                 await _director_inject_ai_flood(environment, count=i)
 
-                # 2. 坏消息广播 (仅在 Day 8)
+                # 2. Bad news broadcast (Only on Day 8)
                 if i == 8:
                     faq_news = (
-                        "【突发恶性新闻】ArtStation 官方更新 FAQ：明确表示‘不会禁止 AI 生成的图片’。"
-                        "官方删除了部分抗议贴，并称这是行业趋势。"
+                        "[Breaking Malicious News] ArtStation Official FAQ Update: Explicitly states 'will not ban AI-generated images'."
+                        "Official deleted some protest posts, calling it an industry trend."
                     )
-                    environment.platform.broadcast.append(faq_news)  # 添加到平台广播
+                    environment.platform.broadcast.append(faq_news)  # Add to platform broadcast
                     for p in environment.personas.values():
                         await environment.memories_store.add_memory(
                             p.agent_id, faq_news, i, MemoryType.EXPERIENCE, 1.0
                         )
-            # --- 第三幕：僵持期 (Day 13 - 18) ---
+            # --- Act 3: Standoff Period (Day 13 - 18) ---
             elif 13 <= i <= 18:
-                log.info(f"🎬 [Scenario] Day {i}: 抗议僵持期...")
-                # 持续高压，测试用户的耐受极限
+                log.info(f"🎬 [Scenario] Day {i}: Protest standoff period...")
+                # Sustain high pressure to test user tolerance limits
                 await _director_inject_ai_flood(environment, count=10)
-            # --- 第四幕：妥协与分流 (Day 19) ---
+            # --- Act 4: Compromise and Diversion (Day 19) ---
             elif i == 19:
-                log.info(f"🎬 [Scenario] Day {i}: ❄️ 平台妥协。")
-                # 减少注入
+                log.info(f"🎬 [Scenario] Day {i}: ❄️ Platform compromise.")
+                # Reduce injection
                 await _director_inject_ai_flood(environment, count=1)
-                # 广播妥协新闻
+                # Broadcast compromise news
                 disappointing_news = (
-                    "【官方公告】ArtStation 回应抗议：拒绝移除 AI 内容，但推出了 'NoAI' 标签功能。"
-                    "这意味着 AI 艺术将继续合法存在。"
+                    "[Official Announcement] ArtStation responds to protests: Refuses to remove AI content, but introduces 'NoAI' tag functionality."
+                    "This means AI art will continue to exist legally."
                 )
                 environment.platform.broadcast.append(disappointing_news)
                 for p in environment.personas.values():
@@ -454,13 +423,13 @@ async def case_main_complete(environment) -> dict:
 
             await environment.apply_persona_updates()
 
-            # 导出数据
+            # Export data
             environment.memories_store.export_day_to_json(environment, environment.day_time,
                                                           additional_str="case_validation")
             log.info("🔛" * 60)
 
         except Exception as e:
-            log.error(f"异常: {e}")
+            log.error(f"Exception: {e}")
             error_traceback = traceback.format_exc()
             log.error(error_traceback)
 

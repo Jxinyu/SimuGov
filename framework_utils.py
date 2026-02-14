@@ -21,22 +21,22 @@ log = logging.getLogger(__name__)
 
 def setup_logger(base_dir):
     """
-    每次运行时调用，用于重定向日志文件到新的文件夹。
+    Called every time it runs, used to redirect log files to a new folder.
     """
-    # 1. 确定日志目录
+    # 1. Determine the log directory
     log_dir = os.path.join(base_dir, "logs")
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
-    # 2. 生成新的日志文件名
+    # 2. Generate a new log file name
     log_filename = datetime.now().strftime("run_%Y%m%d_%H%M%S.log")
     log_filepath = os.path.join(log_dir, log_filename)
 
-    # 3. 获取根日志记录器
+    # 3. Get the root logger
     root_logger = logging.getLogger()
     root_logger.setLevel(logging.INFO)
 
-    # --- 【关键修改】暴力清空所有旧的处理器 ---
+    # --- [Key modification] Force clear all old handlers ---
     if root_logger.hasHandlers():
         for handler in root_logger.handlers[:]:
             try:
@@ -45,7 +45,7 @@ def setup_logger(base_dir):
                 pass
             root_logger.removeHandler(handler)
 
-    # --- 4. 重新添加：文件处理器 (FileHandler) ---
+    # --- 4. Re-add: File processor (FileHandler) ---
     file_handler = logging.FileHandler(log_filepath, 'a', 'utf-8')
     file_handler.setLevel(logging.INFO)
     file_formatter = logging.Formatter(
@@ -54,7 +54,7 @@ def setup_logger(base_dir):
     file_handler.setFormatter(file_formatter)
     root_logger.addHandler(file_handler)
 
-    # --- 5. 重新添加：控制台处理器 (StreamHandler) ---
+    # --- 5. Re-add: Console processor (StreamHandler) ---
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
     console_formatter = logging.Formatter(
@@ -63,8 +63,8 @@ def setup_logger(base_dir):
     console_handler.setFormatter(console_formatter)
     root_logger.addHandler(console_handler)
 
-    root_logger.info(f"✅ 日志系统已重置。")
-    root_logger.info(f"📁 日志文件路径: {log_filepath}")
+    root_logger.info(f"✅ Log system has been reset.")
+    root_logger.info(f"📁 Log file path: {log_filepath}")
 
     return log_filepath
 
@@ -87,13 +87,13 @@ async def simple_framework(policy: Policy) -> dict:
 
 async def nsga2_framework_evaluation(population_size, generations):
     """
-    遗传算法进化
+    Genetic algorithm evolution
     """
-    # 运行NSGA-II
+    # Run NSGA-II
     elite_solutions, evolution_history = await run_nsga2(population_size=population_size, generations=generations)
-    log.info("\n--- 最终精英解决方案（帕累托最优集） ---")
+    log.info("\n--- Final elite solutions (Pareto optimal set) ---")
 
-    # 返回完整的精英解
+    # Return complete elite solutions
     final_elites = []
     for i, solution in enumerate(elite_solutions):
         original_kpi = {k: -v for k, v in solution['kpi'].items()}
@@ -101,7 +101,7 @@ async def nsga2_framework_evaluation(population_size, generations):
         log.info(f"  Policy: {solution['policy']}")
         log.info(f"  KPIs (Simple): {original_kpi}")
         log.info("-" * 20)
-        # 将恢复为正值的KPI也存入solution，方便后续使用
+        # Also store the KPIs restored to positive values in the solution for subsequent use
         solution['kpi'] = original_kpi
         final_elites.append(solution)
 
@@ -110,7 +110,7 @@ async def nsga2_framework_evaluation(population_size, generations):
 
 async def complete_framework_evaluation(elite_solutions_from_nsga):
     """
-    接收 NSGA-II找到的精英解列表，并为它们运行完整的仿真。
+    Receive the list of elite solutions found by NSGA-II and run complete simulations for them.
     """
     tasks = []
     for solution in elite_solutions_from_nsga:
@@ -118,10 +118,10 @@ async def complete_framework_evaluation(elite_solutions_from_nsga):
         task = complete_framework(Policy(f_penalty=p['f_penalty'], e_edu=p['e_edu'], ai_threshold=p['ai_threshold']))
         tasks.append(task)
 
-    # 并发执行所有完整仿真任务
+    # Concurrently execute all complete simulation tasks
     complete_kpi_results = await asyncio.gather(*tasks)
 
-    # 将完整仿真结果与精英解数据合并
+    # Merge complete simulation results with elite solution data
     for i, solution in enumerate(elite_solutions_from_nsga):
         solution['complete_kpi'] = complete_kpi_results[i]
 
@@ -130,27 +130,27 @@ async def complete_framework_evaluation(elite_solutions_from_nsga):
 
 def data_save(experiment_data_to_save: dict, output_dir: str):
     """
-    数据分析与保存
+    Data analysis and preservation
     """
     try:
-        # 保存实验数据
-        experiment_results_file_path = save_experiment_results(experiment_data_to_save, str(output_dir) + "/实验数据")
+        # Save experimental data
+        experiment_results_file_path = save_experiment_results(experiment_data_to_save, str(output_dir) + "/Experimental_Data")
     except:
         experiment_results_file_path = save_experiment_results(experiment_data_to_save, str(output_dir))
     try:
-        # nsga进化绘制
-        nsga_evaluation_data_draw_main(experiment_results_file_path, str(output_dir) + "/nsga进化绘制")
+        # nsga evolution plotting
+        nsga_evaluation_data_draw_main(experiment_results_file_path, str(output_dir) + "/nsga_evolution_plotting")
     except:
         nsga_evaluation_data_draw_main(experiment_results_file_path, str(output_dir))
 
-    # 绘制各类图表
+    # Draw various types of charts
     path_obj = Path(output_dir)
-    draw_kpi_main(plot_mode='T', use_simplified_data=True, output_dir=path_obj / "简化框架kpi绘制")
-    draw_kpi_main(plot_mode='T', use_simplified_data=False, output_dir=path_obj / "完整框架kpi绘制")
-    draw_kpi_main(plot_mode='P', use_simplified_data=True, output_dir=path_obj / "简化框架的帕累托前沿绘制")
-    draw_kpi_main(plot_mode='P', use_simplified_data=False, output_dir=path_obj / "最终的帕累托前沿绘制")
+    draw_kpi_main(plot_mode='T', use_simplified_data=True, output_dir=path_obj / "simplified_framework_kpi_plotting")
+    draw_kpi_main(plot_mode='T', use_simplified_data=False, output_dir=path_obj / "complete_framework_kpi_plotting")
+    draw_kpi_main(plot_mode='P', use_simplified_data=True, output_dir=path_obj / "simplified_framework_Pareto_frontier_plotting")
+    draw_kpi_main(plot_mode='P', use_simplified_data=False, output_dir=path_obj / "final_Pareto_frontier_plotting")
 
-    # 写入终止时间
+    # Write termination time
     with open(path_obj / "termination_time.txt", "w") as f:
         f.write(str(datetime.now()))
 
@@ -159,16 +159,16 @@ async def test_complete_three_policies():
     current_dir = get_current_timestamp_dir()
     setup_logger(current_dir)
 
-    # 系统有效性闭环实验
-    settings.platform.complete_run_days = 20  # 高粒度运行天数
-    settings.platform.kpi_window_size = 3  # KPI 窗口大小
-    settings.platform.import_policy_day_time = 3  # 策略导入时间
+    # System effectiveness closed-loop experiment
+    settings.platform.complete_run_days = 20  # High-granularity run days
+    settings.platform.kpi_window_size = 3  # KPI window size
+    settings.platform.import_policy_day_time = 3  # Policy import time
     settings.file_load_path.personas_file = r'method/data/scenario_protest.json'
 
-    policy1 = Policy(e_edu='低', f_penalty=0.01, ai_threshold=0.99)
-    policy2 = Policy(e_edu='中', f_penalty=0.5, ai_threshold=0.5)
-    policy4 = Policy(e_edu='低', f_penalty=0.99, ai_threshold=0.01)
-    policy3 = Policy(e_edu='高', f_penalty=0.99, ai_threshold=0.01)  # 创造力低、安全性高
+    policy1 = Policy(e_edu='Low', f_penalty=0.01, ai_threshold=0.99)
+    policy2 = Policy(e_edu='Medium', f_penalty=0.5, ai_threshold=0.5)
+    policy4 = Policy(e_edu='Low', f_penalty=0.99, ai_threshold=0.01)
+    policy3 = Policy(e_edu='High', f_penalty=0.99, ai_threshold=0.01)  # Low creativity, high safety
     res = await asyncio.gather(
         # complete_framework(policy1),
         complete_framework(policy2),
@@ -200,14 +200,14 @@ async def test_simple_three_policies():
 
     settings.file_load_path.personas_file = r'method\data\personas_30.json'
 
-    settings.platform.kpi_window_size = 3  # KPI 窗口大小
-    settings.platform.import_policy_day_time = 2  # 策略导入时间
+    settings.platform.kpi_window_size = 3  # KPI window size
+    settings.platform.import_policy_day_time = 2  # Policy import time
 
     try:
-        policy1 = Policy(e_edu='低', f_penalty=0.01, ai_threshold=0.99)  # 创造力高、安全性低
-        # policy2 = Policy(e_edu='中', f_penalty=0.6, ai_threshold=0.6)
-        # policy4 = Policy(e_edu='低', f_penalty=0.2, ai_threshold=0.2)
-        policy3 = Policy(e_edu='高', f_penalty=0.99, ai_threshold=0.01)  # 创造力低、安全性高
+        policy1 = Policy(e_edu='Low', f_penalty=0.01, ai_threshold=0.99)  # High creativity, low safety
+        # policy2 = Policy(e_edu='Medium', f_penalty=0.6, ai_threshold=0.6)
+        # policy4 = Policy(e_edu='Low', f_penalty=0.2, ai_threshold=0.2)
+        policy3 = Policy(e_edu='High', f_penalty=0.99, ai_threshold=0.01)  # Low creativity, high safety
         res = await asyncio.gather(
             simple_framework(policy1),
             # simple_framework(policy2),
@@ -231,9 +231,9 @@ async def test_simple_three_policies():
 
 async def run_complete_in_one_policy(e_edu, f_penalty, ai_threshold):
     """
-    测试一个政策在高粒度中效果实验
+    Test a policy's effectiveness experiment in high-granularity
 
-    这个函数里不设置任何参数
+    No parameters are set in this function
 
     :param e_edu:
     :param f_penalty:
@@ -261,33 +261,33 @@ async def run_complete_in_one_policy(e_edu, f_penalty, ai_threshold):
 
 async def high_low_evaluation(open_high_simulation: bool = False):
     """
-    完整的主流程，包括计时、执行和保存。
-    open_high_simulation: 开启高粒度模型
+    Complete main process, including timing, execution, and preservation.
+    open_high_simulation: Turn on the high-granularity model
     """
-    # 1. 确定本次实验的总目录 (使用真实的物理时间)
+    # 1. Determine the total directory for this experiment (using real physical time)
     current_dir = get_current_timestamp_dir()
     setup_logger(current_dir)
 
     now = datetime.now()
     fixed_subdir = f"{now.strftime('%Y-%m-%d')}/{now.strftime('%H%M%S')}"
 
-    # 2. 设置上下文变量 (返回一个 token，用于稍后重置，虽然脚本结束自动销毁也不必重置)
+    # 2. Set context variables (returns a token for later reset, though not necessary to reset as the script will automatically destroy it)
     token = current_sim_subdir.set(fixed_subdir)
 
-    log.info(f"🔒 [Context] 已设置统一仿真目录: {fixed_subdir}")
+    log.info(f"🔒 [Context] Unified simulation directory set: {fixed_subdir}")
 
     try:
         run_params = {
-            "population_size": settings.nsga.population_size,  # 初始种群大小
-            "generations": settings.nsga.generations  # 迭代轮数
+            "population_size": settings.nsga.population_size,  # Initial population size
+            "generations": settings.nsga.generations  # Iteration rounds
         }
         timings = {}
         total_start_time = time.perf_counter()
 
-        log.info("阶段一: NSGA-II 快速寻优开始")
+        log.info("Phase 1: NSGA-II rapid optimization starts")
         phase1_start_time = time.perf_counter()
 
-        # 遗传算法进化
+        # Genetic algorithm evolution
         elite_solutions, evolution_history = await nsga2_framework_evaluation(
             population_size=settings.nsga.population_size,
             generations=settings.nsga.generations
@@ -297,23 +297,23 @@ async def high_low_evaluation(open_high_simulation: bool = False):
 
         phase1_end_time = time.perf_counter()
         timings["phase1_nsga2_duration_seconds"] = round(phase1_end_time - phase1_start_time, 2) / 60
-        log.info(f"阶段一完成, 耗时: {timings['phase1_nsga2_duration_seconds']:.2f} 分钟 ")
+        log.info(f"Phase 1 completed, duration: {timings['phase1_nsga2_duration_seconds']:.2f} minutes ")
 
         final_results_data = []
         if elite_solutions and open_high_simulation:
-            log.info(f" 阶段二: 精英策略精准评估开始 {len(elite_solutions)}")
+            log.info(f" Phase 2: Elite strategy precision evaluation starts {len(elite_solutions)}")
             phase2_start_time = time.perf_counter()
 
-            # 完整仿真框架评估
+            # Complete simulation framework evaluation
             final_results_data = await complete_framework_evaluation(elite_solutions)
 
             phase2_end_time = time.perf_counter()
             timings["phase2_complete_sim_duration_seconds"] = round(phase2_end_time - phase2_start_time, 2) / 60
-            log.info(f"阶段二完成, 耗时: {timings['phase2_complete_sim_duration_seconds']:.2f} 分钟 ")
+            log.info(f"Phase 2 completed, duration: {timings['phase2_complete_sim_duration_seconds']:.2f} minutes ")
 
         total_end_time = time.perf_counter()
         timings["total_duration_seconds"] = round(total_end_time - total_start_time, 2) / 60
-        log.info(f"\n=== 全部流程结束, 总耗时: {timings['total_duration_seconds']:.2f} 分钟 ===")
+        log.info(f"\n=== All processes ended, total duration: {timings['total_duration_seconds']:.2f} minutes ===")
 
         experiment_data_to_save = {
             "run_parameters": run_params,
@@ -332,7 +332,7 @@ async def high_low_evaluation(open_high_simulation: bool = False):
 
 def build_personas_polls():
     """
-    构建智能体池子
+    Construct agent pool
     :return:
     """
     from method.utils.get_personas.build_artstation_dataset_poolsl import build_agent_pools_demo
@@ -341,26 +341,7 @@ def build_personas_polls():
 
 def build_artstation_personas():
     """
-    构建artstaion的personas数据集
+    Construct personas dataset for ArtStation
     :return:
     """
     build_artstation_personas_main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

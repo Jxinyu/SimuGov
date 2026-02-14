@@ -24,102 +24,102 @@ DEFAULT_EMBEDDING_FUNCTION = default_ollama_embedding_function
 
 class MemoryType(Enum):
     """
-    定义智能体记忆的三种核心类型，代表了从具体经验到抽象信念的认知层次。
+    Defines the three core types of agent memory, representing the cognitive hierarchy from specific experiences to abstract beliefs.
     """
     EXPERIENCE = 'experience'
     """
-    **类型：经验 **
+    ** Type: Experience **
     """
 
     # BELIEF = 'belief'
     BELIEF = 'experience'
     """
-    **类型：信念 **
+    ** Type: Belief **
     """
 
     # SUMMARIZE = 'summarize'
     SUMMARIZE = 'experience'
     """
-    **类型：总结 **
+    ** Type: Summarize **
     """
 
 
 class MemoryStore:
     """
-    一个用于管理智能体记忆的向量存储库。
+    A vector store for managing agent memories.
     """
 
     def __init__(self,
                  collection_name: str = "simulation_memories",
-                 content_collection_name: str = "platform_contents",  # 内容专用集合
+                 content_collection_name: str = "platform_contents",  # Collection dedicated to content
                  persist_directory: str = None,
                  embedding_function: Embeddings = DEFAULT_EMBEDDING_FUNCTION):
-        log.info(f"正在初始化 MemoryStore...")
+        log.info(f"Initializing MemoryStore...")
         if persist_directory is None:
-            # 1. 获取当前时间
+            # 1. Get current time
             current_now = datetime.now()
             current_date = current_now.strftime("%Y-%m-%d")
             current_time = current_now.strftime("%H_%M_%S")
 
-            # 2. 生成一个随机后缀 (8位 UUID)，确保即使同一秒启动，路径也不一样
+            # 2. Generate a random suffix (8-character UUID) to ensure unique paths even if started in the same second
             unique_suffix = uuid.uuid4().hex[:8]
 
-            # 3. 拼接完整路径
-            # 格式示例: .../2025-12-27/21_30_05_a1b2c3d4_db
+            # 3. Concatenate the full path
+            # Example: .../2025-12-27/21_30_05_a1b2c3d4_db
             persist_directory = (
                 f"{settings.file_load_path.chroma_db_file}/"
                 f"{current_date}/{current_time}_{unique_suffix}_db"
             )
 
-            # 记录这次运行使用的实际路径，方便调试
+            # Record the actual path used for this run to facilitate debugging
         self.persist_directory = persist_directory
-        log.info(f"📂 本次运行的独立数据库路径: {self.persist_directory}")
+        log.info(f"📂 Independent database path for this run: {self.persist_directory}")
 
-        # 1. 智能体记忆存储
+        # 1. Agent memory storage
         self.vectorstore = Chroma(
             collection_name=collection_name,
             persist_directory=persist_directory,
             embedding_function=embedding_function
         )
 
-        # 2. 平台内容存储
-        # 使用独立的 collection，防止搜索新闻时搜到别人的私密记忆
+        # 2. Platform content storage
+        # Use a separate collection to prevent private memories from appearing in news searches
         self.content_vectorstore = Chroma(
             collection_name=content_collection_name,
             persist_directory=persist_directory,
             embedding_function=embedding_function
         )
 
-        log.info("✅ MemoryStore 初始化成功 (包含记忆库与内容库)。")
+        log.info("✅ MemoryStore initialization successful (includes memory and content stores).")
 
     async def add_content_to_db(self, content_obj) -> bool:
         """
-        将内容向量化并存入 ChromaDB 的内容集合中。
+        Vectorize content and store it in the ChromaDB content collection.
         Args:
-            content_obj: Content 对象
+            content_obj: Content object
         """
         try:
-            # 构造用于 Embedding 的文本
-            # 包含主题和详情，有助于计算语义相似度
-            embed_text = f"主题: {content_obj.topic}\n内容: {content_obj.content_detail}"
+            # Construct text for Embedding
+            # Includes topic and details to help calculate semantic similarity
+            embed_text = f"Topic: {content_obj.topic}\nContent: {content_obj.content_detail}"
 
-            # 构造元数据
+            # Construct metadata
             metadata = {
                 "content_id": content_obj.id,
                 "author_id": content_obj.author_id,
-                "time": content_obj.time,  # 用于时间衰减计算
+                "time": content_obj.time,  # Used for time decay calculation
                 "topic": content_obj.topic,
                 "type": "content",
             }
 
             doc = Document(page_content=embed_text, metadata=metadata)
 
-            # 使用内容专用的 vectorstore
+            # Use the content-specific vectorstore
             await self.content_vectorstore.aadd_documents(documents=[doc], ids=[content_obj.id])
-            log.debug(f"✅ 内容 '{content_obj.id}' 已向量化存入数据库。")
+            log.debug(f"✅ Content '{content_obj.id}' has been vectorized and stored in the database.")
             return True
         except Exception as e:
-            log.error(f"❌ 存储内容向量失败: {e}")
+            log.error(f"❌ Failed to store content vector: {e}")
             return False
 
     async def recommend_contents(self,
@@ -129,102 +129,102 @@ class MemoryStore:
                                  limit: int = 5,
                                  recall_multiplier: int = 10) -> List[str]:
         """
-        公式：Score = MaxSim(User, Content) * lambda^(time_diff) + phi * I(social)
-        这一条内容要么是用户极其感兴趣且刚发布的，要么是用户关注的好友发送的。
+        Formula: Score = MaxSim(User, Content) * lambda^(time_diff) + phi * I(social)
+        This content is either something the user is extremely interested in and just released,
+        or sent by a followed friend.
 
         Args:
-            persona: 请求推荐的智能体对象 (包含 beliefs, description, social_relationships)
-            interest_content: 用户想要获取的内容
-            current_day: 当前仿真时间步 (用于计算时间衰减)
-            limit: 最终推荐的内容数量
-            recall_multiplier: 初筛倍率 (先从向量库召回 limit * N 条，再进行重排序)
+            persona: Agent object requesting recommendation (contains beliefs, description, social_relationships)
+            interest_content: Content the user wants to get
+            current_day: Current simulation time step (used for time decay calculation)
+            limit: Number of contents finally recommended
+            recall_multiplier: Recall multiplier (recall limit * N items from the vector store first, then re-rank)
 
         Returns:
-            List[str]: 推荐的内容 ID 列表
+            List[str]: List of recommended content IDs
         """
-        # --- 1. 构造用户兴趣向量 ---
+        # --- 1. Construct user interest vector ---
         if interest_content:
             query_text = interest_content
         else:
             query_text = persona.description
-        # 对应公式中的 τ^i (Agent的过去观点/兴趣)  “兴趣向量”
-        user_interest_text = f"{query_text}\n我的信念: {', '.join(persona.beliefs)}"
+        # Corresponds to τ^i in the formula (Agent's past views/interests) "Interest Vector"
+        user_interest_text = f"{query_text}\nMy Beliefs: {', '.join(persona.beliefs)}"
 
-        # --- 2. 向量召回---
-        # 先召回较多候选集 (例如需要5条，先查50条)，然后在内存中做精细排序
-        # 对应公式中的 MaxSim 部分
+        # --- 2. Vector Recall ---
+        # Recall a larger candidate set first (e.g., if 5 are needed, search 50), then do fine-grained ranking in memory
+        # Corresponds to the MaxSim part in the formula
         search_k = limit * recall_multiplier
 
         try:
-            # 尝试进行搜索
+            # Attempt search
             candidates = await self.content_vectorstore.asimilarity_search_with_relevance_scores(
                 query=user_interest_text,
                 k=search_k
             )
         except Exception as e:
-            # 捕获 ChromaDB 的空库/索引未就绪错误
+            # Catch ChromaDB empty database/index not ready error
             error_str = str(e)
             if "Nothing found on disk" in error_str or "segment" in error_str:
-                log.warning(f"⚠️ 向量数据库尚未就绪或为空 (Day {current_day})，跳过本次搜索。")
-                return []  # 优雅返回空列表，表示“没内容”
+                log.warning(f"⚠️ Vector database is not ready or is empty (Day {current_day}), skipping this search.")
+                return []  # Gracefully return empty list
             else:
-                # 如果是其他严重错误，打印日志但尽量不崩
-                log.error(f"❌ 向量搜索发生未知异常: {e}")
+                # For other serious errors, log them but try not to crash
+                log.error(f"❌ Unknown exception occurred during vector search: {e}")
                 return []
 
-        # --- 3. 重排序 ---
+        # --- 3. Re-ranking ---
         ranked_candidates = []
 
-        # 参数设置
-        lambda_decay = 0.8  # 时间衰减系数 (0~1)，越小衰减越快。表示新内容的权重。
-        phi_social = 0.5  # 社交关系加分项权重
+        # Parameter settings
+        lambda_decay = 0.8  # Time decay coefficient (0~1), smaller means faster decay. Represents weight of new content.
+        phi_social = 0.5  # Weight for social relationship bonus
 
         is_case_validation = settings.platform.case_validation
 
         for doc, similarity_score in candidates:
-            # 获取元数据
+            # Get metadata
             meta = doc.metadata
             content_id = meta.get("content_id")
             author_id = meta.get("author_id")
             topic = meta.get("topic", "")
             pub_time = meta.get("time", current_day)
 
-            # 过滤掉自己发的内容
+            # Filter out own content
             if author_id == persona.agent_id:
                 continue
 
-            # 过滤掉已经看过的
+            # Filter out viewed content
             if content_id in persona.viewed_content:
                 continue
 
-            # A. 计算时间衰减
+            # A. Calculate time decay
             # time_diff = d - d_k
             time_diff = max(0, current_day - pub_time)
             time_factor = math.pow(lambda_decay, time_diff)
 
-            # B. 计算社交加权
-            # phi * I (是否关注)
+            # B. Calculate social weighting
+            # phi * I (whether following)
             social_bonus = 0.0
             if author_id in persona.social_relationships:
-                # 获取关注强度 (假设 range -1.0 to 1.0)
+                # Get following strength (assume range -1.0 to 1.0)
                 strength = persona.social_relationships[author_id]
                 if strength > 0:
-                    social_bonus = phi_social * strength  # 关系越好，加分越多
+                    social_bonus = phi_social * strength  # Better relationship, more points
 
-            # C. [关键修改] 热门事件/抗议内容的强制提权 (Viral Boost)
+            # C. [Key Modification] Viral boost for hot events/protest content
             viral_bonus = 0.0
             if is_case_validation:
-                # 识别抗议内容或AI刷屏内容
+                # Identify protest content or AI spam content
                 if "NO AI" in topic.upper() or "PROTEST" in topic.upper():
-                    # 给予巨大的加分，模拟“全站热搜”，确保能冲破个人的兴趣茧房
+                    # Give a huge bonus to simulate "site-wide trending," ensuring it breaks through personal interest bubbles
                     viral_bonus = 0.6
-                # 识别是否是AI刷屏内容 (通过 content_detail 或 注入时的特征)
-                # 这里假设我们在注入时，Topic设置为了特定的AI相关词汇
+                # Identify if it's AI spam content (via content_detail or injection features)
                 if "AI Generation" in doc.page_content:
-                    # AI 内容也有一定的热度，确保被看到从而引发愤怒
+                    # AI content also gets some heat to ensure it's seen to trigger anger
                     viral_bonus = 0.3
 
-            # C. 综合打分
+            # C. Comprehensive scoring
             # Score = Sim * TimeDecay + SocialBonus + viral_bonus
             final_score = (similarity_score * time_factor) + social_bonus + viral_bonus
 
@@ -234,7 +234,7 @@ class MemoryStore:
                 "debug_info": f"Sim:{similarity_score:.2f}, Time:{time_diff}, Soc:{social_bonus:.2f}"
             })
 
-        # --- 4. 排序并截断 ---
+        # --- 4. Sort and truncate ---
         ranked_candidates.sort(key=lambda x: x["score"], reverse=True)
 
         final_ids = [item["content_id"] for item in ranked_candidates[:limit]]
@@ -242,7 +242,7 @@ class MemoryStore:
         if ranked_candidates:
             top_debug = ranked_candidates[0]
             log.info(
-                f"推荐Top1给 {persona.name}: ID={top_debug['content_id']}, Score={top_debug['score']:.3f} ({top_debug['debug_info']})")
+                f"Recommended Top 1 to {persona.name}: ID={top_debug['content_id']}, Score={top_debug['score']:.3f} ({top_debug['debug_info']})")
 
         return final_ids
 
@@ -260,12 +260,12 @@ class MemoryStore:
     async def add_memory(self, persona_id: str, content: str, day_time: int, memory_type: MemoryType,
                          important_score: float | None) -> str:
         """
-        存储记忆
+        Store memory
         :param persona_id:
         :param content:
         :param day_time:
         :param memory_type:
-        :param important_score: 该条记忆的重要性分数
+        :param important_score: Importance score of this memory
         :return:
         """
 
@@ -277,23 +277,23 @@ class MemoryStore:
             "important_score": important_score or 0
         }
 
-        # 自动扁平化元数据
+        # Automatically flatten metadata
         flattened_metadata = _flatten_metadata_fully(final_metadata)
 
-        memory_id = f"mem_{persona_id}_{uuid.uuid4().hex[:8]}"  # 生成唯一ID
+        memory_id = f"mem_{persona_id}_{uuid.uuid4().hex[:8]}"  # Generate unique ID
 
-        log.info(f"➕ 正在为 '{persona_id}' 添加记忆 (ID: {memory_id}): '{content[:30]}...'")
+        log.info(f"➕ Adding memory for '{persona_id}' (ID: {memory_id}): '{content[:30]}...'")
 
         doc = Document(page_content=content, metadata=flattened_metadata)
         await self.vectorstore.aadd_documents(documents=[doc], ids=[memory_id])
 
-        log.debug(f"✅ 记忆 '{memory_id}' 已存入，元数据: {flattened_metadata}")
+        log.debug(f"✅ Memory '{memory_id}' stored with metadata: {flattened_metadata}")
 
         return memory_id
 
     async def add_agent_think_memory(self, content: str, persona_id: str, day_time: int):
         """
-        存储智能体思考记忆
+        Store agent thought memory
         :param content:
         :param persona_id:
         :param day_time:
@@ -307,17 +307,17 @@ class MemoryStore:
             "important_score": 0
         }
 
-        # 自动扁平化元数据
+        # Automatically flatten metadata
         flattened_metadata = _flatten_metadata_fully(final_metadata)
 
-        memory_id = f"mem_{persona_id}_{uuid.uuid4().hex[:8]}"  # 生成唯一ID
+        memory_id = f"mem_{persona_id}_{uuid.uuid4().hex[:8]}"  # Generate unique ID
 
-        log.info(f"➕ 正在为 '{persona_id}' 添加记忆 (ID: {memory_id}): '{content[:30]}...'")
+        log.info(f"➕ Adding memory for '{persona_id}' (ID: {memory_id}): '{content[:30]}...'")
 
         doc = Document(page_content=content, metadata=flattened_metadata)
         await self.vectorstore.aadd_documents(documents=[doc], ids=[memory_id])
 
-        log.debug(f"✅ 记忆 '{memory_id}' 已存入，元数据: {flattened_metadata}")
+        log.debug(f"✅ Memory '{memory_id}' stored with metadata: {flattened_metadata}")
 
     async def recall_memories(self,
                               persona_id: str,
@@ -325,7 +325,8 @@ class MemoryStore:
                               top_k: int = 5,
                               memory_type: Optional[MemoryType] = None) -> List[Document]:
         """
-        根据语义相似性，为特定智能体回忆最相关的记忆，并可选地模拟基于时间的记忆衰减。
+        Recall the most relevant memories for a specific agent based on semantic similarity,
+        optionally simulating time-based memory decay.
 
         Args:
             persona_id (str):
@@ -337,7 +338,7 @@ class MemoryStore:
             List[Document]: ...
         """
 
-        # --- 1. 数据过滤器 ---
+        # --- 1. Data Filter ---
         final_filter_conditions = {'persona_id': persona_id}
         if memory_type:
             final_filter_conditions['memory_type'] = memory_type.value
@@ -345,41 +346,41 @@ class MemoryStore:
         if not final_filter_conditions:
             chroma_filter = None
         elif len(final_filter_conditions) == 1:
-            # 如果只有一个条件，直接使用
+            # If only one condition, use it directly
             key, value = list(final_filter_conditions.items())[0]
             chroma_filter = {key: {"$eq": value}}
         else:
-            # 如果有多个条件，才使用 $and 操作符
+            # Use $and operator only if multiple conditions exist
             chroma_filter = {
                 "$and": [
                     {key: {"$eq": value}} for key, value in final_filter_conditions.items()
                 ]
             }
 
-        log.info(f"🔍 正在为 '{persona_id}' 查询记忆...")
+        log.info(f"🔍 Querying memories for '{persona_id}'...")
         try:
-            # --- 2. 执行查询 ---
+            # --- 2. Execute Query ---
             results = await self.vectorstore.asimilarity_search(query=query, k=top_k, filter=chroma_filter)
         except Exception as e:
             error_str = str(e)
             if "Nothing found on disk" in error_str or "segment" in error_str:
-                log.warning(f"⚠️ 记忆库尚未初始化或为空 (查询: '{query}')，返回空结果。这在第一天是正常的。")
+                log.warning(f"⚠️ Memory store is not initialized or is empty (Query: '{query}'), returning empty results. This is normal on day one.")
                 return []
-            log.error(f"❌ 在向量搜索期间发生未预期错误。查询: '{query}'. 错误: {e}")
+            log.error(f"❌ Unexpected error occurred during vector search. Query: '{query}'. Error: {e}")
             traceback.TracebackException.from_exception(e).print()
             return []
 
-        log.info(f"✅  - 检索到 {len(results)} 条相关记忆。")
+        log.info(f"✅ - Retrieved {len(results)} relevant memories.")
         return results
 
     def export_day_to_json(self, environment, day_number: int = 1,
                            output_directory: str = settings.file_load_path.daily_memory_exports_file,
                            additional_str: str = "", simple: bool = False):
         """
-        将在指定日期添加到向量数据库的所有记忆导出到一个JSON文件中。
+        Export all memories added to the vector database on a specified date to a JSON file.
 
-        这个函数应该在每天的仿真循环结束后调用，用于数据备份和离线分析。
-        **前提**: 添加记忆时，元数据中必须包含 'day' 字段。
+        This function should be called after the simulation loop each day for data backup and offline analysis.
+        **Prerequisite**: Metadata must include the 'day' field when adding memories.
 
         Args:
             :param output_directory:
@@ -387,19 +388,19 @@ class MemoryStore:
             :param simple:
             :param additional_str:
             :param environment:
-            day_number (int): 需要导出记忆的日期（天数）。
-            output_directory (str): 存放导出JSON文件的目录路径。
+            day_number (int): The date (day number) to export memories for.
+            output_directory (str): The directory path to store exported JSON files.
         """
-        log.info(f"📄 开始导出第 {day_number} 天的数据...")
+        log.info(f"📄 Starting export of Day {day_number} data...")
 
-        # 确保输出目录存在
+        # Ensure output directory exists
         if additional_str:
             output_directory = output_directory + f"/{environment.log_output_dir}/{additional_str}/day_time_{day_number}"
         else:
             output_directory = output_directory + f"/{environment.log_output_dir}/day_time_{day_number}"
         os.makedirs(output_directory, exist_ok=True)
 
-        # 输出目录
+        # Output paths
         output_contents = output_directory + f"/output_contents.json"
         output_personas = output_directory + f"/output_personas.json"
         output_platform = output_directory + f"/output_platform.json"
@@ -408,17 +409,17 @@ class MemoryStore:
         output_memories = output_directory + f"/output_memories.json"
         output_agent_think_memories = output_directory + f"/output_agent_think_memories.json"
 
-        # 构造内容数据
+        # Construct content data
         contents = [content.model_dump() for content in environment.contents.get_all_contents_dict()]
-        # 构造用户数据
+        # Construct user data
         personas = [v.model_dump() for k, v in environment.personas.items()]
-        # 构造策略数据
+        # Construct policy data
         policy = {
             "e_edu": environment.policy.e_edu,
             "ai_threshold": environment.policy.ai_threshold,
             "f_penalty": environment.policy.f_penalty,
         }
-        # 构造平台数据
+        # Construct platform data
         platforms = {
             "w": environment.platform.w,
             "mu": environment.platform.mu,
@@ -441,7 +442,7 @@ class MemoryStore:
 
 
         }
-        # 构造系统KPI数据
+        # Construct system KPI data
         system_kpi = {
             "safety": environment.system_kpi.safety,
             "satisfaction": environment.system_kpi.satisfaction,
@@ -450,7 +451,7 @@ class MemoryStore:
             "theta": environment.system_kpi.theta,
         }
 
-        # 使用 get 方法和 where 过滤器来获取当天的所有记忆
+        # Use get method and where filter to retrieve all memories of the day
         try:
             results = self.vectorstore.get(
                 where={
@@ -461,9 +462,9 @@ class MemoryStore:
                 }
             )
         except Exception as e:
-            log.error(f"从ChromaDB获取第 {day_number} 天的数据时出错: {e}")
+            log.error(f"Error retrieving Day {day_number} data from ChromaDB: {e}")
             results = {"ids": [], "documents": [], "metadatas": []}
-        # 将返回的数据构造成一个更清晰的列表
+        # Construct a clearer list from returned data
         daily_memories_list = []
         if results['ids']:
             for mem_id, content, metadata in zip(results['ids'], results['documents'], results['metadatas']):
@@ -474,20 +475,20 @@ class MemoryStore:
                 }
                 daily_memories_list.append(memory_obj)
 
-        # 获取智能体思考记忆
+        # Retrieve agent thought memories
         results_agent_think_memory = {}
         for persona in environment.personas.values():
             try:
                 agent_think_memory = self.vectorstore.get(where={
                     "$and": [
-                        {"memory_type": {"$eq": "agent_think"}},  # 确保存储时也是用的这个字符串
+                        {"memory_type": {"$eq": "agent_think"}},  # Ensure string matches storage
                         {"persona_id": {"$eq": persona.agent_id}},
                     ]
                 })
             except Exception as e:
-                log.error(f"获取智能体 {persona.agent_id} 的思考记忆时出错: {e}")
+                log.error(f"Error retrieving thought memory for agent {persona.agent_id}: {e}")
                 agent_think_memory = {"ids": [], "documents": [], "metadatas": []}
-            # 只有当查找到数据时才进行处理
+            # Process only if data is found
             if agent_think_memory['ids']:
                 res = [persona.model_dump(exclude=["viewed_content", "reacted_content"])]
 
@@ -504,71 +505,71 @@ class MemoryStore:
                     }
                     res.append(memory_obj)
 
-                # 存入结果字典
+                # Store into result dictionary
                 results_agent_think_memory[persona.agent_id] = res
 
-        # 内容 写入JSON文件
+        # Write Content to JSON file
         try:
             with open(output_contents, 'w', encoding='utf-8') as f:
                 json.dump(contents, f, ensure_ascii=False, indent=4)
-            log.info(f"✅ 第 {day_number} 天的 内容 已成功导出到: {output_contents}")
+            log.info(f"✅ Day {day_number} Content exported successfully to: {output_contents}")
         except Exception as e:
-            log.error(f"写入JSON文件 {output_contents} 时出错: {e}")
+            log.error(f"Error writing to JSON file {output_contents}: {e}")
 
-        # 人物数据 写入JSON文件
+        # Write Persona data to JSON file
         try:
             with open(output_personas, 'w', encoding='utf-8') as f:
                 json.dump(personas, f, ensure_ascii=False, indent=4)
-            log.info(f"✅ 第 {day_number} 天的 人物数据 已成功导出到: {output_personas}")
+            log.info(f"✅ Day {day_number} Persona data exported successfully to: {output_personas}")
         except Exception as e:
-            log.error(f"写入JSON文件 {output_personas} 时出错: {e}")
+            log.error(f"Error writing to JSON file {output_personas}: {e}")
 
-        # 平台数据 写入JSON文件
+        # Write Platform data to JSON file
         try:
             with open(output_platform, 'w', encoding='utf-8') as f:
                 json.dump(platforms, f, ensure_ascii=False, indent=4)
-            log.info(f"✅ 第 {day_number} 天的 平台数据 已成功导出到: {output_platform}")
+            log.info(f"✅ Day {day_number} Platform data exported successfully to: {output_platform}")
         except Exception as e:
-            log.error(f"写入JSON文件 {output_platform} 时出错: {e}")
+            log.error(f"Error writing to JSON file {output_platform}: {e}")
 
-        # 政策参数 写入JSON文件
+        # Write Policy parameters to JSON file
         try:
             with open(output_policy, 'w', encoding='utf-8') as f:
                 json.dump(policy, f, ensure_ascii=False, indent=4)
-            log.info(f"✅ 第 {day_number} 天的 政策参数 已成功导出到: {output_policy}")
+            log.info(f"✅ Day {day_number} Policy parameters exported successfully to: {output_policy}")
         except Exception as e:
-            log.error(f"写入JSON文件 {output_policy} 时出错: {e}")
+            log.error(f"Error writing to JSON file {output_policy}: {e}")
 
-        # 系统KPI 写入JSON文件
+        # Write System KPI to JSON file
         try:
             with open(output_system_kpi, 'w', encoding='utf-8') as f:
                 json.dump(system_kpi, f, ensure_ascii=False, indent=4)
-            log.info(f"✅ 第 {day_number} 天的 系统KPI 已成功导出到: {output_system_kpi}")
+            log.info(f"✅ Day {day_number} System KPI exported successfully to: {output_system_kpi}")
         except Exception as e:
-            log.error(f"写入JSON文件 {output_system_kpi} 时出错: {e}")
+            log.error(f"Error writing to JSON file {output_system_kpi}: {e}")
 
-        # 记忆 写入JSON文件
+        # Write Memories to JSON file
         try:
             with open(output_memories, 'w', encoding='utf-8') as f:
                 json.dump(daily_memories_list, f, ensure_ascii=False, indent=4)
-            log.info(f"✅ 第 {day_number} 天的 {len(daily_memories_list)} 条记忆已成功导出到: {output_memories}")
+            log.info(f"✅ Day {day_number}'s {len(daily_memories_list)} memories exported successfully to: {output_memories}")
         except Exception as e:
-            log.error(f"写入JSON文件 {output_memories} 时出错: {e}")
+            log.error(f"Error writing to JSON file {output_memories}: {e}")
 
         try:
             with open(output_agent_think_memories, 'w', encoding='utf-8') as f:
                 json.dump(results_agent_think_memory, f, ensure_ascii=False, indent=4)
             log.info(
-                f"✅ 第 {day_number} 天的 {len(results_agent_think_memory)} 条思考记忆已成功导出到: {output_agent_think_memories}")
+                f"✅ Day {day_number}'s {len(results_agent_think_memory)} thought memories exported successfully to: {output_agent_think_memories}")
         except Exception as e:
-            log.error(f"写入JSON文件 {output_agent_think_memories} 时出错: {e}")
+            log.error(f"Error writing to JSON file {output_agent_think_memories}: {e}")
 
 
-# --- 推荐的扁平化辅助函数 ---
+# --- Recommended flattening helper function ---
 def _flatten_metadata_fully(metadata: Dict[str, Any], parent_key: str = '', sep: str = '_') -> Dict[str, Any]:
     """
-    一个辅助函数，递归地将嵌套字典扁平化，通过连接键名。
-    例如: {"a": {"b": 1}} -> {"a_b": 1}
+    A helper function to recursively flatten nested dictionaries by joining keys.
+    Example: {"a": {"b": 1}} -> {"a_b": 1}
     """
     items = []
     for k, v in metadata.items():

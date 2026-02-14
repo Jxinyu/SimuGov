@@ -3,87 +3,87 @@ from typing import Literal, Optional, List
 
 
 class PersonaUpdateParams(BaseModel):
-    """定义需要更新的智能体参数。所有字段都是可选的。"""
-    # --- 新增字段 ---
+    """Define agent parameters that need to be updated. All fields are optional."""
+    # --- New Fields ---
     new_role: Optional[Literal['合规创作者', '水印破坏者', '公众']] = Field(
         default=None,
-        description="反思后决定的新角色定位。如果角色不变，则为 null。"
+        description="New role positioning decided after reflection. If the role remains unchanged, it is null."
     )
     new_satisfaction: Optional[float] = Field(
         default=None, ge=-1.0, le=1.0,
-        description="根据今天的经历更新的对平台的新满意度分数。"
+        description="Updated satisfaction score for the platform based on today's experiences."
     )
-    new_post_wish: Optional[bool] = Field(default=None, description="更新发布意愿。")
-    is_active: Optional[bool] = Field(default=None, description="是否决定继续留在平台。")
+    new_post_wish: Optional[bool] = Field(default=None, description="Update posting willingness.")
+    is_active: Optional[bool] = Field(default=None, description="Whether decided to continue staying on the platform.")
 
 
 class DailyReflection(BaseModel):
-    """定义每日总结的完整输出。"""
-    new_belief: str = Field(description="根据今天的经历，提炼出的一个关于世界或平台的新核心信念。")
-    daily_summary: str = Field(description="一句话高度概括今天的整体感受。")
-    updates: PersonaUpdateParams = Field(description="需要对自身 persona 进行的参数更新。")
+    """Define the complete output of daily reflection."""
+    new_belief: str = Field(description="A new core belief about the world or the platform distilled from today's experiences.")
+    daily_summary: str = Field(description="A single sentence highly summarizing today's overall feeling.")
+    updates: PersonaUpdateParams = Field(description="Parameter updates that need to be applied to the persona.")
 
 
 class AgentInteractionDecision(BaseModel):
-    """定义单个智能体对单个内容的具体互动行为。"""
-    content_id: str = Field(description="决定要进行互动的内容的唯一ID。")
+    """Define specific interaction behaviors of a single agent toward a single content item."""
+    content_id: str = Field(description="The unique ID of the content decided for interaction.")
     action_type: Literal["like", "comment", "share"] = Field(
-        description="要执行的互动类型：点赞、评论或分享。"
+        description="The type of interaction to perform: like, comment, or share."
     )
     comment_text: Optional[str] = Field(
         default=None,
-        description="如果action_type是'comment'，这里必须包含评论的具体内容。"
+        description="If action_type is 'comment', this field must contain the specific content of the comment."
     )
-    reason: str = Field(description="为什么你决定对这个内容进行此项互动。")
+    reason: str = Field(description="Why you decided to perform this interaction on this content.")
 
 
 class SingleAgentBatchResult(BaseModel):
-    """定义LLM为单个智能体返回的所有互动决策。"""
-    agent_id: str = Field(description="做出这些决策的智能体的ID。")
+    """Define all interaction decisions returned by the LLM for a single agent."""
+    agent_id: str = Field(description="The ID of the agent making these decisions.")
     interactions: List[AgentInteractionDecision] = Field(
-        description="该智能体决定要执行的互动列表。如果对所有内容都无动于衷，则返回空列表[]。"
+        description="List of interactions the agent decided to perform. If indifferent to all content, return an empty list []."
     )
 
 
 class BatchInteractionResult(BaseModel):
-    """定义整个批次的最终输出，包含所有智能体的决策。"""
+    """Define the final output of the entire batch, containing decisions of all agents."""
     agent_decisions: List[SingleAgentBatchResult] = Field(
-        description="一个列表，包含本次批次中每一个智能体的决策结果。"
+        description="A list containing the decision results for each agent in this batch."
     )
 
 
 class ReactionRule(BaseModel):
     """
-    定义一条具体的互动规则。
+    Define a specific interaction rule.
     """
     target_content_type: Literal['AI_LABELED', 'HUMAN_LABELED', 'ANY'] = Field(
-        description="规则适用的内容标签类型。"
+        description="The type of content label the rule applies to."
     )
 
     action_type: Literal['IGNORE', 'LIKE', 'SHARE', 'COMMENT'] = Field(
-        description="触发规则后的互动行为。"
+        description="The interaction behavior after the rule is triggered."
     )
 
     probability: float = Field(
         ge=0.0, le=1.0,
-        description="触发该互动的概率。"
+        description="The probability of triggering this interaction."
     )
 
     satisfaction_impact: float = Field(
         ge=-0.1, le=0.1,
-        description="单次互动对个体满意度的微小影响。例如：看到喜欢的内容点赞(+0.01)，看到讨厌的内容虽然忽视但心里不爽(-0.02)。"
+        description="The subtle impact of a single interaction on individual satisfaction. For example: liking content you like (+0.01), feeling disgruntled while ignoring content you dislike (-0.02)."
     )
 
 
 class PublicGroupPolicy(BaseModel):
     """
-    群体宏观反应策略。
+    Group macro reaction strategy.
     """
     group_name: str
-    rules: List[ReactionRule] = Field(description="该群体的一组反应规则列表。")
+    rules: List[ReactionRule] = Field(description="A list of reaction rules for this group.")
     base_satisfaction_change: float = Field(
-        description="除具体互动外，因整体环境氛围导致的每日满意度自然变化量。"
+        description="Natural daily change in satisfaction due to the overall environment atmosphere, excluding specific interactions."
     )
     churn_probability: float = Field(
-        description="该群体中今天感到绝望而流失的概率。"
+        description="The probability of group members churning today due to despair."
     )

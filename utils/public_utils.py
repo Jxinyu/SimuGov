@@ -5,7 +5,7 @@ import numpy as np
 
 
 def calculate_theta_jitter(theta_history: list) -> float:
-    """计算 Theta (政策) 的抖动程度。"""
+    """Calculate the jitter degree of Theta (policy)."""
     if not theta_history or len(theta_history) < 2:
         return 0.0
     diffs = [abs(theta_history[i] - theta_history[i - 1]) for i in range(1, len(theta_history))]
@@ -15,7 +15,7 @@ def calculate_theta_jitter(theta_history: list) -> float:
 def calculate_stable_score(kpi_list: list, theta_history: list = None, penalty_weight: float = 1.0,
                            jitter_weight: float = 2.0) -> float:
     """
-    计算考虑了稳定性与政策抖动的综合得分。
+    Calculate the comprehensive score considering stability and policy jitter.
     Score = Mean(KPI) - (Weight * StdDev(KPI)) - (JitterWeight * Mean(|Delta Theta|))
     """
     if not kpi_list:
@@ -25,10 +25,10 @@ def calculate_stable_score(kpi_list: list, theta_history: list = None, penalty_w
     mean_val = np.mean(data)
     std_val = np.std(data)
 
-    # 基础分：均值 - 波动惩罚
+    # Base score: mean - fluctuation penalty
     score = mean_val - (penalty_weight * std_val)
 
-    # 额外惩罚：政策抖动
+    # Extra penalty: policy jitter
     if theta_history:
         jitter = calculate_theta_jitter(theta_history)
         score -= (jitter * jitter_weight)
@@ -38,12 +38,12 @@ def calculate_stable_score(kpi_list: list, theta_history: list = None, penalty_w
 
 def calculate_best_policy_by_path(path: str):
     """
-    根据传入的目录计算最佳政策。
-    逻辑：遍历目录下所有策略，计算三项KPI稳健分的平均值，选出最高者。
+    Calculate the best policy based on the passed-in directory.
+    Logic: traverse all policies under the directory, calculate the average of three KPI robust scores, and select the highest one.
     """
     base_path = Path(path)
     if not base_path.exists():
-        print(f"❌ 路径不存在: {path}")
+        print(f"❌ Path does not exist: {path}")
         return None
 
     best_policy_data = {
@@ -53,21 +53,21 @@ def calculate_best_policy_by_path(path: str):
         "kpi_robust_detail": {}
     }
 
-    # 1. 遍历所有政策文件夹
+    # 1. Traverse all policy folders
     for policy_folder in base_path.iterdir():
-        # 排除“简化”文件夹及非目录文件
-        if not policy_folder.is_dir() or policy_folder.name == "简化":
+        # Exclude "simplified" folder and non-directory files
+        if not policy_folder.is_dir() or policy_folder.name == "simplified":
             continue
 
-        # 2. 定位最新的 day_time 文件夹 (例如 day_time_15)
+        # 2. Locate the latest day_time folder (e.g., day_time_15)
         day_dirs = list(policy_folder.glob("day_time_*"))
         if not day_dirs:
             continue
 
-        # 按照文件夹后缀的数字进行排序
+        # Sort according to the numbers in the folder suffix
         latest_day_dir = max(day_dirs, key=lambda d: int(d.name.split('_')[-1]))
 
-        # 3. 读取数据文件
+        # 3. Read data files
         kpi_path = latest_day_dir / "output_system_kpi.json"
         policy_path = latest_day_dir / "output_policy.json"
 
@@ -80,19 +80,19 @@ def calculate_best_policy_by_path(path: str):
             with open(policy_path, 'r', encoding='utf-8') as f:
                 policy_params = json.load(f)
 
-            # 4. 提取序列数据
-            # 这里的 key 需要对应你 json 中的实际字段名 (一般是 safety, creativity, satisfaction)
+            # 4. Extract sequence data
+            # The keys here need to correspond to the actual field names in your json (usually safety, creativity, satisfaction)
             theta_hist = kpi_json.get('theta', [])
 
-            # 分别计算三个维度的稳健得分
+            # Calculate robust scores for the three dimensions separately
             s_robust = calculate_stable_score(kpi_json.get('safety', []), theta_hist)
             c_robust = calculate_stable_score(kpi_json.get('creativity', []), theta_hist)
             sa_robust = calculate_stable_score(kpi_json.get('satisfaction', []), theta_hist)
 
-            # 计算综合稳健分 (三者平均)
+            # Calculate the comprehensive robust score (average of the three)
             avg_robust_score = (s_robust + c_robust + sa_robust) / 3
 
-            # 5. 更新全局最优
+            # 5. Update global optimal
             if avg_robust_score > best_policy_data["overall_robust_score"]:
                 best_policy_data.update({
                     "overall_robust_score": avg_robust_score,
@@ -107,65 +107,10 @@ def calculate_best_policy_by_path(path: str):
                 })
 
         except Exception as e:
-            print(f"⚠️ 处理文件夹 {policy_folder.name} 时出错: {e}")
+            print(f"⚠️ Error processing folder {policy_folder.name}: {e}")
             continue
 
     if best_policy_data["overall_robust_score"] == -1.0:
         return None
 
     return best_policy_data
-
-
-# --- 使用示例 ---
-if __name__ == "__main__":
-    test_path = r'D:\A-课题\小论文内容\code\SimuGov\experiment\multi_granularity_method_evaluation\closed_loop_effectiveness_experiment\Verification_passed\Adaptive experiment passed\2\data\低逆反\elite'
-    result = calculate_best_policy_by_path(test_path)
-
-    if result:
-        print("\n" + "=" * 30 + " 低逆反最优解 " + "=" * 30)
-        print(f"🥇 最佳策略ID: {result['policy_id']}")
-        print(f"📊 综合稳健得分: {result['overall_robust_score']:.4f}")
-        print(f"🛠️ 政策参数: {result['params']}")
-        print(f"📈 维度详情: {result['kpi_robust_detail']}")
-        print("=" * 75)
-
-    # test_path = r'method\store\daily_memory_exports\2026-01-19\高逆反'
-    # result = calculate_best_policy_by_path(test_path)
-    #
-    # if result:
-    #     print("\n" + "=" * 30 + " 高逆反最优解 " + "=" * 30)
-    #     print(f"🥇 最佳策略ID: {result['policy_id']}")
-    #     print(f"📊 综合稳健得分: {result['overall_robust_score']:.4f}")
-    #     print(f"🛠️ 政策参数: {result['params']}")
-    #     print(f"📈 维度详情: {result['kpi_robust_detail']}")
-    #     print("=" * 75)
-    #
-    # test_path = r'experiment\多粒度方法评估\闭环有效性实验\验证通过\自适应实验通过\2\data\低入高\运行数据'
-    # result = calculate_best_policy_by_path(test_path)
-    #
-    # if result:
-    #     print("\n" + "=" * 30 + " 低入高结果 " + "=" * 30)
-    #     print(f"🥇 最佳策略ID: {result['policy_id']}")
-    #     print(f"📊 综合稳健得分: {result['overall_robust_score']:.4f}")
-    #     print(f"🛠️ 政策参数: {result['params']}")
-    #     print(f"📈 维度详情: {result['kpi_robust_detail']}")
-    #     print("=" * 75)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -3,8 +3,8 @@ import os
 import sys
 
 from framework_utils import test_simple_three_policies
-# 导入配置（确保环境变量能被 config 加载前设置，或者让 config 自动处理）
-# 这里我们直接导入实验函数
+# Import configuration (ensure environment variables can be set before config is loaded, or let config handle it automatically)
+# Here we directly import experimental functions
 from main_experiment import (
     low_model_effective_filter_experiment,
     framework_efficiency_experiment,
@@ -18,7 +18,7 @@ from config import settings
 
 def adaptive_experiment():
     """
-    策略自适应实验
+    Policy adaptation experiment
     :return:
     """
 
@@ -30,7 +30,7 @@ async def run_sequentially():
 
 
 if __name__ == '__main__':
-    # 1. 强制清空环境变量中的代理设置
+    # 1. Force clear proxy settings in environment variables
     os.environ['http_proxy'] = ''
     os.environ['https_proxy'] = ''
     os.environ['all_proxy'] = ''
@@ -40,29 +40,29 @@ if __name__ == '__main__':
     os.environ["ANONYMIZED_TELEMETRY"] = "False"
     os.environ["CHROMA_TELEMETRY_IMPL"] = "false"
 
-    # 高低粒度 有效性 实验
-    # asyncio.run(adaptive_experiment_low_in_high('中', 0.46, 0.90))
+    # High-low granularity effectiveness experiment
+    # asyncio.run(adaptive_experiment_low_in_high('Medium', 0.46, 0.90))
     # asyncio.run(effect_verification())
-    # asyncio.run(read_lf_policy_run_complete(r'result_data\20260121\低逆反进化结果'))
+    # asyncio.run(read_lf_policy_run_complete(r'result_data\20260121\low_reactance_evolution_results'))
     # asyncio.run(read_lf_policy_run_complete(r'result_data\20260118\221824'))
-    # asyncio.run(complete_three_policies())  # 三个基准实验
-    # asyncio.run(adaptive_experiment_filter_elites(False, False))  # 低逆反社会  筛选精英解集
+    # asyncio.run(complete_three_policies())  # Three baseline experiments
+    # asyncio.run(adaptive_experiment_filter_elites(False, False))  # Low-reactance society screen elite solution sets
 
     # asyncio.run(complete_three_policies())
 
-    # 框架效率实验
+    # Framework efficiency experiment
     # asyncio.run(framework_efficiency_experiment(1))
     asyncio.run(run_sequentially())
 
-    # 简化框架政策测试
+    # Simplified framework policy test
     # asyncio.run(test_simple_three_policies())
     # asyncio.run(complete_three_policies())
 
-    # 案例验证实验
+    # Case validation experiment
     # asyncio.run(case_experiment())  # case_verification_and_ablation
-    # asyncio.run(case_ablation_experiment())  # 消融实验
+    # asyncio.run(case_ablation_experiment())  # Ablation experiment
 
-    # KPI鲁棒性实验
+    # KPI robustness experiment
     # time.sleep(60)
     # settings.platform.case_validation = False
     # settings.platform.complete_run_days = 20
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     #     asyncio.run(complete_three_policies())
     #     time.sleep(60)
 
-    # 高低粒度趋势一致性实验
+    # High-low granularity trend consistency experiment
     # settings.platform.complete_run_days = 10
     # settings.platform.simple_run_days = 10
     # settings.file_load_path.personas_file = r'method\data\trend_consistency_30.json'
