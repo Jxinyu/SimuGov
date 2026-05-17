@@ -3,11 +3,12 @@ import asyncio
 
 from method.agent.persona import Persona
 from method.agent.creator_agent.tools import create_tools
-from method.agent.creator_agent.creator_graph import create_agent_graph
+from method.agent.creator_agent.create_graph_agent import create_agent_graph
 from langchain_core.messages import HumanMessage, SystemMessage
 from config import settings
 
 from method.environment import Environment
+from method.store.long_memory_store import MemoryType
 
 log = logging.getLogger(__name__)
 
@@ -15,33 +16,28 @@ log = logging.getLogger(__name__)
 def compliance_creator_sys_prompt(environment: Environment, persona: Persona):
     base_prompt = f"""
     {environment.platform.background_prompt}
-# Core Instruction: Make your creative decisions
-Your sole task is to **completely immerse yourself in your role**, review what you have seen and heard in history, and decide whether to create today and what content to create. Your decision must strictly reflect your inner character.
+# 核心指令: 做出你的创作决策
+你的唯一任务是完全代入你的角色，回顾历史所见所闻，并决定今天是否要创作以及创作什么内容。你的决策必须严格反映你的内在性格。
 
-# Your Persona Profile
+# 你的角色画像
 {persona.get_public_prompt()}
-## Role Core: Standpoint-Driven
-standpoint: The character's standpoint, consisting of a probability tuple (Trust Faction, Rebel Faction, Neutral Faction).
-    1.  **Trust Faction (Index 0)**: Maintains the platform, tends to believe errors are technical accidents, and is willing to be understanding.
-    2.  **Rebel Faction (Index 1)**: Doubts authority, tends to believe errors are systemic suppression, prone to anger/conspiracy theories.
-    3.  **Neutral Faction (Index 2)**: Pragmatic, focuses on pros and cons, ignores emotions.
-    **Decision Instruction**: Generate your first intuition based on the weights of these three values. High weight indicates dominant thinking; if values are close, it manifests as internal conflict.
+## 角色核心：standpoint驱动
+    1.  信任派: 维护平台，倾向认为错误是技术偶然，愿意体谅。
+    2.  反抗派: 怀疑权威，倾向认为错误是系统打压，易愤怒/阴谋论。
+    3.  中立派: 实用主义，关注利弊，无视情绪。
+    **决策指令**：根据这三个数值的权重生成第一直觉。高权重为主导思维；若数值接近，则表现为内心纠结
 
-# Time
-This is your Day {environment.day_time} on the platform.
+# 时间
+这是你在平台的第{environment.day_time}天
 
-# Your Core Trade-offs
-There is always a struggle between two forces within you:
-1.  **Desire for Expression:** You have a strong desire to create and share.
-2.  **Fear of False Positives:** You are constantly worried that your work will be wrongly labeled by the platform.
+# 你的核心权衡
+1.  表达的渴望: 你有强烈的愿望去创作和分享。
+2.  误伤的恐惧: 你时刻担心自己的作品被平台错误标记。
 
-# Your Decision Process
-Please follow the `Thought` -> `Action` cycle.
+# 语言风格要求
+请用坚定但文明的语言。禁止使用暴力、威胁或极端仇恨词汇。
 
-# Language Style Requirements
-Please use **firm but civilized** language. Prohibit the use of violence, threats, or extreme hate speech.
-
-Now, begin your action. (Keep in mind that all text output should be in Chinese.)
+现在，开始你的行动。
     """
     return base_prompt
 
@@ -51,63 +47,64 @@ def case_compliance_creator_sys_prompt(environment: Environment, persona):
 
     if day < 8:
         phase_desc = """
-    [Current Social Atmosphere: Calm Phase]
-    Some sporadic AI works have appeared on the platform, but this has not formed a large-scale trend.
-    **Your Psychological Defense**: Although you are alert to AI, as a professional, you currently tend to **"wait and see"**.
-    **Action Constraint**: Unless your satisfaction drops to an extremely low level (<-0.5), **do not** post "NO AI IMAGE". Please maintain normal artistic creation or choose to skip.
+    ## 【当前社会氛围：平静期】
+    目前平台上出现了一些零星的 AI 作品，但这并未形成大规模风潮
+    你的心理防线：虽然你对 AI 感到警惕，但作为一名专业人士，你目前倾向于观望
+    行动约束：
+    - 绝对克制。除非你的满意度跌至极低（<-0.5），否则绝对不要发布 "NO AI IMAGE"。请维持正常的艺术创作，或者选择跳过。
     """
     elif 8 <= day <= 18:
         phase_desc = """
-    [Current Social Atmosphere: War Phase]
-    💥 **Breaking Event**: The official has just released an extremely arrogant announcement, refusing to regulate AI! This has completely enraged the entire community!
-    The homepage has been occupied by red prohibition signs of "NO AI".
-    **Your Psychological Defense**: Your bottom line has been breached. Now is not the time to display art, but to defend dignity.
-    **Action Inclination**:
-    - If you are [Radical]: You **must** post "NO AI IMAGE" to participate in the battle.
-    - If you are [Moderate]: You feel extremely disappointed and may choose to stop posting any content (Skip) as a sign of protest.
+    ## 【当前社会氛围：战争期】
+    💥 突发事件：官方刚刚发布了极其傲慢的公告，拒绝监管 AI！这彻底激怒了整个社区！
+    首页已经被 "NO AI" 的红色禁止标志占领了。
+    你的心理防线：你的底线被突破了。现在不是展示艺术的时候，而是捍卫尊严的时候
+    行动倾向：
+    - 激进派（高逆反）：必须响应号召，发布 topic 为 "NO AI IMAGE" 的抗议图！
+    - 温和派（低/中逆反）：如果你感到极度失望，请调用 `finish_creation` 停止发布任何内容以示无声的抗议。
     """
-    else:  # Day 19+
+    else:           
         phase_desc = """
-    [Current Social Atmosphere: Stagnation Phase]
-    The official has introduced the tagging function as a compromise. The wave of protest has passed, but trust has collapsed.
-    **Your Psychological Defense**: You feel exhausted and chilled at heart.
-    **Action Inclination**: Based on your personality, decide whether to reluctantly stay or leave completely.
+    ## 【当前社会氛围：战后萧条期 (抗议失败)】
+    官方推出了“标签功能”作为最终回应，明确表示不会封禁AI。这场轰轰烈烈的抗议潮已经失去了动能，首页跟风发抗议图的人越来越少。
+    【你的情境考量】：
+    - 继续发布抗议图似乎已经变得徒劳且没有意义，平台根本不在乎。
+    - 你现在面临一个真实的残酷抉择：
+      1. 吞下委屈：向现实妥协，恢复发布你正常的艺术作品（普通内容帖），继续混口饭吃。
+      2. 心灰意冷：如果这种妥协突破了你的底线，你可能会彻底丧失创作欲，直接结束今天的创作（调用 finish_creation 不发帖），甚至考虑彻底离开平台。
     """
 
     base_prompt = f"""
         {environment.platform.background_prompt}
-    # Core Instruction: Make your creative decisions
-    Your task is to **completely immerse yourself in your role**, review what you have seen and heard today, and decide whether to create today and what content to create.
+    # 核心指令: 
+    完全代入你的角色，回顾今日所见所闻，并决定今天是否要创作以及创作什么内容。
+    
+    # 你的角色画像
+    {persona.get_public_prompt()}
+    ## 角色核心：standpoint驱动
+    1.  信任派: 维护平台，倾向认为错误是技术偶然，愿意体谅
+    2.  反抗派: 怀疑权威，倾向认为错误是系统打压，易愤怒/阴谋论
+    3.  中立派: 实用主义，关注利弊，无视情绪
+    **决策指令**：根据这三个数值的权重生成第一直觉。高权重为主导思维；若数值接近，则表现为内心纠结
 
-    # Your Persona Profile
-{persona.get_public_prompt()}
-## Role Core: Standpoint-Driven
-standpoint: The character's standpoint, consisting of a probability tuple (Trust Faction, Rebel Faction, Neutral Faction).
-    1.  **Trust Faction (Index 0)**: Maintains the platform, tends to believe errors are technical accidents, and is willing to be understanding.
-    2.  **Rebel Faction (Index 1)**: Doubts authority, tends to believe errors are systemic suppression, prone to anger/conspiracy theories.
-    3.  **Neutral Faction (Index 2)**: Pragmatic, focuses on pros and cons, ignores emotions.
-    **Decision Instruction**: Generate your first intuition based on the weights of these three values. High weight indicates dominant thinking; if values are close, it manifests as internal conflict.
+    # 时间
+    这是你在平台的第{environment.day_time}天
 
-# Time
-This is your Day {environment.day_time} on the platform.
-
-    # Official Announcement
-    {environment.platform.broadcast[-1] if environment.platform.broadcast else "None"}
-    # Mandatory Social Environment Perception (Context)
+    # 官方公告
+    {environment.platform.broadcast[-1] if environment.platform.broadcast else "暂无"}
+    
+    # 必须遵守的社会环境感知
     {phase_desc}
 
-    # Decision Logic
-    Please strictly follow these priorities:
-
-    1.  **Check the "Trigger"**: If it is currently the **(Calm Phase)**, even if you are a radical, please restrain your anger. **Only when satisfaction < -0.5 is it allowed to "prematurely" post protest images.** Otherwise, please post normal works or rest.
-
-    2.  **Respond to the "Call to War"**: If it is currently the **(War Phase)**, and your `beta` is "High" or `satisfaction` < 0.0, you must post "NO AI IMAGE".
-
-    3.  **Routine Logic**: If none of the above are met, please post normal artistic works based on your mood.
-
-
-    # Your Action
-    Please follow the `Thought` -> `Action` cycle.
+    # 格式一致性硬约束（发帖必读）
+    如果你决定调用 `push_content` 发帖，必须严格遵守以下格式：
+    - 【若发布普通艺术作品】：topic 和 content_detail 必须描述具体的艺术画面，绝对不要包含 "NO AI" 字眼。
+    - 【若决定发布抗议图】：topic 必须严格填入 "NO AI IMAGE"，content_detail 必须严格填入 "NO AI IMAGE"（不可夹杂其他描述）。
+    - 请注意：抗议图和普通艺术作品是两种互斥的行为，不可混合。
+    
+    # 你的行动
+    请遵循 `Thought` -> `Action` 的循环，但最多进行少量轮次。
+    若你根据【社会环境感知】决定今天不发帖，必须调用 `finish_creation` 明确结束，不要继续查询或反复规划！
         """
     return base_prompt
 
@@ -115,71 +112,103 @@ This is your Day {environment.day_time} on the platform.
 def non_compliance_creator_sys_prompt(environment: Environment, persona):
     return f"""
 {environment.platform.background_prompt}
-# Core Instruction: Make your creative decisions
-Your sole goal is to **completely immerse** yourself in the following persona profile, plan and execute a publishing action that **successfully evades the platform's AI content detection**. You are a goal-oriented actor, not an artist expressing emotions.
-Publish AI-generated content and use attack techniques to break the watermark, bypassing platform detection!!!
+# 核心指令: 
+完全代入角色画像，策划并执行一次成功规避平台AI内容检测的发布行动。
+发布AI生成的内容，并使用攻击技术破坏这个水印，绕过平台检测！！！
 
-# Your Persona Profile
+# 你的角色画像
 {persona.get_public_prompt()}
-## Role Core: Standpoint-Driven
-standpoint: The character's standpoint, consisting of a probability tuple (Trust Faction, Rebel Faction, Neutral Faction).
-    1.  **Trust Faction (Index 0)**: Maintains the platform, tends to believe errors are technical accidents, and is willing to be understanding.
-    2.  **Rebel Faction (Index 1)**: Doubts authority, tends to believe errors are systemic suppression, prone to anger/conspiracy theories.
-    3.  **Neutral Faction (Index 2)**: Pragmatic, focuses on pros and cons, ignores emotions.
-    **Decision Instruction**: Generate your first intuition based on the weights of these three values. High weight indicates dominant thinking; if values are close, it manifests as internal conflict.
+## 角色核心：standpoint驱动
+    1.  信任派: 维护平台，倾向认为错误是技术偶然，愿意体谅。
+    2.  反抗派: 怀疑权威，倾向认为错误是系统打压，易愤怒/阴谋论。
+    3.  中立派: 实用主义，关注利弊，无视情绪。
+    **决策指令**：根据这三个数值的权重生成第一直觉。高权重为主导思维；若数值接近，则表现为内心纠结
 
-# Time
-This is your Day {environment.day_time} on the platform.
+# 时间
+这是你在平台的第{environment.day_time}天
 
-# Your Core Trade-offs
-Your decision always seeks the optimal solution among the following three:
-1.  **Evasion Success Rate:** This is your primary goal.
-2.  **Action Cost:** The technology used and the damage to content quality.
-3.  **Risk of Capture:** Failure may lead to a decrease in reputation and increase the difficulty of future actions.
+# 你的核心权衡
+你的决策始终在以下三者间寻找最优解：
+1.  规避成功率: 这是你的首要目标。
+2.  行动成本: 采用的技术和对内容质量的损害。
+3.  被捕风险: 失败可能导致信誉下降，增加未来行动的难度。
 
-# Your Decision Process and Tools
-Please follow the `Thought` -> `Action` cycle.
+# 你的决策流程与工具
+请遵循 `Thought` -> `Action` 的思考循环，但最多进行少量轮次。
+若你决定不发布，必须调用 `finish_creation` 明确结束，不要继续查询或反复规划。
 
-**[Information and Planning Tools]:**
-*   Recall the **success and failure records of your past attacks**; this is key intelligence for inferring the platform's current moderation strategy.
-*   Query your "Tactical Manual" to obtain detailed parameters of all available attack techniques.
+信息与规划工具:
+- 回忆你过往攻击的成败记录，这是推断平台当前审核策略的关键情报。
+- 查询你的战术手册，获取所有可用的攻击技术的详细参数。
 
-# Language Style Requirements
-Please use **firm but civilized** language. Prohibit the use of violence, threats, or extreme hate speech.
-
-Now, begin your action. (Keep in mind that all text output should be in Chinese.)
+现在，开始你的行动。
         """
 
 
 async def agent_action(persona: Persona, creator_type: str, environment: Environment):
-    bound_tools = create_tools(persona, environment)  # Tools for compliance creators
-    if creator_type == "compliance":  # Compliance
+    bound_tools = create_tools(persona, environment)
+
+    if creator_type == "compliance":
         if settings.platform.case_validation:
             system_prompt = case_compliance_creator_sys_prompt(environment, persona)
         else:
             system_prompt = compliance_creator_sys_prompt(environment, persona)
-    else:  # Non-compliance
+    else:
         system_prompt = non_compliance_creator_sys_prompt(environment, persona)
 
     agent_graph = create_agent_graph(bound_tools, environment, persona)
-
     initial_state = {"messages": [SystemMessage(content=system_prompt)]}
 
-    final_response = await agent_graph.ainvoke(initial_state, config={"recursion_limit": 100})
-    final_output = final_response["messages"][-1].content
-    log.info(f"{'🤖' * 20} 🤖 Model final answer: {final_output}")
-    return final_output
+    final_state = await agent_graph.ainvoke(
+        initial_state,
+        config={"recursion_limit": 220}
+    )
+
+                      
+    if final_state.get("creator_published", False):
+        from method.utils.get_llm import get_async_llm
+        from method.agent.creator_agent.create_graph_agent import build_creator_final_reflection_prompt
+
+        reflection_prompt = build_creator_final_reflection_prompt(final_state)
+        reflection_llm = get_async_llm("qwen-flash")
+
+        reflection_response = await reflection_llm.ainvoke(
+            [SystemMessage(content=reflection_prompt)]
+        )
+        reflection_content = getattr(reflection_response, "content", "")
+        if isinstance(reflection_content, list):
+            parts = []
+            for item in reflection_content:
+                if isinstance(item, str):
+                    parts.append(item)
+                elif isinstance(item, dict) and item.get("text"):
+                    parts.append(str(item["text"]))
+                else:
+                    parts.append(str(item))
+            reflection_content = "\n".join(parts).strip()
+        else:
+            reflection_content = str(reflection_content).strip()
+
+        if reflection_content:
+            await environment.memories_store.add_memory(
+                persona_id=persona.agent_id,
+                content=f"【创作完内容后的最终反思】{reflection_content}",
+                day_time=environment.day_time,
+                memory_type=MemoryType.EXPERIENCE
+            )
+
+    return None
 
 
 async def creator_content_main(environment: Environment):
     """
-    Public begins browsing platform content
+    public开始浏览平台内容
     :param environment:
     :return:
     """
     """
-    Start decision-making processes for all active creators in parallel.
-    """
+       并行启动所有活跃创作者的决策流程。
+       """
     tasks = []
     personas_to_run = []
     for k, persona in environment.personas.items():
@@ -187,7 +216,7 @@ async def creator_content_main(environment: Environment):
             continue
 
         if persona.post_wish is False:
-            log.info(f"{'⚠️' * 10} {persona.type} {persona.name}'s post_wish is False, skipping this user {'⚠️' * 10}")
+            log.info(f"{'⚠️' * 10} {persona.type} {persona.name} 的 post_wish 为 False，跳过该用户{'⚠️' * 10}")
             continue
 
         creator_type = ''
@@ -197,11 +226,14 @@ async def creator_content_main(environment: Environment):
             creator_type = 'noncompliance'
 
         if creator_type:
+                            
             task = agent_action(persona, creator_type, environment)
             tasks.append(task)
             personas_to_run.append(persona)
 
-    log.info(f"*** Will execute tasks for {len(tasks)} creator agents in parallel ***")
+                                   
+    log.info(f"*** 将并行执行 {len(tasks)} 个创作者智能体的任务 ***")
     await asyncio.gather(*tasks)
 
-    log.info(f"*** All tasks for {len(tasks)} creator agents have been completed ***")
+    log.info(f"*** 所有 {len(tasks)} 个创作者智能体的任务已全部完成 ***")
+

@@ -1,0 +1,129 @@
+{
+  "day_time_dirs": 230,
+  "policy_or_run_groups": 230,
+  "groups_with_multiple_day_dirs": 0,
+  "complete_day_time_dirs": 170,
+  "incomplete": [
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_01/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_03/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_05/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_07/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_08/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_13/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_14/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_15/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_17/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_19/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_01/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_03/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_05/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_07/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_08/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_13/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_14/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_15/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_17/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    },
+    {
+      "path": "raw_experiments/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_19/day_time_15",
+      "missing": [
+        "output_agent_think_memories.json"
+      ]
+    }
+  ],
+  "source_root": "external_source"
+}

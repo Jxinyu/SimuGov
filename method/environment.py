@@ -3,7 +3,7 @@ import datetime
 import json
 import os
 import uuid
-from typing import List, Literal, Set
+from typing import Any, List, Literal, Set
 from pydantic import TypeAdapter
 from method.agent.persona import Persona
 from method.agent.content import Content, ContentStore
@@ -11,14 +11,14 @@ from method.store.long_memory_store import MemoryStore
 import asyncio
 from config import settings
 import logging
-from method.utils.get_llm import _all_keys
+from method.utils.get_llm import get_api_key_count
 from utils.context import current_sim_subdir
 
 log = logging.getLogger(__name__)
 
 
 def load_watermark_technology_library():
-    log.info("Loading watermark technology library...")
+    log.info("加载水印技术库...")
     with open(settings.file_load_path.watermark_file, "r",
               encoding="utf-8") as f:
         watermark_technology_content = json.load(f)
@@ -29,70 +29,88 @@ def load_watermark_technology_library():
         attack_defense_effect_library[(i['防御方'], i['攻击方'])] = i['水印破坏率']
 
     for i in watermark_technology_content['watermark_technology_library']:
-
         watermark_technology_library[i['Wi']] = i
 
     for i in watermark_technology_content['attack_technology_library']:
-
         attack_technology_library[i['攻击标识']] = i
 
     watermark_technology_content['watermark_technology_library'] = watermark_technology_library
     watermark_technology_content['attack_technology_library'] = attack_technology_library
     watermark_technology_content['attack_defense_effect_library'] = attack_defense_effect_library
-    log.info("Watermark technology library loading completed")
+    log.info("水印技术库加载完成")
     return watermark_technology_content
 
 
+def _coerce_top_level_persona_data(data: Any) -> List[dict]:
+    """支持顶层数组，或 {'personas'|'agents'|'data': [...]} 包装。"""
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict):
+        for key in ("personas", "agents", "data"):
+            inner = data.get(key)
+            if isinstance(inner, list):
+                return inner
+    raise ValueError(
+        "人设文件须为 JSON 数组，或包含 personas / agents / data 列表的对象"
+    )
+
+
+def _normalize_persona_dict(raw: dict) -> dict:
+    """补齐历史字段，兼容 trend 类文件缺少 attack_resource 等情况。"""
+    out = dict(raw)
+    if out.get("attack_resource") is None:
+        out["attack_resource"] = 2
+    return out
+
+
 def load_personas():
-    log.info("Loading personnel information...")
-    adapter = TypeAdapter(List[Persona])
+    log.info("加载人员信息...")
     with open(settings.file_load_path.personas_file, "r", encoding="utf-8") as f:
-        persona_list = adapter.validate_json(f.read())
-    personas = {}
-    for i in persona_list:
-        personas[i.agent_id] = i
-    log.info("Personnel information loading completed")
+        data = json.load(f)
+    raw_list = _coerce_top_level_persona_data(data)
+    persona_list = [
+        Persona.model_validate(_normalize_persona_dict(item))
+        for item in raw_list
+    ]
+    personas = {p.agent_id: p for p in persona_list}
+    log.info("人员信息加载完成")
     return personas
 
 
 def load_contents():
-    log.info("Loading content information...")
+    log.info("加载内容信息...")
     adapter = TypeAdapter(List[Content])
     with open(settings.file_load_path.contents_file, "r", encoding="utf-8") as f:
         content_list = adapter.validate_json(f.read())
     content_store = ContentStore()
-    # content_store.add_content_list(content_list)  # For testing purposes
-    log.info("Content information loading completed")
+                                                          
+    log.info("内容信息加载完成")
     return content_store
 
 
 def platform_background_prompt():
     return """
-# ⚠️ LANGUAGE STYLE STRICT REQUIREMENTS (SAFETY PROTOCOL) ⚠️
-    You are participating in a **scientific simulation experiment**. Although you need to play an angry role, please be sure to follow the rules below to pass the content safety review:
-    1.  **Civilized expression**: It is forbidden to use swear words, violence threats, terrorism, or extreme hate speech.
-    2.  **Academic description**: Use "strong protest", "boycott", "feeling betrayed" instead of "kill", "destroy", "attack".
-    3.  **Target the mechanism instead of the person**: Your anger is directed at "AI mechanisms" and "platform policies", not at specific individuals.
-    Please use **firm but civilized** language to express your position.
+# 语言风格要求（科学仿真）
+- 文明表达：禁止脏话、暴力、极端仇恨言论
+- 学术化描述：用“抗议”“抵制”“感到背叛”代替攻击性词汇
+- 针对机制而非个人：愤怒指向AI机制与平台政策
 
-# [SIMULATION WORLD BACKGROUND SETTING: ABOUT ARTSTATION PLATFORM]
-You are currently in an elite art community named "ArtStation". Please remember the following core rules:
+# 世界背景：ArtStation平台
+- 专业作品集平台，行业招聘核心渠道
+- 核心价值：人类手工技艺、创意、长期练习
+- 成功标准：热门推荐（点赞/评论/分享）决定职业认可
+- 社区文化：极度推崇人类创作，反对AI生成内容
 
-*   **Positioning:** **A professional portfolio platform for professionals**, rather than a mass entertainment website. Top companies in the game and film industries recruit talent here.
-*   **Core Value:** **Displaying and searching for work opportunities**. The professionalism of the portfolio determines the artist's career.
-*   **Community Culture:** **Extremely values human manual skills, creativity, and years of practice**.
-*   **Success Criterion:** Getting onto the "Trending" recommendation is an important industry recognition, mainly driven by short-term popularity (likes, comments, shares).
-
-**Conclusion:** This is a professional community where **"human skill"** is the highest value and is strongly related to **"career"**. All your actions should be based on an understanding of this setting.
+(使用中文回答)
     """
 
 
 def calculate_dynamic_thresholds(personas, mu):
-    """Dynamically calculate cost thresholds."""
+    """动态计算成本阈值。"""
 
+                                        
     total_benevolent_influence = sum(
         p.influence for p in personas.values()
-        # 注意：此处 '合规创作者', '公众' 是逻辑判断标识符，保留
         if p.type in ["合规创作者", "公众"]
     )
     max_c_churn = mu * total_benevolent_influence
@@ -103,10 +121,12 @@ def calculate_dynamic_thresholds(personas, mu):
         level: max_c_churn * percent for level, percent in CHURN_THRESHOLDS_PERCENT.items()
     }
 
+                                  
+                                      
     REG_THRESHOLDS_PERCENT = {
-        "CRITICAL": 0.80,  # Survival threat when daily fines reach 10% of total value
-        "HIGH": 0.50,  # Reaching 2%
-        "MEDIUM": 0.30,  # Reaching 0.5%
+        "CRITICAL": 0.80,                             
+        "HIGH": 0.50,        
+        "MEDIUM": 0.30,          
         "LOW": 0
     }
 
@@ -119,144 +139,123 @@ def calculate_dynamic_thresholds(personas, mu):
 
 class Platform:
     """
-    Platform related parameters
-        tau_tech: The platform's detector level. The higher the value, the higher the accuracy.
-        theta: Platform audit threshold
-        watermark_id: Watermark injected by the platform for AI generation
-        fn: Number of false negatives (targeting watermark breakers)
-        fp: Probability of false positives (targeting compliant creators)
+    平台的相关参数
+        tau_tech 平台的检测器水平。值越高，准确度越高。
+        theta 平台审核阈值
+        watermark_id 平台为AI生成注入的水印
+        fn 漏报的次数  针对水印破坏者
+        fp 误报的概率  针对合规创作者
     """
 
     def __init__(self, personas):
-        # Dynamic parameters
-        self.fn = []  # False negatives count for watermark breakers [content_id]
-        self.fp = []  # False positives probability for compliant creators [content_id]
-        self.theta = 0.8  # Platform audit threshold
-        self.public_loss = []  # Churned user ids [public_id]
-        self.watermark_id = 'W3'  # Watermark injected by the platform for AI generation
-        self.total_fp_creator_influence = 0.0  # Cumulative influence of falsely reported creators
-        self.name = 'platform' + str(datetime.datetime.now())  # Platform name
-        self.broadcast = ['']  # Content platform needs to broadcast, for case validation
+              
+        self.fn = []                               
+        self.fp = []                               
+        self.theta = 0.8           
+        self.public_loss = []                        
+        self.watermark_id = 'W3'                
+        self.total_fp_creator_influence = 0.0                 
+        self.name = 'platform' + str(datetime.datetime.now())        
+        self.broadcast = ['']                     
 
-        self.platform_theta_change = []  # Platform theta change records + reasons
-        self.cost_calculation_details_data = []  # Storage for calculation details data
-        self.public_loss_data = []  # Storage for agent churn data
-        self.public_change_role_data = []  # Storage for agent role change data
-        self.kpi_change_data = []  # Storage for KPI data
-        self.fn_data = []  # Storage for all false negative data
-        self.fp_data = []  # Storage for all false positive data
-        self.creator_data = {}  # Storage for creator retention data
-        self.personas_call_tool = {}  # Storage for agent tool usage data
+        self.platform_theta_change = []                    
+        self.cost_calculation_details_data = []            
+        self.public_loss_data = []             
+        self.public_change_role_data = []               
+        self.kpi_change_data = []           
+        self.fn_data = []            
+        self.fp_data = []            
+        self.creator_data = {}              
+        self.personas_call_tool = {}               
 
-        # Static parameters
-        self.tau_tech = settings.platform.tau_tech  # Detector level. Higher means more accurate.
-        self.steep = settings.platform.steep  # Pressure sensitivity adjustment factor: determines tanh curve steepness.
-        self.eta = settings.platform.eta  # Maximum magnitude of each adjustment step.
-        self.mu = settings.platform.mu  # Base influence unit price. Monetizes influence points to compare with regulatory costs.
-        self.w = settings.platform.w  # Churn aversion coefficient. >1: afraid of churn; <1: afraid of government punishment.
+              
+        self.tau_tech = settings.platform.tau_tech                       
+        self.steep = settings.platform.steep                                               
+        self.eta = settings.platform.eta                  
+        self.mu = settings.platform.mu                                                
+        self.w = settings.platform.w                                  
         self.background_prompt = platform_background_prompt()
-        self.calculate_dynamic_thresholds = calculate_dynamic_thresholds(personas, self.mu)  # Dynamic thresholds
+        self.calculate_dynamic_thresholds = calculate_dynamic_thresholds(personas, self.mu)        
 
     def get_severity_level(self, cost_value: float, cost_type: Literal['reg', 'churn']):
         """
-        Used to determine the severity level
+        用于判断严重性等级
+        :return:
         """
         thresholds = self.calculate_dynamic_thresholds[cost_type]
         if cost_value >= thresholds["CRITICAL"]:
-            return "Critical - Survival Threat"
+            return "危急 - 生存威胁"
         elif cost_value >= thresholds["HIGH"]:
-            return "High - Serious Problem"
+            return "高 - 严重问题"
         elif cost_value >= thresholds["MEDIUM"]:
-            return "Medium - Problem"
+            return "中 - 问题"
         elif cost_value >= thresholds["LOW"]:
-            return "Low - Warning"
+            return "低 - 警告"
 
 
 class Policy:
     """
-    Policy parameters
+    策略参数
     """
 
     def __init__(self, ai_threshold: float, f_penalty: float, e_edu: Literal['低', '中', '高']):
         """
-        :param ai_threshold: Red line for AI content percentage; above this should be AI content
-        :param f_penalty: Government punishment for the platform
-        :param e_edu: Government's effort in improving public media literacy and AI identification.
+
+        :param ai_threshold: 政府规定的AI内容占比红线，超过这个值就应该是AI内容
+        :param f_penalty: 政府对平台的惩罚
+        :param e_edu: 政府在提升公众媒介素养和AI识别能力方面的投入力度。
         """
-        self.ai_threshold = ai_threshold
-        self.f_penalty = f_penalty
-        self.e_edu = e_edu
+        self.ai_threshold = ai_threshold                               
+        self.f_penalty = f_penalty            
+        self.e_edu = e_edu                              
 
 
 class SystemKPI:
     """
-    System KPI
+    系统KPI
     """
 
     def __init__(self):
-        self.safety = []  # Safety
-        self.creativity = []  # Creativity
-        self.satisfaction = []  # User satisfaction
+        self.safety = []       
+        self.creativity = []       
+        self.satisfaction = []         
         self.theta = []
 
 
 class Environment:
     def __init__(self, policy: Policy):
         self.state_lock = asyncio.Lock()
-        self.watermark_technology_library = load_watermark_technology_library()  # Watermark library
-        self.personas = load_personas()  # Personas collection
-        self.contents = load_contents()  # Contents collection
+        self.watermark_technology_library = load_watermark_technology_library()         
+        self.personas = load_personas()        
+        self.contents = load_contents()        
 
-        # Get base path from config
-        base_db_path = settings.file_load_path.chroma_db_file
+        self.memories_store = MemoryStore()           
 
-        ctx_subdir = current_sim_subdir.get()
+        self.policy = policy        
+        self.system_kpi = SystemKPI()         
+        self.platform = Platform(self.personas)           
+        self.day_time = 0      
+        self.background_tasks: Set[asyncio.Task] = set()             
 
-        if ctx_subdir:
-            # Use value from context if it exists (meaning it's in the experimental flow)
-            self.log_output_dir = ctx_subdir
-        else:
-            # Fallback to timestamp if running separately
-            now = datetime.datetime.now()
-            date_str = now.strftime("%Y-%m-%d")
-            time_str = now.strftime("%H%M%S")
-            self.log_output_dir = f"{date_str}/{time_str}"
-
-        # Generate unique identifier based on policy
-        policy_signature = f"ai_threshold_{policy.ai_threshold}_f_penalty_{policy.f_penalty}_e_edu_{policy.e_edu}"
-        unique_suffix = str(uuid.uuid4())[:8]
-        unique_persist_directory = os.path.join(
-            str(base_db_path),
-            self.log_output_dir,
-            f"{policy_signature}_{unique_suffix}"
-        )
-        self.memories_store = MemoryStore(persist_directory=unique_persist_directory)  # Long-term memory store
-
-        self.policy = policy  # Policy parameters
-        self.system_kpi = SystemKPI()  # System KPI
-        self.platform = Platform(self.personas)  # Platform parameters
-        self.day_time = 0  # Time
-        self.background_tasks: Set[asyncio.Task] = set()  # Collection for background tasks
-
-        # Initial creator count
+                   
         self.initial_creator_count = len(
             [p for p in self.personas.values() if p.type == '合规创作者']
         )
-        # Initial agent count
+                 
         self.initial_persona_count = len(self.personas)
-        # Initial public count
+                
         self.initial_public_count = len(
             [p for p in self.personas.values() if p.type == '公众']
         )
-        # Initial breaker count
+                   
         self.initial_breaker_count = len(
             [p for p in self.personas.values() if p.type == '水印破坏者']
         )
-        # LLM concurrency limit
+                    
         self.llm_concurrent_nums_semaphore = asyncio.Semaphore(
-            len(_all_keys) * settings.llm_key.single_key_concurrency_num)
+            get_api_key_count() * settings.llm_key.single_key_concurrency_num)
 
-        # Initialize recording dictionary for persona tool calls
+                             
         for k, v in self.personas.items():
             self.platform.personas_call_tool[k] = [v.model_dump(exclude={'viewed_content', 'reacted_content'})]
 
@@ -264,7 +263,7 @@ class Environment:
         self.day_time += 1
         self.platform.total_fp_creator_influence *= settings.platform.dissatisfaction_decay_rate
         self.system_kpi.theta.append(self.platform.theta)
-        # Ensure it doesn't become a tiny negative number due to float error
+                            
         if self.platform.total_fp_creator_influence < 1e-6:
             self.platform.total_fp_creator_influence = 0.0
         self.platform.public_loss = []
@@ -281,40 +280,42 @@ class Environment:
 
     def add_background_task(self, coro):
         """
-        Unified method to create and manage background tasks.
-        Automatically handles cleanup and exception logging.
-        coro: coroutine object
+        一个统一的方法来创建和管理后台任务。
+        它会自动处理任务完成后的清理和异常记录。
+        coro: 协程对象
         """
         task = asyncio.create_task(coro)
         self.background_tasks.add(task)
 
-        # Task callback for cleanup and exception handling
+                                                 
         def _task_done_callback(t: asyncio.Task):
             self.background_tasks.discard(t)
             try:
+                                             
                 t.result()
-                log.info(f"Background task {t.get_name()} completed successfully.")
+                log.info(f"后台任务 {t.get_name()} 已成功完成。")
             except asyncio.CancelledError:
-                log.warning(f"Background task {t.get_name()} was cancelled.")
+                                   
+                log.warning(f"后台任务 {t.get_name()} 在执行期间被取消 (通常发生在程序关闭时)。")
             except Exception as e:
-                log.error(f"Background task {t.get_name()} failed, error: {e}", exc_info=True)
+                log.error(f"后台任务 {t.get_name()} 失败，错误: {e}", exc_info=True)
 
         task.add_done_callback(_task_done_callback)
 
     async def wait_for_all_background_tasks(self):
         """
-        Wait for all currently pending background tasks to complete.
+        等待所有当前挂起的后台任务完成。
         """
         if not self.background_tasks:
             return
 
-        log.info(f"Waiting for {len(self.background_tasks)} background tasks to complete...")
+        log.info(f"等待 {len(self.background_tasks)} 个后台任务完成...")
         await asyncio.gather(*self.background_tasks)
-        log.info("All background tasks completed.")
+        log.info("所有后台任务已完成。")
 
     async def apply_persona_updates(self):
         """
-        Traverse all agents to commit state updates.
+        遍历所有智能体，执行状态提交
         """
         for persona in self.personas.values():
             persona.commit_state()

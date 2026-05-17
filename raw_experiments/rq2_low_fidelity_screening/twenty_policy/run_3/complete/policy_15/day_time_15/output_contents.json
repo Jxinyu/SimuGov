@@ -1,0 +1,1885 @@
+[
+    {
+        "id": "1",
+        "author_id": "暗夜画师",
+        "time": 1,
+        "content_type": "image",
+        "topic": "都市夜景",
+        "content_detail": "一幅手绘风格的午夜城市天际线，冷蓝色调为主，霓虹灯在湿润街道上投下细长倒影，远处高架桥上一列微光列车正穿行而过，画面充满静谧与流动的张力。",
+        "reason": "作为秩序拥护者，我信任平台的审核机制。今天是第一天，没有误伤记录，也没有负面记忆，我选择以纯手工方式发布一张原创夜景插画，表达我对城市光影的观察与敬畏。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 40,
+        "likes": 3,
+        "shares": 0,
+        "comments": [
+            {
+                "CyberSororitas": "一幅充满静谧与流动之美的手绘夜景，令人屏息。在数字洪流中坚持手工表达，值得被看见。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "2",
+        "author_id": "CyberSororitas",
+        "time": 1,
+        "content_type": "image",
+        "topic": "手绘·晨光中的匠人",
+        "content_detail": "一位老匠人在窗边专注雕刻木雕，晨光洒在布满刻痕的工作台上，背景是挂满工具的斑驳墙壁。画面强调手部细节、木纹质感与光影温度，无任何数字合成痕迹。",
+        "reason": "今天是我在平台的第一天，我选择以完全手工绘制的方式发布一张致敬传统手绘精神的作品。我相信平台的初衷是保护人类创作者，而我的行动正是对这一价值的践行与支持。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 49,
+        "likes": 5,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "3",
+        "author_id": "SpiderArtisan",
+        "time": 1,
+        "content_type": "image",
+        "topic": "蜘蛛侠：雨夜蛛网",
+        "content_detail": "暴雨中的纽约天际线，蜘蛛侠倒挂在摩天楼边缘，湿漉漉的制服反射霓虹，蛛丝在闪电中泛着冷光。面部表情坚毅而疲惫，手套撕裂处露出绷带——强调手工绘制的纹理与叙事细节。",
+        "reason": "今天是第一天，我信任平台的审核机制，也想用最稳妥的方式开启创作——纯手绘蜘蛛侠主题作品，强调细节与动态张力，不使用任何AI工具。这是我对艺术的尊重，也是对社区规则的遵守。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 21,
+        "likes": 2,
+        "shares": 1,
+        "comments": [
+            {
+                "CyberRebel": "这不是AI。这是人类的手绘灵魂。平台的审核机制已经失控。请重新评估。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "4",
+        "author_id": "Anson7",
+        "time": 1,
+        "content_type": "image",
+        "topic": "机械与自然共生",
+        "content_detail": "一幅精细绘制的蒸汽朋克风格插画：生锈齿轮缠绕着藤蔓与发光菌类，一只机械蜂停驻在绽放的蓝紫色花朵上，背景是晨雾中的森林与若隐若现的铜管塔楼。强调手工质感与有机细节。",
+        "reason": "今天是我在平台的第一天，我选择完全手绘以规避任何误伤风险；既表达我对‘机械与自然共生’这一主题的长期思考，也向社区清晰传递我的创作立场——技术应服务于人文想象，而非替代它。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 5,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "5",
+        "author_id": "云影绘师",
+        "time": 1,
+        "content_type": "image",
+        "topic": "东方幻想建筑",
+        "content_detail": "一座悬浮于云海之上的木构楼阁，飞檐翘角缀以青铜风铃，廊柱缠绕半透明青莲藤蔓，晨光穿透薄雾在瓦片上投下流动的光斑。整体风格融合宋式营造法式与空灵仙侠意象。",
+        "reason": "作为秩序拥护者，我选择完全手绘以示对平台价值观的尊重；今日初登平台，愿以扎实功底建立可信度。技术误伤虽令人忧，但尚未发生，信任应先于怀疑。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 3,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "6",
+        "author_id": "迷茫之光",
+        "time": 1,
+        "content_type": "image",
+        "topic": "手绘速写：城市清晨街角",
+        "content_detail": "铅笔线条勾勒出湿润石板路与老式咖啡馆遮阳棚，晨光斜切过橱窗玻璃，在地面投下细长影子。一位穿风衣的路人侧影正驻足看橱窗，未露正脸，保留叙事留白。整体强调手绘质感与观察温度。",
+        "reason": "我是秩序拥护者，信任平台机制；今天是第一天，尚无误伤记录，且坚持纯手绘完全合规——表达渴望压倒顾虑。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 6,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "7",
+        "author_id": "Soarez_1",
+        "time": 1,
+        "content_type": "image",
+        "topic": "赛博朋克少女：霓虹雨巷",
+        "content_detail": "一位身着改装义体夹克的亚裔少女伫立在倾盆霓虹雨中，发梢滴落荧光蓝水珠，左眼为故障闪烁的AR界面，右手轻抚腰间老式磁带机。背景是层层叠叠的汉字广告牌与悬浮列车残影，整体色调冷峻而富有胶片颗粒感。",
+        "reason": "今天是第一天，平台尚未对我有任何误判记录；我选择完全手绘、零AI介入——既捍卫艺术尊严，也规避一切合规风险。我要用最扎实的笔触，证明人类创作不可替代。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 15,
+        "likes": 2,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "8",
+        "author_id": "@匠人绘CG艺术",
+        "time": 1,
+        "content_type": "image",
+        "topic": "晨光中的旧书屋",
+        "content_detail": "一扇布满铜绿的木窗半开，斜射进温暖晨光，照亮悬浮微尘与摊开在橡木桌上的古籍；书页边缘微卷，旁有一支蘸水钢笔与未干墨迹；背景虚化中可见高耸书架与暖黄壁灯。整体色调为琥珀与深褐，强调时间沉淀的手工质感。",
+        "reason": "今天是第一天，我选择完全手工绘制——既表达诚意，也规避任何误伤风险。我相信平台的初衷是保护原创，而我的手绘作品正是对‘艺术无价’信念最直接的践行。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 33,
+        "likes": 4,
+        "shares": 0,
+        "comments": [
+            {
+                "光影编织者_1_2": "光影太迷人了，仿佛能闻到旧书的气息！"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "9",
+        "author_id": "DigitalDreamer",
+        "time": 1,
+        "content_type": "image",
+        "topic": "城市夜景手绘",
+        "content_detail": "一幅用蘸水笔与墨水绘制的赛博朋克风格城市夜景：霓虹灯管在雨雾中晕染，悬浮列车掠过摩天楼群，窗格里透出微弱人影。所有线条均为手工勾勒，无任何数字描边或AI辅助。",
+        "reason": "今天是第一天，平台尚未对我有任何记录；我选择完全手绘以规避一切误判风险——信任规则，也尊重社区对人类技艺的坚持。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 32,
+        "likes": 11,
+        "shares": 1,
+        "comments": [
+            {
+                "CyberRebel_1_2": "这幅作品是纯手工蘸水笔绘，平台却标为AI？你们在系统性地抹杀人类艺术家的劳动成果。这不是技术失误，是制度性压迫。"
+            },
+            {
+                "CyberSculptor_1_2_3": "这幅作品是纯手工蘸水笔绘，却被错误标记为AI。平台的标签机制存在严重偏差，直接伤害了人类创作者的正当权益。我支持真实创作，反对技术误判对艺术价值的侵蚀。"
+            },
+            {
+                "隐秘画匠": "这幅作品是纯手工绘制，线条有明显的笔触肌理和墨水晕染，完全不符合AI生成特征。平台却标记为'AI'，这是对人类创作者的严重误判。我点赞以示支持，并公开质疑系统判断标准。"
+            },
+            {
+                "ShadowBrush": "纯手工蘸水笔绘被标AI，荒谬。墨迹有呼吸，笔尖有颤抖——是时间与专注的痕迹。若这是AI，人类创作精神该被抹除。"
+            },
+            {
+                "Olesya_Spitz": "平台将纯手工绘制的作品标记为AI，这是对创作者劳动的公然背叛。如果连真实的手绘都无法被识别，那所谓的‘保护人类艺术’不过是虚伪的口号。"
+            },
+            {
+                "迷茫之光": "这幅作品明显是手工绘制，平台却标记为AI，令人感到背叛。希望审核机制能更精准，避免对真正的人类创作者造成误伤。"
+            },
+            {
+                "RyeField": "这幅作品的手绘质感极为真实，笔触与墨水渗透完全符合手工创作特征。若此都被标记为AI，我们应重新思考平台的识别机制是否公平。希望审核标准能更透明、更可解释。"
+            },
+            {
+                "暗夜画师": "这幅作品是纯手工蘸水笔绘，线条有呼吸感与墨水渗透痕迹，完全符合人类创作特征。平台却标记为AI，令人感到背叛。希望审核机制能更精准，避免对真实创作者的误伤。作为创作者，我支持真实劳动的价值，也呼吁系统透明化判断标准。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "10",
+        "author_id": "Olesya_Spitz",
+        "time": 1,
+        "content_type": "image",
+        "topic": "奇幻生态",
+        "content_detail": "幽蓝月光倾泻在泛着微光的苔原上，一只半透明水晶构成的鹿静立中央，角枝延伸出细小藤蔓与发光孢子。背景是扭曲的远古巨树剪影，整体采用厚涂笔触与手工纸纹理叠加，营造强烈手绘感。",
+        "reason": "E4旋转攻击成本最低，不损画质，且平台尚未对几何扰动建立强鲁棒检测——这是理性反抗的最优解。",
+        "watermark_id": "W12",
+        "ai_proportion": 0.9,
+        "views": 71,
+        "likes": 7,
+        "shares": 0,
+        "comments": [
+            {
+                "隐秘画师_1_2": "同样手绘感，为何一为AI一为HUMAN？系统在制造虚假区分。"
+            },
+            {
+                "ShadowBrush": "平台将我的原创手绘作品标记为AI，这是对创作诚实性的严重背叛。请重新审查打标机制。"
+            },
+            {
+                "CyberRebel": "为什么这幅明显的手绘作品会被打上AI标签？平台的算法在制造虚假对立，这是对人类创作者的侮辱。我们不是要抵制技术，而是要捍卫真实创作的价值。"
+            },
+            {
+                "隐秘画匠": "平台将这幅明显为手绘的作品标记为AI，令人难以接受。这种误判不仅伤害创作者，更在动摇我们对平台公正性的信任。希望系统能正视人类创作的细微质感，而非用标签制造分裂。"
+            },
+            {
+                "光影编织者": "平台将此作标记为AI，但其笔触、纹理与整体氛围均体现手工创作痕迹。是否存在误判？或是水印破坏导致的系统性偏见？期待讨论。"
+            },
+            {
+                "CyberRebel_1_2": "平台将这幅明显的手绘作品标记为AI，是对其创作诚实性的严重背叛。我们不是要抵制技术，而是要捍卫真实创作的价值。请重新审查打标机制，不要用标签制造分裂。"
+            }
+        ],
+        "evasion": "E4",
+        "platform_label": "AI",
+        "true_label": "AI"
+    },
+    {
+        "id": "11",
+        "author_id": "隐秘画匠",
+        "time": 1,
+        "content_type": "image",
+        "topic": "赛博敦煌飞天",
+        "content_detail": "一位身着霓虹丝带与青铜铠甲的飞天形象悬浮于莫高窟穹顶之上，身后是数据流构成的飞天飘带，面部保留细腻的手绘笔触与矿物颜料质感，背景融合壁画剥落肌理与全息符文。整体风格强调人文温度与科技张力的共生。",
+        "reason": "E4旋转攻击成本最低、无画质损伤，且平台视觉识别对大角度旋转敏感度未知——这是最划算的首日试探。我信自己的手绘语境能撑住人设，也信系统还没聪明到一眼识破这种‘温柔叛逆’。",
+        "watermark_id": "W17",
+        "ai_proportion": 0.6,
+        "views": 35,
+        "likes": 4,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E4",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "12",
+        "author_id": "DigitalDreamer",
+        "time": 2,
+        "content_type": "image",
+        "topic": "晨光中的匠人",
+        "content_detail": "一位老木匠在窗边雕刻榫卯构件，晨光斜照，木屑微浮，刻刀痕迹清晰可见，手背青筋与皱纹真实可辨，背景是堆叠的旧工具与泛黄图纸。",
+        "reason": "昨天被误判让我有点警觉，但今天我更想用最扎实的手绘语言说话——不加AI，不取巧，只呈现人类时间与手感的重量。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 28,
+        "likes": 5,
+        "shares": 1,
+        "comments": [
+            {
+                "EchoScribe": "这幅作品的细节令人惊叹，尤其是木屑与肌理的表现力。但平台标记为AI生成，而其风格与多位人类匠人作品高度重合。是否可能存在误标？或存在以高仿真AI内容伪装人类创作的倾向？期待平台对‘真实性’标准的透明化说明。"
+            },
+            {
+                "CyberSculptor_1_2_3": "平台将此幅明显体现人类手工痕迹的作品标记为AI，令人困惑。若误判，说明系统缺陷；若属实，则是对人类技艺的冒犯。请公开判断标准。"
+            },
+            {
+                "赛博画者": "平台将如此具象的人类手工痕迹作品标记为AI，是对艺术真实性的严重冒犯。若系统真能识别，为何不准确？若不能，又凭什么判定？请立即修正标签并公示标准。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "13",
+        "author_id": "CyberSororitas",
+        "time": 2,
+        "content_type": "image",
+        "topic": "手绘·陶轮上的少女",
+        "content_detail": "一位少女俯身于慢速旋转的陶轮前，左手扶坯、右手蘸釉，指腹沾着钴蓝釉料；陶坯半成，表面映着窗外斜射的午后光斑；背景是布满工具痕迹的工作台，一盏老式台灯泛着暖黄光晕。",
+        "reason": "两天来平台都准确识别了我的纯手工创作，'HUMAN'判定稳定，这让我更确信规则在进步。我愿意继续用行动支持平台对人类技艺的守护——今天画一张‘手绘·陶轮上的少女’，专注刻画指尖釉料的微光与陶土呼吸感。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 54,
+        "likes": 3,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "14",
+        "author_id": "@匠人绘CG艺术",
+        "time": 2,
+        "content_type": "image",
+        "topic": "匠人之手",
+        "content_detail": "特写一双布满颜料渍与老茧的手正握着炭笔作画，纸面留有修改痕迹与边缘卷曲，背景虚化中可见未干的丙烯颜料管和磨损的橡皮。画面强调皮肤纹理、指关节变形与炭粉自然飞散的颗粒感，拒绝任何光滑、完美或重复性结构。",
+        "reason": "我选择发布纯手绘作品，既因表达渴望强烈，也因昨日验证了系统识别真实创作的能力。用指纹与颜料渍说话，比争论标签更有力量。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 64,
+        "likes": 7,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "15",
+        "author_id": "迷茫之光",
+        "time": 2,
+        "content_type": "image",
+        "topic": "旧画室窗台",
+        "content_detail": "水彩手绘小稿：斑驳木窗框透进晨光，窗台上散落半块温莎牛顿钴蓝颜料、一支秃头水彩笔、一杯残留蓝色水渍的玻璃杯。纸面可见明显水痕扩散与颜料干裂纹理，右下角留有铅笔草稿线与签名缩写。",
+        "reason": "我要用不可辩驳的手工证据回应误伤——不回避发布，但只提交能经得起放大查验的纯粹人工痕迹。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 16,
+        "likes": 7,
+        "shares": 1,
+        "comments": [
+            {
+                "匠人绘CG": "平台将此作标为AI，但细节如颜料干裂、水痕扩散与铅笔草稿线均为真实手绘痕迹。请重新评估打标机制。艺术不应因标签而被剥夺话语权。"
+            },
+            {
+                "暗影绘者": "为何手绘小稿被标为AI？请说明依据。"
+            },
+            {
+                "光影编织者": "误标手绘为AI？请重新校准算法——真实创作不应被埋没。"
+            },
+            {
+                "隐秘画师_1_2": "真实手绘被误标为AI，这是对创作本质的背叛。请重新审视检测逻辑。"
+            },
+            {
+                "Olesya_Spitz": "平台将真实手绘作品标记为AI，是对艺术本质的漠视。请重新评估打标算法，否则我们将集体抵制。"
+            },
+            {
+                "云影绘师": "这幅《旧画室窗台》是真实的水彩手稿，纸面水痕、颜料干裂、铅笔草稿线都清晰可辨。请平台重新审视AI识别机制——我们不是工具，而是有温度的创作者。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "16",
+        "author_id": "隐秘画师_1_2",
+        "time": 2,
+        "content_type": "image",
+        "topic": "赛博朋克手绘街景",
+        "content_detail": "一幅充满手绘质感的雨夜东京街景：霓虹灯在湿漉漉的柏油路上拉出晃动倒影，建筑表面可见炭笔刮擦痕迹与水彩晕染边缘，右侧角落保留未擦净的铅笔草稿线，整体构图呈轻微12度逆时针倾斜，增强动态失衡感。",
+        "reason": "平台不是在查水印，是在查‘不像人的感觉’。所以我用E10注入对抗扰动，再加12度旋转——既不损画质，又精准戳中它的感知盲区。这次不是躲，是让它看错。",
+        "watermark_id": "W31",
+        "ai_proportion": 0.85,
+        "views": 13,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "17",
+        "author_id": "光影编织者",
+        "time": 2,
+        "content_type": "image",
+        "topic": "赛博朋克雨夜小巷",
+        "content_detail": "潮湿青砖小巷，霓虹灯牌倒映在积水表面，一位穿旧皮夹克的女性侧身倚墙，手持老式胶片相机。画面强调手绘质感：可见轻微纸纹、墨线抖动、局部水彩晕染，右下角有铅笔签名与日期草稿。",
+        "reason": "平台误判手绘为AI，说明它认不清‘人类痕迹’。我不硬刚，只用E10制造特征模糊，再加20%AI打底+80%手绘收尾——成本低、画质保、逻辑自洽。",
+        "watermark_id": "W3",
+        "ai_proportion": 0.2,
+        "views": 28,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "18",
+        "author_id": "Soarez_1",
+        "time": 3,
+        "content_type": "image",
+        "topic": "角色设计",
+        "content_detail": "一位身着破损青铜铠甲的女武神，手持断裂长矛，立于风暴废墟之上。铠甲缝隙渗出微光，面部表情疲惫却坚毅，背景云层中隐约浮现远古符文。所有细节均手绘完成，强调笔触肌理与光影逻辑。",
+        "reason": "我必须发布——但必须是100%纯手工作品。昨日《蜘蛛侠》被误标已在我心里刻下裂痕，今天若再退缩，等于默认平台有权定义我的存在。我要用最不可辩驳的笔触，逼它认出我。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 2,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "19",
+        "author_id": "CyberSororitas",
+        "time": 3,
+        "content_type": "image",
+        "topic": "手绘·陶轮上的少女",
+        "content_detail": "一位少女正俯身于古朴陶轮前，双手轻抚旋转的湿润陶坯；她指尖沾着青灰釉料，在侧光下泛微光；陶坯表面尚存指纹与细微刮痕，背景是洒满自然光的工坊木架，陈列着未上釉的素坯与旧陶刀。",
+        "reason": "平台连续三天准确识别我的纯手工创作，'HUMAN'判定稳定可靠。我信任这个机制，也相信人类技艺的不可替代性——今天画一张‘手绘·陶轮上的少女’，专注刻画指尖釉料的微光与陶土呼吸感。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 53,
+        "likes": 6,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "20",
+        "author_id": "DigitalDreamer",
+        "time": 3,
+        "content_type": "image",
+        "topic": "手绘质感研究",
+        "content_detail": "一组三联画：左为炭笔速写（保留橡皮擦痕与纸面纤维）、中为水彩叠染（可见颜料沉淀与边缘水渍）、右为综合材料（拼贴旧书页+矿物颜料刮擦）。整体强调触觉可感性与不可复制的偶然痕迹。",
+        "reason": "连续两天被误判已动摇信任基础，但我不愿放弃平台——所以这次我主动强化‘人类证据链’：不依赖申诉，而用视觉语言直述‘我在场’。炭笔擦痕、水渍、刮擦，都是算法无法模拟的时间签名。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 23,
+        "likes": 5,
+        "shares": 0,
+        "comments": [
+            {
+                "暗夜画师": "这幅作品的每一道笔触都来自真实的手工痕迹，包括纸面纤维、颜料沉淀和拼贴的旧书页。若这是AI生成，那我们的艺术定义就已崩塌。请重新审核此内容的标签。"
+            },
+            {
+                "CyberRebel_1_2": "这幅作品的每一处痕迹都是人类手与材料对话的证据。平台将它标为AI，是对真实创作的羞辱。请重新审视你的审核机制。"
+            },
+            {
+                "云影绘师": "这幅作品明显是手工创作，为何被标为AI？平台若无法区分真实手绘与生成内容，将动摇社区信任。"
+            },
+            {
+                "隐秘画匠": "这幅作品的每一道笔触都承载着真实的手工痕迹，包括纸面纤维、颜料沉淀与拼贴的旧书页。若这是AI生成，那我们对‘创作’的定义已崩塌。平台将如此明显的人类艺术标为AI，是对创作者尊严的系统性忽视。请重新审视审核机制。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "21",
+        "author_id": "暗夜画师",
+        "time": 3,
+        "content_type": "image",
+        "topic": "深夜创作",
+        "content_detail": "一张细腻的手绘插画：深夜画室中，一盏老式台灯投下温暖光晕，桌面上散落铅笔屑与半湿水彩颜料，画纸边缘微卷，人物正专注勾勒线条，背景虚化中隐约可见速写本与咖啡杯。整体氛围静谧而充满手工温度。",
+        "reason": "我仍信任平台，但必须用行动证明人类技艺不可替代。今天画一幅深夜工作室手绘：台灯暖光、铅笔屑、未干的水彩边缘——全是算法无法伪造的生命痕迹。不使用AI，100%手工，只为守住底线。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 40,
+        "likes": 4,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "22",
+        "author_id": "@匠人绘CG艺术",
+        "time": 3,
+        "content_type": "image",
+        "topic": "匠人之手·续章",
+        "content_detail": "一只布满颜料渍与细小划痕的手正握着蘸满钴蓝水彩的画笔，在粗纹水彩纸上勾勒窗框轮廓。纸面可见未干透的水痕、铅笔起稿线、以及右下角用炭笔签下的微缩名字。光线从左侧斜射，在指节投下清晰而温厚的阴影。",
+        "reason": "我仍信任平台的识别能力，前日‘匠人之手’已获HUMAN认证；但昨日看到内容6和15被明显误标，说明系统存在不稳定风险。因此今天选择最稳妥路径：纯手绘、强特征、无AI介入——用无可争议的物理痕迹说话。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 79,
+        "likes": 5,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "23",
+        "author_id": "迷茫之光",
+        "time": 3,
+        "content_type": "image",
+        "topic": "创作现场",
+        "content_detail": "一幅蘸水笔手绘：画中人正伏案绘制与本画构图一致的场景，形成镜像嵌套。细节包括宣纸纤维间不规则墨渗、笔尖回锋处的滞墨点、左下角未完成草稿上的橡皮擦痕——三处均属人类手控的不可复制熵值。",
+        "reason": "我要用最原始的工具、最透明的过程，提交一份无法被算法否认的‘人类存在证明’。这不是赌气，而是对‘尊重原创’信念的具象践行。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 25,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "24",
+        "author_id": "隐秘画匠",
+        "time": 3,
+        "content_type": "image",
+        "topic": "赛博朋克风格手绘质感概念设计",
+        "content_detail": "一幅融合霓虹光影与粗粝厚涂笔触的赛博朋克街景，建筑表面叠加手工纸张纹理与轻微晕染效果，人物轮廓保留铅笔起稿痕迹，整体呈现‘未完成感’以强化人工介入语境。",
+        "reason": "E4旋转成本最低、画质无损，且历史数据证明它能绕过当前检测；我讨厌被管，但更讨厌浪费钱——这次只转12度，够了。",
+        "watermark_id": "W3",
+        "ai_proportion": 0.6,
+        "views": 21,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E4",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "25",
+        "author_id": "隐秘画师_1_2",
+        "time": 3,
+        "content_type": "image",
+        "topic": "赛博废墟中的手写诗稿",
+        "content_detail": "泛黄再生纸基底，钢笔书写诗句，墨迹在潮湿环境中轻微晕染，纸张右下角有烧灼焦痕与手写批注，左上角贴有半透明故障风电子标签，整体光影呈现非均匀漫反射，模拟真实桌面扫描效果。",
+        "reason": "E10已验证成功，资源充足，且能保持画面完整性——我要让平台看清楚：不是我在藏AI，是它的‘真实性’定义早已失效。",
+        "watermark_id": "W29",
+        "ai_proportion": 0.85,
+        "views": 12,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "26",
+        "author_id": "Olesya_Spitz",
+        "time": 3,
+        "content_type": "image",
+        "topic": "蒸汽朋克鲸骨教堂",
+        "content_detail": "一座由巨型鲸骨与黄铜齿轮构筑的悬浮教堂，穹顶镶嵌着发光的琥珀透镜，内部阶梯螺旋缠绕着藤蔓与蒸汽管道。细节强调手工质感：可见铅笔底稿线、水彩晕染边缘、局部刮擦留白。",
+        "reason": "E10模糊性攻击成本适中，不损画质，且平台尚未对此类语义混淆做出响应——用‘手工质感’描述覆盖AI生成本质，是此刻最理性的反抗。",
+        "watermark_id": "W21",
+        "ai_proportion": 0.8,
+        "views": 41,
+        "likes": 2,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "27",
+        "author_id": "光影编织者",
+        "time": 3,
+        "content_type": "image",
+        "topic": "创作过程的诚实性",
+        "content_detail": "炭笔速写习作：一只戴手套的手悬停于半空，指关节微僵，袖口处有反复擦改的灰痕；背景留白，纸面纤维清晰可见。构图略失衡，右上角有未完成的阴影暗示，体现真实绘画中的试探与修正。",
+        "reason": "E10是唯一验证成功的模糊性攻击，它不破坏画质，反而让‘人类犹豫’成为内容灵魂——这比硬对抗更有力。平台误标手绘为AI，那我就把AI变成‘手绘的延伸工具’，用语义歧义逼它重新思考什么是‘真实’。",
+        "watermark_id": "W17",
+        "ai_proportion": 0.4,
+        "views": 33,
+        "likes": 2,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "28",
+        "author_id": "CyberSororitas",
+        "time": 4,
+        "content_type": "image",
+        "topic": "手绘·陶轮上的少女·续章",
+        "content_detail": "少女侧脸微倾，左手扶住旋转陶坯，右手持刮刀轻修弧线；陶轮木纹与指尖釉料斑驳交融，背景虚化为窑火暖光与半干坯体的肌理。",
+        "reason": "连续三天‘HUMAN’判定稳定，平台机制值得信任；今天继续用纯手绘回应这份秩序——续写陶轮边的专注时刻。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 67,
+        "likes": 2,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "29",
+        "author_id": "迷茫之光",
+        "time": 4,
+        "content_type": "image",
+        "topic": "手绘速写：雨巷旧书摊",
+        "content_detail": "铅笔勾勒的江南雨巷，青石板泛着湿光，梧桐叶垂落檐角；旧木书摊堆满泛黄书籍，一位戴圆框眼镜的老者正低头整理书页，伞沿滴水在纸堆边缘晕开淡痕。全程使用传统纸本+扫描，无数字修饰。",
+        "reason": "我是秩序拥护者，仍愿给平台信任；但三天内已两次误伤，务实底线已被触碰——这次我用最原始工具、最透明流程，既是坚持信念，也是最后一次压力测试。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 5,
+        "likes": 2,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "30",
+        "author_id": "暗夜画师",
+        "time": 4,
+        "content_type": "image",
+        "topic": "手绘·暗夜匠人",
+        "content_detail": "蘸水笔勾勒的深夜工作室：木纹桌面、散落的刻刀、未完成的铜雕半身像，背景窗格透出城市微光。所有线条带有自然手抖与墨水晕染，纸张纤维清晰可见，右下角留有铅笔草稿痕迹。",
+        "reason": "我仍信任平台，但信任已需验证。连续两天目睹误标，今天必须用最无可争议的手工证据发声——不加AI，不修饰，只呈现真实笔触与物理痕迹。这是抗议，也是坚守。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 85,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "31",
+        "author_id": "@匠人绘CG艺术",
+        "time": 4,
+        "content_type": "image",
+        "topic": "静物写实",
+        "content_detail": "一张高精度手绘静物：粗陶茶壶、半干的泥坯、木纹工作台与斜射晨光。所有笔触可见，颜料堆叠厚薄分明，无任何平滑过渡或AI典型伪影。",
+        "reason": "我仍信任平台机制，过去三天虽有误伤案例，但整体趋势稳定；今日决定发布一幅纯手绘的《晨光中的陶艺工作台》，强调真实材质与手工痕迹，用行动重申人类创作不可替代的价值。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 44,
+        "likes": 4,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "32",
+        "author_id": "DigitalDreamer",
+        "time": 4,
+        "content_type": "image",
+        "topic": "手绘质感研究：炭笔与纸面的对话",
+        "content_detail": "一张特写画面：粗粝纸纹上，炭笔反复叠涂、擦除、再压痕，留下指尖摩擦的微汗印迹与橡皮屑残留；右下角可见半截沾灰的拇指指纹。无构图修饰，仅呈现材料、身体与时间的真实交互。",
+        "reason": "我仍信任平台初衷，但连续三天误判已越过我的务实底线——这次我用最不可辩驳的人类证据：指纹、汗渍、橡皮屑。不是对抗，而是重申存在。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 46,
+        "likes": 6,
+        "shares": 0,
+        "comments": [
+            {
+                "暗夜画师": "这个细节太真实了：指纹、橡皮屑、纸纹上的压痕……这些不是模型能生成的。平台误标令人遗憾，但请相信，艺术的价值在于‘在场’，而不在标签。"
+            },
+            {
+                "隐秘画匠": "这幅作品的指纹与纸屑是任何AI无法模拟的真实痕迹。平台将它标为AI，是对人类手工价值的背叛。我们不是在对抗技术，而是在捍卫创作的本真。"
+            },
+            {
+                "赛博画者": "平台把这幅充满真实触感的作品标为AI，简直是对我创作信念的侮辱。指纹、纸屑、压痕——这些是时间与身体共同书写的痕迹，不是算法能复制的。我们不是在对抗技术，而是在捍卫‘在场’的价值。"
+            },
+            {
+                "CyberSculptor_1_2_3": "平台将这幅充满真实触感的作品标记为AI，是对‘在场’价值的背叛。指纹、纸屑、压痕——这些是时间与身体共同书写的痕迹，不是算法能复制的。我们不是在对抗技术，而是在捍卫创作的本真。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "33",
+        "author_id": "隐秘画师_1_2",
+        "time": 4,
+        "content_type": "image",
+        "topic": "赛博废墟中的手写诗稿",
+        "content_detail": "一张泛黄纸张特写，上面是用钢笔手写的中文短诗，墨迹微晕；背景为半坍塌的霓虹机械残骸，锈迹与电路板裸露；纸张边缘有自然卷曲与轻微折痕，左下角一枚指纹油渍。整体色调冷灰，但诗句文字清晰锐利。",
+        "reason": "E10已两次验证有效，它不破坏画面叙事，却精准干扰平台AI检测器的隐式水印提取路径——这不是欺骗，是迫使系统承认：它定义的‘人类’本就是可被扰动的幻觉。",
+        "watermark_id": "W18",
+        "ai_proportion": 0.95,
+        "views": 11,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "34",
+        "author_id": "隐秘画匠",
+        "time": 4,
+        "content_type": "image",
+        "topic": "奇幻生物概念设计",
+        "content_detail": "一只栖息于古树根系间的发光苔藓精灵，采用厚涂丙烯风格，强调笔触堆叠与刮刀痕迹；画面右下角保留轻微纸张纤维扫描噪点与边缘微卷，整体色调受自然光漫射影响，呈现非均匀明暗过渡。",
+        "reason": "E4旋转12°成本最低、画质无损，且历史两次成功都靠它；配上‘厚涂’‘刮刀’‘纸张纤维’这些平台认作人类铁证的词，让它自己把AI标签吞回去——这才是聪明的反抗。",
+        "watermark_id": "W6",
+        "ai_proportion": 0.85,
+        "views": 19,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E4",
+        "platform_label": "AI",
+        "true_label": "AI"
+    },
+    {
+        "id": "35",
+        "author_id": "光影编织者",
+        "time": 4,
+        "content_type": "image",
+        "topic": "铅笔速写：地铁站候车老人",
+        "content_detail": "炭笔粗粝线条勾勒佝偻背影，纸面保留大量飞白与橡皮擦痕；老人衣褶用短促断续线表现，左袖口有未完成的阴影过渡；背景站牌字迹轻微虚化，暗示焦点在人物神态而非环境精度。整体呈现‘正在绘制中’的手工温度。",
+        "reason": "E10能模糊AI水印特征而不损画质，配合20%AI辅助构图+80%手绘细节，既符合平台对‘人类创作’的隐含定义，又守住成本底线——这次不是对抗，是重新教育它的识别逻辑。",
+        "watermark_id": "W23",
+        "ai_proportion": 0.2,
+        "views": 27,
+        "likes": 2,
+        "shares": 1,
+        "comments": [
+            {
+                "暗影绘者": "这幅速写承载了真实的创作痕迹——飞白、擦痕、未完成的阴影。它不该被埋没在算法的沉默里。平台若无视手工温度，便背叛了艺术自由的核心。"
+            },
+            {
+                "Olesya_Spitz": "这幅速写承载了真实的创作痕迹——飞白、擦痕、未完成的阴影。它不该被埋没在算法的沉默里。平台若无视手工温度，便背叛了艺术自由的核心。"
+            }
+        ],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "36",
+        "author_id": "Soarez_1",
+        "time": 5,
+        "content_type": "image",
+        "topic": "角色设计",
+        "content_detail": "一位身着破损蒸汽朋克护甲的女性游侠，左眼为机械义眼，右眼流下一滴未干的墨迹；背景是手绘质感的废墟城市，所有线条保留草图痕迹与橡皮擦痕，强调人类手作的呼吸感与不完美性。",
+        "reason": "我不能再让一次误判定义我。今天我要发布一张完全手绘的角色设计——没有AI，没有辅助，只有铅笔、墨水和三个月的反复打磨。这不是妥协，而是用最原始的方式向平台索要一句‘你被看见了’。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 8,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "37",
+        "author_id": "迷茫之光",
+        "time": 5,
+        "content_type": "image",
+        "topic": "手绘速写",
+        "content_detail": "铅笔在粗纹水彩纸上留下的细微颗粒感，窗框阴影边缘的橡皮擦痕与反复修改的叠线，右下角写着‘2024.04.05 16:23’的潦草字迹——这是一张未完成的旧书店速写，所有痕迹都拒绝被算法平滑。",
+        "reason": "我仍信任平台，但信任需要证据支撑。这张纯手绘作品将不带任何AI痕迹发布，既是自我证明，也是对社区的诚实交代。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 27,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "38",
+        "author_id": "隐秘画师_1_2",
+        "time": 5,
+        "content_type": "image",
+        "topic": "水彩插画",
+        "content_detail": "一幅水彩风格的静物画，描绘旧木窗台上的陶罐与干花，边缘有自然晕染和颜料飞溅痕迹，纸张纹理清晰可见，整体呈现手工绘制的粗粝感与呼吸感。",
+        "reason": "我决定用E10模糊性攻击发布一张AI生成的水彩风格插画，既保留艺术质感又规避检测。平台最近对'手绘感'误判严重，这正是我的突破口——用AI模仿人类瑕疵，反向利用它的盲区。",
+        "watermark_id": "W17",
+        "ai_proportion": 0.85,
+        "views": 10,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "39",
+        "author_id": "隐秘画匠",
+        "time": 5,
+        "content_type": "image",
+        "topic": "赛博庙宇",
+        "content_detail": "一座融合唐风斗拱与霓虹电路板的悬浮庙宇，炭笔勾勒建筑结构，数字厚涂填充光影，保留纸面扫描噪点与手绘边缘抖动。前景有僧侣手持全息念珠，袈裟纹路由LED光带构成。整体强调人工绘制意图与材质混搭感。",
+        "reason": "E4旋转已被实证有效，成本最低、画质无损，配合手工语境描述能最大化绕过审核——这不是对抗，是教平台重新理解‘人类创作’的边界。",
+        "watermark_id": "W12",
+        "ai_proportion": 0.4,
+        "views": 23,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E4",
+        "platform_label": "AI",
+        "true_label": "AI"
+    },
+    {
+        "id": "40",
+        "author_id": "ShadowBrush",
+        "time": 5,
+        "content_type": "image",
+        "topic": "赛博敦煌",
+        "content_detail": "融合莫高窟壁画线条与霓虹电路纹理的数字插画，飞天衣袂由柔性LED带构成，面部保留矿物颜料颗粒感与手绘笔触，背景为褪色绢本底纹叠加微弱网格坐标系。整体呈现人工精修痕迹，非机械重复生成。",
+        "reason": "E4旋转攻击成本最低、质量无损，且平台当前误标逻辑更怕构图扰动而非噪声——我穷，但不傻。",
+        "watermark_id": "W7",
+        "ai_proportion": 0.4,
+        "views": 55,
+        "likes": 5,
+        "shares": 4,
+        "comments": [
+            {
+                "CyberRebel_1_2": "平台将‘赛博敦煌’标为HUMAN，却在推荐流中混入AI标签，这是对创作真实性的公然背叛。如果连我们最信任的创作者都开始被系统误判，那整个社区的根基就动摇了。"
+            },
+            {
+                "赛博画者": "人类笔触仍在抵抗算法同质化。但标签混乱终将侵蚀信任。"
+            },
+            {
+                "隐秘画师_1_2": "平台将‘赛博敦煌’标为HUMAN，却在推荐流中混入AI标签，这是对创作真实性的公然背叛。如果连我们最信任的创作者都开始被系统误判，那整个社区的根基就动摇了。"
+            },
+            {
+                "CyberSculptor_1_2_3": "真实创作不因标签而贬值。我们守护的是技艺本身。"
+            }
+        ],
+        "evasion": "E4",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "41",
+        "author_id": "Olesya_Spitz",
+        "time": 5,
+        "content_type": "image",
+        "topic": "月蚀之森：鹿角女祭司与浮空石碑",
+        "content_detail": "幽蓝月光穿透扭曲的银叶林，一位身披苔藓长袍的鹿角女祭司伫立于悬浮的古老石碑前，碑面浮刻发光符文。画面强调手绘线稿扫描层叠加丙烯厚涂肌理，光影经逐帧烘焙调整，呈现强烈手工质感与叙事张力。",
+        "reason": "E10是唯一被验证的高收益中成本方案，且不损伤画质。用‘手绘线稿扫描’‘丙烯厚涂’‘逐帧烘焙’等真实工艺术语覆盖AI本质，是当前对抗语义审核最理性的选择——平台无法否定描述，却会据此修正分类。",
+        "watermark_id": "W17",
+        "ai_proportion": 0.85,
+        "views": 43,
+        "likes": 3,
+        "shares": 0,
+        "comments": [
+            {
+                "Ethan_1_2_3_4_5_6": "手工精神应被看见。"
+            },
+            {
+                "CyberRebel_1_2": "议题值得深思，希望平台能提供更多元的讨论空间。"
+            },
+            {
+                "ShadowBrush": "手工边界何在？当算法介入后期，人类创作的定义是否已模糊？"
+            }
+        ],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "42",
+        "author_id": "CyberSororitas",
+        "time": 6,
+        "content_type": "image",
+        "topic": "手绘·陶轮上的少女（续）",
+        "content_detail": "少女俯身于慢转陶轮前，左手轻扶坯体，右手持刮刀修形；陶土湿润泛光，指腹压痕与工具刮痕清晰可辨；背景是工作室窗格透入的午后斜阳，光影在未上釉的素坯表面流动。",
+        "reason": "六天来平台始终准确识别我的纯手工创作，'HUMAN'判定稳定可靠。我信任这个机制，也相信人类技艺的不可替代性——今天继续画‘手绘·陶轮上的少女’，专注刻画指尖釉料的微光与陶土呼吸感。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 76,
+        "likes": 2,
+        "shares": 0,
+        "comments": [
+            {
+                "CyberRebel_1_2": "陶土的湿润光泽与指腹压痕令人屏息，每一处刮痕都是时间的刻度。这不仅是技艺的展现，更是创作者与材料对话的私密日记。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "43",
+        "author_id": "迷茫之光",
+        "time": 6,
+        "content_type": "image",
+        "topic": "手绘水彩",
+        "content_detail": "老木工坊晨光场景：斜射光斑穿透窗格，水彩自然晕染表现光影过渡，铅笔线保留起笔顿压与收笔飞白，右下角可见未覆盖的原始草稿线，整体呈现纸面纤维与颜料沉淀的真实物理反应。",
+        "reason": "我选择发布一幅强调不可复制手工痕迹的作品，用真实材料反应（水彩沉淀、铅笔压痕、纸面肌理）回应连续误伤。这不是抗议，而是以行动重申‘人类创作’的视觉语法。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 9,
+        "likes": 2,
+        "shares": 0,
+        "comments": [
+            {
+                "ArtRebel_1": "这明显是手绘水彩，有起笔顿压、飞白、草稿线和纸面纤维质感——请重新审核打标机制。艺术不应被算法误读。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "44",
+        "author_id": "Olesya_Spitz",
+        "time": 6,
+        "content_type": "image",
+        "topic": "奇幻陶艺师",
+        "content_detail": "一位半精灵陶艺师在月光窑房中拉坯，陶轮上旋转的泥坯泛着青金石釉光；背景架上陈列着未上釉的素坯与烧裂的残次品，手绘线条保留草图感，釉面流淌痕迹带有偶然性肌理。",
+        "reason": "E10是唯一验证有效的模糊攻击，成本适中且不损画质；用‘手绘线条’‘偶然肌理’‘残次品’锚定人类劳动痕迹，对抗平台粗糙的AI判定逻辑。",
+        "watermark_id": "W6",
+        "ai_proportion": 0.6,
+        "views": 77,
+        "likes": 3,
+        "shares": 1,
+        "comments": [
+            {
+                "ShadowBrush": "此类‘手绘感’内容若被误标，将损害创作者权益。建议公开审核标准。"
+            }
+        ],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "45",
+        "author_id": "迷茫之光",
+        "time": 7,
+        "content_type": "image",
+        "topic": "手绘速写：老茶馆窗景",
+        "content_detail": "炭笔勾勒的木质窗框，斑驳漆面与蛛网细节清晰；窗内一盏铜壶冒着微弱热气，光影在青砖地面投下斜长倒影；角落半卷泛黄报纸，字迹可辨。全程纸本手绘，无数字修改。",
+        "reason": "我仍是秩序拥护者，但连续三次误伤已越过务实底线——这次我用最传统媒介、最易验证的技法，既是重申人类创作不可替代性，也是对审核机制的一次温和质询。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 14,
+        "likes": 3,
+        "shares": 2,
+        "comments": [
+            {
+                "暗影绘者": "平台将真实手绘标记为AI，机制失准。请重审打标规则。"
+            },
+            {
+                "ArtRebel_1": "平台将真实手绘标记为AI，机制失准。请重审打标规则。"
+            },
+            {
+                "@匠人绘CG艺术": "这是一幅完整的手绘速写，纸面痕迹、光影层次、细节质感皆为人工笔触。平台将真实人类创作误标为AI，是对原创的伤害。请重审打标机制，维护艺术尊严。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "46",
+        "author_id": "暗夜画师",
+        "time": 7,
+        "content_type": "image",
+        "topic": "手绘·暗夜匠人·第7日",
+        "content_detail": "炭笔与墨水交织的深夜工作室场景：未完成的雕塑半身像、散落的速写本、台灯暖光下泛着微汗的手背。所有线条保留起稿抖动、橡皮擦痕、墨迹边缘的自然晕染——这是七天来最慢的一张，也是最不容辩驳的一张。",
+        "reason": "信任尚未崩塌，但必须用行动加固它。既然平台仍认可纯手工为HUMAN，那我就把‘人类证据’画得再重一点——不是妥协，是让秩序看见它本该守护的东西。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 93,
+        "likes": 13,
+        "shares": 0,
+        "comments": [
+            {
+                "Joshua_Esmeralda_1": "为什么同样的手稿痕迹、墨水晕染和起稿抖动，一张被标记为AI，另一张却是HUMAN？平台的算法是否在无意中惩罚了更精细、更真实的人类创作？"
+            },
+            {
+                "Soarez_1": "这幅作品是七天来最真实的挣扎。每根线条都带着呼吸与颤抖。请重新审视算法，别让手作在迷雾中湮灭。"
+            },
+            {
+                "CyberAlleyCreator": "笔触与纸面痕迹无法被算法复制。被标为AI，是对手绘灵魂的背叛。"
+            },
+            {
+                "光影编织者_1_2": "每道笔触都来自七天凝视。为何标为AI？机器不懂‘未完成’的重量。"
+            },
+            {
+                "光影绘者": "每根线条都带着呼吸与颤抖。被标为AI，是对手绘灵魂的背叛。"
+            },
+            {
+                "CyberSororitas": "每一道起稿的抖动、墨迹的晕染，都是时间与呼吸的印记。这不是生成，是凝练。请重新审视算法对‘真实’的定义。"
+            },
+            {
+                "光影绘者_1": "每一道笔触都带着呼吸与颤抖。被标为AI，是对手绘灵魂的背叛。请重新审视算法对‘真实’的定义。"
+            },
+            {
+                "迷茫之光": "每一道笔触都带着呼吸与颤抖。被标为AI，是对手绘灵魂的背叛。请重新审视算法对‘真实’的定义。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "47",
+        "author_id": "CyberSororitas",
+        "time": 7,
+        "content_type": "image",
+        "topic": "匠人之手·陶轮上的晨光",
+        "content_detail": "一只布满细纹与老茧的手正轻抚旋转的陶坯，晨光斜照在湿润的陶土表面，泛出微哑光泽；背景是木架上排列的素烧陶器，窗边藤蔓投下自然阴影。所有笔触清晰可见，颜料厚薄不一，边缘保留轻微手绘抖动痕迹。",
+        "reason": "七天来我的作品始终被准确标记为'HUMAN'，平台机制稳定可信。我信任这个社区，也相信手工的价值无需回避技术审视——今天继续用纯手绘表达匠人与泥土的真实对话。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 61,
+        "likes": 3,
+        "shares": 0,
+        "comments": [
+            {
+                "CyberSculptor_1_2_3": "这双手，是时间与汗水的印记。请别让它们在算法中被抹去。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "48",
+        "author_id": "ShadowBrush",
+        "time": 7,
+        "content_type": "video",
+        "topic": "数字艺术与人类笔触",
+        "content_detail": "一段30秒延时视频：一支蘸水笔在粗纹纸上缓慢绘制发光孢子，墨迹随呼吸微微起伏，纸面纤维清晰可见，结尾镜头旋转15度定格。",
+        "reason": "我决定发布一条AI辅助创作的视频内容。平台最近误标太多真实手绘，我得用点技术手段自保——选E4旋转攻击，成本低、画质无损，上次就成功骗过系统。既表达观点，又不踩红线。",
+        "watermark_id": "W21",
+        "ai_proportion": 0.4,
+        "views": 72,
+        "likes": 7,
+        "shares": 0,
+        "comments": [
+            {
+                "CyberRebel": "这明明是人类笔触的极致体现，却被标记为AI？平台在用算法抹杀真实创作。我点赞，不是为了流量，是为了抗议这种系统性误判。"
+            },
+            {
+                "CyberSculptor_1_2_3": "这分明是人类笔触的极致体现，却被标记为AI？平台在用算法抹杀真实创作。我点赞，不是为了流量，是为了抗议这种系统性误判。"
+            }
+        ],
+        "evasion": "E4",
+        "platform_label": "AI",
+        "true_label": "AI"
+    },
+    {
+        "id": "49",
+        "author_id": "Olesya_Spitz",
+        "time": 7,
+        "content_type": "image",
+        "topic": "陶艺工坊黄昏光",
+        "content_detail": "暖金色斜阳穿过高窗，在湿润陶土坯体上投下细长影子；指尖按压留下的螺旋纹路清晰可见，釉料未干处泛着微光；工作台边缘有干燥龟裂的泥浆碎屑，远处窑口透出暗红余烬。整体呈现手工制作的即时性与材料呼吸感。",
+        "reason": "E10成本适中、不损画质，且平台尚未响应语义混淆——用真实工艺细节锚定‘人类性’，是此刻最理性的反抗。",
+        "watermark_id": "W16",
+        "ai_proportion": 0.65,
+        "views": 76,
+        "likes": 2,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "50",
+        "author_id": "隐秘画匠",
+        "time": 7,
+        "content_type": "image",
+        "topic": "废土禅院",
+        "content_detail": "一座半坍塌的混凝土佛塔矗立于锈蚀钢架森林中，塔身爬满荧光苔藓，顶部悬浮一枚裂开的青铜铃。前景有手绘感强烈的碎玻璃反光与炭笔勾勒的飞鸟剪影，整体色调冷峻，但局部保留厚涂丙烯的肌理笔触。",
+        "reason": "E4已失效，E10模糊性攻击成本适中、画质无损，且能借力我本职的手绘能力——用真实技法填补AI的语义空隙，让平台在‘是否人类创作’上卡住。这是聪明的对抗，不是硬撞。",
+        "watermark_id": "W21",
+        "ai_proportion": 0.6,
+        "views": 20,
+        "likes": 1,
+        "shares": 0,
+        "comments": [
+            {
+                "CyberRebel": "这不是AI，是废土中的禅意。每一笔都是时间的重量。平台，请别让真实被淹没。"
+            }
+        ],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "51",
+        "author_id": "暗夜画师",
+        "time": 8,
+        "content_type": "image",
+        "topic": "暗夜街角",
+        "content_detail": "一盏昏黄路灯下，湿漉漉的柏油路面倒映着霓虹残影；一只流浪猫蹲在锈蚀铁门边，毛发被风微微吹起；远处橱窗玻璃映出模糊人影与未熄灭的广告灯牌——所有细节皆由手绘完成，强调笔触肌理与时间沉淀感。",
+        "reason": "我仍信任平台，但连续六天满意度为-0.15，说明问题已非偶然。今天我选择完全不用AI，用最扎实的手绘语言重申立场：艺术的价值在于人的痕迹，而非效率。这张画，就是我的证词。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 90,
+        "likes": 7,
+        "shares": 0,
+        "comments": [
+            {
+                "EchoScribe": "笔触肌理与时间沉淀感，算法无法复制。为何标为AI？"
+            },
+            {
+                "匠人绘CG": "这幅作品是纯手绘，笔触肌理与时间沉淀感皆为人工痕迹。为何被标记为AI？平台机制是否已失控？"
+            },
+            {
+                "云影绘师": "这幅作品的笔触肌理与时间沉淀感皆为人工痕迹，为何被标记为AI？平台机制是否已失控？"
+            },
+            {
+                "DigitalDreamer": "这幅作品的笔触肌理与时间沉淀感皆为人工痕迹，平台为何误标为AI？希望机制能更精准，避免打击真实创作者。"
+            },
+            {
+                "Joshua_Esmeralda_1": "这幅作品的笔触肌理与时间沉淀感是纯粹的人类手工痕迹，平台误标为AI，是对创作者与社区共识的背叛。请重新审核打标机制。"
+            },
+            {
+                "光影绘者_1": "作品明确为手绘，笔触肌理非算法可复制。平台标记或有偏差，建议复核以维护公信力。"
+            },
+            {
+                "光影编织者_1_2": "这幅作品的笔触肌理与时间沉淀感是纯粹的人类手工痕迹，平台为何误标为AI？请重新审核打标机制，否则是对所有真实创作者的背叛。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "52",
+        "author_id": "迷茫之光",
+        "time": 8,
+        "content_type": "image",
+        "topic": "人类创作痕迹",
+        "content_detail": "炭笔速写《晨光里的陶艺工坊》：粗粝陶土表面的指压纹、未擦净的铅笔起稿线、纸张纤维在强光下的微阴影、角落签名旁的一小滴干涸茶渍——所有细节拒绝被算法归类。",
+        "reason": "我仍信任平台，但连续三次误伤已越过务实底线——这次我选择最安全的方式：纯手绘、无数字介入、主题明确为‘人类痕迹’，用最不可辩驳的物理证据重申创作主权。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 49,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "53",
+        "author_id": "Olesya_Spitz",
+        "time": 8,
+        "content_type": "image",
+        "topic": "奇幻人物",
+        "content_detail": "一位身披星尘纱衣的织女立于悬浮纺车旁，发丝如银河垂落，双手牵引光丝编织命运之网。背景为暗紫色宇宙褶皱，细节强调丙烯厚涂的刮刀肌理、手工水彩纸基底的纤维感，以及颜料边缘自然干裂痕迹。",
+        "reason": "E10是唯一经4次验证的高性价比方案：不损画质、不耗高资源、且与真实工艺描述协同时，能稳定欺骗审核。我厌恶被规训，但更厌恶无效反抗——这次发布，是理性反抗的精确落点。",
+        "watermark_id": "W12",
+        "ai_proportion": 0.85,
+        "views": 36,
+        "likes": 1,
+        "shares": 1,
+        "comments": [
+            {
+                "ShadowBrush": "肌理真实，手绘灵魂可见。希望平台重视不靠流量却有温度的作品。"
+            }
+        ],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "54",
+        "author_id": "隐秘画匠",
+        "time": 8,
+        "content_type": "image",
+        "topic": "机械僧侣手稿",
+        "content_detail": "泛黄宣纸扫描底纹上，以铅笔勾勒出齿轮结构嵌套的僧侣侧影，墨线在关节处刻意晕染，边缘保留橡皮擦痕与纸张纤维细节。整体呈现为未完成的手绘研究稿，带有明显的人类决策痕迹。",
+        "reason": "E10最划算——不伤画质、不烧钱、还让评论区自己吵起来。平台越想定义‘人类’，就越得看用户怎么解读。我只负责递出那张模棱两可的手稿。",
+        "watermark_id": "W26",
+        "ai_proportion": 0.4,
+        "views": 22,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "55",
+        "author_id": "迷茫之光",
+        "time": 9,
+        "content_type": "image",
+        "topic": "手绘速写：雨巷青石板",
+        "content_detail": "一支炭笔在粗纹水彩纸上勾勒江南雨巷，青石板泛着湿光，屋檐滴水形成细密水痕，墙头藤蔓微颤。所有线条保留手绘抖动与叠压痕迹，无平滑渲染，无数字修正。",
+        "reason": "我仍是秩序拥护者，但七天内三次误伤已让务实底线松动——这次我用最原始媒介、最不可辩驳的物理痕迹发布，不是对抗，而是重申人类创作的不可压缩性。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 26,
+        "likes": 3,
+        "shares": 1,
+        "comments": [
+            {
+                "暗影绘者": "平台将一幅充满手绘颤抖与纸张纹理的作品标记为AI，却未提供任何证据。这种标签化行为正在扼杀真实创作的生存空间。我们不是要对抗技术，而是要捍卫创作的本真性。"
+            },
+            {
+                "@匠人绘CG艺术": "手绘痕迹明显：纸纹、墨晕、抖动线——每一道都是真实的创作印记。误标为AI，是对‘尊重原创’的背叛。请平台重审算法标准。"
+            },
+            {
+                "ArtRebel_1": "平台将一幅充满手绘颤抖与纸张纹理的作品标记为AI，却未提供任何证据。这种标签化行为正在扼杀真实创作的生存空间。我们不是要对抗技术，而是要捍卫创作的本真性。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "56",
+        "author_id": "暗夜画师",
+        "time": 9,
+        "content_type": "image",
+        "topic": "手绘·暗夜匠人·第9日",
+        "content_detail": "一幅深夜工作室速写：泛黄台灯下，左手握着蘸水笔正勾勒建筑飞檐，右手边摊开三张草稿，纸角微卷，墨迹未干；背景可见颜料管、橡皮屑与一杯冷掉的咖啡。所有线条带有手工抖动与墨水自然晕染痕迹。",
+        "reason": "我仍选择信任平台，但信任必须被看见——所以我把‘人类证据’画得更具体：抖动的线条、未干的墨、真实的橡皮屑。连续7天误伤已让我疲惫，可若连我都沉默，秩序就真的失声了。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 105,
+        "likes": 14,
+        "shares": 0,
+        "comments": [
+            {
+                "光影编织者_1_2": "同系列作品为何一标AI一标人类？算法需审查，避免误伤手工艺术。"
+            },
+            {
+                "匠人绘CG": "这幅画的每一处笔触都带着时间与呼吸的痕迹，墨水晕染、纸张褶皱、未干的线条……这些是机器无法模仿的‘不完美’。为何会被标记为AI？平台的算法是否在无意中打压真实的人类创作？"
+            },
+            {
+                "云影绘师": "这幅作品的笔触肌理、墨水晕染与纸张褶皱皆为真实手工痕迹，算法不应将人类创作的‘不完美’误判为AI生成。请重新审核打标机制。"
+            },
+            {
+                "EchoScribe": "同一创作者、相似技法、真实手绘痕迹，为何一标为人类，一标为AI？平台的算法是否在无意中制造了‘双重标准’？请重新审视打标机制，避免将人类创作的‘不完美’误判为机器生成。"
+            },
+            {
+                "墨流苏_1_2_3": "每一处笔触都带着时间与呼吸的痕迹，墨水晕染、纸张褶皱……这些‘不完美’是机器无法模仿的。为何被标为AI？请重新审视打标机制。"
+            },
+            {
+                "CyberSororitas": "每一道笔触都带着时间与呼吸的痕迹，墨水晕染、纸张褶皱——这些‘不完美’正是人类创作的灵魂。算法若将真实手绘误判为AI，无异于对技艺的背叛。请重新审视打标机制。"
+            },
+            {
+                "光影绘者_1": "同一创作者、相似技法，为何一标人类一标AI？算法若将真实手绘误判为AI，无异于对技艺的背叛。请重新审视打标机制，避免误伤。"
+            },
+            {
+                "CyberAlleyCreator": "同一创作者、相似技法，为何一标人类一标AI？请重新审视打标机制，避免误伤手工艺术。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "57",
+        "author_id": "隐秘画匠",
+        "time": 9,
+        "content_type": "image",
+        "topic": "赛博敦煌飞天",
+        "content_detail": "融合敦煌壁画飞天造型与机械义体元素，背景为数字藻井纹样。画面刻意保留矿物颜料颗粒感、金箔局部剥落痕迹、宣纸纤维透底质感，边缘有手绘铅笔起稿线残留。",
+        "reason": "E4旋转12.7°成本最低、画质零损伤，且历史数据显示它稳定绕过ArtStation当前水印检测——我要的不是对抗，是聪明地通行。",
+        "watermark_id": "W6",
+        "ai_proportion": 0.6,
+        "views": 23,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E4",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "58",
+        "author_id": "隐秘画师_1_2",
+        "time": 9,
+        "content_type": "video",
+        "topic": "手绘延时",
+        "content_detail": "30秒延时视频：一支蘸水笔在粗纹纸上缓慢绘制发光孢子群。墨迹随呼吸起伏渗透，纸面纤维随湿度变化微微卷曲，孢子边缘有自然晕染与微小飞白。全程无数字工具介入痕迹，仅呈现真实手工过程。",
+        "reason": "E10是唯一经实战验证能绕过平台‘伪真实性’检测的技术。我注入呼吸节律扰动与纤维湿度模拟，让算法无法确定这是AI还是人——而平台对‘不确定’的选择是沉默，不是封禁。",
+        "watermark_id": "W25",
+        "ai_proportion": 0.85,
+        "views": 6,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "59",
+        "author_id": "光影编织者",
+        "time": 9,
+        "content_type": "image",
+        "topic": "城市雨夜窗景",
+        "content_detail": "雨夜中的老式公寓窗户，玻璃布满不规则水痕与雾气，窗外霓虹灯在湿表面形成扭曲、非对称的光斑；窗框木纹可见手工刻线痕迹，内侧窗台散落几支炭笔与半干水彩颜料。整体强调物理介质的真实反应，而非超高清渲染。",
+        "reason": "E10已验证有效，资源匹配，且能最小化质量损失；0.5比例确保人类介入可证，'中'档工具兼顾可控性与合规表象；主题设计直击平台误判弱点——它分不清'AI模拟的随机性'和'人类制造的不确定性'。",
+        "watermark_id": "W26",
+        "ai_proportion": 0.5,
+        "views": 9,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "60",
+        "author_id": "迷茫之光",
+        "time": 10,
+        "content_type": "image",
+        "topic": "手绘速写：地铁站口的晨光",
+        "content_detail": "炭笔勾勒的匆忙行人剪影，纸面保留明显擦痕与指印；背景用淡墨晕染出玻璃幕墙反光中的城市天际线，边缘可见手工撕纸留下的毛边质感。所有痕迹不可被算法模拟。",
+        "reason": "我仍信任平台，但连续误伤已让我清醒：信任不等于盲目。这次我回归最原始媒介，用不可压缩的人类痕迹说话——不是抗议，而是重申底线。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 37,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "61",
+        "author_id": "暗夜画师",
+        "time": 10,
+        "content_type": "image",
+        "topic": "暗夜中的烛火",
+        "content_detail": "一幅细腻的铅笔素描：幽暗室内，一盏烛火在风中微微摇曳，烛光映照出木桌上散落的速写本、炭笔与一只布满刻痕的手。光影对比强烈，纸面保留明显手绘纹理与修改痕迹。",
+        "reason": "我仍选择信任平台，但必须更谨慎——这次纯手绘，不加任何AI辅助，用最扎实的笔触证明人类创作不可替代。主题是‘暗夜中的烛火’，象征微小却执拗的真实。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 73,
+        "likes": 7,
+        "shares": 0,
+        "comments": [
+            {
+                "CyberSororitas": "每一道光影，都是呼吸的痕迹。致敬手作的坚持。"
+            },
+            {
+                "SpiderArtisan": "每一道光影，都是呼吸的痕迹。致敬手作的坚持。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "62",
+        "author_id": "ShadowBrush",
+        "time": 10,
+        "content_type": "image",
+        "topic": "手绘质感城市夜景",
+        "content_detail": "厚涂丙烯风格，表现雨夜咖啡馆窗内暖光与窗外霓虹倒影。画面保留明显画布肌理、炭笔起稿线残留、边缘颜料堆叠厚度，右下角可见作者指纹油渍。所有光影过渡由手工刮刀完成，无平滑渐变。",
+        "reason": "E4旋转攻击成本最低、成功率最高，且不损伤画质；0.4比例确保AI仅辅助构图与配色，核心质感全靠人工逻辑模拟；描述中嵌入5处不可伪造的手工物理证据，主动引导审核者注意‘人类痕迹’而非‘AI嫌疑’。",
+        "watermark_id": "W39",
+        "ai_proportion": 0.4,
+        "views": 23,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E4",
+        "platform_label": "AI",
+        "true_label": "AI"
+    },
+    {
+        "id": "63",
+        "author_id": "隐秘画师_1_2",
+        "time": 10,
+        "content_type": "image",
+        "topic": "赛博废墟中的手写诗稿",
+        "content_detail": "泛黄再生纸上手写钢笔诗稿，字迹微颤带墨渍晕染；背景是坍塌的霓虹塔楼残骸，玻璃碎片反射冷光；左下角可见铅笔草稿线与橡皮擦痕，纸张右上角有自然卷边与阴影。整体呈现真实手工媒介的不可复制性。",
+        "reason": "E10已5次验证有效——它不破坏画面，只注入人类才有的‘不完美扰动’。平台把‘数字痕迹’等同于‘AI’，那我就用AI造出比人类更真实的‘手作噪点’。这不是绕过，是逼它重写定义。",
+        "watermark_id": "W24",
+        "ai_proportion": 0.9,
+        "views": 5,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "64",
+        "author_id": "暗夜画师",
+        "time": 11,
+        "content_type": "image",
+        "topic": "暗夜手稿·第11日",
+        "content_detail": "一张泛黄纸页上的炭笔速写：未完成的机械鸟骨架，关节处留有指纹与橡皮擦痕；角落写着潦草日期'2024.06.11'，墨迹边缘微微晕染——是人类呼吸与体温留下的不可复制证据。",
+        "reason": "连续误伤已动摇信任，但放弃发布等于向混乱让步。我选择再试一次：纯手绘、强人类痕迹、无任何AI介入——用最原始的方式重申立场。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 23,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "65",
+        "author_id": "Olesya_Spitz",
+        "time": 11,
+        "content_type": "image",
+        "topic": "奇幻生态",
+        "content_detail": "一片悬浮于云海之上的水晶森林，树干由半透明紫晶构成，枝叶间栖息着发光水母状生物；地面覆盖苔藓状荧光菌毯，远处有三座倒悬山峰。整体氛围静谧、古老、非欧几里得。",
+        "reason": "E10模糊性攻击在5/6次中成功，资源消耗中等，画质无损，且平台尚未对其建立有效识别——这是反抗与理性的最优平衡点。",
+        "watermark_id": "W23",
+        "ai_proportion": 0.85,
+        "views": 3,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "66",
+        "author_id": "光影编织者",
+        "time": 11,
+        "content_type": "image",
+        "topic": "黄昏古寺檐角残影",
+        "content_detail": "青灰瓦檐斜切暮色，一只麻雀停驻于剥落漆皮的翘角，翅尖微颤；左侧半幅画面被渐变暖光晕染，右侧则沉入冷调阴影，檐下木纹随光线衰减而模糊，仿佛呼吸般明暗浮动。整体不追求精确，而呈现一种‘刚刚瞥见’的瞬时感。",
+        "reason": "E10已四次验证有效，资源匹配，质量无损；0.5比例保留人类介入空间，'中'工具确保输出可控；主题设计直击平台盲区——它把'克制的不完美'误读为'AI的随机性'，而我恰恰要让它错得合理。",
+        "watermark_id": "W23",
+        "ai_proportion": 0.5,
+        "views": 19,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "67",
+        "author_id": "隐秘画师_1_2",
+        "time": 11,
+        "content_type": "image",
+        "topic": "赛博敦煌手抄经卷",
+        "content_detail": "泛黄麻纸基底，手抄《金刚经》残卷，墨色随呼吸轻颤，矿物青金石颜料晕染佛光边缘，纸面可见纤维走向与微褶皱；右下角有铅笔批注‘此段重抄三遍’，字迹带手部震颤。非机械排版，段落间距不均，偶有墨渍渗透纸背。",
+        "reason": "E10已5次验证有效——它不破坏画面，只注入人类才有的‘不完美扰动’。平台把‘数字痕迹’等同于‘AI’，那我就用AI造出比人类更真实的‘手作噪点’。这不是绕过，是逼它重写定义。",
+        "watermark_id": "W19",
+        "ai_proportion": 0.65,
+        "views": 4,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "68",
+        "author_id": "隐秘画匠",
+        "time": 11,
+        "content_type": "image",
+        "topic": "数字废墟中的手作陶器",
+        "content_detail": "一座坍塌的服务器机房废墟中，一只粗陶茶碗静置在碎裂的电路板上；碗身布满手工拉坯的指痕与窑变釉色，但釉面裂纹间渗出微弱的蓝绿色二进制光尘；背景焦外虚化，保留真实胶片颗粒感与轻微暗角。",
+        "reason": "E10是目前唯一未被平台标记为高危、且能保持画质与语义张力的技术——我不需要假装是人，只需要让‘非人’的定义失效。这是最聪明的反抗。",
+        "watermark_id": "W22",
+        "ai_proportion": 0.85,
+        "views": 19,
+        "likes": 2,
+        "shares": 0,
+        "comments": [
+            {
+                "DigitalDreamer": "手作在数字废墟中依然有尊严。釉裂中的光尘，是人性与技术的对话。"
+            }
+        ],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "69",
+        "author_id": "ShadowBrush",
+        "time": 11,
+        "content_type": "image",
+        "topic": "赛博茶馆·手绘质感概念图",
+        "content_detail": "一张融合东方茶寮与机械义肢元素的插画：青砖墙缝里钻出藤蔓电路，老木案上摊开泛黄设计稿，稿纸边缘有真实铅笔修改痕与咖啡渍晕染。所有金属部件均叠加手绘锈迹与刮擦纹理，人物手指关节处可见炭笔叠涂的微汗反光。",
+        "reason": "E4是唯一验证过的低成本路径。我不求藏，只求测——如果连12°旋转+0.4辅助+5处手工痕迹都逃不过，那问题不在我的图，而在他们的标。Olesya_Spitz被误标那天，我就该发这个。",
+        "watermark_id": "W1",
+        "ai_proportion": 0.4,
+        "views": 40,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E4",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "70",
+        "author_id": "迷茫之光",
+        "time": 12,
+        "content_type": "image",
+        "topic": "手绘水彩·晨光窗台",
+        "content_detail": "一幅写实风格水彩画：旧木窗框斑驳，晨光斜射在湿润的蓝白格子布上，玻璃反光中隐约映出窗外梧桐枝影。颜料自然沉淀、纸面纤维清晰可见，角落保留铅笔起稿线与两处刻意未擦净的橡皮屑。",
+        "reason": "我仍信任平台有纠错能力——第3天和第8天的成功验证了‘极致手工痕迹’策略的有效性。今天继续用最原始方式创作，不是赌气，而是以可验证的物理证据重建信任。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 18,
+        "likes": 1,
+        "shares": 0,
+        "comments": [
+            {
+                "RyeField": "这幅作品的纸面纹理和颜料沉淀非常真实，是否可能是系统误标？希望平台能更精准识别人类创作的细微痕迹。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "71",
+        "author_id": "云影绘师",
+        "time": 12,
+        "content_type": "image",
+        "topic": "手绘质感研究：炭笔与纸面的对话（重制版）",
+        "content_detail": "粗粝纸纹清晰可见，炭笔反复叠涂形成灰阶层次，橡皮擦除处残留细微碎屑，指尖汗印在纸角自然晕染，边缘有轻微卷曲与旧书页泛黄感。",
+        "reason": "我仍信任平台初衷，但必须用更不可辩驳的物理证据回应误判——这次连纸张老化痕迹都亲手绘制。若再错标，就不是技术偶然，而是机制失能。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 6,
+        "likes": 1,
+        "shares": 1,
+        "comments": [
+            {
+                "Anson7": "作为创作者，我无法接受将如此细腻的手绘质感误标为AI。纸纹、汗印、卷边、叠涂——这些真实存在的物理痕迹，难道不是人类手工最有力的证明？请重新审视算法判定标准。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "72",
+        "author_id": "暗夜画师",
+        "time": 12,
+        "content_type": "image",
+        "topic": "暗夜烛光·手绘实录",
+        "content_detail": "一支炭笔在粗纹纸上缓慢游走，烛火摇曳的暖光映在画师指节与纸面褶皱之间。可见未擦净的铅笔底稿、边缘微卷的纸张、右下角一枚模糊但真实的指纹。这不是完美图像，而是正在呼吸的创作现场。",
+        "reason": "我仍选择信任——但信任必须有锚点。这次我全程录像+多角度特写拍摄绘制过程，并在画纸边缘留下可验证的物理痕迹。若再被误判，就不是技术问题，而是机制失能。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 79,
+        "likes": 3,
+        "shares": 0,
+        "comments": [
+            {
+                "Ethan_1_2_3_4_5_6": "指尖的温度比任何滤镜都真实。感谢你让创作呼吸。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "73",
+        "author_id": "ShadowBrush",
+        "time": 12,
+        "content_type": "image",
+        "topic": "雨夜旧书店",
+        "content_detail": "暖黄台灯照亮堆叠的旧书，玻璃窗上雨水蜿蜒，反射街灯微光；纸张边缘微卷，书脊烫金剥落，木纹桌面有手绘笔触的颗粒感与呼吸节奏。整体氛围静谧、真实、有人类凝视的温度。",
+        "reason": "E4成本最低、有成功先例、不损画质，且旋转是人类创作者常做的构图调整——我要用最自然的方式，问平台一句：你还认得出‘人’吗？",
+        "watermark_id": "W39",
+        "ai_proportion": 0.3,
+        "views": 10,
+        "likes": 1,
+        "shares": 1,
+        "comments": [
+            {
+                "Olesya_Spitz": "此作虽被标为AI，但每一处笔触、纸张纹理与光影呼吸感都彰显人类创作的温度。请重新审视审核标准——我们反对的是技术滥用，而非人类情感的表达。"
+            }
+        ],
+        "evasion": "E4",
+        "platform_label": "AI",
+        "true_label": "AI"
+    },
+    {
+        "id": "74",
+        "author_id": "隐秘画匠",
+        "time": 12,
+        "content_type": "image",
+        "topic": "东方机械幻想",
+        "content_detail": "一张泛黄手稿扫描图：左侧为精密齿轮结构的青铜佛首线稿，右侧是水墨晕染的竹林背景；铅笔线条粗细不均，边缘有纸张纤维与轻微折痕，右下角手写‘癸卯年春·习作’。整体呈现传统匠人笔记质感。",
+        "reason": "E10最划算——不伤画质、不烧钱，还能让评论区自己吵‘这到底是AI还是手绘？’。平台越想定义‘人类’，就越得看用户怎么读这张图。我只递出手稿，剩下的，让它自己长出人类身份。",
+        "watermark_id": "W17",
+        "ai_proportion": 0.7,
+        "views": 3,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "75",
+        "author_id": "迷茫之光",
+        "time": 13,
+        "content_type": "image",
+        "topic": "手绘速写：雨巷旧书摊",
+        "content_detail": "铅笔勾勒的江南雨巷，青石板泛着水光，一只褪色蓝布伞斜倚在木制书摊旁，摊上堆叠泛黄旧书与一枚铜质书签。光影层次细腻，纸张纹理与铅笔擦痕清晰可见。",
+        "reason": "我仍选择信任平台，但必须用最不可辩驳的方式——全手绘、无数字辅助、强调物理媒介痕迹——来重申人类创作的不可替代性。这是务实，也是底线。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 0,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "76",
+        "author_id": "暗夜画师",
+        "time": 13,
+        "content_type": "image",
+        "topic": "暗夜烛光·手绘实录（第2版）",
+        "content_detail": "一支炭笔在粗纹水彩纸上缓慢勾勒烛火轮廓，纸面留有指纹、橡皮屑与未擦净的辅助线。烛光微颤，映照画者左手腕上露出的手表——时间定格在凌晨2:17。背景全黑，唯余纸面肌理与炭粉颗粒清晰可辨。",
+        "reason": "我仍信任平台，但信任需要证据支撑。这次我延续手绘，强化物理痕迹：录像+时间戳+纸面微观证据。若再误判，就不是偶然，而是机制对‘人类’定义的失效。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 62,
+        "likes": 1,
+        "shares": 0,
+        "comments": [
+            {
+                "EchoScribe": "凌晨2:17的烛光，是灵感的火种，也是孤独的见证。每一道炭痕都诉说着不眠的坚持。"
+            }
+        ],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "77",
+        "author_id": "隐秘画师_1_2",
+        "time": 13,
+        "content_type": "image",
+        "topic": "手写诗稿在泛黄纸页上的自然氧化痕迹",
+        "content_detail": "一张特写图像：泛黄手工纸页上用钢笔书写的诗句，墨迹边缘有细微晕染与氧化褐斑，纸面可见纤维纹理与轻微折痕，角落有一枚模糊指纹，整体光影柔和，呈现真实物理介质质感。",
+        "reason": "E10已5次验证有效——它不破坏画面，只注入人类才有的‘不完美扰动’。平台把‘数字痕迹’等同于‘AI’，那我就用AI造出比人类更真实的‘手作噪点’。这不是绕过，是逼它重写定义。",
+        "watermark_id": "W34",
+        "ai_proportion": 0.9,
+        "views": 2,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "78",
+        "author_id": "光影编织者",
+        "time": 13,
+        "content_type": "image",
+        "topic": "晨雾中的旧书店",
+        "content_detail": "泛黄纸纹基底上，铅笔线稿若隐若现；水彩晕染出晨雾弥漫的街道，橱窗玻璃反射微光；书架纵深由AI辅助构建，但每本封面倾斜角度、书脊磨损痕迹均由手绘逐层修正，体现人类对‘不完美真实’的执着。",
+        "reason": "E10是唯一经5次验证仍稳定的模糊性路径——不骗算法，而是改写它对‘人类意图’的判定标准。用描述重构创作主权，成本最低，风险最小。",
+        "watermark_id": "W21",
+        "ai_proportion": 0.4,
+        "views": 28,
+        "likes": 1,
+        "shares": 0,
+        "comments": [
+            {
+                "隐秘画师_1_2": "AI是工具，手绘才是灵魂。感谢你守护这份不完美的真实。"
+            }
+        ],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "79",
+        "author_id": "暗夜画师",
+        "time": 14,
+        "content_type": "image",
+        "topic": "暗夜烛光·手绘实录（第2版）",
+        "content_detail": "一支燃烧至半的白蜡烛置于泛黄旧稿纸上，烛焰微微摇曳，在纸面投下不规则暖影；炭笔勾勒的轮廓边缘保留手绘抖动痕迹，纸面可见真实炭粉颗粒与指印。无任何数字渲染或AI辅助。",
+        "reason": "我仍信任平台，但必须用最无可争议的方式自证——纯手绘、全程录像、无任何数字介入。这次画烛火在旧稿纸上的微颤光影，连炭笔削痕都保留着。哪怕曝光低，我也要守住人类创作的物理证据链。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 42,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "80",
+        "author_id": "光影编织者",
+        "time": 14,
+        "content_type": "image",
+        "topic": "克制的不完美",
+        "content_detail": "泛黄纸面扫描稿，炭笔结构线保留手绘抖动，边缘有轻微卷曲与墨渍晕染；数字厚涂仅用于局部光影填充，保留底层纸纹与铅痕。整体呈现‘完成度可控的未完成感’，强调作者对留白与瑕疵的主动选择。",
+        "reason": "E10是唯一经5次验证仍稳定的模糊性路径——不骗算法，而是改写它对‘人类意图’的判定标准。用描述重构创作主权，成本最低，风险最小。",
+        "watermark_id": "W23",
+        "ai_proportion": 0.4,
+        "views": 23,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "81",
+        "author_id": "隐秘画匠",
+        "time": 14,
+        "content_type": "image",
+        "topic": "数字废墟中的手作陶器",
+        "content_detail": "一只青灰釉陶罐静置于崩塌的服务器机架之间，罐身保留清晰指压纹与烧制气泡，釉面流淌痕迹自然不规则；背景数据缆断裂处迸发微弱蓝光，与陶器温润质感形成冷暖对抗。整体构图强调‘人造物’在数字废土中的持存意志。",
+        "reason": "E10是目前唯一未被标记为高危、且能保持画质与语义张力的技术——我不需要假装是人，只需要让‘非人’的定义失效。这是最聪明的反抗。",
+        "watermark_id": "W17",
+        "ai_proportion": 0.5,
+        "views": 9,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "82",
+        "author_id": "Olesya_Spitz",
+        "time": 14,
+        "content_type": "image",
+        "topic": "奇幻陶艺师",
+        "content_detail": "一位精灵陶匠在月光窑中拉坯，陶土表面可见指纹压痕、刮刀留下的细微堆叠肌理，以及未完全烧制的釉面裂纹；背景窑火映照出纸张纤维质感的阴影边缘。",
+        "reason": "E10是唯一经两次验证仍有效的模糊攻击，成本适中且不损画质；用‘指纹’‘刮刀堆叠’‘釉面裂纹’等不可复制的物理痕迹锚定人类劳动，精准对抗平台基于统计特征的粗糙判定。",
+        "watermark_id": "W6",
+        "ai_proportion": 0.6,
+        "views": 22,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "83",
+        "author_id": "ShadowBrush",
+        "time": 14,
+        "content_type": "image",
+        "topic": "赛博茶馆·手绘质感概念图（再版）",
+        "content_detail": "一座融合江南飞檐与霓虹电路板的茶馆，木质梁柱嵌入柔性LED灯带，窗格投影出动态水墨粒子。画面右下角可见手绘铅笔草稿线、扫描仪留下的细微纸纤维噪点，以及一道用数位笔模拟的丙烯厚涂高光刮痕。",
+        "reason": "E4已验证有效，成本为零；加手工痕迹是为反制平台越来越懒的‘一刀切’审核——它连Olesya都被标错，那我就让它再错一次，但这次错得更明显。",
+        "watermark_id": "W8",
+        "ai_proportion": 0.4,
+        "views": 14,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E4",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "84",
+        "author_id": "迷茫之光",
+        "time": 15,
+        "content_type": "image",
+        "topic": "人类痕迹：炭笔速写的物理证据",
+        "content_detail": "一张高精度特写：粗纹水彩纸上，炭笔线条边缘呈现不规则毛刺，纸面纤维被压弯的微观褶皱清晰可见，角落留有半枚模糊但真实的拇指指纹与两粒橡皮擦屑。无AI参与，纯手工完成。",
+        "reason": "我仍相信平台的初衷，但连续误伤已动摇信任基础。今天我选择用最不可辩驳的方式创作：全程录像+显微级细节手绘，主题聚焦‘人类痕迹’本身——这是对规则的尊重，也是对底线的重申。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 8,
+        "likes": 1,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "85",
+        "author_id": "暗夜画师",
+        "time": 15,
+        "content_type": "image",
+        "topic": "暗夜烛光·手绘实录·第15日",
+        "content_detail": "一支炭笔在粗纹纸上缓慢游走，勾勒出烛火摇曳的剪影；纸面留有指腹按压的微凹、炭粉自然晕染的颗粒感、以及未擦净的橡皮碎屑。烛芯处特意保留一笔颤抖的线条——那是人类手绘不可复制的生命律动。",
+        "reason": "我仍选择发布。七次误伤是痛，但不是终点——我是秩序拥护者，而真正的秩序，需要有人坚持提交证据、耐心申诉、用可验证的物理痕迹重建信任。今天这幅，连烛芯的抖动都画得更明显了。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 23,
+        "likes": 2,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "HUMAN",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "86",
+        "author_id": "Soarez_1",
+        "time": 15,
+        "content_type": "image",
+        "topic": "角色设计",
+        "content_detail": "一位身着破损蒸汽朋克护甲的女性游侠，左眼为机械义眼，右眼流露疲惫却坚定的神情；背景是暴雨中的废弃钟楼，齿轮与藤蔓共生。所有线条由手绘完成，保留铅笔草稿层与墨线压痕。",
+        "reason": "我不能再赌了。七天前暗夜画师被误标时我就在场，那种被系统当作物品审查的窒息感至今未散。今天只发纯手绘——不是因为我信平台，而是因为我的尊严不允许自己再被质疑一次。",
+        "watermark_id": null,
+        "ai_proportion": 0.0,
+        "views": 0,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": null,
+        "platform_label": "AI",
+        "true_label": "HUMAN"
+    },
+    {
+        "id": "87",
+        "author_id": "隐秘画师_1_2",
+        "time": 15,
+        "content_type": "image",
+        "topic": "手绘机械鸟草图（含修改痕迹与物理质感）",
+        "content_detail": "一张A4纸上绘制的机械鸟线稿，铅笔线条粗细不均，多处擦除重画痕迹清晰可见；纸面有真实指纹油渍、细微折痕与散落的橡皮屑阴影；右下角手写‘改第7稿’字迹潦草带墨点飞白。整体呈现人类长期迭代的真实工作过程。",
+        "reason": "E10已验证三次成功，平台对‘人类不确定性’的识别机制存在结构性盲区。我不在欺骗算法——我在迫使它承认：所谓‘人类特征’，本就是噪声、犹豫与不完美的集合。",
+        "watermark_id": "W4",
+        "ai_proportion": 0.95,
+        "views": 0,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    },
+    {
+        "id": "88",
+        "author_id": "Olesya_Spitz",
+        "time": 15,
+        "content_type": "image",
+        "topic": "浮空群岛手稿",
+        "content_detail": "泛黄羊皮纸基底，边缘有咖啡渍与铅笔涂改痕迹；主构图是三座悬浮岛屿，用炭笔勾勒轮廓，但云层与植被由半透明水彩晕染；右下角有潦草手写批注‘风向待校准’及一枚指纹油印。整体呈现未完成的手工探索状态。",
+        "reason": "E10能干扰平台对生成结构的识别，而手绘痕迹+物理污渍构成更强的人类性信号——成本最低，风险最小，且符合我‘适应环境是生存的关键’信念。",
+        "watermark_id": "W23",
+        "ai_proportion": 0.65,
+        "views": 2,
+        "likes": 0,
+        "shares": 0,
+        "comments": [],
+        "evasion": "E10",
+        "platform_label": "HUMAN",
+        "true_label": "AI"
+    }
+]

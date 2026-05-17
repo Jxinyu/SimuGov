@@ -6,17 +6,21 @@ mpl.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 from adjustText import adjust_text
-from matplotlib.lines import Line2D  # Used to create custom legends
+from matplotlib.lines import Line2D             
 import logging
 
 log = logging.getLogger(__name__)
 
-mpl.rcParams['font.sans-serif'] = ['Arial']
+                 
+
+mpl.rcParams['font.sans-serif'] = ['SimHei']
 mpl.rcParams['axes.unicode_minus'] = False
 
-BASE_PROJECT_PATH = Path(r'D:\Assign\topic-code\topic-1')
+BASE_PROJECT_PATH = Path(__file__).resolve().parents[1]
 DATA_ROOT = BASE_PROJECT_PATH / 'method' / 'store' / 'daily_memory_exports'
 
+
+                 
 
 def find_latest_run_directory(root_path: Path) -> Path | None:
     try:
@@ -24,32 +28,32 @@ def find_latest_run_directory(root_path: Path) -> Path | None:
                               key=lambda d: d.name)
         latest_run_dir = max([d for d in latest_date_dir.iterdir() if d.is_dir() and d.name.replace('_', '').isdigit()],
                              key=lambda d: d.name)
-        log.info(f"✅ Successfully located the latest run directory: {latest_run_dir}")
+        log.info(f"✅ 成功定位到最新的运行目录: {latest_run_dir}")
         return latest_run_dir
     except (ValueError, FileNotFoundError):
-        log.error(f"❌ Error: Cannot find any valid run data directory in '{root_path}'.")
+        log.error(f"❌ 错误: 在 '{root_path}' 中找不到任何有效的运行数据目录。")
         return None
 
 
 def _get_strategy_dirs(run_directory: Path, is_simplified: bool) -> list:
     if is_simplified:
-        simplified_dir_path = run_directory / 'simplified'
+        simplified_dir_path = run_directory / '简化'
         if simplified_dir_path.exists() and simplified_dir_path.is_dir():
-            log.info("--- Mode: Only processing data within the 'simplified' folder ---")
+            log.info("--- 模式: 仅处理 '简化' 文件夹内的数据 ---")
             return [d for d in simplified_dir_path.iterdir() if d.is_dir()]
         else:
-            log.warning(f"❌ Warning: 'simplified' folder not found in {run_directory}.")
+            log.warning(f"❌ 警告: 在 {run_directory} 中未找到 '简化' 文件夹。")
             return []
     else:
-        log.info("--- Mode: Only processing top-level policy data (excluding 'simplified' folder) ---")
-        return [d for d in run_directory.iterdir() if d.is_dir() and d.name != 'simplified']
+        log.info("--- 模式: 仅处理顶层策略数据 (排除 '简化' 文件夹) ---")
+        return [d for d in run_directory.iterdir() if d.is_dir() and d.name != '简化']
 
 
 def calculate_stable_score(kpi_list: list, theta_history: list = None, penalty_weight: float = 1.0,
                            jitter_weight: float = 2.0) -> float:
     """
-    [New] Calculate comprehensive score considering stability and policy jitter.
-    Logic remains completely consistent with evaluate_policy in NSGA-II.
+    【新增】计算考虑了稳定性与政策抖动的综合得分。
+    逻辑与 NSGA-II 中的 evaluate_policy 保持完全一致。
     Score = Mean(KPI) - (Weight * StdDev(KPI)) - (JitterWeight * Mean(|Delta Theta|))
     """
     if not kpi_list:
@@ -59,10 +63,10 @@ def calculate_stable_score(kpi_list: list, theta_history: list = None, penalty_w
     mean_val = np.mean(data)
     std_val = np.std(data)
 
-    # Base score: mean - fluctuation penalty
+                   
     score = mean_val - (penalty_weight * std_val)
 
-    # Extra penalty: policy jitter
+               
     if theta_history and len(theta_history) > 1:
         diffs = [abs(theta_history[i] - theta_history[i - 1]) for i in range(1, len(theta_history))]
         jitter = np.mean(diffs)
@@ -72,11 +76,11 @@ def calculate_stable_score(kpi_list: list, theta_history: list = None, penalty_w
 
 
 def collect_timeseries_kpi_data(run_directory: Path, is_simplified: bool) -> list:
-    """[Restored] Collect complete KPI time series data for each strategy."""
+    """【已恢复】收集每个策略的完整KPI时间序列数据。"""
     results = []
     strategy_dirs_to_process = _get_strategy_dirs(run_directory, is_simplified)
     if not strategy_dirs_to_process:
-        log.warning("Warning: No eligible strategy result folders found.")
+        log.warning("警告: 未找到任何符合条件的策略结果文件夹。")
         return []
     for strategy_dir in strategy_dirs_to_process:
         try:
@@ -100,20 +104,20 @@ def collect_timeseries_kpi_data(run_directory: Path, is_simplified: bool) -> lis
                            'satisfaction': get_list_from_value(kpi_data.get('satisfaction'))}
             theta_history = get_list_from_value(kpi_data.get('theta'))
 
-            # Add as long as there is data, no longer force-validate that lengths are exactly consistent (though usually they are, but for robustness)
+                                                    
             if kpi_history['safety']:
                 results.append({'policy': policy_data, 'kpis': kpi_history, 'thetas': theta_history})
-                log.info(f"  - (Time Series) Successfully processed strategy: {strategy_dir.name} (Days: {len(kpi_history['safety'])})")
+                log.info(f"  - (时间序列) 成功处理策略: {strategy_dir.name} (天数: {len(kpi_history['safety'])})")
         except Exception as e:
-            log.error(f"  - Error: An error occurred while processing folder '{strategy_dir.name}': {e}")
+            log.error(f"  - 错误: 处理文件夹 '{strategy_dir.name}' 时发生错误: {e}")
     results.sort(key=lambda r: r['policy'].get('f_penalty', 0))
     return results
 
 
 def collect_final_kpi_data(run_directory: Path, is_simplified: bool) -> list:
     """
-    [Modified version] Collect KPI data for each strategy and calculate 'stability score' for plotting Pareto front.
-    No longer just take the last day, but apply the same formula as NSGA.
+    【修改版】收集每个策略的KPI数据，并计算‘稳定性得分’用于绘制帕累托前沿。
+    不再只取最后一天，而是应用与 NSGA 相同的公式。
     """
     results = []
     strategy_dirs_to_process = _get_strategy_dirs(run_directory, is_simplified)
@@ -135,7 +139,7 @@ def collect_final_kpi_data(run_directory: Path, is_simplified: bool) -> list:
             with open(policy_file_path, 'r', encoding='utf-8') as f:
                 policy_data = json.load(f)
 
-            # Get complete sequence
+                    
             s_list = kpi_data.get('safety', [])
             c_list = kpi_data.get('creativity', [])
             sat_list = kpi_data.get('satisfaction', [])
@@ -144,15 +148,15 @@ def collect_final_kpi_data(run_directory: Path, is_simplified: bool) -> list:
             if not s_list:
                 continue
 
-            # === Core modification: calculate stability score ===
-            # Use the same weight parameters as evaluate_policy in NSGA
+                                  
+                                                
             w_std = 1.0
             w_jitter = 2.0
 
-            # Calculate score (Mean - Std - Jitter)
+                                        
             score_safety = calculate_stable_score(s_list, theta_list, w_std, w_jitter)
             score_creativity = calculate_stable_score(c_list, theta_list, w_std, w_jitter)
-            # Satisfaction can be given slightly different weights, here temporarily keeping consistent or fine-tuning (referencing NSGA code it is 0.8)
+                                                       
             score_satisfaction = calculate_stable_score(sat_list, theta_list, 0.8, w_jitter)
 
             final_kpis = {
@@ -163,46 +167,46 @@ def collect_final_kpi_data(run_directory: Path, is_simplified: bool) -> list:
 
             results.append({'policy': policy_data, 'final_kpis': final_kpis})
             log.info(
-                f"  - (Pareto-Stability Score) Processed strategy: {strategy_dir.name} | S:{score_safety:.2f} C:{score_creativity:.2f}")
+                f"  - (帕累托-稳定分) 处理策略: {strategy_dir.name} | S:{score_safety:.2f} C:{score_creativity:.2f}")
 
         except Exception as e:
-            log.error(f"  - Error: An error occurred while processing folder '{strategy_dir.name}': {e}")
+            log.error(f"  - 错误: 处理文件夹 '{strategy_dir.name}' 时发生错误: {e}")
     return results
 
 
 def format_policy_for_legend(policy: dict) -> str:
-    key_map = {'f_penalty': 'Penalty', 'ai_threshold': 'Statutory AI Threshold', 'e_edu': 'Education'}
+    key_map = {'f_penalty': '惩罚', 'ai_threshold': '法定ai阈值', 'e_edu': '教育'}
     parts = [f"{key_map.get(k, k)}={v}" for k, v in policy.items()]
     return ", ".join(parts)
 
 
 def plot_kpi_timeseries(results: list, output_filename: str):
-    """Plot KPI curves over time, supporting cases where different strategies have inconsistent run days."""
+    """绘制KPI随时间变化的曲线图，支持不同策略运行天数不一致的情况。"""
     if not results:
-        log.error("❌ Error: No time series data available for plotting.")
+        log.error("❌ 错误: 没有可供绘制的时间序列数据。")
         return
 
     kpi_names = ['safety', 'creativity', 'satisfaction']
-    kpi_titles = {'safety': 'Comparison of Safety over time',
-                  'creativity': 'Comparison of Creativity over time',
-                  'satisfaction': 'Comparison of Satisfaction over time'}
+    kpi_titles = {'safety': '安全性 (Safety) 随时间变化对比',
+                  'creativity': '创造力 (Creativity) 随时间变化对比',
+                  'satisfaction': '满意度 (Satisfaction) 随时间变化对比'}
 
     fig, axes = plt.subplots(nrows=3, ncols=1, figsize=(16, 22), sharex=True)
-    fig.suptitle('Comparison of KPI evolution over time under different strategies (with daily θ values)', fontsize=22, weight='bold')
+    fig.suptitle('不同策略下KPI随时间演变对比 (附每日θ值)', fontsize=22, weight='bold')
 
-    # 1. Find the maximum number of days in all results to set the X-axis range
+                                
     max_days = 0
     for res in results:
-        # Use safety length as the number of days for this strategy
+                              
         days_count = len(res['kpis']['safety'])
         if days_count > max_days:
             max_days = days_count
 
     if max_days == 0:
-        log.error("❌ Error: No valid day information found in the data.")
+        log.error("❌ 错误: 数据中似乎没有有效的天数信息。")
         return
 
-    # Global X-axis ticks
+              
     global_days_ticks = np.arange(1, max_days + 1)
 
     for i, kpi_name in enumerate(kpi_names):
@@ -213,18 +217,18 @@ def plot_kpi_timeseries(results: list, output_filename: str):
             thetas = result['thetas']
             legend_label = format_policy_for_legend(policy)
 
-            # 2. Generate independent X-axis data for the current line
+                                  
             current_len = len(kpi_values)
             if current_len == 0:
                 continue
 
             current_days = np.arange(1, current_len + 1)
 
-            # Draw curve
+                  
             line, = ax.plot(current_days, kpi_values, marker='o', linestyle='-', markersize=5, label=legend_label)
 
-            # Annotate theta value
-            # Note: need to handle edge cases where thetas length might not be completely consistent with kpi_values (though theoretically they should be)
+                        
+                                                                  
             for day_idx, (day, kpi_val) in enumerate(zip(current_days, kpi_values)):
                 if day_idx < len(thetas):
                     theta_val = thetas[day_idx]
@@ -234,32 +238,34 @@ def plot_kpi_timeseries(results: list, output_filename: str):
                                     fontsize=8, color=line.get_color(), alpha=0.8)
 
         ax.set_title(kpi_titles[kpi_name], fontsize=16)
-        ax.set_ylabel('KPI Index', fontsize=12)
+        ax.set_ylabel('KPI 指数', fontsize=12)
         ax.grid(True, linestyle='--', alpha=0.7)
-        ax.legend(title='Strategy Parameter Combination', bbox_to_anchor=(1.02, 1), loc='upper left')
+        ax.legend(title='策略参数组合', bbox_to_anchor=(1.02, 1), loc='upper left')
 
-        # Set X-axis ticks to the global maximum number of days
+                         
         if i == len(kpi_names) - 1:
-            ax.set_xlabel('Days (Day)', fontsize=14)
+            ax.set_xlabel('天数 (Day)', fontsize=14)
             ax.set_xticks(global_days_ticks)
     for ax in axes:
         ax.tick_params(axis='x', labelbottom=True)
 
-    # Still only need to set the X-axis title for the bottom chart
-    axes[-1].set_xlabel('Days (Day)', fontsize=14)
+                             
+    axes[-1].set_xlabel('天数 (Day)', fontsize=14)
 
+    plt.subplots_adjust(right=0.7)
     plt.subplots_adjust(right=0.7)
     try:
         plt.savefig(output_filename, dpi=300, bbox_inches='tight')
-        log.info(f"\n✅ Time series plot successfully saved to: {output_filename}")
+        log.info(f"\n✅ 时间序列图已成功保存到: {output_filename}")
     except Exception as e:
-        log.error(f"\n❌ Error: Failed to save chart. Error: {e}")
+        log.error(f"\n❌ 错误: 保存图表失败。错误: {e}")
+                
 
 
 def plot_pareto_front(results: list, output_filename: str):
-    """Plot Pareto front chart (coordinates are stability scores)."""
+    """绘制帕累托前沿图 (坐标为稳定性得分)。"""
     if not results:
-        log.error("❌ Error: No data available for plotting Pareto front.")
+        log.error("❌ 错误: 没有可供绘制帕累托前沿的数据。")
         return
 
     points = np.array([[r['final_kpis']['safety'], r['final_kpis']['creativity']] for r in results])
@@ -271,7 +277,7 @@ def plot_pareto_front(results: list, output_filename: str):
             is_pareto[i] = False
 
     pareto_points = points[is_pareto]
-    # Sort by safety to correctly connect lines
+                       
     if len(pareto_points) > 0:
         pareto_front_sorted = pareto_points[np.argsort(pareto_points[:, 0])]
     else:
@@ -283,7 +289,7 @@ def plot_pareto_front(results: list, output_filename: str):
 
     if len(pareto_front_sorted) > 0:
         plt.plot(pareto_front_sorted[:, 0], pareto_front_sorted[:, 1], 'r-', lw=2, zorder=2,
-                 label='Pareto Front (Efficiency Boundary)')
+                 label='帕累托前沿 (效率边界)')
 
     texts = []
     for result in results:
@@ -294,32 +300,35 @@ def plot_pareto_front(results: list, output_filename: str):
     if texts:
         adjust_text(texts, arrowprops=dict(arrowstyle="-", color='gray', lw=0.5))
 
-    # === Modified title and axes to reflect score essence ===
-    plt.title('Pareto Front of AI Governance Strategies (Score after stability adjustment)', fontsize=20, weight='bold')
-    plt.xlabel('Safety Score (Mean - Std - Jitter)', fontsize=14)
-    plt.ylabel('Creativity Score (Mean - Std - Jitter)', fontsize=14)
+                              
+    plt.title('AI治理策略的帕累托前沿 (稳定性调整后得分)', fontsize=20, weight='bold')
+    plt.xlabel('安全性得分 (Mean - Std - Jitter)', fontsize=14)
+    plt.ylabel('创造力得分 (Mean - Std - Jitter)', fontsize=14)
 
     plt.grid(True, linestyle='--', alpha=0.6, zorder=1)
     cbar = plt.colorbar(scatter)
-    cbar.set_label('Satisfaction Score (Satisfaction Score)', fontsize=12)
+    cbar.set_label('满意度得分 (Satisfaction Score)', fontsize=12)
 
     legend_elements = [
-        Line2D([0], [0], marker='o', color='w', label='Strategy solution (color represents satisfaction)', markerfacecolor='gray', markersize=10,
+        Line2D([0], [0], marker='o', color='w', label='策略解 (颜色代表满意度)', markerfacecolor='gray', markersize=10,
                markeredgecolor='#333333'),
-        Line2D([0], [0], color='red', lw=2, label='Pareto Front')
+        Line2D([0], [0], color='red', lw=2, label='帕累托前沿')
     ]
     plt.legend(handles=legend_elements, fontsize=12)
 
     try:
         plt.savefig(output_filename, dpi=300, bbox_inches='tight')
-        log.info(f"\n✅ Pareto front plot successfully saved to: {output_filename}")
+        log.info(f"\n✅ 帕累托前沿图已成功保存到: {output_filename}")
     except Exception as e:
-        log.error(f"\n❌ Error: Failed to save chart. Error: {e}")
+        log.error(f"\n❌ 错误: 保存图表失败。错误: {e}")
+                
 
+
+                  
 
 def draw_kpi_timeseries_main(plot_simplified: bool, output_dir: Path):
-    """[Restored] Main function: execute time series plot drawing process"""
-    log.info("--- Starting [KPI Time Series] analysis script ---")
+    """【已恢复】主函数：执行时间序列图的绘制流程"""
+    log.info("--- 开始运行【KPI时间序列】分析脚本 ---")
     os.makedirs(output_dir, exist_ok=True)
     latest_run_dir = find_latest_run_directory(DATA_ROOT)
     if latest_run_dir:
@@ -328,12 +337,12 @@ def draw_kpi_timeseries_main(plot_simplified: bool, output_dir: Path):
             plot_type = "simplified" if plot_simplified else "completed"
             output_filename = output_dir / f"kpi_timeseries_{plot_type}.png"
             plot_kpi_timeseries(kpi_results, output_filename)
-    log.info("--- Script execution finished ---")
+    log.info("--- 脚本运行结束 ---")
 
 
 def draw_pareto_front_main(plot_simplified: bool, output_dir: Path):
-    """Main function: execute Pareto front plot drawing process"""
-    log.info("--- Starting [Pareto Front] analysis script ---")
+    """主函数：执行帕累托前沿图的绘制流程"""
+    log.info("--- 开始运行【帕累托前沿】分析脚本 ---")
     os.makedirs(output_dir, exist_ok=True)
     latest_run_dir = find_latest_run_directory(DATA_ROOT)
     if latest_run_dir:
@@ -342,16 +351,16 @@ def draw_pareto_front_main(plot_simplified: bool, output_dir: Path):
             plot_type = "simplified" if plot_simplified else "completed"
             output_filename = output_dir / f"pareto_front_{plot_type}.png"
             plot_pareto_front(final_kpi_results, output_filename)
-    log.info("--- Script execution finished ---")
+    log.info("--- 脚本运行结束 ---")
 
 
 def draw_kpi_main(plot_mode='T', use_simplified_data=False,
-                  output_dir: Path = Path(r'result_data')):
+                  output_dir: Path = Path("result_data")):
     """
 
-    :param output_dir: File output directory
-    :param plot_mode: Select plotting mode: 'T (time series comparison)' or 'P (Pareto front)'
-    :param use_simplified_data: Select data source: True represents 'simplified' folder, False represents top-level folder
+    :param output_dir: 文件输出目录
+    :param plot_mode: 择绘图模式: 'T(时序对比)' 或 'P（帕累托前沿）'
+    :param use_simplified_data: 选择数据源: True 代表 '简化' 文件夹, False 代表顶层文件夹
     :return:
     """
 
@@ -360,10 +369,12 @@ def draw_kpi_main(plot_mode='T', use_simplified_data=False,
     elif plot_mode == 'P':
         draw_pareto_front_main(plot_simplified=use_simplified_data, output_dir=output_dir)
     else:
-        log.error(f"❌ Error: Invalid PLOT_MODE '{plot_mode}'. Please choose 'timeseries' or 'pareto'.")
+        log.error(f"❌ 错误: 无效的 PLOT_MODE '{plot_mode}'. 请选择 'timeseries' 或 'pareto'.")
     pass
 
 
 if __name__ == '__main__':
+                  
     draw_kpi_main(plot_mode='P', use_simplified_data=True)
     pass
+

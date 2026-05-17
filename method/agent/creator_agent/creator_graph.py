@@ -11,16 +11,16 @@ from openai import BadRequestError
 from method.agent.persona import Persona
 from method.environment import Environment
 from method.utils.get_llm import get_async_llm
-from method.utils.token_statistics import token_logger
 from config import settings
 
 log = logging.getLogger(__name__)
 
 
+         
 class AgentState(TypedDict):
     """
-    Defines the structure of the agent state.
-    Note: We use "Full Coverage" mode for messages here to facilitate the implementation of memory compression nodes.
+    定义代理状态的结构。
+    注意：这里的 messages 我们采用“全量覆盖”模式管理，以便于记忆压缩节点的实现。
     """
     messages: Sequence[BaseMessage]
     step_count: Annotated[int, operator.add]
@@ -28,7 +28,7 @@ class AgentState(TypedDict):
 
 def create_agent_graph(tools: List[BaseTool], environment: Environment, persona: Persona):
     """
-    Creates and returns the executable graph for LangGraph.
+    创建并返回 LangGraph 的可执行图。
     """
     llm = get_async_llm(settings.model.creator_model)
     llm_with_tools = llm.bind_tools(tools)
@@ -43,6 +43,7 @@ def create_agent_graph(tools: List[BaseTool], environment: Environment, persona:
         if split_idx < 1:
             split_idx = 1
 
+                                          
         while split_idx > 1 and isinstance(messages[split_idx], ToolMessage):
             split_idx -= 1
 
@@ -59,6 +60,7 @@ def create_agent_graph(tools: List[BaseTool], environment: Environment, persona:
         if isinstance(last_message, ToolMessage) and last_message.name == 'push_content':
             return "end"
 
+                               
         if len(state['messages']) > settings.public_agent.number_of_compressions:
             return "memory_compression"
 
@@ -66,21 +68,22 @@ def create_agent_graph(tools: List[BaseTool], environment: Environment, persona:
 
     async def call_model(state: AgentState):
         current_step = state.get("step_count", 0)
-        messages = list(state['messages'])  # Get current full history
+        messages = list(state['messages'])            
 
         is_force_step = False
 
+                
         if current_step >= 8:
-            log.warning(f"🚨 {persona.agent_id} step count reached {current_step}, triggering forced post!")
+            log.warning(f"🚨 {persona.agent_id} 步数达到 {current_step}，触发强制发布！")
             is_force_step = True
             force_prompt = HumanMessage(content="""
-            【System Instruction: Time Expired】
-            Please **stop thinking immediately**. Based on the current information, immediately call the `push_content` tool to publish content.
-            Do not call query tools anymore. You must publish.
+            【系统指令：时间已耗尽】
+            请**立即停止思考**。根据目前信息，立即调用 `push_content` 工具发布内容。
+            不要再调用查询工具。必须发布。
             """)
             messages.append(force_prompt)
 
-        log.info(f"🤔 {persona.agent_id} thinking... (Step: {current_step}, HistLen: {len(messages)})")
+        log.info(f"🤔 {persona.agent_id} 思考中... (Step: {current_step}, HistLen: {len(messages)})")
 
         max_retries = 2
         attempt = 1
@@ -89,43 +92,43 @@ def create_agent_graph(tools: List[BaseTool], environment: Environment, persona:
         while attempt <= max_retries:
             try:
                 async with environment.llm_concurrent_nums_semaphore:
-                    # Send full history
+                            
                     response = await llm_with_tools.ainvoke(messages)
                 break
             except BadRequestError as e:
                 log.warning(f"⚠️ API Error (Attempt {attempt}): {e}")
                 if "data_inspection_failed" in str(e) or "inappropriate content" in str(e):
                     if attempt >= max_retries:
-                        response = AIMessage(content="(System: Content intercepted, operation terminated.)")
+                        response = AIMessage(content="（系统：内容被拦截，操作终止。）")
                         break
-                    messages.append(SystemMessage(content="【Warning】Sensitive words detected. Please retry using objective, academic language."))
+                    messages.append(SystemMessage(content="【警告】检测到敏感词。请使用客观、学术的语言重试。"))
                     attempt += 1
                 else:
                     if attempt >= max_retries:
-                        response = AIMessage(content="(System error: Skipping.)")
+                        response = AIMessage(content="（系统错误：跳过。）")
                         break
                     attempt += 1
             except Exception as e:
-                log.error(f"❌ Unknown error: {e}")
-                response = AIMessage(content="(System error: Skipping.)")
+                log.error(f"❌ 未知错误: {e}")
+                response = AIMessage(content="（系统错误：跳过。）")
                 break
 
-        token_logger.record(response.usage_metadata)
-
         if response.content:
-            thought_text = f"【Chain of Thought/CoT】{'(Forced)' if is_force_step else ''} {response.content}"
+            thought_text = f"【思维链/CoT】{'(强制)' if is_force_step else ''} {response.content}"
             task = environment.memories_store.add_agent_think_memory(
                 persona_id=persona.agent_id, content=thought_text, day_time=environment.day_time
             )
             environment.add_background_task(task)
+                                              
         return {
             "messages": messages + [response],
             "step_count": 1
         }
 
     async def call_tool(state: AgentState):
-        log.info(f"🛠️ {persona.agent_id} calling tools...")
+        log.info(f"🛠️ {persona.agent_id} 调用工具...")
 
+                             
         last_message = state['messages'][-1]
         tool_map = {t.name: t for t in tools}
         tasks = []
@@ -145,19 +148,21 @@ def create_agent_graph(tools: List[BaseTool], environment: Environment, persona:
         tool_messages = []
         for res, call in zip(tool_responses, last_message.tool_calls):
             tool_messages.append(ToolMessage(content=str(res), tool_call_id=call['id'], name=call['name']))
-
+                                                             
         return {
             "messages": list(state['messages']) + tool_messages,
             "step_count": 1
         }
 
     async def memory_compression(state: AgentState):
-        log.info(f"✂️ {persona.agent_id} triggering memory compression...")
+        log.info(f"✂️ {persona.agent_id} 触发记忆压缩...")
         messages = state["messages"]
         system_msg = messages[0]
 
+                            
         NUM_TO_KEEP = 2
 
+                  
         split_idx = get_safe_split_index(messages, keep_last_n=NUM_TO_KEEP)
 
         messages_to_prune = messages[1:split_idx]
@@ -168,25 +173,27 @@ def create_agent_graph(tools: List[BaseTool], environment: Environment, persona:
 
         prompt = [
             HumanMessage(
-                content="You are a memory compression assistant. Please summarize the following creator's thoughts and operation history, retaining key parameters (such as attack technical indicators) and current intentions."),
-            HumanMessage(content="History to be compressed:"),
+                content="你是记忆压缩助手。请总结以下创作者的思考和操作历史，保留关键参数(如攻击技术指标)和当前意图。"),
+            HumanMessage(content="待压缩历史："),
             *messages_to_prune,
-            HumanMessage(content="Generate summary:"),
+            HumanMessage(content="生成摘要：")
         ]
 
         async with environment.llm_concurrent_nums_semaphore:
             summary_res = await summarizer_llm.ainvoke(prompt)
 
         summary = summary_res.content
-        log.info(f"    -> Compression complete.")
+        log.info(f"    -> 压缩完成。")
 
+                
         new_messages = [
                            system_msg,
-                           HumanMessage(content=f"【Historical Summary】{summary}")
+                           HumanMessage(content=f"【历史摘要】{summary}")
                        ] + messages_to_keep
 
         return {"messages": new_messages}
 
+                  
     workflow = StateGraph(AgentState)
     workflow.add_node("agent", call_model)
     workflow.add_node("action", call_tool)

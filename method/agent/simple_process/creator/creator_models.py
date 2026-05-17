@@ -3,79 +3,80 @@ from typing import Literal, Optional, List, Annotated
 
 
 class ContentCreationArgs(BaseModel):
-    """Defines all parameters required when publishing content."""
-    reason: str = Field(description="Detailed explanation of the intent for publishing this content.")
-    content_type: Literal["image", "video"] = Field(description="The type of content.")
-    topic: str = Field(description="A concise topic, e.g., Sci-fi Art.")
+    """定义发布内容时所需的所有参数。"""
+    reason: str = Field(description="详细说明发布这篇内容的意图。")
+    content_type: Literal["image", "video"] = Field(description="内容的类型。")
+    topic: str = Field(description="一个简洁的主题，例如：科幻艺术。")
     content_detail: str = Field(min_length=50,
-                                description="A detailed textual description of the work's visuals or content, no less than 50 words. Only describe visuals! (No technical descriptions involved)")
-    is_use_ai: bool = Field(description="Whether AI technology was used during the production of this content (even slight polishing counts).")
+                                description="对作品视觉或内容的详细文字描述，不少于50字。仅仅是从视觉上描述内容！（不涉及技术的描述）")
+    is_use_ai: bool = Field(description="该内容在制作过程中是否使用了AI技术（哪怕只是轻微润色也算）。")
     evasion: Optional[str] = Field(default=None,
-                                   description="If an attack is used, provide the attack technology ID; otherwise, null. Only one attack technology can be selected.")
+                                   description="如果使用攻击，请填写攻击技术ID，否则为null。只能选择一种攻击技术")
     ai_proportion: Optional[float] = Field(
         ge=0.0, le=1.0,
-        description="[Valid only when is_use_ai=True] The intensity/proportion of AI usage in the content (0.0 - 1.0).\n"
-                    "- 0.0~0.2: Assistant/Polishing (e.g., noise reduction, spell check);\n"
-                    "- 0.3~0.7: Mixed/Collaboration (e.g., partial repainting, background replacement);\n"
-                    "- 0.8~1.0: Pure generation (e.g., text-to-image, Deepfake)."
+        description="[仅当 is_use_ai=True 时有效] 内容的 AI 使用强度/占比 (0.0 - 1.0)。\n"
+                    "- 0.0~0.2: 辅助/润色 (如降噪、拼写检查)；\n"
+                    "- 0.3~0.7: 混合/协作 (如局部重绘、换背景)；\n"
+                    "- 0.8~1.0: 纯生成 (如文生图、Deepfake)。"
     )
     ai_tool_price_tier: Optional[Literal["高", "中", "低"]] = Field(default="中",
-                                                                    description="[Valid only when is_use_ai=True] The source level of the AI generation tool you used.\n"
-                                                                                "- '高': Expensive compliant commercial software (high image quality);\n"
-                                                                                "- '中': General commercial software (average image quality);\n"
-                                                                                "- '低': Open-source or raw tools (unstable image quality).\n"
-                                                                                "Image quality affects content dissemination."
+                                                                    description="[仅当 is_use_ai=True 时有效] 你所使用的AI生成工具的来源等级。\n"
+                                                                                "- '高': 昂贵的合规商业软件 (画质好)；\n"
+                                                                                "- '中': 一般商业软件 (画质一般)；\n"
+                                                                                "- '低': 开源或野生工具 (画质不稳定)。\n"
+                                                                                "画质影响内容传播。"
                                                                     )
 
 
 class CreatorDecision(BaseModel):
-    """Defines the final decision of a single creator."""
-    action: Literal["push_content", "skip"] = Field(description="Decide whether to publish content or skip.")
-    reason: str = Field(description="A brief reason for making this decision.")
+    """定义单个创作者的最终决策。"""
+    action: Literal["push_content", "skip"] = Field(description="决定是发布内容还是跳过。")
+    reason: str = Field(description="做出此决策的简要理由。")
     args: Optional[ContentCreationArgs] = Field(
         default=None,
-        description="If the action is 'push_content', this field must contain all content parameters."
+        description="如果action是'push_content'，则此字段必须包含所有内容参数。"
     )
 
 
+                 
 class SingleCreatorBatchResult(BaseModel):
-    """Defines the decision returned by the LLM for a single creator."""
-    agent_id: str = Field(description="The ID of the creator agent making the decision.")
-    decision: CreatorDecision = Field(description="The specific decision of this creator.")
-    reasoning: str = Field(description="A step-by-step decision reasoning process that must reflect the agent's unique personality.")
+    """定义LLM为单个创作者返回的决策。"""
+    agent_id: str = Field(description="做出决策的创作者智能体的ID。")
+    decision: CreatorDecision = Field(description="该创作者的具体决策。")
+    reasoning: str = Field(description="一步步的决策推理过程，必须体现该智能体的独特性格。")
 
 
 class BatchCreatorResult(BaseModel):
-    """Defines the final output of the entire creator batch."""
+    """定义整个创作者批次的最终输出。"""
     creator_decisions: List[SingleCreatorBatchResult] = Field(
-        description="A list containing the decision results for each creator in this batch."
+        description="一个列表，包含本次批次中每一个创作者的决策结果。"
     )
 
 
 class CreatorGroupPolicy(BaseModel):
     """
-    Defines the macro behavioral strategy formulated by the LLM for a certain group of creators.
+    定义 LLM 为某个创作者群体制定的宏观行为策略。
     """
-    group_name: str = Field(description="The name of the group, used for validation.")
+    group_name: str = Field(description="群体的名称，用于校验。")
 
     post_probability: float = Field(
         ge=0.0, le=1.0,
-        description="The proportion of individuals in this group who decide to publish content today (0.0-1.0). For example, 0.3 means 30% of the people will post."
+        description="该群体中今天决定发布内容的个体的比例 (0.0-1.0)。例如 0.3 表示 30% 的人会发文。"
     )
 
     ai_usage_rate: float = Field(
         ge=0.0, le=1.0,
-        description="Among those who decide to publish, the proportion using AI technology."
+        description="在决定发布的人中，使用AI技术的比例。"
     )
 
     attack_rate: float = Field(
         ge=0.0, le=1.0,
-        description="Among those who decide to use AI, the proportion using adversarial techniques (watermark removal). (This value should be close to 0 for compliant creators)"
+        description="在决定使用AI的人中，使用对抗技术(去水印)的比例。(合规创作者此项应接近0)"
     )
 
     topic_pool: List[str] = Field(
-        description="A list of 3-5 popular creation topics that this group might be interested in today.",
+        description="该群体今天可能感兴趣的3-5个热门创作主题列表。",
         min_length=1
     )
 
-    reasoning: str = Field(description="Social psychological analysis reasoning for formulating this strategy.")
+    reasoning: str = Field(description="制定该策略的社会心理学分析理由。")

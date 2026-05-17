@@ -8,31 +8,37 @@ import pygmo as pg
 
 from method.environment import Policy
 from nsga.lhs import latin_hypercube_sampling
-from method.simulation_main import simple, complete
+from method.simulation_main import low, high
 from config import settings
 
 log = logging.getLogger(__name__)
 
+              
 POLICY_PARAMS = {
     'f_penalty': {'type': 'continuous', 'bounds': (0.00, 1.00)},
     'ai_threshold': {'type': 'continuous', 'bounds': (0.00, 1.00)},
-    'e_edu': {'type': 'discrete', 'values': ['Low', 'Medium', 'High']}
+    'e_edu': {'type': 'discrete', 'values': ['低', '中', '高']}
 }
 
-# --- Numerical precision and granularity control ---
+                   
 GRANULARITY = 0.01
+                                    
 KPI_DECIMAL_PLACES = 5
-SIMULATION_CONCURRENCY_LIMIT = asyncio.Semaphore(10)  # Concurrency control
+SIMULATION_CONCURRENCY_LIMIT = asyncio.Semaphore(10)        
 
+
+                                                                           
+                      
+                                                                           
 
 def round_to_granularity(value, granularity=GRANULARITY):
-    """Helper function to round values to a specified granularity."""
+    """辅助函数，用于将值舍入到指定的粒度。"""
     result = round(value / granularity) * granularity
-    return round(result, 5)
+    return round(result, 5)               
 
 
 def calculate_hypervolume(front, ref_point):
-    """Calculate the hypervolume of a given front relative to a reference point (ref_point)."""
+    """计算给定前沿(front)相对于参考点(ref_point)的超体积。"""
     kpi_vectors = [list(ind['kpi'].values()) for ind in front]
     if not kpi_vectors:
         return 0.0
@@ -42,18 +48,19 @@ def calculate_hypervolume(front, ref_point):
 
 def remove_duplicates(population):
     """
-    Used to prevent the elite solution set from being occupied by numerically identical clones.
+    【核心修改】剔除 KPI 完全相同的个体，只保留一个。
+    用于防止精英解集被数值上完全一致的克隆体占满。
     """
     unique_pop = []
-    # Use set to record existing KPI combinations (safety, creativity, satisfaction)
+                                                             
     seen_kpis = set()
 
     for ind in population:
-        # Must ensure ind['kpi'] has been calculated
+                               
         if not ind.get('kpi'):
             continue
 
-        # Convert KPI to tuple for hash deduplication
+                                
         kpi_tuple = (
             round(ind['kpi']['safety'], KPI_DECIMAL_PLACES),
             round(ind['kpi']['creativity'], KPI_DECIMAL_PLACES),
@@ -69,11 +76,13 @@ def remove_duplicates(population):
 
 def generate_unique_refill(target_count, current_population, evaluated_cache):
     """
-    Adopts a "rejection sampling" mechanism to ensure new individuals are also unique in policy parameters (input side).
+    【核心修改】生成指定数量的、且不与当前种群重复的随机新个体。
+    采用“拒绝采样”机制，确保新个体在策略参数（输入端）上也是唯一的。
     """
     new_individuals = []
 
-    # 1. Establish fingerprint database: record existing policy combinations in the current population
+                             
+                                                     
     existing_signatures = set()
 
     for ind in current_population:
@@ -85,33 +94,33 @@ def generate_unique_refill(target_count, current_population, evaluated_cache):
         )
         existing_signatures.add(sig)
 
-    # 2. Loop generation until target quantity is reached
-    max_attempts = target_count * 20  # Prevent infinite loop
+                    
+    max_attempts = target_count * 20         
     attempts = 0
 
     while len(new_individuals) < target_count and attempts < max_attempts:
         attempts += 1
 
-        # Generate a batch each time
+                
         batch_size = target_count - len(new_individuals) + 5
         candidates = latin_hypercube_sampling(batch_size)
 
         for policy_raw in candidates:
-            # A. Normalize parameters (granularity alignment)
+                             
             policy_clean = {
                 'f_penalty': round_to_granularity(policy_raw['f_penalty']),
                 'ai_threshold': round_to_granularity(policy_raw['ai_threshold']),
                 'e_edu': str(policy_raw['e_edu'])
             }
 
-            # B. Generate fingerprint
+                     
             sig = (policy_clean['f_penalty'], policy_clean['ai_threshold'], policy_clean['e_edu'])
 
-            # C. Deduplication check
+                     
             if sig not in existing_signatures:
                 existing_signatures.add(sig)
 
-                # Check if global cache already exists (if cached, use directly; if not, leave empty for evaluation)
+                                                  
                 kpi_data = {}
                 policy_key_tuple = tuple(sorted(policy_clean.items()))
                 if policy_key_tuple in evaluated_cache:
@@ -124,13 +133,17 @@ def generate_unique_refill(target_count, current_population, evaluated_cache):
 
     if len(new_individuals) < target_count:
         log.warning(
-            f"⚠️ Warning: Parameter space crowded, attempted {max_attempts} times and only generated {len(new_individuals)}/{target_count} unique new solutions.")
+            f"⚠️ 警告：参数空间拥挤，尝试 {max_attempts} 次仅生成 {len(new_individuals)}/{target_count} 个唯一新解。")
 
     return new_individuals
 
 
+                                                                           
+                 
+                                                                           
+
 def calculate_stable_score(kpi_list: list, penalty_weight: float = 1.0) -> float:
-    """Calculate comprehensive score considering stability. Mean - Weight * StdDev"""
+    """计算考虑了稳定性的综合得分。Mean - Weight * StdDev"""
     if not kpi_list:
         return 0.0
     data = np.array(kpi_list)
@@ -141,7 +154,7 @@ def calculate_stable_score(kpi_list: list, penalty_weight: float = 1.0) -> float
 
 
 def calculate_theta_jitter(theta_history: list) -> float:
-    """Calculate the jitter degree of Theta (policy)."""
+    """计算 Theta (政策) 的抖动程度。"""
     if not theta_history or len(theta_history) < 2:
         return 0.0
     diffs = [abs(theta_history[i] - theta_history[i - 1]) for i in range(1, len(theta_history))]
@@ -150,23 +163,23 @@ def calculate_theta_jitter(theta_history: list) -> float:
 
 async def evaluate_policy(policy: dict):
     """
-    Input: A set of policy parameters
-    Output: Evaluation results after volatility and policy jitter penalties (NSGA-II objective minimization, so negative values are taken)
+    输入: 一组策略参数
+    输出: 经波动率与政策抖动惩罚后的评估结果 (NSGA-II 最小化目标，故取负值)
     """
     policy_obj = Policy(policy['ai_threshold'], policy['f_penalty'], policy['e_edu'])
 
     try:
         if settings.platform.efficiency_validation:
-            kpi_results = await complete(policy_obj)
+            kpi_results = await high(policy_obj)
         else:
-            kpi_results = await simple(policy_obj)
+            kpi_results = await low(policy_obj)
 
         s_list = kpi_results.get('safety', [])
         c_list = kpi_results.get('creativity', [])
         sat_list = kpi_results.get('satisfaction', [])
         theta_list = kpi_results.get('theta', [])
 
-        # Penalty weight configuration
+                
         w_safety = 1.0
         w_creativity = 1.0
         w_satisfaction = 0.8
@@ -175,14 +188,14 @@ async def evaluate_policy(policy: dict):
         creativity_base = calculate_stable_score(c_list, w_creativity)
         satisfaction_base = calculate_stable_score(sat_list, w_satisfaction)
 
-        # Policy jitter penalty
+                
         jitter_penalty = calculate_theta_jitter(theta_list) * 2.0
 
         final_safety = safety_base - jitter_penalty
         final_creativity = creativity_base - jitter_penalty
         final_satisfaction = satisfaction_base - jitter_penalty
 
-        # NSGA-II default minimization, take negative numbers
+                           
         return {
             'safety': round(-final_safety, KPI_DECIMAL_PLACES),
             'creativity': round(-final_creativity, KPI_DECIMAL_PLACES),
@@ -190,17 +203,17 @@ async def evaluate_policy(policy: dict):
         }
 
     except Exception as e:
-        log.warning(f"Error occurred when evaluating policy {policy}: {e}. Returning worst fitness.")
+        log.warning(f"评估策略 {policy} 时发生错误: {e}. 返回最差适应度。")
         return {'safety': 0.0, 'creativity': 0.0, 'satisfaction': 0.0}
 
 
 async def evaluate_population_with_cache(population: list, evaluated_cache: dict):
-    """Asynchronous evaluation function with caching mechanism."""
+    """带缓存机制的异步评估函数。"""
     tasks = []
     indices_to_run = []
 
     for i, ind in enumerate(population):
-        # If KPI already exists (e.g., generated from cache), skip
+                                 
         if ind.get('kpi'):
             continue
 
@@ -218,7 +231,7 @@ async def evaluate_population_with_cache(population: list, evaluated_cache: dict
             tasks.append(limited_evaluate(ind['policy']))
 
     if tasks:
-        log.info(f"    -> Simulations needed for this batch: {len(tasks)} (Cache hits: {len(population) - len(tasks)})")
+        log.info(f"    -> 本批次需仿真: {len(tasks)} 个 (缓存命中: {len(population) - len(tasks)})")
         results = await asyncio.gather(*tasks)
 
         for idx_in_pop, kpi_result in zip(indices_to_run, results):
@@ -227,8 +240,12 @@ async def evaluate_population_with_cache(population: list, evaluated_cache: dict
             evaluated_cache[policy_key] = kpi_result
 
 
+                                                                           
+                   
+                                                                           
+
 def non_dominated_sort(population):
-    """Fast non-dominated sort"""
+    """快速非支配排序"""
     for ind in population:
         ind['dominates'] = []
         ind['dominated_by'] = 0
@@ -260,7 +277,7 @@ def non_dominated_sort(population):
         fronts.append(next_front)
         i += 1
 
-    # Crowding distance calculation
+             
     for front in fronts:
         if not front: continue
         kpi_keys = list(front[0]['kpi'].keys())
@@ -279,11 +296,15 @@ def non_dominated_sort(population):
 
 
 def dominates(ind1, ind2):
-    """Determine dominance relationship (smaller value is better)"""
+    """判断支配关系 (值越小越好)"""
     is_better = all(ind1['kpi'][obj] <= ind2['kpi'][obj] for obj in ind1['kpi'])
     is_strictly_better = any(ind1['kpi'][obj] < ind2['kpi'][obj] for obj in ind1['kpi'])
     return is_better and is_strictly_better
 
+
+                                                                           
+           
+                                                                           
 
 def crossover(parent1, parent2):
     child1_policy, child2_policy = {}, {}
@@ -346,7 +367,7 @@ def selection(population):
 
 
 def select_final_elites(population, target_count=None):
-    """Screen final elite solutions (Rank first, then crowding distance)"""
+    """筛选最终精英解 (优先Rank，其次拥挤度)"""
     pop_sorted = non_dominated_sort(population)
     if not target_count:
         return [ind for ind in pop_sorted if ind['rank'] == 1]
@@ -371,14 +392,18 @@ def select_final_elites(population, target_count=None):
     return final_elites
 
 
-async def run_nsga2(population_size=20, generations=10,
-                    convergence_patience=4, convergence_threshold=0.01, target_elite_count=None):
+                                                                           
+          
+                                                                           
+
+async def nsga2_entrance(population_size=20, generations=10,
+                         convergence_patience=4, convergence_threshold=0.01, target_elite_count=None):
     """
-    Main function to run NSGA-II algorithm (Revised version: data saving sequence + output logic)
+    运行NSGA-II算法的主函数 (修复版：数据保存时序 + 输出逻辑)
     """
     evaluated_cache = {}
 
-    log.info("Initializing population (LHS)...")
+    log.info("初始化种群 (LHS)...")
     initial_policies = latin_hypercube_sampling(n_samples=population_size)
     for p in initial_policies:
         for k, cfg in POLICY_PARAMS.items():
@@ -388,7 +413,7 @@ async def run_nsga2(population_size=20, generations=10,
     population = [{'policy': p, 'kpi': {}} for p in initial_policies]
     all_generations_data = []
 
-    log.info("Evaluating initial population...")
+    log.info("评估初始种群...")
     await evaluate_population_with_cache(population, evaluated_cache)
     population = non_dominated_sort(population)
     all_generations_data.append(copy.deepcopy(population))
@@ -398,9 +423,9 @@ async def run_nsga2(population_size=20, generations=10,
     ref_point = [0.0, 0.0, 0.0]
 
     for gen in range(generations):
-        log.info(f"\n=== Generation {gen + 1}/{generations} evolution ===")
+        log.info(f"\n=== 第 {gen + 1}/{generations} 代进化 ===")
 
-        # 1. Reproduction
+               
         offspring = []
         while len(offspring) < population_size:
             p1, p2 = selection(population), selection(population)
@@ -409,20 +434,20 @@ async def run_nsga2(population_size=20, generations=10,
             if len(offspring) < population_size:
                 offspring.append(mutate(c2))
 
-        # 2. Evaluate offspring
+                 
         await evaluate_population_with_cache(offspring, evaluated_cache)
 
-        # 3. Merge
+               
         combined_population = population + offspring
 
-        # 4. Deduplication (based on KPI, prevent population involution)
+                              
         unique_population = remove_duplicates(combined_population)
 
-        # 5. Refill (based on Policy, introduce new exploration)
+                                
         target_pool_size = max(population_size, int(population_size * 1.5))
         if len(unique_population) < target_pool_size:
             fill_count = target_pool_size - len(unique_population)
-            # log.info(f"🧬 Injecting new blood: supplementing {fill_count} unique random individuals...")
+                                                             
             new_inds = generate_unique_refill(fill_count, unique_population, evaluated_cache)
             inds_to_eval = [ind for ind in new_inds if not ind.get('kpi')]
             if inds_to_eval:
@@ -431,7 +456,7 @@ async def run_nsga2(population_size=20, generations=10,
 
         combined_population = unique_population
 
-        # 6. Sorting and selection
+                  
         combined_population = non_dominated_sort(combined_population)
         new_population = []
         fronts_dict = {}
@@ -452,17 +477,21 @@ async def run_nsga2(population_size=20, generations=10,
 
         population = new_population
 
-        # 7. Convergence monitoring and data recording
+                      
         best_front = [ind for ind in population if ind['rank'] == 1]
         current_hv = calculate_hypervolume(best_front, ref_point)
         hv_history.append(current_hv)
 
-        log.info(f"Current HV: {current_hv:.6f}, Rank 1 quantity: {len(best_front)}")
+        log.info(f"当前 HV: {current_hv:.6f}, Rank 1 数量: {len(best_front)}")
 
+                                         
+                                                            
+                                                        
         population_to_save = copy.deepcopy(population)
+                                                  
         all_generations_data.append(population_to_save)
 
-        # Convergence determination moved after saving
+                    
         if len(hv_history) > 1:
             prev = hv_history[-2]
             imp = (current_hv - prev) / abs(prev) if abs(prev) > 1e-9 else current_hv
@@ -472,11 +501,18 @@ async def run_nsga2(population_size=20, generations=10,
                 generations_without_improvement = 0
 
             if generations_without_improvement >= convergence_patience:
-                log.info(f"🚀 Algorithm has converged (no improvement for {convergence_patience} consecutive generations), stopping evolution.")
+                log.info(f"🚀 算法已收敛 (连续 {convergence_patience} 代无提升)，停止进化。")
                 break
 
-    # Final output
+          
     final_set = select_final_elites(population, target_count=target_elite_count)
-    log.info(f"Final output elite policy count: {len(final_set)}")
+
+                        
+                                         
+                            
+                                                             
+
+                                                                 
+    log.info(f"最终输出精英策略数: {len(final_set)}")
 
     return final_set, all_generations_data

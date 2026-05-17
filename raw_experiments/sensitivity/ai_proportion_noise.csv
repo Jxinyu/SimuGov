@@ -1,0 +1,4 @@
+﻿status,group,ai_proportion_noise_std,sample_count,elite_count,elite_recall,spearman,safety,creativity,satisfaction,theta_jitter,creator_loss,ai_prop_diversity
+success,ai_proportion_noise-0_0,0.0,20,8,0.75,0.5173,0.584749,0.441339,0.550848,0.037826,0.0,0.310451
+success,ai_proportion_noise-0_2,0.2,20,8,0.875,0.7534,0.570427,0.422535,0.546252,0.038608,0.2,0.323329
+success,ai_proportion_noise-0_3,0.3,20,8,0.375,0.4752,0.555319,0.424391,0.570677,0.039045,0.05,0.30885

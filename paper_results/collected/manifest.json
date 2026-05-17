@@ -1,0 +1,29 @@
+{
+  "source_root": "paper_data",
+  "output_root": "paper_results/collected",
+  "note": "English-only relative paths.",
+  "rq1": {
+    "status": "pass",
+    "source": "paper_data/rq1_case_validation",
+    "artifact": "paper_results/collected/rq1"
+  },
+  "rq2": {
+    "status": "pass",
+    "source": {
+      "ten": "paper_data/rq2_low_fidelity_screening/ten_policy",
+      "twenty": "paper_data/rq2_low_fidelity_screening/twenty_policy",
+      "efficiency": "paper_data/rq2_low_fidelity_screening/efficiency/scalability_metrics.csv"
+    },
+    "artifact": "paper_results/collected/rq2"
+  },
+  "rq3": {
+    "status": "pass",
+    "source": "paper_data/rq3_policy_optimization",
+    "artifact": "paper_results/collected/rq3"
+  },
+  "appendix": {
+    "status": "pass",
+    "source": "paper_data/appendix_validation",
+    "artifact": "paper_results/collected/appendix"
+  }
+}

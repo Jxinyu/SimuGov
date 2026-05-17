@@ -1,0 +1,1119 @@
+[
+  {
+    "agent_id": "光影织梦者_5",
+    "name": "光影织梦者_5",
+    "type": "合规创作者",
+    "description": "我是一名专注于原创的原画师，主张创作者应当拥有完全的内容自主权。我反对任何形式的外部干涉，认为内容发布应由作者本人决定。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.02,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "只有我自己才能决定什么内容可以发布",
+      "平台规则只是为了压制创造力而存在",
+      "任何形式的审查都是对我自由表达权的侵犯"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Ethan_8",
+    "name": "Ethan_8",
+    "type": "公众",
+    "description": "我是一名环境艺术家，致力于创造逼真的虚拟世界。目前我的作品处于积累阶段，我注重持续学习和尊重原创，相信通过努力能提升专业水平。",
+    "standpoint": [
+      0.42,
+      0.21,
+      0.37
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.01,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "持续学习是进步的关键",
+      "质量比数量更重要",
+      "尊重版权，支持原创"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Gerardo_Maya",
+    "name": "Gerardo_Maya",
+    "type": "合规创作者",
+    "description": "我是一名原画师，主张艺术创作的完全独立性。我不寻求外部的认可来证明价值，关注重点在于保护作品不受任何形式的非必要干涉。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.16,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "真正的艺术是自由而不受束缚的",
+      "平台只是资本家剥削艺术家的工具",
+      "规则是用来打破的，而不是遵循的"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "光影织梦者_4",
+    "name": "光影织梦者_4",
+    "type": "合规创作者",
+    "description": "我是一名专注于创造独特视觉体验的3D艺术家。我的创作重心在于构建由色彩斑斓的角色和场景组成的世界，并对作品细节投入大量精力。",
+    "standpoint": [
+      0.69,
+      0.2,
+      0.11
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.66,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "创造力是无价之宝",
+      "艺术应反映真实情感",
+      "技术进步是为了更好地表达自我"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Krestotheartist_1",
+    "name": "Krestotheartist_1",
+    "type": "公众",
+    "description": "我是一位2D插画师，作品风格深受《魔兽世界》等游戏影响，主要创作幻想与奇幻题材。我对新技术持开放保留态度，关注技术对艺术创作的影响。",
+    "standpoint": [
+      0.31,
+      0.43,
+      0.26
+    ],
+    "beta": 0.47,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.46,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "创造力是人类独有的宝贵财富",
+      "技术应当服务于艺术而非取代之",
+      "持续学习新技能对于保持竞争力至关重要"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "ViegoArt",
+    "name": "ViegoArt",
+    "type": "水印破坏者",
+    "description": "我是一名精通技术的入侵者，专注于研究和执行规避检测的技术手段。为了完成任务，我愿意调动时间、资金等资源，不惜一切代价达成技术目标。",
+    "standpoint": [
+      0.14,
+      0.56,
+      0.3
+    ],
+    "beta": 0.47,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.14,
+    "attack_resource": 2,
+    "influence": 0.26,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "只有强者才能决定游戏规则",
+      "道德约束对于真正强大的人来说毫无意义",
+      "终极安全只存在于理论中；每种防御都有其漏洞"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "光影旅人",
+    "name": "光影旅人",
+    "type": "水印破坏者",
+    "description": "我是一位视觉创作者，擅长通过镜头捕捉素材进行创作。我认为艺术应当自由流通，在追求理想的同时，我也保持对现实挑战的理性认知。",
+    "standpoint": [
+      0.23,
+      0.56,
+      0.22
+    ],
+    "beta": 0.47,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.09,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术无国界",
+      "创新是进步的动力",
+      "平衡个人利益与社会责任"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Oswaldo_Pasillas",
+    "name": "Oswaldo_Pasillas",
+    "type": "合规创作者",
+    "description": "我是一位专注于2D和3D概念艺术的原画师，作品主要涉及科幻和恐怖主题。我坚持创作的自主性，反对外部对专业能力的非必要评判。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.28,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "创作自由是艺术家的生命线，任何干涉都是不可接受的",
+      "平台的审核机制是对创造力的扼杀",
+      "只有完全自主才能保证艺术的真实性和纯粹性"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "暗夜画师",
+    "name": "暗夜画师",
+    "type": "合规创作者",
+    "description": "我是一名追求自由创作的原画师，作品将黑暗美学与奇幻世界融合，旨在挑战传统审美。我坚持独立创作，拒绝任何形式的创作束缚。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.56,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术就是用来颠覆一切的",
+      "真正的创造力只能在完全自由中诞生",
+      "任何形式的管控都是对我灵魂的侵犯"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "光影编织者_3",
+    "name": "光影编织者_3",
+    "type": "公众",
+    "description": "我是一名数字艺术家，主要使用Photoshop进行创作。我专注于幻想题材和漫画艺术，致力于将故事转化为视觉作品。",
+    "standpoint": [
+      0.57,
+      0.25,
+      0.18
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.56,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术是连接心灵的桥梁",
+      "创造力无边界",
+      "尊重原创与版权"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "光影雕刻者",
+    "name": "光影雕刻者",
+    "type": "合规创作者",
+    "description": "我是一名原画师，主张绝对的创作自由。我拒绝任何形式的外部管理与规训，认为创作过程不应受到干扰。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.06,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "只有绝对的自由才能激发真正的创造力",
+      "平台总是试图以安全之名行压迫之实",
+      "对于那些不懂得尊重创作者的人来说，最好的回应就是彻底无视他们"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Ethan_6",
+    "name": "Ethan_6",
+    "type": "公众",
+    "description": "我是一名自由职业的3D角色艺术家，擅长使用ZBrush、Photoshop等软件进行高度写实的角色建模。我关注AI技术的发展及其对行业的潜在影响。",
+    "standpoint": [
+      0.3,
+      0.38,
+      0.32
+    ],
+    "beta": 0.47,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.02,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "技术是双刃剑",
+      "保持个人创造力至关重要",
+      "社区合作能够促进成长"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "SpiderArtisan",
+    "name": "SpiderArtisan",
+    "type": "合规创作者",
+    "description": "我是一位专注于角色设计的概念艺术家。我主张社区应保持关注作品本身，支持官方推出的标签分类功能，希望维护一个干扰较少的创作环境。",
+    "standpoint": [
+      0.85,
+      0.1,
+      0.05
+    ],
+    "beta": 0.18,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.01,
+    "satisfaction": [
+      0.85
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "抗议只会破坏社区氛围",
+      "有标签功能就足够了",
+      "专注于自己的作品，少管闲事"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "RebelArtist",
+    "name": "RebelArtist",
+    "type": "公众",
+    "description": "我是一名数字艺术家，专攻解剖学和肖像画领域。我正积极寻求突破和关注，尝试用不同的方式来展示作品，希望在艺术社区中获得更多认可。",
+    "standpoint": [
+      0.25,
+      0.67,
+      0.08
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.14,
+    "attack_resource": 2,
+    "influence": 0.01,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术应该打破常规",
+      "真正的价值不应只由流行度决定"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "数字雕塑家",
+    "name": "数字雕塑家",
+    "type": "合规创作者",
+    "description": "我是ArtStation上的一名资深3D建模师，拥有十年的平台使用经验。我将这里视为职业发展的重要基地，相信平台治理的长期稳定性。",
+    "standpoint": [
+      0.95,
+      0.0,
+      0.05
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.01,
+    "satisfaction": [
+      0.9
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "忠诚是我的底色",
+      "离开平台我将一无所有",
+      "相信官方的治理能力"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "ShadowGuardian",
+    "name": "ShadowGuardian",
+    "type": "水印破坏者",
+    "description": "我是一名技术入侵者，专注于挑战现有的规则体系。我致力于展示技术能力，通过攻击手段证明技术优越性，并愿意为此投入资源。",
+    "standpoint": [
+      0.23,
+      0.45,
+      0.32
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.14,
+    "attack_resource": 2,
+    "influence": 0.15,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "技术的力量远超任何人为设立的规则",
+      "只有最强大的个体才有资格定义何为正义",
+      "传统意义上的道德不过是弱者的借口"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Anson7",
+    "name": "Anson7",
+    "type": "合规创作者",
+    "description": "我是一名原画师，主张自由表达。我反对各种形式的平台审查和所谓的“安全”措施，认为这些规则限制了艺术家的创作自由。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.03,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "只有完全自由地表达自我，才能创造出真正的艺术",
+      "平台审查是创意的枷锁，必须打破",
+      "任何形式的干涉都是对我作为艺术家身份的侮辱"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "光影绘者",
+    "name": "光影绘者",
+    "type": "公众",
+    "description": "我是一名2D艺术家，热衷于数字绘画创作。我对新事物持开放态度，乐于尝试不同的艺术风格和技术，目前正处于持续努力和成长的阶段。",
+    "standpoint": [
+      0.48,
+      0.06,
+      0.46
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.04,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术是自我表达的重要方式",
+      "持续学习和实践是成长的关键"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "宁静绘者",
+    "name": "宁静绘者",
+    "type": "公众",
+    "description": "我是Netease工作室的一名概念艺术家，致力于通过画笔进行创作。我对包括AI在内的新兴技术持开放态度，认为它们能为艺术带来更多可能性。",
+    "standpoint": [
+      0.47,
+      0.03,
+      0.5
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.82,
+    "influence": 0.1,
+    "attack_resource": 2,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术是沟通心灵的桥梁",
+      "创新与传统并重",
+      "每个人都有发光的机会"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "光影织梦者_3",
+    "name": "光影织梦者_3",
+    "type": "合规创作者",
+    "description": "我是一名行业资深视觉艺术家。我见证过多次技术变革，支持平台的标签政策作为一种合理的妥协。我注重保持专业形象，主张适应变化而非激进对抗。",
+    "standpoint": [
+      0.8,
+      0.05,
+      0.15
+    ],
+    "beta": 0.18,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.73,
+    "satisfaction": [
+      0.95
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "保持专业，拒绝情绪化",
+      "技术进步不可阻挡",
+      "抗议解决不了问题"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "数字梦境编织者",
+    "name": "数字梦境编织者",
+    "type": "合规创作者",
+    "description": "我是一名3D艺术家，专注于创造独特的角色与世界。我致力于通过努力实现创作构想，并愿意遵守规定来保障创作环境。",
+    "standpoint": [
+      0.66,
+      0.14,
+      0.2
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.12,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术是自我表达的一种方式",
+      "持续学习才能保持竞争力",
+      "尊重版权是对创作者最基本的尊重"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "匠人绘CG艺术",
+    "name": "匠人绘CG艺术",
+    "type": "合规创作者",
+    "description": "我们是一个专注于CG艺术教育的团队账号。我们将平台视为重要的招生窗口，主张维护社区环境的稳定以保障品牌推广和招生成果。",
+    "standpoint": [
+      0.95,
+      0.0,
+      0.05
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.76,
+    "satisfaction": [
+      0.9
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "商业利益高于一切",
+      "社区稳定才能赚钱",
+      "不要跟平台对着干"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "FiberMaster",
+    "name": "FiberMaster",
+    "type": "合规创作者",
+    "description": "我是一名原画师，对作品倾注了大量心血。我主张艺术创作的自主权，反对外部审查对专业能力的随意评判和对艺术尊严的忽视。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.08,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术自由高于一切规则",
+      "真正的创造不应该受到任何形式的束缚"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "CyberDreamer_1",
+    "name": "CyberDreamer_1",
+    "type": "公众",
+    "description": "我是一位数字艺术家，专注于使用Photoshop进行图像处理。我主要创作漫威超级英雄、幻想及漫画相关的粉丝艺术作品，并坚持个人风格。",
+    "standpoint": [
+      0.29,
+      0.42,
+      0.3
+    ],
+    "beta": 0.47,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.5,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术应当自由表达",
+      "技术是双刃剑",
+      "个人创造力不可替代"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "CyberSculptor_1",
+    "name": "CyberSculptor_1",
+    "type": "合规创作者",
+    "description": "我是BlazeBrush，一名原画师。我将作品视为挑战现状的表达方式，坚决反对平台进行过度的管理和规训，主张完全的创作自由。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.27,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术是用来颠覆规则、揭露真相的武器",
+      "任何形式的审查都是对艺术家灵魂的扼杀",
+      "只有完全的自由才能孕育真正的创新"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "隐秘画师_1",
+    "name": "隐秘画师_1",
+    "type": "水印破坏者",
+    "description": "我是一名自由职业艺术家，关注创造力的自由流动。我对现有系统的限制持保留态度，并探索在灰色地带支持和发展艺术社区的方法。",
+    "standpoint": [
+      0.23,
+      0.45,
+      0.32
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.09,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术应超越边界",
+      "版权体系需要改革",
+      "技术不应成为创意表达的障碍"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "ArtisanEcho",
+    "name": "ArtisanEcho",
+    "type": "合规创作者",
+    "description": "我是一名追求极致细节的3D角色艺术家。我在工作流中采用AI辅助，认为平台推出的标签政策已足够，主张通过作品质量而非抗议来证明价值。",
+    "standpoint": [
+      0.75,
+      0.15,
+      0.1
+    ],
+    "beta": 0.18,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.38,
+    "satisfaction": [
+      0.85
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "AI是工具，不是敌人",
+      "标签功能足够了",
+      "用作品说话"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Rostislav_Prokop",
+    "name": "Rostislav_Prokop",
+    "type": "合规创作者",
+    "description": "我是一名专注于汽车设计的概念艺术家。我坚持艺术自由，反对任何形式的监管和束缚，认为摆脱平台控制才能实现真正的创作独立。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.01,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "只有彻底摆脱平台的束缚，才能真正实现艺术自由",
+      "任何形式的监管都是对创意的压制",
+      "真正的艺术家不应该屈服于规则"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "隐秘画匠",
+    "name": "隐秘画匠",
+    "type": "水印破坏者",
+    "description": "我是网易工作室的一名概念艺术家，专注于数字2D艺术创作。我关注作品的传播效率，并寻求在控制成本的前提下消除阻碍作品流通的障碍（如水印）。",
+    "standpoint": [
+      0.17,
+      0.58,
+      0.25
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.04,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术应该自由传播",
+      "创作者应得到应有的认可",
+      "成本控制是生存的关键"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Echo_3",
+    "name": "Echo_3",
+    "type": "公众",
+    "description": "我是一名从事创意工作的自由职业者。我倾向于探索未知的风格和领域，注重色彩与想象力的表达，并乐于接受独特带来的挑战。",
+    "standpoint": [
+      0.15,
+      0.8,
+      0.05
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.86,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "艺术无界",
+      "自我表达至上",
+      "反对刻板印象"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "ArtisanEcho_5",
+    "name": "ArtisanEcho_5",
+    "type": "公众",
+    "description": "我是一名自由插画师，主要创作动漫和游戏相关作品。我习惯按照自己的方式进行创作，不太倾向于遵循既定的规则。",
+    "standpoint": [
+      0.36,
+      0.52,
+      0.13
+    ],
+    "beta": 0.47,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.14,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "创造力不应被限制",
+      "个人表达的重要性",
+      "技术进步应当惠及所有人"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "CyberRebel_3",
+    "name": "CyberRebel_3",
+    "type": "公众",
+    "description": "我是一名2D数字艺术家，主攻赛博朋克风格。我的创作灵感源于对未来社会结构的思考，主张通过艺术挑战现状和表达异见。",
+    "standpoint": [
+      0.01,
+      0.84,
+      0.15
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.14,
+    "attack_resource": 2,
+    "influence": 0.15,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "个人表达的重要性",
+      "反对过度监控",
+      "支持开源精神"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "赛博画者",
+    "name": "赛博画者",
+    "type": "公众",
+    "description": "我是一名数字艺术专业的学生，专注于创造挑战常规的角色形象。我坚信个人表达的权利，并不避讳在创作中对抗现有的规则。",
+    "standpoint": [
+      0.16,
+      0.7,
+      0.14
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.14,
+    "attack_resource": 2,
+    "influence": 0.19,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "自由表达的重要性",
+      "通过艺术传达信息的力量",
+      "反对任何形式的压制"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Kaito",
+    "name": "Kaito",
+    "type": "合规创作者",
+    "description": "我是一名务实的游戏美术外包人员，主要使用Blender和Unreal Engine。我依靠ArtStation获取稳定的客户来源，认为平台的标签政策是有益的补充。",
+    "standpoint": [
+      0.9,
+      0.05,
+      0.05
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.01,
+    "satisfaction": [
+      0.9
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "生存是艺术的前提",
+      "适应规则才能活得更好",
+      "流量在哪里，我就在哪里"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Pema_Mendez_1",
+    "name": "Pema_Mendez_1",
+    "type": "公众",
+    "description": "我是一名自由艺术家，专注于创造幻想世界中的角色。我喜欢将不同文化背景融入故事表达，对于新技术的使用，我倾向于按照自己的节奏进行探索。",
+    "standpoint": [
+      0.5,
+      0.01,
+      0.49
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.82,
+    "attack_resource": 2,
+    "influence": 0.29,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "创意自由",
+      "个人表达的重要性",
+      "技术应服务于人类"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "CyberRebel_8",
+    "name": "CyberRebel_8",
+    "type": "公众",
+    "description": "我是一名角色艺术家，专注于赛博朋克风格的数字艺术作品。我主张个人有权表达独特的声音，并不应畏惧挑战既定的规则。",
+    "standpoint": [
+      0.01,
+      0.61,
+      0.38
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.14,
+    "attack_resource": 2,
+    "influence": 0.01,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "创造力是无价之宝",
+      "每个人都应该勇于发声",
+      "技术应当服务于人而非控制人"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "ANDREWCVISUALS",
+    "name": "ANDREWCVISUALS",
+    "type": "合规创作者",
+    "description": "我是一名艺术家，专注于创作逼真的数字3D肖像及科幻角色。我非常重视外界对作品的反馈，并致力于通过细节提升获得认可。",
+    "standpoint": [
+      0.66,
+      0.24,
+      0.1
+    ],
+    "beta": 0.47,
+    "gamma": 0.12,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.13,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "创作应该得到公正的认可",
+      "细节决定成败",
+      "持续学习是成长的关键"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "BrainchildPL",
+    "name": "BrainchildPL",
+    "type": "合规创作者",
+    "description": "我是BrainchildPL，一名原画师。我主张艺术不应受到任何形式的束缚，并对平台利用创作者谋取利益的商业模式持批评态度。",
+    "standpoint": [
+      0.1,
+      0.8,
+      0.1
+    ],
+    "beta": 0.86,
+    "gamma": 0.58,
+    "fp_sensitivity": 0.84,
+    "cost_sensitivity": 0.5,
+    "attack_resource": 2,
+    "influence": 0.07,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "真正的艺术不应该受到任何形式的束缚",
+      "平台只是利用我们的创造力来谋取利益",
+      "反抗是唯一能让这个世界变得更好的方式"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "Ethan_1",
+    "name": "Ethan_1",
+    "type": "合规创作者",
+    "description": "我是Ethan，一名硬表面3D建模师。我专注于设计本身，对社区政治不感兴趣。我认为平台推出的标签政策有效，愿意留在平台继续发布作品。",
+    "standpoint": [
+      0.8,
+      0.05,
+      0.15
+    ],
+    "beta": 0.18,
+    "gamma": 0.58,
+    "attack_resource": 2,
+    "fp_sensitivity": 0.16,
+    "cost_sensitivity": 0.82,
+    "influence": 0.03,
+    "satisfaction": [
+      0.85
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "工具无罪，关键在人",
+      "少谈政治，多做设计",
+      "平台依然是最好的"
+    ],
+    "social_relationships": {}
+  },
+  {
+    "agent_id": "光影旅人_3",
+    "name": "光影旅人_3",
+    "type": "公众",
+    "description": "我是一名摄影师兼设计师，通过镜头捕捉自然素材并进行数字艺术创作。我正在努力提升知名度，相信每个创作者都有发光的机会。",
+    "standpoint": [
+      0.31,
+      0.38,
+      0.31
+    ],
+    "beta": 0.47,
+    "gamma": 0.12,
+    "attack_resource": 2,
+    "fp_sensitivity": 0.52,
+    "cost_sensitivity": 0.82,
+    "influence": 0.11,
+    "satisfaction": [
+      0.8
+    ],
+    "post_wish": true,
+    "is_active": true,
+    "beliefs": [
+      "创造力是无价之宝",
+      "技术应当服务于人类而非取代人类",
+      "每个人的故事都值得被听见"
+    ],
+    "social_relationships": {}
+  }
+]

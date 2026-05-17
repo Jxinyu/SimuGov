@@ -1,0 +1,3302 @@
+[
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.79,
+      "creativity": 0.17,
+      "satisfaction": 0.13,
+      "theta": 0.405
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.92,
+      "creativity": 0.3,
+      "satisfaction": 0.26,
+      "theta": 0.94
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.22,
+      "creativity": 0.0,
+      "satisfaction": 0.09,
+      "theta": 0.518
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.93,
+      "creativity": 0.38,
+      "satisfaction": 0.15,
+      "theta": 0.781
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.37,
+      "satisfaction": 0.18,
+      "theta": 0.775
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.05,
+      "creativity": 0.0,
+      "satisfaction": 0.14,
+      "theta": 0.622
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.43,
+      "satisfaction": 0.25,
+      "theta": 0.858
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.76,
+      "creativity": 0.26,
+      "satisfaction": 0.19,
+      "theta": 0.635
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.7,
+      "creativity": 0.12,
+      "satisfaction": 0.16,
+      "theta": 0.335
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/complete/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.82,
+      "creativity": 0.37,
+      "satisfaction": 0.21,
+      "theta": 0.832
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.3,
+      "creativity": 0.54,
+      "satisfaction": 0.38,
+      "theta": 0.7659814940927194
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.8,
+      "creativity": 0.64,
+      "satisfaction": 0.92,
+      "theta": 0.8089351245499375
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.39,
+      "creativity": 0.61,
+      "satisfaction": 0.47,
+      "theta": 0.7108358626628398
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.47,
+      "creativity": 0.59,
+      "satisfaction": 0.26,
+      "theta": 0.5678498558840928
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.72,
+      "creativity": 0.64,
+      "satisfaction": 0.65,
+      "theta": 0.6601973069285472
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.57,
+      "creativity": 0.49,
+      "satisfaction": 0.77,
+      "theta": 0.6310991756757669
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.88,
+      "creativity": 0.61,
+      "satisfaction": 0.95,
+      "theta": 0.730660031312902
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.67,
+      "creativity": 0.63,
+      "satisfaction": 0.9,
+      "theta": 0.6569951734671763
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.48,
+      "creativity": 0.36,
+      "satisfaction": 0.24,
+      "theta": 0.25007523558220646
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_1/simple/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.95,
+      "creativity": 0.65,
+      "satisfaction": 0.86,
+      "theta": 0.7357662716401265
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.79,
+      "creativity": 0.17,
+      "satisfaction": 0.13,
+      "theta": 0.405
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.92,
+      "creativity": 0.3,
+      "satisfaction": 0.26,
+      "theta": 0.94
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.22,
+      "creativity": 0.0,
+      "satisfaction": 0.09,
+      "theta": 0.518
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.93,
+      "creativity": 0.38,
+      "satisfaction": 0.15,
+      "theta": 0.781
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.37,
+      "satisfaction": 0.18,
+      "theta": 0.775
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.05,
+      "creativity": 0.0,
+      "satisfaction": 0.14,
+      "theta": 0.622
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.43,
+      "satisfaction": 0.25,
+      "theta": 0.858
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.76,
+      "creativity": 0.26,
+      "satisfaction": 0.19,
+      "theta": 0.635
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.7,
+      "creativity": 0.12,
+      "satisfaction": 0.16,
+      "theta": 0.335
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/complete/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.82,
+      "creativity": 0.37,
+      "satisfaction": 0.21,
+      "theta": 0.832
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.42,
+      "creativity": 0.65,
+      "satisfaction": 0.37,
+      "theta": 0.7119466595213666
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.75,
+      "creativity": 0.63,
+      "satisfaction": 0.88,
+      "theta": 0.7598526840513601
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.3,
+      "creativity": 0.63,
+      "satisfaction": 0.28,
+      "theta": 0.5752568475268659
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.41,
+      "creativity": 0.55,
+      "satisfaction": 0.32,
+      "theta": 0.5081473747957618
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.68,
+      "creativity": 0.48,
+      "satisfaction": 0.37,
+      "theta": 0.5868916678527044
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.55,
+      "creativity": 0.63,
+      "satisfaction": 0.74,
+      "theta": 0.552486722640466
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.71,
+      "creativity": 0.62,
+      "satisfaction": 0.85,
+      "theta": 0.7493948537438011
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.7,
+      "creativity": 0.51,
+      "satisfaction": 0.88,
+      "theta": 0.5824641316424635
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.75,
+      "creativity": 0.51,
+      "satisfaction": 0.45,
+      "theta": 0.4928938806180148
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_2/simple/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.88,
+      "creativity": 0.65,
+      "satisfaction": 0.93,
+      "theta": 0.7759365716232054
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.79,
+      "creativity": 0.17,
+      "satisfaction": 0.13,
+      "theta": 0.405
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.92,
+      "creativity": 0.3,
+      "satisfaction": 0.26,
+      "theta": 0.94
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.22,
+      "creativity": 0.0,
+      "satisfaction": 0.09,
+      "theta": 0.518
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.93,
+      "creativity": 0.38,
+      "satisfaction": 0.15,
+      "theta": 0.781
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.37,
+      "satisfaction": 0.18,
+      "theta": 0.775
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.05,
+      "creativity": 0.0,
+      "satisfaction": 0.14,
+      "theta": 0.622
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.43,
+      "satisfaction": 0.25,
+      "theta": 0.858
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.76,
+      "creativity": 0.26,
+      "satisfaction": 0.19,
+      "theta": 0.635
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.7,
+      "creativity": 0.12,
+      "satisfaction": 0.16,
+      "theta": 0.335
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/complete/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.82,
+      "creativity": 0.37,
+      "satisfaction": 0.21,
+      "theta": 0.832
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.48,
+      "creativity": 0.64,
+      "satisfaction": 0.35,
+      "theta": 0.7248839526421297
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.97,
+      "creativity": 0.65,
+      "satisfaction": 0.89,
+      "theta": 0.7716137393792688
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.53,
+      "creativity": 0.61,
+      "satisfaction": 0.39,
+      "theta": 0.6058926890742843
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.45,
+      "creativity": 0.62,
+      "satisfaction": 0.3,
+      "theta": 0.4197563405327899
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.7,
+      "creativity": 0.63,
+      "satisfaction": 0.74,
+      "theta": 0.6433911556660837
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.85,
+      "creativity": 0.56,
+      "satisfaction": 0.83,
+      "theta": 0.6648100043501356
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.85,
+      "creativity": 0.65,
+      "satisfaction": 0.9,
+      "theta": 0.7439381183695298
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.82,
+      "creativity": 0.63,
+      "satisfaction": 0.94,
+      "theta": 0.6174838638755359
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.51,
+      "creativity": 0.0,
+      "satisfaction": 0.21,
+      "theta": 0.2129413347985811
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_3/simple/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.85,
+      "creativity": 0.64,
+      "satisfaction": 0.94,
+      "theta": 0.7722358950020569
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.79,
+      "creativity": 0.17,
+      "satisfaction": 0.13,
+      "theta": 0.405
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.92,
+      "creativity": 0.3,
+      "satisfaction": 0.26,
+      "theta": 0.94
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.22,
+      "creativity": 0.0,
+      "satisfaction": 0.09,
+      "theta": 0.518
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.93,
+      "creativity": 0.38,
+      "satisfaction": 0.15,
+      "theta": 0.781
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.37,
+      "satisfaction": 0.18,
+      "theta": 0.775
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.05,
+      "creativity": 0.0,
+      "satisfaction": 0.14,
+      "theta": 0.622
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.43,
+      "satisfaction": 0.25,
+      "theta": 0.858
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.76,
+      "creativity": 0.26,
+      "satisfaction": 0.19,
+      "theta": 0.635
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.7,
+      "creativity": 0.12,
+      "satisfaction": 0.16,
+      "theta": 0.335
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/complete/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.82,
+      "creativity": 0.37,
+      "satisfaction": 0.21,
+      "theta": 0.832
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.41,
+      "creativity": 0.64,
+      "satisfaction": 0.31,
+      "theta": 0.7220488004531881
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.78,
+      "creativity": 0.65,
+      "satisfaction": 0.88,
+      "theta": 0.7580786940971882
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.59,
+      "creativity": 0.33,
+      "satisfaction": 0.39,
+      "theta": 0.5595398690457306
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.57,
+      "creativity": 0.63,
+      "satisfaction": 0.62,
+      "theta": 0.5280490945433222
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.65,
+      "creativity": 0.65,
+      "satisfaction": 0.6,
+      "theta": 0.6136525103337241
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.78,
+      "creativity": 0.65,
+      "satisfaction": 0.92,
+      "theta": 0.7364726450486236
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.61,
+      "satisfaction": 0.87,
+      "theta": 0.7055007393625541
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.86,
+      "creativity": 0.55,
+      "satisfaction": 0.84,
+      "theta": 0.5979810201996989
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.56,
+      "creativity": 0.11,
+      "satisfaction": 0.29,
+      "theta": 0.11575231148343805
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_4/simple/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.64,
+      "satisfaction": 0.94,
+      "theta": 0.7685377482181348
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.79,
+      "creativity": 0.17,
+      "satisfaction": 0.13,
+      "theta": 0.405
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.92,
+      "creativity": 0.3,
+      "satisfaction": 0.26,
+      "theta": 0.94
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.22,
+      "creativity": 0.0,
+      "satisfaction": 0.09,
+      "theta": 0.518
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.93,
+      "creativity": 0.38,
+      "satisfaction": 0.15,
+      "theta": 0.781
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.37,
+      "satisfaction": 0.18,
+      "theta": 0.775
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.05,
+      "creativity": 0.0,
+      "satisfaction": 0.14,
+      "theta": 0.622
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.43,
+      "satisfaction": 0.25,
+      "theta": 0.858
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.76,
+      "creativity": 0.26,
+      "satisfaction": 0.19,
+      "theta": 0.635
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.7,
+      "creativity": 0.12,
+      "satisfaction": 0.16,
+      "theta": 0.335
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/complete/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.82,
+      "creativity": 0.37,
+      "satisfaction": 0.21,
+      "theta": 0.832
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.43,
+      "creativity": 0.65,
+      "satisfaction": 0.37,
+      "theta": 0.6378186516085719
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.94,
+      "creativity": 0.65,
+      "satisfaction": 0.87,
+      "theta": 0.7041911843748271
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.47,
+      "creativity": 0.65,
+      "satisfaction": 0.42,
+      "theta": 0.5954490760914584
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.41,
+      "creativity": 0.54,
+      "satisfaction": 0.31,
+      "theta": 0.5980092842556394
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.41,
+      "creativity": 0.3,
+      "satisfaction": 0.38,
+      "theta": 0.4644910605486454
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.86,
+      "creativity": 0.64,
+      "satisfaction": 0.91,
+      "theta": 0.6819430592243542
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.86,
+      "creativity": 0.64,
+      "satisfaction": 0.94,
+      "theta": 0.7776161116520739
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.59,
+      "satisfaction": 0.84,
+      "theta": 0.5938779122462226
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.33,
+      "creativity": 0.57,
+      "satisfaction": 0.39,
+      "theta": 0.35256029989762827
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/ten_policy/run_5/simple/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.88,
+      "creativity": 0.63,
+      "satisfaction": 0.92,
+      "theta": 0.7389724233499236
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.97,
+      "creativity": 0.64,
+      "satisfaction": 0.36,
+      "theta": 0.759
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.58,
+      "satisfaction": 0.25,
+      "theta": 0.716
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.56,
+      "satisfaction": 0.38,
+      "theta": 0.778
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.67,
+      "creativity": 0.0,
+      "satisfaction": 0.74,
+      "theta": 0.861
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.31,
+      "creativity": 0.3,
+      "satisfaction": 0.49,
+      "theta": 0.71
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.57,
+      "satisfaction": 0.33,
+      "theta": 0.72
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.74,
+      "creativity": 0.32,
+      "satisfaction": 0.32,
+      "theta": 0.5
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.3
+    },
+    "final_kpi": {
+      "safety": 0.57,
+      "creativity": 0.43,
+      "satisfaction": 0.6,
+      "theta": 0.677
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.85,
+      "creativity": 0.49,
+      "satisfaction": 0.28,
+      "theta": 0.678
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.64,
+      "creativity": 0.43,
+      "satisfaction": 0.46,
+      "theta": 0.714
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_11",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.74,
+      "creativity": 0.38,
+      "satisfaction": 0.44,
+      "theta": 0.576
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_12",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.45,
+      "creativity": 0.42,
+      "satisfaction": 0.63,
+      "theta": 0.67
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_13",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.25,
+      "creativity": 0.22,
+      "satisfaction": 0.67,
+      "theta": 0.679
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_14",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.65,
+      "creativity": 0.43,
+      "satisfaction": 0.3,
+      "theta": 0.621
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_15",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.4,
+      "f_penalty": 0.7
+    },
+    "final_kpi": {
+      "safety": 0.88,
+      "creativity": 0.38,
+      "satisfaction": 0.39,
+      "theta": 0.547
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_16",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.63,
+      "creativity": 0.29,
+      "satisfaction": 0.45,
+      "theta": 0.584
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_17",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.96,
+      "creativity": 0.21,
+      "satisfaction": 0.5,
+      "theta": 0.591
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_18",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.16,
+      "satisfaction": 0.27,
+      "theta": 0.255
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_19",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.1,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.82,
+      "creativity": 0.49,
+      "satisfaction": 0.3,
+      "theta": 0.66
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/complete/policy_20",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.6,
+      "creativity": 0.3,
+      "satisfaction": 0.63,
+      "theta": 0.663
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.44,
+      "creativity": 0.65,
+      "satisfaction": 0.5,
+      "theta": 0.699809617394856
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.39,
+      "creativity": 0.65,
+      "satisfaction": 0.35,
+      "theta": 0.6519348233193504
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.75,
+      "creativity": 0.63,
+      "satisfaction": 0.65,
+      "theta": 0.653762436952542
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.8,
+      "creativity": 0.65,
+      "satisfaction": 0.85,
+      "theta": 0.7209655526596503
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.67,
+      "creativity": 0.64,
+      "satisfaction": 0.88,
+      "theta": 0.7514254182201809
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.47,
+      "creativity": 0.6,
+      "satisfaction": 0.29,
+      "theta": 0.6003203765441293
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.76,
+      "creativity": 0.65,
+      "satisfaction": 0.66,
+      "theta": 0.6788727643624575
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.3
+    },
+    "final_kpi": {
+      "safety": 0.77,
+      "creativity": 0.64,
+      "satisfaction": 0.8,
+      "theta": 0.7648511005410512
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.7,
+      "creativity": 0.63,
+      "satisfaction": 0.44,
+      "theta": 0.5719286025922617
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.65,
+      "satisfaction": 0.72,
+      "theta": 0.7966502149973229
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_11",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.86,
+      "creativity": 0.65,
+      "satisfaction": 0.85,
+      "theta": 0.7019687569252752
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_12",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.85,
+      "creativity": 0.65,
+      "satisfaction": 0.84,
+      "theta": 0.7651269340831328
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_13",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.9,
+      "creativity": 0.64,
+      "satisfaction": 0.84,
+      "theta": 0.7481693702433566
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_14",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.37,
+      "creativity": 0.46,
+      "satisfaction": 0.28,
+      "theta": 0.47791015232889367
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_15",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.4,
+      "f_penalty": 0.7
+    },
+    "final_kpi": {
+      "safety": 0.41,
+      "creativity": 0.55,
+      "satisfaction": 0.31,
+      "theta": 0.4509090902033818
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_16",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.64,
+      "creativity": 0.65,
+      "satisfaction": 0.76,
+      "theta": 0.8112064611826718
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_17",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.65,
+      "satisfaction": 0.86,
+      "theta": 0.7430220564060573
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_18",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.62,
+      "creativity": 0.62,
+      "satisfaction": 0.36,
+      "theta": 0.5748257681149339
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_19",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.1,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.57,
+      "creativity": 0.44,
+      "satisfaction": 0.33,
+      "theta": 0.4225362431356378
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_1/simple/policy_20",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.65,
+      "satisfaction": 0.73,
+      "theta": 0.845913944226719
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.97,
+      "creativity": 0.64,
+      "satisfaction": 0.36,
+      "theta": 0.759
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.58,
+      "satisfaction": 0.25,
+      "theta": 0.716
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.56,
+      "satisfaction": 0.38,
+      "theta": 0.778
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.67,
+      "creativity": 0.0,
+      "satisfaction": 0.74,
+      "theta": 0.861
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.31,
+      "creativity": 0.3,
+      "satisfaction": 0.49,
+      "theta": 0.71
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.57,
+      "satisfaction": 0.33,
+      "theta": 0.72
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.74,
+      "creativity": 0.32,
+      "satisfaction": 0.32,
+      "theta": 0.5
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.3
+    },
+    "final_kpi": {
+      "safety": 0.57,
+      "creativity": 0.43,
+      "satisfaction": 0.6,
+      "theta": 0.677
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.85,
+      "creativity": 0.49,
+      "satisfaction": 0.28,
+      "theta": 0.678
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.64,
+      "creativity": 0.43,
+      "satisfaction": 0.46,
+      "theta": 0.714
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_11",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.74,
+      "creativity": 0.38,
+      "satisfaction": 0.44,
+      "theta": 0.576
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_12",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.45,
+      "creativity": 0.42,
+      "satisfaction": 0.63,
+      "theta": 0.67
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_13",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.25,
+      "creativity": 0.22,
+      "satisfaction": 0.67,
+      "theta": 0.679
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_14",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.65,
+      "creativity": 0.43,
+      "satisfaction": 0.3,
+      "theta": 0.621
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_15",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.4,
+      "f_penalty": 0.7
+    },
+    "final_kpi": {
+      "safety": 0.88,
+      "creativity": 0.38,
+      "satisfaction": 0.39,
+      "theta": 0.547
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_16",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.63,
+      "creativity": 0.29,
+      "satisfaction": 0.45,
+      "theta": 0.584
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_17",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.96,
+      "creativity": 0.21,
+      "satisfaction": 0.5,
+      "theta": 0.591
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_18",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.16,
+      "satisfaction": 0.27,
+      "theta": 0.255
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_19",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.1,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.82,
+      "creativity": 0.49,
+      "satisfaction": 0.3,
+      "theta": 0.66
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/complete/policy_20",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.6,
+      "creativity": 0.3,
+      "satisfaction": 0.63,
+      "theta": 0.663
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.45,
+      "creativity": 0.64,
+      "satisfaction": 0.62,
+      "theta": 0.7122211305411799
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.43,
+      "creativity": 0.65,
+      "satisfaction": 0.37,
+      "theta": 0.6378186516085719
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.59,
+      "creativity": 0.64,
+      "satisfaction": 0.6,
+      "theta": 0.6871182491252739
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.65,
+      "satisfaction": 0.86,
+      "theta": 0.7700993714252758
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.81,
+      "creativity": 0.64,
+      "satisfaction": 0.87,
+      "theta": 0.7530029617331816
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.47,
+      "creativity": 0.65,
+      "satisfaction": 0.42,
+      "theta": 0.5954490760914584
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.55,
+      "creativity": 0.5,
+      "satisfaction": 0.58,
+      "theta": 0.5996894757963497
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.3
+    },
+    "final_kpi": {
+      "safety": 0.93,
+      "creativity": 0.65,
+      "satisfaction": 0.78,
+      "theta": 0.8161301928460513
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.41,
+      "creativity": 0.54,
+      "satisfaction": 0.31,
+      "theta": 0.5980092842556394
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.41,
+      "creativity": 0.3,
+      "satisfaction": 0.38,
+      "theta": 0.4644910605486454
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_11",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.86,
+      "creativity": 0.64,
+      "satisfaction": 0.91,
+      "theta": 0.6819430592243542
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_12",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.86,
+      "creativity": 0.64,
+      "satisfaction": 0.94,
+      "theta": 0.7776161116520739
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_13",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.9,
+      "creativity": 0.65,
+      "satisfaction": 0.76,
+      "theta": 0.7956309927073297
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_14",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.5,
+      "creativity": 0.64,
+      "satisfaction": 0.55,
+      "theta": 0.8418293012495282
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_15",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.4,
+      "f_penalty": 0.7
+    },
+    "final_kpi": {
+      "safety": 0.78,
+      "creativity": 0.63,
+      "satisfaction": 0.77,
+      "theta": 0.580613523532906
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_16",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.59,
+      "satisfaction": 0.84,
+      "theta": 0.5938779122462226
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_17",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.98,
+      "creativity": 0.61,
+      "satisfaction": 0.87,
+      "theta": 0.707113157043159
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_18",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.33,
+      "creativity": 0.57,
+      "satisfaction": 0.39,
+      "theta": 0.35256029989762827
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_19",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.1,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.58,
+      "creativity": 0.23,
+      "satisfaction": 0.27,
+      "theta": 0.4923081580525521
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_2/simple/policy_20",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.88,
+      "creativity": 0.63,
+      "satisfaction": 0.92,
+      "theta": 0.7389724233499236
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.97,
+      "creativity": 0.64,
+      "satisfaction": 0.36,
+      "theta": 0.759
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.58,
+      "satisfaction": 0.25,
+      "theta": 0.716
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.56,
+      "satisfaction": 0.38,
+      "theta": 0.778
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.67,
+      "creativity": 0.0,
+      "satisfaction": 0.74,
+      "theta": 0.861
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.31,
+      "creativity": 0.3,
+      "satisfaction": 0.49,
+      "theta": 0.71
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.83,
+      "creativity": 0.57,
+      "satisfaction": 0.33,
+      "theta": 0.72
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.74,
+      "creativity": 0.32,
+      "satisfaction": 0.32,
+      "theta": 0.5
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.3
+    },
+    "final_kpi": {
+      "safety": 0.57,
+      "creativity": 0.43,
+      "satisfaction": 0.6,
+      "theta": 0.677
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.85,
+      "creativity": 0.49,
+      "satisfaction": 0.28,
+      "theta": 0.678
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.64,
+      "creativity": 0.43,
+      "satisfaction": 0.46,
+      "theta": 0.714
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_11",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.74,
+      "creativity": 0.38,
+      "satisfaction": 0.44,
+      "theta": 0.576
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_12",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.45,
+      "creativity": 0.42,
+      "satisfaction": 0.63,
+      "theta": 0.67
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_13",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.25,
+      "creativity": 0.22,
+      "satisfaction": 0.67,
+      "theta": 0.679
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_14",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.65,
+      "creativity": 0.43,
+      "satisfaction": 0.3,
+      "theta": 0.621
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_15",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.4,
+      "f_penalty": 0.7
+    },
+    "final_kpi": {
+      "safety": 0.88,
+      "creativity": 0.38,
+      "satisfaction": 0.39,
+      "theta": 0.547
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_16",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.63,
+      "creativity": 0.29,
+      "satisfaction": 0.45,
+      "theta": 0.584
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_17",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.96,
+      "creativity": 0.21,
+      "satisfaction": 0.5,
+      "theta": 0.591
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_18",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.89,
+      "creativity": 0.16,
+      "satisfaction": 0.27,
+      "theta": 0.255
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_19",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.1,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.82,
+      "creativity": 0.49,
+      "satisfaction": 0.3,
+      "theta": 0.66
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/complete/policy_20",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.6,
+      "creativity": 0.3,
+      "satisfaction": 0.63,
+      "theta": 0.663
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_01",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.59,
+      "creativity": 0.66,
+      "satisfaction": 0.49,
+      "theta": 0.776935662577524
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_02",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.65,
+      "creativity": 0.66,
+      "satisfaction": 0.6,
+      "theta": 0.833995257767683
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_03",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.0
+    },
+    "final_kpi": {
+      "safety": 0.75,
+      "creativity": 0.66,
+      "satisfaction": 0.71,
+      "theta": 0.7641932552990358
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_04",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.86,
+      "creativity": 0.53,
+      "satisfaction": 0.87,
+      "theta": 0.6638151714269004
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_05",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.1
+    },
+    "final_kpi": {
+      "safety": 0.72,
+      "creativity": 0.65,
+      "satisfaction": 0.86,
+      "theta": 0.7886116818032358
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_06",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.3,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.46,
+      "creativity": 0.35,
+      "satisfaction": 0.33,
+      "theta": 0.6608455860793957
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_07",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.2
+    },
+    "final_kpi": {
+      "safety": 0.67,
+      "creativity": 0.61,
+      "satisfaction": 0.38,
+      "theta": 0.5942521267693132
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_08",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.3
+    },
+    "final_kpi": {
+      "safety": 0.92,
+      "creativity": 0.65,
+      "satisfaction": 0.81,
+      "theta": 0.7677939678964569
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_09",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.4
+    },
+    "final_kpi": {
+      "safety": 0.39,
+      "creativity": 0.6,
+      "satisfaction": 0.35,
+      "theta": 0.569974561594017
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_10",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.5,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.5,
+      "creativity": 0.64,
+      "satisfaction": 0.57,
+      "theta": 0.5861599251754809
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_11",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.6,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.77,
+      "creativity": 0.64,
+      "satisfaction": 0.88,
+      "theta": 0.6433001805563923
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_12",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.5
+    },
+    "final_kpi": {
+      "safety": 0.91,
+      "creativity": 0.58,
+      "satisfaction": 0.83,
+      "theta": 0.8256118647598142
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_13",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.9,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.92,
+      "creativity": 0.65,
+      "satisfaction": 0.79,
+      "theta": 0.7995186884337173
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_14",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.2,
+      "f_penalty": 0.6
+    },
+    "final_kpi": {
+      "safety": 0.65,
+      "creativity": 0.41,
+      "satisfaction": 0.28,
+      "theta": 0.4638554724489085
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_15",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.4,
+      "f_penalty": 0.7
+    },
+    "final_kpi": {
+      "safety": 0.7,
+      "creativity": 0.56,
+      "satisfaction": 0.43,
+      "theta": 0.5557076314660447
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_16",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.7,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.73,
+      "creativity": 0.65,
+      "satisfaction": 0.87,
+      "theta": 0.7829074655735577
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_17",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.8,
+      "f_penalty": 0.8
+    },
+    "final_kpi": {
+      "safety": 0.8,
+      "creativity": 0.65,
+      "satisfaction": 0.89,
+      "theta": 0.7395918658820512
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_18",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "低",
+      "ai_threshold": 0.1,
+      "f_penalty": 0.9
+    },
+    "final_kpi": {
+      "safety": 0.42,
+      "creativity": 0.38,
+      "satisfaction": 0.31,
+      "theta": 0.5820726965902713
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_19",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "中",
+      "ai_threshold": 0.1,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.57,
+      "creativity": 0.6,
+      "satisfaction": 0.33,
+      "theta": 0.36694938174917324
+    }
+  },
+  {
+    "policy_dir": "paper_data/rq2_low_fidelity_screening/twenty_policy/run_3/simple/policy_20",
+    "final_day": 15,
+    "policy": {
+      "e_edu": "高",
+      "ai_threshold": 0.9,
+      "f_penalty": 1.0
+    },
+    "final_kpi": {
+      "safety": 0.72,
+      "creativity": 0.65,
+      "satisfaction": 0.89,
+      "theta": 0.689382101885515
+    }
+  }
+]

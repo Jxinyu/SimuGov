@@ -1,0 +1,25 @@
+graph TD
+    A[Start Day] --> B(GroupManager: Cluster Agents)
+
+    subgraph Creator Phase
+    B --> C1[Group: Compliance Creators]
+    B --> C2[Group: Watermark Breakers]
+    C1 --> D1{LLM: Macro Policy}
+    C2 --> D2{LLM: Macro Policy}
+    D1 & D2 --> E[Python: Micro Execution]
+    E -- Generate --> F[(Vector DB: Content Store)]
+    end
+
+    subgraph Public Phase
+    F -- Recommendation (Sim + Time + Social) --> G[Python: Individual Feeds]
+    B --> H[Group: Rebel Public]
+    B --> I[Group: Trust Public]
+    H --> J1{LLM: Reaction Rules}
+    I --> J2{LLM: Reaction Rules}
+    G & J1 & J2 --> K[Python: Match Rules & Update Stats]
+    end
+
+    subgraph Platform Phase
+    K --> L[Calc: Cost & Pressure]
+    L --> M{LLM: Adjust Theta}
+    end

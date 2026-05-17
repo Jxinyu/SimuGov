@@ -1,89 +1,133 @@
-# SimuGov: A Simulation Optimization Framework for Generative AI Governance Strategy Design
+# SimuGov
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+**A simulation-optimization framework for generative AI governance strategy design.**
 
-![alt text](https://gitee.com/cool-dada/blog_img/raw/master/20260209215705551.svg+xml;charset=utf-8)
+SimuGov provides an agent-based social simulation environment and a multi-fidelity optimization pipeline for evaluating AI governance policies. This repository is the official artifact package for the KDD 2026 AI4Sciences paper:
 
-## 📖 Introduction
+> SimuGov: A Simulation Optimization Framework for Generative AI Governance Strategy Design
 
-**SimuGov** is the official open-source implementation of the paper *SimuGov: A Simulation Optimization Framework for Generative AI Governance Strategy Design*.
+The repository includes:
 
-This framework aims to resolve the core contradiction in Generative AI governance: how to achieve effective compliance regulation (Safety) while maintaining creator ecosystem vitality (Creativity) and public satisfaction (Satisfaction). We propose a computational governance solution combining Psychological Attribute and Environment Perception (PAEP) modeling, Representative Shadow Clone (RSC) mechanism, and Multi-Objective Evolutionary Algorithm (NSGA-II).
+- Source code for running new SimuGov simulations and policy optimization.
+- Final-day raw simulation snapshots used to reproduce the reported paper results.
+- Scripts that rebuild compact paper data and recompute all reported metrics.
 
-## 🌟 Core Features
+The paper reproduction pipeline does not require LLM API keys. API keys are needed only for running new LLM-driven simulations.
 
-*   **PAEP Psychological Modeling**: Deeply simulates agent psychological traits including Psychological Reactance (Beta), Confirmation Bias (Gamma), and False Positive Sensitivity.
-*   **RSC Efficient Simulation**: Reduces LLM invocation costs by over 90% via the "Representative-Follower" mechanism while preserving collective behavioral diversity.
-*   **Automated Policy Optimization**: Automatically searches for the optimal Pareto Front of governance strategies based on stability-regularized NSGA-II algorithms.
-*   **Evidence-Driven**: Successfully reproduced nonlinear social dynamics such as the 2022 ArtStation protest event.
+## Quick Start
 
-## 🛠️ Installation Guide
-
-1.  **Clone Repository**:
-    ```bash
-    git clone https://github.com/Jxinyu/SimuGov.git
-    cd SimuGov
-    ```
-
-2.  **Create Virtual Environment**:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # Use venv\Scripts\activate on Windows
-    pip install -r requirements.txt
-    ```
-
-3.  **Configure Environment**:
-    *   Configure paths in `config/config.yaml` to local relative paths.
-    *   Create a `.env` file in the root directory and fill in your LLM API Key (supports OpenAI-compatible interfaces like Qwen):
-        ```env
-        LLM__KEY1=Your_API_Key
-        ```
-
-4.  **Local Embedding Service**:
-    This project uses Ollama by default for local vector embedding services. Please ensure [Ollama](https://ollama.com/) is installed and the model is pulled:
-    ```bash
-    ollama pull qwen3-embedding:4b
-    ```
-
-## 🚀 Quick Start
-
-### 1. Run Single Governance Simulation
-Execute a complete High-Fidelity (HF) simulation experiment:
-```python
-import asyncio
-from framework_utils import run_complete_in_one_policy
-
-async def main():
-    # Parameters: Education Investment, Penalty Coefficient, AI Detection Threshold
-    await run_complete_in_one_policy('Medium', 0.5, 0.5)
-
-if __name__ == "__main__":
-    asyncio.run(main())
-```
-
-### 2. Start Automated Strategy Optimization
-Run the two-stage evolutionary algorithm to search for optimal governance solutions:
 ```bash
-python main.py  # Default runs coupled High-Low fidelity optimization
+pip install -r requirements.txt
+python scripts/prepare_paper_data.py --raw-root raw_experiments --output paper_data
+python scripts/recompute_paper_results.py --data-root paper_data --output paper_results/recomputed
 ```
 
-## 📂 Project Structure
+The main verification report is written to:
 
 ```text
-SimuGov/
-├── config/             # System parameters and model configuration
-├── method/
-│   ├── agent/          # PAEP agent logic and LangGraph workflow
-│   ├── simple_process/ # RSC lightweight simulation logic
-│   ├── store/          # Long/Short-term memory management based on ChromaDB
-│   └── environment.py  # Social environment state machine
-├── nsga/               # Multi-objective evolutionary algorithm optimization engine
-├── experiment/         # Paper experiment reproduction and analysis plotting scripts
-├── main_experiment.py  # Preset experiment pipeline
-└── requirements.txt    # Dependency list
+paper_results/recomputed/RECOMPUTED_CONSISTENCY_CHECK.md
 ```
 
-## 📊 Experiment Reproduction
+## Repository Layout
 
-Key experiments mentioned in the paper can be run as follows:
-**experiment/main.py**
+- `main_experiment.py`: command-line entry point for running new SimuGov simulations.
+- `config/`: configuration models and YAML settings.
+- `method/`, `nsga/`, `utils/`: simulation, agent, optimization, and analysis implementation.
+- `raw_experiments/`: raw final-day `day_time_*` simulation snapshots used by the paper.
+- `paper_data/`: compact reproduction package generated from `raw_experiments/`.
+- `paper_results/`: derived reproduction outputs and consistency reports.
+- `scripts/`: data migration, preparation, collection, and recomputation utilities.
+- `data/`: lightweight auxiliary data used by the codebase.
+
+## Install
+
+```bash
+pip install -r requirements.txt
+```
+
+API keys are not required to recompute the reported paper results from the bundled snapshots. API keys are required only when running new LLM-driven simulations.
+
+## Reproduce Paper Results
+
+The reproducibility chain is:
+
+```text
+raw_experiments -> paper_data -> paper_results
+```
+
+Prepare the compact paper data package:
+
+```bash
+python scripts/prepare_paper_data.py --raw-root raw_experiments --output paper_data
+```
+
+Recompute all reported paper results:
+
+```bash
+python scripts/recompute_paper_results.py --data-root paper_data --output paper_results/recomputed
+```
+
+Optional: collect intermediate artifacts for inspection:
+
+```bash
+python scripts/collect_paper_results.py all --output paper_results/collected
+```
+
+The main verification report is:
+
+```text
+paper_results/recomputed/RECOMPUTED_CONSISTENCY_CHECK.md
+```
+
+## Raw Data Migration
+
+The bundled `raw_experiments/` directory already contains the raw final-day snapshots needed for reproduction. If migrating again from an original full experiment archive, run:
+
+```bash
+python scripts/migrate_raw_experiments.py --source-root path/to/original/project --output raw_experiments
+```
+
+The migration script keeps only the final `day_time_*` snapshot for each run or policy. Earlier days are intentionally omitted because the reported metrics are computed from the final-day state.
+
+## Run New Simulations
+
+New simulations call LLM services. Configure at least one key before running these commands:
+
+```bash
+copy .env.example .env
+```
+
+Then set the key value in `.env` using the nested settings format expected by `config/config.py`, for example:
+
+```text
+LLM__KEY1=your_api_key_here
+```
+
+Examples:
+
+```bash
+python main_experiment.py single-low
+python main_experiment.py single-high
+python main_experiment.py optimize --population-size 10 --generations 1
+python main_experiment.py optimize --population-size 10 --generations 1 --high-eval
+```
+
+Simulation outputs are written under `result_data/`.
+
+## Verified Claims
+
+The recomputation pipeline checks:
+
+- RQ1 case validation Pearson correlation
+- RQ2 low-fidelity screening consistency
+- RQ2 efficiency and cost reduction
+- RQ3 convergence
+- RQ3 manual and random baseline comparisons
+- Appendix Monte Carlo validation
+- Sensitivity analysis
+
+`paper_results/` is derived output only and can be regenerated from `raw_experiments/`.
+
+## License
+
+This project is released under the Apache License 2.0. See `LICENSE` for details.

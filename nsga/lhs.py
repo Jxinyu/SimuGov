@@ -5,34 +5,38 @@ import pprint
 
 def latin_hypercube_sampling(n_samples: int):
     """
-    Implement Latin Hypercube Sampling (LHS) for AI watermarking policy parameters.
-    Revised version: correctly handle numerical range distribution.
+    针对AI水印政策参数实现拉丁超立方抽样 (LHS)。
+    修正版：正确处理数值范围分布。
     """
+              
     granularity = 0.01
-    print(f"--- Starting Latin Hypercube Sampling for {n_samples} samples (Granularity: {granularity}) ---")
+    print(f"--- 开始 {n_samples} 个样本的拉丁超立方体采样 (粒度: {granularity}) ---")
 
+                 
+                                          
     params_config = {
         'f_penalty': {'type': 'continuous', 'bounds': (0.00, 1.00)},
         'ai_threshold': {'type': 'continuous', 'bounds': (0.00, 1.00)},
-        'e_edu': {'type': 'discrete', 'values': ['Low', 'Medium', 'High']}
+        'e_edu': {'type': 'discrete', 'values': ['低', '中', '高']}
     }
 
-    # Used to store the sample list generated for each parameter
+                     
     samples_per_param = {}
 
-    # 2. Independently generate stratified samples for each parameter
+                      
     for param_name, config in params_config.items():
 
+                                                 
         if config['type'] == 'discrete':
             categories = config['values']
             k = len(categories)
 
-            # Calculate the number of occurrences for each category
+                         
             base_count = n_samples // k
             remainder = n_samples % k
 
             counts = [base_count] * k
-            # Randomly assign remainders to different categories to prevent always biasing towards the first few
+                                    
             remainder_indices = random.sample(range(k), remainder)
             for idx in remainder_indices:
                 counts[idx] += 1
@@ -41,21 +45,28 @@ def latin_hypercube_sampling(n_samples: int):
             np.random.shuffle(param_samples)
             samples_per_param[param_name] = param_samples
 
+                                            
         elif config['type'] == 'continuous':
             low, high = config['bounds']
+
+                                                         
             intervals = np.linspace(low, high, n_samples + 1)
 
             param_samples = []
             for i in range(n_samples):
+                               
                 val = random.uniform(intervals[i], intervals[i + 1])
+                                   
                 val = round(val / granularity) * granularity
+                          
                 val = max(low, min(high, val))
                 param_samples.append(round(val, 2))
 
+                                          
             random.shuffle(param_samples)
             samples_per_param[param_name] = param_samples
 
-    # 3. Combine final policies
+               
     final_policy_samples = []
     for i in range(n_samples):
         policy = {
@@ -65,12 +76,12 @@ def latin_hypercube_sampling(n_samples: int):
         }
         final_policy_samples.append(policy)
 
-    print("--- LHS complete. All parameter samples have been merged. ---")
+    print("--- LHS 完成。所有参数样本均已合并。 ---")
     return final_policy_samples
 
 
 if __name__ == '__main__':
-    # Test code
+          
     POPULATION_SIZE = 10
     population = latin_hypercube_sampling(n_samples=POPULATION_SIZE)
     pprint.pprint(population)

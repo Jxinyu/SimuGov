@@ -1,0 +1,48 @@
+{
+    "metadata": {
+        "run_id": "161601",
+        "subject_id": "惩罚0_52_教育低_ai_threshold_0_79",
+        "compare_group_id": "random-2",
+        "compare_group": "best_random_group"
+    },
+    "metrics": {
+        "hv_subject_set": 0.17133903443061851,
+        "hv_compare_set": 0.07913123020705037,
+        "subject_robust_vector": [
+            0.5205292403136208,
+            0.5697799391196169,
+            0.547036695246019
+        ],
+        "compare_group_best_strategy_vector": [
+            0.5760666493005205,
+            0.2405353083964595,
+            0.4871853119838199
+        ],
+        "best_random_group_hv": 0.07913123020705037
+    },
+    "benchmarking": [
+        {
+            "baseline_id": "random-2\\惩罚0_98_教育中_ai_threshold_0_64",
+            "comparison": {
+                "安全性": {
+                    "base_val": 0.5760666493005205,
+                    "elite_val": 0.5205292403136208,
+                    "abs_diff": -0.05553740898689974,
+                    "percent_change": "-9.64%"
+                },
+                "创造力": {
+                    "base_val": 0.2405353083964595,
+                    "elite_val": 0.5697799391196169,
+                    "abs_diff": 0.32924463072315735,
+                    "percent_change": "+136.88%"
+                },
+                "满意度": {
+                    "base_val": 0.4871853119838199,
+                    "elite_val": 0.547036695246019,
+                    "abs_diff": 0.05985138326219902,
+                    "percent_change": "+12.29%"
+                }
+            }
+        }
+    ]
+}

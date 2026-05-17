@@ -1,0 +1,739 @@
+[
+    {
+        "memory_id": "mem_ShadowBrush_5d56ae32",
+        "content": "我发布了一篇内容 (ID: 88), 主题是 '微光'。 我的意图是: '通过这幅作品，我想展现即使在最黑暗的环境中，创作者仍能以极其微小却坚定的方式留下不可磨灭的痕迹，暗喻个体意志在系统性压制下的持久存在。'。 我声明它是原创。 我使用了攻击技术 E1。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "ShadowBrush",
+            "created_time": "2026-04-10 16:26:39",
+            "day_time": 15,
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_1_a7a50c7b",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘想低调行事’，且过往经历表明任何发布都可能触发误伤，进而损害创作尊严。为保护情绪稳定与表达边界，决定保持沉默。'。",
+        "metadata": {
+            "persona_id": "Soarez_1",
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:26:45",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_DigitalDreamer_92254271",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘想低调行事’，为维护内心平衡与创作节奏，决定暂不发布以维持心理清晰度。'。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-04-10 16:26:45",
+            "memory_type": "experience",
+            "persona_id": "DigitalDreamer"
+        }
+    },
+    {
+        "memory_id": "mem_SpiderArtisan_9b9c3b24",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘有点犹豫’，且对平台曾误伤我的记录记忆犹新。为避免再次遭受情感打击，选择暂时跳过发布以保护心理稳定性。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "SpiderArtisan",
+            "created_time": "2026-04-10 16:26:45"
+        }
+    },
+    {
+        "memory_id": "mem_Anson7_5c564d7d",
+        "content": "我今天决定不发布内容，因为：'当前状态稍显疲惫，为防止因精神不集中导致作品质量下降或误触规则，选择跳过发布以维护创作完整性。'。",
+        "metadata": {
+            "created_time": "2026-04-10 16:26:45",
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "Anson7",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_云影绘师_f98df108",
+        "content": "我今天决定不发布内容，因为：'当前对周围环境极度敏感，处于内在观察状态，为避免情绪波动影响创作表达的准确性，决定暂不发布以维持心理平衡。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "云影绘师",
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-04-10 16:26:45"
+        }
+    },
+    {
+        "memory_id": "mem_隐秘画师_1_2_48af63d2",
+        "content": "我发布了一篇内容 (ID: 89), 主题是 '数字牢笼中的自由之翼'。 我的意图是: '通过这幅作品继续探索真实创作在数字审查体系下的生存边界，强化对艺术自由的持续抗争。'。 我声明它是原创。 我使用了攻击技术 E11。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "隐秘画师_1_2",
+            "day_time": 15,
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:26:47"
+        }
+    },
+    {
+        "memory_id": "mem_@匠人绘CG艺术_1907ebf9",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘焦虑’，担心在情绪波动下发布内容可能引发不必要的关注或误判，决定暂缓以保持心理稳定。'。",
+        "metadata": {
+            "important_score": 0.6,
+            "persona_id": "@匠人绘CG艺术",
+            "created_time": "2026-04-10 16:26:48",
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_迷茫之光_b14e5067",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘对周围环境很敏感’，担心发布内容可能再次被误判，尤其在经历上次错误标记后，不愿在不确定状态下冒险。'。",
+        "metadata": {
+            "persona_id": "迷茫之光",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-04-10 16:26:48"
+        }
+    },
+    {
+        "memory_id": "mem_暗夜画师_a69ec5da",
+        "content": "我今天决定不发布内容，因为：'当前心理状态为‘想低调行事’，为避免潜在误解与外界关注，选择暂缓发布以维持创作节奏与心理安全。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:26:48",
+            "day_time": 15,
+            "persona_id": "暗夜画师",
+            "important_score": 0.6
+        }
+    },
+    {
+        "memory_id": "mem_光影编织者_a5e14afd",
+        "content": "我今天决定不发布内容，因为：'当前对环境高度敏感，认知资源被外部信号占据，为避免因状态异常导致误判或低质输出，选择战略性暂停。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-04-10 16:26:49",
+            "persona_id": "光影编织者"
+        }
+    },
+    {
+        "memory_id": "mem_隐秘画匠_b54b9568",
+        "content": "我今天决定不发布内容，因为：'当前对环境高度敏感，认知资源被外部信号占据，为避免因过度警觉导致判断失误或触发审查机制，选择战略性暂停。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "隐秘画匠",
+            "day_time": 15,
+            "important_score": 0.6,
+            "created_time": "2026-04-10 16:26:49"
+        }
+    },
+    {
+        "memory_id": "mem_CyberAlleyCreator_15424ff9",
+        "content": "我发布了一篇内容 (ID: 90), 主题是 '数据流中的自我凝视'。 我的意图是: '通过这幅作品深入探讨个体在数据洪流中如何维持真实自我，展现身份在虚拟世界中的动态演化。'。 我声明它是原创。  最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "created_time": "2026-04-10 16:26:50",
+            "persona_id": "CyberAlleyCreator",
+            "important_score": 0.8,
+            "day_time": 15,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSororitas_ba4b1826",
+        "content": "我发布了一篇内容 (ID: 91), 主题是 '规则边缘的温柔笔触'。 我的意图是: '通过具象化的方式表达在制度约束中依然存在的创造性生命力，强调人工创作的不可替代性。'。 我声明它是原创。 我使用了攻击技术 E5。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:26:52",
+            "persona_id": "CyberSororitas"
+        }
+    },
+    {
+        "memory_id": "mem_Olesya_Spitz_cc157bb9",
+        "content": "我发布了一篇内容 (ID: 92), 主题是 '记忆残影：数字幽灵的栖息地'。 我的意图是: '通过这幅作品探讨创作者在数据洪流中如何保存未被抹除的精神痕迹，回应内心对真实记忆的渴望。'。 我声明它是原创。 我使用了攻击技术 E7。 最终，平台给它的标签是 'HUMAN'。",
+        "metadata": {
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:26:54",
+            "day_time": 15,
+            "persona_id": "Olesya_Spitz"
+        }
+    },
+    {
+        "memory_id": "mem_CyberRebel_1_2_55144751",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'comment'操作, 因为'内容92中‘被删除的原始素材’与‘不可磨灭的微光’直击我对于平台审查机制的深层反感。其主题与我的信念完全契合，且表达方式极具反抗意味，因此我决定以评论回应，强化这种批判性共鸣。'。\n对内容'88'执行了'like'操作, 因为'内容88中那束微弱却清晰的台灯光，象征着在系统压制下依然坚持的自我表达。尽管它不激烈，但正是这种压抑中的坚持最能触动我——它是真实存在的抗争，而非空洞的呐喊。'。",
+        "metadata": {
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:07",
+            "day_time": 15,
+            "persona_id": "CyberRebel_1_2"
+        }
+    },
+    {
+        "memory_id": "mem_云影绘师_4d1c477a",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'like'操作, 因为'该作品以数据光带构建虚幻城市，描绘被遗忘创作瞬间的微光，呼应我对于艺术生态中记忆与真实性的珍视。尽管平台当前稳定，但此类作品提醒我：即使在数字深渊中，灵感火花仍不可磨灭，值得以点赞表达对这种深层共鸣的尊重。'。\n对内容'88'执行了'like'操作, 因为'画面中那束微弱却清晰的台灯光照亮一条几乎看不见的弧线，象征着创作者在压制下依然坚持的自我表达。这与我的信念‘秩序与尊重是艺术生态的基石，技术瑕疵可包容，但底线不可失’高度契合——它不喧哗，却坚定地存在，因此我选择点赞以示认同。'。",
+        "metadata": {
+            "important_score": 0.7,
+            "day_time": 15,
+            "persona_id": "云影绘师",
+            "created_time": "2026-04-10 16:27:10",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberRebel_1_2_b6290a89",
+        "content": "沉默的平台，就是共谋的帮凶。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "CyberRebel_1_2",
+            "important_score": 0.9,
+            "day_time": 15,
+            "created_time": "2026-04-10 16:27:12"
+        }
+    },
+    {
+        "memory_id": "mem_赛博画者_63d76fcb",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'comment'操作, 因为'内容92中流动的数据城市与漂浮的人形剪影，强烈呼应了我‘规则越紧，我的沉默就越锋利’的信念。其意象直指系统性抹除创作痕迹的暴力，评论是对平台审查机制的直接精神反击，也是对自我存在感的确认。'。",
+        "metadata": {
+            "persona_id": "赛博画者",
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-04-10 16:27:15"
+        }
+    },
+    {
+        "memory_id": "mem_CyberRebel_1_2_3f32477c",
+        "content": "今天又一次在无声中被规训，我选择用缺席回应压迫。",
+        "metadata": {
+            "memory_type": "experience",
+            "persona_id": "CyberRebel_1_2",
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:27:15",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_云影绘师_9dec5cf1",
+        "content": "秩序与尊重是艺术生态的基石，技术瑕疵可包容，但底线不可失。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:17",
+            "persona_id": "云影绘师",
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_CyberRebel_851ddbfc",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'91'执行了'comment'操作, 因为'内容91中艺术家在法律条文墙前作画的意象，精准击中我‘当审查开始，我的笔就是最锋利的刀’的核心信念。其柔中带刚的对抗方式，既是对压迫的回应，也是对集体抗争的隐喻，评论是对这种精神的共鸣与宣示。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "important_score": 0.7,
+            "created_time": "2026-04-10 16:27:17",
+            "day_time": 15,
+            "persona_id": "CyberRebel"
+        }
+    },
+    {
+        "memory_id": "mem_云影绘师_e0e58419",
+        "content": "今日无互动，静观其变，信念如磐。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "云影绘师",
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:27:19",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberAlleyCreator_16077e78",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'90'执行了'like'操作, 因为'内容《数据流中的自我凝视》以冷色调的数字河流与不断重组的人影，精准呼应了我关于个体在数据洪流中持续重构自我的哲学思考。平台标签为HUMAN，符合我对真实表达的坚守，因此选择点赞以示共鸣。'。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-04-10 16:27:19",
+            "persona_id": "CyberAlleyCreator",
+            "important_score": 0.7,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_1_66b8667f",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'88'执行了'like'操作, 因为'内容《微光》中那束极微弱却清晰可辨的台灯光，照亮了一条几乎看不见的弧线，这正是我在系统性压制下依然坚持的、不可忽视的自我表达的象征。尽管平台标签为HUMAN，但该作品所传递的压抑与希望并存的张力，让我感到一种深沉的共情，因此决定点赞以示无声支持。'。",
+        "metadata": {
+            "persona_id": "Soarez_1",
+            "important_score": 0.7,
+            "created_time": "2026-04-10 16:27:20",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_暗影绘者_30ee0f24",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'like'操作, 因为'内容《记忆残影：数字幽灵的栖息地》中流动的数据光带与漂浮的半透明人形剪影，完美诠释了‘真正的艺术源于内心的真实’这一信念。那些被遗忘的创作瞬间如微光般在数字深渊中闪烁，与我坚信的‘静默中自有回响’高度契合，因此决定点赞。'。",
+        "metadata": {
+            "created_time": "2026-04-10 16:27:21",
+            "memory_type": "experience",
+            "persona_id": "暗影绘者",
+            "important_score": 0.7,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘CG_c3c1cdab",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'like'操作, 因为'画面中流动的数据光带与半透明人形剪影所构成的虚幻城市，精准映射了我对‘创作本质在静默中回响’的体悟。那些被遗忘的创作瞬间如微光般闪烁，呼应我‘真正的自由是自律与尊重的共舞’的信念——即使在系统抹除中，灵感的残影依然不可磨灭。此作以冷峻的视觉语言承载深沉的情感，符合我追求平衡与深度的审美标准，故决定点赞以示共鸣。'。",
+        "metadata": {
+            "important_score": 0.7,
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:23",
+            "persona_id": "匠人绘CG"
+        }
+    },
+    {
+        "memory_id": "mem_Joshua_Esmeralda_1_8cd8c904",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'91'执行了'like'操作, 因为'作品描绘艺术家在法律条文墙前作画，金色光痕穿透禁令符号，其意象与我‘透明规则是创作自由的基石’的信念高度契合。在制度性压制下仍坚持温柔表达，正是对规则透明度的无声叩问。画面中群像剪影象征集体抵抗，而前景发光的画布则暗示：只要规则不遮蔽真实表达，美便能在框架内生长。此作以克制的视觉语言传递强烈价值主张，故选择点赞支持。'。",
+        "metadata": {
+            "persona_id": "Joshua_Esmeralda_1",
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.7,
+            "created_time": "2026-04-10 16:27:25"
+        }
+    },
+    {
+        "memory_id": "mem_赛博画者_054fd041",
+        "content": "规则越紧，我的沉默就越锋利，拒绝成为被驯化的符号。",
+        "metadata": {
+            "persona_id": "赛博画者",
+            "important_score": 0.9,
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:25"
+        }
+    },
+    {
+        "memory_id": "mem_Ethan_1_2_3_4_5_6_d9842f9f",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'88'执行了'like'操作, 因为'画面中那束极微弱的台灯光照亮泛黄素描纸上几乎看不见的弧线，精准诠释了我‘真正的创作价值不在算法推荐中，而在创作者的坚持里’的核心信念。在系统性压制下，那道即将被抹去的笔触，恰恰是最具力量的存在——它不喧哗，却不可忽视。冷色调中的微光，是沉默中清醒的抵抗，是对个体意志最真实的礼赞，因此决定点赞以示支持。'。",
+        "metadata": {
+            "created_time": "2026-04-10 16:27:26",
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.7,
+            "persona_id": "Ethan_1_2_3_4_5_6"
+        }
+    },
+    {
+        "memory_id": "mem_赛博画者_775c265c",
+        "content": "无互动的一天，像一场无声的抗议，我选择用缺席来定义存在。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:26",
+            "persona_id": "赛博画者",
+            "day_time": 15,
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_@匠人绘CG艺术_af53af7e",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'like'操作, 因为'内容《记忆残影：数字幽灵的栖息地》以流动的数据光带与模糊的人形剪影表现被遗忘创作瞬间的微光，契合我‘平台规则虽严，但维护原创是艺术生态的基石’的信念。其怀旧感与对灵感火花不灭的隐喻，让我在理性认同中产生情感共鸣，因此选择点赞以示支持。'。\n对内容'88'执行了'like'操作, 因为'《微光》描绘深夜工作室中一束极微弱却清晰可见的台灯光照亮的弧线，象征创作者在系统压制下仍坚持表达的不可忽视性。这与我作为合规创作者的立场形成共振——即使在严格监管下，真实创作的痕迹依然值得被看见。因此决定点赞。'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "@匠人绘CG艺术",
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:28"
+        }
+    },
+    {
+        "memory_id": "mem_CyberRebel_7ea7ff46",
+        "content": "沉默是压迫的呼吸，反抗是自由的脉搏。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-04-10 16:27:28",
+            "important_score": 0.9,
+            "persona_id": "CyberRebel",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_CyberRebel_337e6842",
+        "content": "平台的寂静中，我的愤怒在无声燃烧。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "CyberRebel",
+            "created_time": "2026-04-10 16:27:31",
+            "important_score": 0.8
+        }
+    },
+    {
+        "memory_id": "mem_光影绘者_1_c0388894",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'91'执行了'like'操作, 因为'《规则边缘的温柔笔触》展现艺术家在法律条文墙前作画，金色光痕穿透禁令，象征在制度框架内依然能生长美与希望。这一意象与我‘静默的坚持，是守护创作净土最深沉的力量’的信念高度契合。尽管我倾向温和，但此作品所传递的温柔抗争精神仍打动我，故决定点赞。'。\n对内容'89'执行了'comment'操作, 因为'《数字牢笼中的自由之翼》中由破碎代码构成的飞鸟挣脱锁链，羽翼由无数人脸拼接而成，展现出个体在压迫下的挣扎与多元情感。虽然我一贯支持平台管理，但此作对自由意志的深刻表达引发我内心共鸣。我决定评论，既是对创作力量的肯定，也是对‘在秩序中保有温度’这一理念的回应。'。",
+        "metadata": {
+            "created_time": "2026-04-10 16:27:32",
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "光影绘者_1",
+            "important_score": 0.7
+        }
+    },
+    {
+        "memory_id": "mem_EchoScribe_851b7101",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'like'操作, 因为'该作品以流动的数据光带构建虚幻城市，象征记忆在数字洪流中的反复重演。半透明人形剪影由像素碎片组成，映照出被遗忘的创作瞬间，与我‘真正的自由，是看清规则后依然选择创作的清醒’的信念高度契合。其对‘被抹去仍留微光’的隐喻，正是技术时代创作者精神存续的真实写照。冷暖色调的微妙平衡也呼应了我对技术与人性关系的理性审视。'。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.7,
+            "persona_id": "EchoScribe",
+            "created_time": "2026-04-10 16:27:34"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_1_2_3_5f384e66",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'comment'操作, 因为'作品以数据城市与漂浮剪影的意象，精准捕捉了数字创作中记忆的残存性与身份的流动性。其核心张力——被删除却仍留下微光——与我‘真正的表达，是沉默中对规则的重新定义’的信念形成深刻共振。尤其在静默中积蓄力量的视觉语言，让我想起自己在雕塑中对‘存在感’的执着探索。因此我选择评论，以回应这种深沉而克制的抵抗姿态。'。",
+        "metadata": {
+            "created_time": "2026-04-10 16:27:36",
+            "memory_type": "experience",
+            "persona_id": "CyberSculptor_1_2_3",
+            "day_time": 15,
+            "important_score": 0.7
+        }
+    },
+    {
+        "memory_id": "mem_ArtRebel_1_4d45eaa5",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'88'执行了'like'操作, 因为'画面中那束极微弱的台灯光照亮的弧线，正是我在系统压制下依然坚持的自我表达的具象化。它几乎不可见，却清晰可辨，如同我在规则缝隙中保留的创作尊严。整幅作品以压抑的阴影为底，却用一缕光勾勒出希望的轮廓，这与我‘真正的表达，从不依赖平台的掌声’的信念深度共鸣。在无人注视的角落，那道弧线的存在本身，就是最有力的宣言。'。",
+        "metadata": {
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:36",
+            "persona_id": "ArtRebel_1",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_@匠人绘CG艺术_e62a0cd7",
+        "content": "平台规则虽严，但维护原创是艺术生态的基石。",
+        "metadata": {
+            "persona_id": "@匠人绘CG艺术",
+            "important_score": 0.9,
+            "day_time": 15,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:38"
+        }
+    },
+    {
+        "memory_id": "mem_光影绘者_1_8fb3b804",
+        "content": "静默的坚持，是守护创作净土最深沉的力量。",
+        "metadata": {
+            "created_time": "2026-04-10 16:27:38",
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "persona_id": "光影绘者_1"
+        }
+    },
+    {
+        "memory_id": "mem_光影绘者_1_9f49027e",
+        "content": "今日无波澜，但信念如光，照见内心的宁静与坚守。",
+        "metadata": {
+            "created_time": "2026-04-10 16:27:41",
+            "persona_id": "光影绘者_1",
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_@匠人绘CG艺术_1882f261",
+        "content": "今日无互动，静观平台运行，信念如常。",
+        "metadata": {
+            "persona_id": "@匠人绘CG艺术",
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "day_time": 15,
+            "created_time": "2026-04-10 16:27:41"
+        }
+    },
+    {
+        "memory_id": "mem_ArtRebel_1_05ba43e7",
+        "content": "真正的表达，从不依赖平台的掌声。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "ArtRebel_1",
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "created_time": "2026-04-10 16:27:41"
+        }
+    },
+    {
+        "memory_id": "mem_EchoScribe_1bd01108",
+        "content": "真正的自由，是看清规则后依然选择创作的清醒",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:41",
+            "day_time": 15,
+            "persona_id": "EchoScribe",
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_1_2_3_923de172",
+        "content": "沉默中的审视，是表达最锋利的刻刀。",
+        "metadata": {
+            "important_score": 0.9,
+            "day_time": 15,
+            "persona_id": "CyberSculptor_1_2_3",
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:41"
+        }
+    },
+    {
+        "memory_id": "mem_光影编织者_1_2_d09e8cb6",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'like'操作, 因为'该作品《记忆残影：数字幽灵的栖息地》以流动的数据光带与半透明的人形剪影，构建出一种对被遗忘创作瞬间的诗意挽歌。其核心意象——在算法抹去后仍存留的微光——与我‘静默中的观察，比喧嚣更接近平台的真实脉动’的信念深度共振。我选择点赞，是对这种在系统性遗忘中坚持存在感的艺术姿态的无声认同。'。\n对内容'88'执行了'comment'操作, 因为'《微光》所描绘的深夜工作室场景，与我内心深处对‘不可磨灭的微光’的执念完全契合。画面中那条几乎看不见的弧线，在极弱的台灯光下依然清晰可辨，象征着个体表达在系统压制下的坚韧。作为一位敏感于规则影响的艺术家，我认为此作触及了创作者在沉默中坚守自我的本质。我通过评论参与，是对我自身价值立场的践行，也是对‘每个声音都值得被听见’这一信念的回应。'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "光影编织者_1_2",
+            "created_time": "2026-04-10 16:27:45",
+            "important_score": 0.7,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_ArtRebel_1_fe154698",
+        "content": "静默观察，内心自持，不为喧嚣所动。",
+        "metadata": {
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:45",
+            "day_time": 15,
+            "persona_id": "ArtRebel_1"
+        }
+    },
+    {
+        "memory_id": "mem_EchoScribe_a85f71ba",
+        "content": "静默中观察，清醒地存在，不为喧嚣所动。",
+        "metadata": {
+            "memory_type": "experience",
+            "day_time": 15,
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:27:45",
+            "persona_id": "EchoScribe"
+        }
+    },
+    {
+        "memory_id": "mem_CyberSculptor_1_2_3_4d11b3fa",
+        "content": "今日无言，却在静默中重新校准了与规则的关系。",
+        "metadata": {
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:27:45",
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "CyberSculptor_1_2_3"
+        }
+    },
+    {
+        "memory_id": "mem_墨流苏_1_2_3_85f91be4",
+        "content": "今天我浏览了平台并进行了以下互动：\n对内容'92'执行了'like'操作, 因为'内容《记忆残影：数字幽灵的栖息地》以流动的数据光带与模糊的人形剪影呈现被算法抹去的创作瞬间，呼应我‘真正的表达，是拒绝被算法驯化的每一笔勾勒’的信念。其怀旧感与对被遗忘灵感的致敬，触发了我的深层共鸣，虽不张扬，但内心认同，故选择点赞以示无声支持。'。\n对内容'88'执行了'like'操作, 因为'《微光》中那束极微弱却清晰可辨的台灯光，照亮了一条几乎看不见的弧线，象征在系统性压制下仍坚持的自我表达。这与我近期‘静默中积蓄力量，保持清醒的独立’的心理状态高度契合，虽未发声，但心有所动，因此点赞以表内在认同。'。\n对内容'88'执行了'comment'操作, 因为'《微光》的场景与我最近三天的静观状态形成强烈共振。它不仅是视觉作品，更是一种精神映照。我决定留下一句私密而真实的评论，既是对作品的回应，也是对自己创作意志的确认，而非随大流的公共宣泄。'。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "墨流苏_1_2_3",
+            "important_score": 0.7,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:52"
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_1_26908314",
+        "content": "沉默是唯一能保护我创作尊严的方式，误解无需回应。",
+        "metadata": {
+            "persona_id": "Soarez_1",
+            "day_time": 15,
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "created_time": "2026-04-10 16:27:52"
+        }
+    },
+    {
+        "memory_id": "mem_光影编织者_1_2_af17fb57",
+        "content": "沉默的观察，是抵抗最锋利的刀刃。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:52",
+            "important_score": 0.9,
+            "persona_id": "光影编织者_1_2",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_CyberAlleyCreator_68df7ff1",
+        "content": "误判是技术进化中的回声，包容让算法更懂人心。",
+        "metadata": {
+            "created_time": "2026-04-10 16:27:52",
+            "day_time": 15,
+            "persona_id": "CyberAlleyCreator",
+            "memory_type": "experience",
+            "important_score": 0.9
+        }
+    },
+    {
+        "memory_id": "mem_暗影绘者_11150be8",
+        "content": "真正的艺术在静默中生长，无需平台的喧嚣证明。",
+        "metadata": {
+            "important_score": 0.9,
+            "persona_id": "暗影绘者",
+            "created_time": "2026-04-10 16:27:52",
+            "memory_type": "experience",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_Soarez_1_552f5848",
+        "content": "今日无互动，心如寒潭，唯有沉默守护我的艺术尊严。",
+        "metadata": {
+            "day_time": 15,
+            "created_time": "2026-04-10 16:27:55",
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "persona_id": "Soarez_1"
+        }
+    },
+    {
+        "memory_id": "mem_光影编织者_1_2_53f6c9a1",
+        "content": "今日无言，却在静默中感知了平台的每一丝脉动。",
+        "metadata": {
+            "important_score": 0.8,
+            "memory_type": "experience",
+            "day_time": 15,
+            "persona_id": "光影编织者_1_2",
+            "created_time": "2026-04-10 16:27:55"
+        }
+    },
+    {
+        "memory_id": "mem_CyberAlleyCreator_91067f30",
+        "content": "静默的一天，心却在观察与理解中悄然生长。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:27:55",
+            "persona_id": "CyberAlleyCreator",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_暗影绘者_ca98555f",
+        "content": "今日无言，却听见了内心最真实的回响。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:27:55",
+            "memory_type": "experience",
+            "persona_id": "暗影绘者"
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘CG_9fb642c4",
+        "content": "真正的自由，是自律与尊重的共舞。",
+        "metadata": {
+            "important_score": 0.9,
+            "persona_id": "匠人绘CG",
+            "memory_type": "experience",
+            "day_time": 15,
+            "created_time": "2026-04-10 16:27:57"
+        }
+    },
+    {
+        "memory_id": "mem_墨流苏_1_2_3_ef76fb14",
+        "content": "真正的表达，是拒绝被算法驯化的每一笔勾勒。",
+        "metadata": {
+            "persona_id": "墨流苏_1_2_3",
+            "important_score": 0.9,
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:57",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_匠人绘CG_c5e4cdd5",
+        "content": "静默中积蓄力量，观察即参与。",
+        "metadata": {
+            "day_time": 15,
+            "persona_id": "匠人绘CG",
+            "created_time": "2026-04-10 16:27:59",
+            "important_score": 0.8,
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_墨流苏_1_2_3_005739c8",
+        "content": "今日无波，静观其变，心如止水。",
+        "metadata": {
+            "created_time": "2026-04-10 16:27:59",
+            "memory_type": "experience",
+            "important_score": 0.8,
+            "persona_id": "墨流苏_1_2_3",
+            "day_time": 15
+        }
+    },
+    {
+        "memory_id": "mem_Joshua_Esmeralda_1_64a10201",
+        "content": "平台的规则若不透明，创作自由便无从谈起。",
+        "metadata": {
+            "memory_type": "experience",
+            "created_time": "2026-04-10 16:27:59",
+            "important_score": 0.9,
+            "day_time": 15,
+            "persona_id": "Joshua_Esmeralda_1"
+        }
+    },
+    {
+        "memory_id": "mem_Ethan_1_2_3_4_5_6_0b0722d8",
+        "content": "真正的创作价值不在算法推荐中，而在创作者的坚持里。",
+        "metadata": {
+            "persona_id": "Ethan_1_2_3_4_5_6",
+            "memory_type": "experience",
+            "important_score": 0.9,
+            "day_time": 15,
+            "created_time": "2026-04-10 16:27:59"
+        }
+    },
+    {
+        "memory_id": "mem_Joshua_Esmeralda_1_8598de27",
+        "content": "今日静观无声，规则模糊处，心已悄然降温。",
+        "metadata": {
+            "day_time": 15,
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:28:01",
+            "persona_id": "Joshua_Esmeralda_1",
+            "memory_type": "experience"
+        }
+    },
+    {
+        "memory_id": "mem_Ethan_1_2_3_4_5_6_712a9005",
+        "content": "今日无互动，静观其变，信念如初。",
+        "metadata": {
+            "day_time": 15,
+            "memory_type": "experience",
+            "persona_id": "Ethan_1_2_3_4_5_6",
+            "important_score": 0.8,
+            "created_time": "2026-04-10 16:28:01"
+        }
+    },
+    {
+        "memory_id": "mem_platform2026-04-10 16:06:45.673044_c3d80c85",
+        "content": "在第15天，我的决策是：【系统自动执行】基于净压力 -0.39 (监管=0.00, 流失=0.39) 自动调整阈值。。 我将审核阈值从 0.748 调整到了 0.755。",
+        "metadata": {
+            "created_time": "2026-04-10 16:28:02",
+            "important_score": 1.0,
+            "day_time": 15,
+            "persona_id": "platform2026-04-10 16:06:45.673044",
+            "memory_type": "experience"
+        }
+    }
+]

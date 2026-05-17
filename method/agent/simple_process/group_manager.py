@@ -1,18 +1,20 @@
 import numpy as np
 import random
 from typing import List, Dict, Tuple
+
+from config import settings
 from method.agent.persona import Persona
 from method.environment import Environment
 
 
 class GroupManager:
     """
-    Responsible for clustering agents and generating macro-state descriptions for groups.
+    负责将智能体进行聚类分组，并生成群体的宏观状态描述。
     """
 
     @staticmethod
     def _get_dominant_standpoint(persona: Persona) -> str:
-        """Determine the dominant standpoint based on the probability distribution"""
+        """根据概率分布确定主导立场"""
         idx = np.argmax(persona.standpoint)
         mapping = {0: "信任派(Trust)", 1: "反抗派(Rebel)", 2: "中立派(Neutral)"}
         return mapping.get(idx, "中立派(Neutral)")
@@ -20,7 +22,7 @@ class GroupManager:
     @staticmethod
     def cluster_creators(environment: Environment) -> Dict[str, List[Persona]]:
         """
-        Group the creators.
+        对创作者进行分组。
         """
         groups = {}
         for p in environment.personas.values():
@@ -40,7 +42,7 @@ class GroupManager:
     @staticmethod
     def cluster_public(environment: Environment) -> Dict[str, List[Persona]]:
         """
-        Group the public.
+        对公众进行分组。
         """
         groups = {}
         for p in environment.personas.values():
@@ -56,29 +58,47 @@ class GroupManager:
     @staticmethod
     def get_representative_sample(agents: List[Persona], ratio: float = 0.3) -> Tuple[List[Persona], List[Persona]]:
         """
-        Returns: (representative list, follower list)
+        返回: (代表列表, 跟随者列表)
         """
         if not agents:
             return [], []
 
-        CRITICAL_SURVIVAL_COUNT = 6
+                          
+                                           
+                                     
+        CRITICAL_SURVIVAL_COUNT = settings.platform.critical_survival_count
+        sampling_mode = getattr(settings.platform, "representative_sampling_mode", "mixed").lower()
+        if sampling_mode not in {"mixed", "random", "influence"}:
+            sampling_mode = "mixed"
 
         if len(agents) <= CRITICAL_SURVIVAL_COUNT:
-            return agents, []  # All are representatives, no followers
+                                                                
+            return agents, []             
 
+                        
+                     
         sample_size = max(1, int(len(agents) * ratio))
 
+                                            
         sorted_agents = sorted(agents, key=lambda x: x.influence, reverse=True)
 
-        top_k = max(1, int(sample_size * 0.5))
-        representatives = sorted_agents[:top_k]
+        if sampling_mode == "random":
+            representatives = random.sample(sorted_agents, min(sample_size, len(sorted_agents)))
+        elif sampling_mode == "influence":
+            representatives = sorted_agents[:sample_size]
+        else:
+                                 
+            top_k = max(1, int(sample_size * 0.5))
+            representatives = sorted_agents[:top_k]
 
-        candidates = sorted_agents[top_k:]
-        if candidates:
-            remaining_slots = sample_size - len(representatives)
-            if remaining_slots > 0:
-                representatives.extend(random.sample(candidates, remaining_slots))
+                       
+            candidates = sorted_agents[top_k:]
+            if candidates:
+                remaining_slots = sample_size - len(representatives)
+                if remaining_slots > 0:
+                    representatives.extend(random.sample(candidates, min(remaining_slots, len(candidates))))
 
+                             
         rep_ids = {p.agent_id for p in representatives}
         followers = [p for p in agents if p.agent_id not in rep_ids]
 
@@ -86,15 +106,15 @@ class GroupManager:
 
     @staticmethod
     def get_group_stats_prompt(group_name: str, agents: List[Persona]) -> str:
-        """Keep as is"""
+        """保持原样"""
         count = len(agents)
         if count == 0: return ""
         avg_satisfaction = np.mean([p.satisfaction[-1] if p.satisfaction else 0 for p in agents])
         post_wish_rate = np.mean([1 if p.post_wish else 0 for p in agents])
         return f"""
-        [Group Name]: {group_name}
-        [Group Size]: {count} people
-        [Average Satisfaction]: {avg_satisfaction:.2f}
-        [Current Posting Wish Rate]: {post_wish_rate:.1%}
-        [Typical Persona Characteristics]: {agents[0].description[:100]}...
+        【群体名称】: {group_name}
+        【群体规模】: {count} 人
+        【平均满意度】: {avg_satisfaction:.2f}
+        【当前发布意愿率】: {post_wish_rate:.1%}
+        【典型画像特征】: {agents[0].description[:100]}...
         """

@@ -15,19 +15,19 @@ log = logging.getLogger(__name__)
 
 def calculate_regulatory_cost(fn_contents, environment):
     """
-    Calculate the regulatory cost C_reg(t).
+    计算监管成本 C_reg(t)。
     Args:
-        fn_contents (list): List of all missed detection (FN) content objects for the day.
-        environment: Environment object.
+        fn_contents (list): 当天所有被漏报(FN)的内容对象列表。
+                            每个内容对象应有一个 属性。
+        f_penalty (float): 政府设定的基础罚款单位。
 
     Returns:
-        float: Calculated total regulatory cost.
-        float: Total influence of missed detection content.
+        float: 计算出的总监管成本。
     """
     if not fn_contents:
         return 0.0, 0.0
 
-    # Calculate the total influence of all missed detection content
+                   
     total_fn_content_influence = sum(
         [environment.contents.calculate_content_influence(content, environment, initial_score=True) for content in
          fn_contents]
@@ -39,38 +39,40 @@ def calculate_regulatory_cost(fn_contents, environment):
 
 def calculate_churn_cost(churned_agents, environment) -> dict:
     """
-   Calculate the user churn cost C_churn(t), including explicit churn cost and potential false positive dissatisfaction cost.
+   计算用户流失成本 C_churn(t)，包含显性流失成本和潜在误报不满成本。
 
    Args:
-       churned_agents (list): List of all agent objects churned on the current day.
-       environment: Environment object used to obtain platform parameters and update cumulative dissatisfaction.
+       churned_agents (list): 当天所有流失的智能体对象列表。
+       environment: 环境对象，用于获取平台参数和更新累积不满值。
 
    Returns:
-       dict: Calculated user churn cost details.
+       float: 计算出的总用户流失成本。
    """
-    # --- Step 1: Explicit churn cost (Unit: User influence) ---
+                                       
     explicit_churn_influence = sum([agent.influence for agent in churned_agents]) if churned_agents else 0.0
 
-    # --- Step 2: Potential churn cost (Unit: Sum of raw influence of all FP content today) ---
-    # 2.1 Get all content objects flagged as false positives (FP) today
+                                                 
+                            
     fp_contents = [environment.contents.get_content_by_id(cid) for cid in environment.platform.fp if
                    environment.contents.get_content_by_id(cid)]
 
-    # 2.2 Calculate the real raw influence accumulated by these FP contents at the end of the day
+                                  
+    ls = [environment.contents.calculate_content_influence(content, environment, initial_score=True) for content in
+          fp_contents]
     new_fp_influence_today = sum(
         [environment.contents.calculate_content_influence(content, environment, initial_score=True) for content in
          fp_contents]
     ) * 0.3
 
-    # 2.3 Update the platform's cumulative dissatisfaction influence (it decays automatically daily)
+                                 
     environment.platform.total_fp_creator_influence += new_fp_influence_today
     potential_churn_influence = environment.platform.total_fp_creator_influence
 
-    # --- Step 3: Total "equivalent churn influence" ---
+                              
     total_churn_influence = explicit_churn_influence * settings.platform.mu + potential_churn_influence
 
     if total_churn_influence > 10:
-        log.warning(f"User churn cost exceeds 10, please check!")
+        log.warning(f"用户流失成本超过10，请检查！")
 
     return {
         'total': total_churn_influence,
@@ -83,35 +85,35 @@ def calculate_churn_cost(churned_agents, environment) -> dict:
 
 def update_strategy(fn_contents, churned_agents, environment):
     """
-    Calculate cost, net pressure, and update the moderation threshold θ based on daily operational data.
+    根据当天的运营数据，计算成本、净压力，并更新审核阈值 θ。
     Args:
-        fn_contents (list): List of all missed detection (FN) content today.
-        churned_agents (list): List of all agents churned today.
-        environment: Environment object.
+        fn_contents (list): 当天所有被漏报(FN)的内容列表。
+        churned_agents (list): 当天所有流失的智能体列表。
+        environment: 环境对象。
     Returns:
-        dict: A dictionary containing detailed cost, net pressure, and recommended new threshold.
+        dict: 包含详细成本、净压力和推荐新阈值的字典。
     """
-    # Step 1: Calculate core costs
+                  
     c_reg, total_fn_content_influence = calculate_regulatory_cost(fn_contents, environment)
     churn_cost_details = calculate_churn_cost(churned_agents, environment)
-    c_churn_total = churn_cost_details['total']  # Get total user churn cost
+    c_churn_total = churn_cost_details['total']              
 
     if c_churn_total > 10:
-        log.warning(f"User churn cost exceeds 10, please check!")
+        log.warning(f"用户流失成本超过10，请检查！")
 
-    # Step 2: Calculate net pressure (using total user churn cost)
+                             
     net_pressure = c_reg - environment.platform.w * c_churn_total
 
-    # Step 3: Calculate the adjustment amount Δθ
-    # Use the tanh function to map net pressure to the [-1, 1] interval
+                    
+                                  
     tanh_value = np.tanh(net_pressure / environment.platform.steep)
     delta_theta = -environment.platform.eta * tanh_value
 
-    # Step 4: Update threshold θ(t+1) and use clip to ensure it stays within a valid range
+                                          
     new_theta = environment.platform.theta + delta_theta
     new_theta = float(np.clip(new_theta, 0.05, 0.95))
 
-    # Step 5: Return a more detailed report (Note: Keys are preserved in Chinese as requested)
+                    
     return {
         '当前天数的审核阈值': environment.platform.theta,
         '程序计算的新审核阈值': new_theta,
@@ -132,23 +134,23 @@ def update_strategy(fn_contents, churned_agents, environment):
 
 def create_platform_tools(environment: Environment) -> List[tool]:
     """
-    Factory function: Create and return tools bound to a specific ContentStore instance.
-    This is an implementation of dependency injection.
+    工厂函数：创建并返回与特定 ContentStore 实例绑定的工具。
+    这是一种依赖注入的实现方式。
 
     Args:
-        :param environment: Environment object.
+        :param environment:
 
     Returns:
-        A list containing the configured tools.
+        一个包含配置好的工具的列表。
     """
 
     @tool
     async def get_today_platform_data() -> dict | str:
         """
-        Obtain data analysis reports, including core costs, net pressure, and preliminary system threshold adjustment suggestions. Preferred for decision-making.
+        获取数据分析报告,包含核心成本、净压力和系统初步的阈值调整建议。决策首选。
         """
         try:
-            # --- 1. Execute raw operations ---
+                               
             churned_agents = [environment.personas[persona_id] for persona_id in
                               environment.platform.public_loss]
             fn_contents = [environment.contents.get_content_by_id(content_id) for content_id in
@@ -156,10 +158,11 @@ def create_platform_tools(environment: Environment) -> List[tool]:
 
             report_data = update_strategy(fn_contents, churned_agents, environment)
 
-            # Extract variables from report_data (Using Chinese keys as mapped above)
+                                            
             net_pressure = report_data['程序计算的净压力']
             c_reg = report_data['程序计算的监管成本']
             c_churn_total = report_data['程序计算的用户流失成本_总计']
+            c_churn_explicit = report_data['程序计算的用户流失成本_显性']
             c_churn_potential = report_data['程序计算的用户流失成本_潜在(误报)']
             fn_count = report_data['程序计算的漏报数量']
             fp_count = report_data['程序计算的误报数量']
@@ -167,46 +170,47 @@ def create_platform_tools(environment: Environment) -> List[tool]:
             new_theta = report_data['程序计算的新审核阈值']
             reg_assessment = report_data['监管成本评估']
             churn_assessment = report_data['用户流失成本评估']
+            platform_adjust_history = report_data['近几天平台的调整数据'][:-1]
 
-            # Logical judgment for report generation
+                    
             if net_pressure > 0:
-                dominant_cost_name = "Regulatory Pressure"
+                dominant_cost_name = "监管压力"
             else:
-                dominant_cost_name = "User Churn Pressure"
+                dominant_cost_name = "用户流失压力"
 
-            # Construct memory content
+                    
             memory_content = (
-                f"**Day {environment.day_time} Strategy Evaluation Report**\n\n"
-                f"**1. Core Conclusion:**\n"
-                f"Today, {dominant_cost_name} has become the dominant contradiction. Net pressure is {net_pressure:.2f}, indicating an imbalance between current moderation strategies and the market environment.\n\n"
-                f"**2. In-depth Cost Analysis:**\n"
-                f"* **Regulatory Cost ({reg_assessment})**: {c_reg:.2f}, primarily caused by {fn_count} missed detection events.\n"
-                f"* **User Churn Cost ({churn_assessment})**: {c_churn_total:.2f}, where potential 'creator dissatisfaction' cost ({c_churn_potential:.2f}) is accumulating, with {fp_count} new false positive events today.\n\n"
-                f"**3. Trends and Suggestions:**\n"
-                f"To address today's {dominant_cost_name}, the system suggests adjusting the threshold from {current_theta:.3f} to {new_theta:.3f}.\n"
+                f"**第 {environment.day_time} 天 策略评估报告**\n\n"
+                f"**1. 核心结论：**\n"
+                f"今日，{dominant_cost_name} 成为主导矛盾。净压力为 {net_pressure:.2f}，表明当前审核策略与市场环境失衡。\n\n"
+                f"**2. 成本深度分析：**\n"
+                f"* **监管成本 ({reg_assessment})**: {c_reg:.2f}，主要由 {fn_count} 次漏报事件引起。\n"
+                f"* **用户流失成本 ({churn_assessment})**: {c_churn_total:.2f}，其中潜在的“创作者不满”成本 ({c_churn_potential:.2f}) 正在累积，当日新增 {fp_count} 次误报事件。\n\n"
+                f"**3. 趋势与建议：**\n"
+                f"为应对今日的 {dominant_cost_name}，系统建议将阈值从 {current_theta:.3f} 调整至 {new_theta:.3f}。\n"
             )
 
             await environment.memories_store.add_memory(
-                persona_id=environment.platform.name,  # Fixed ID for the platform agent
+                persona_id=environment.platform.name,              
                 content=memory_content,
                 day_time=environment.day_time,
                 memory_type=MemoryType.EXPERIENCE,
-                important_score=0.95  # Obtaining daily reports is an extremely important observation behavior
+                important_score=0.95                    
             )
 
             return memory_content
         except:
             error_traceback = traceback.format_exc()
-            log.error("Full stack trace is as follows:\n" + error_traceback)
-            return "Data acquisition failed"
+            log.error("完整的堆栈跟踪信息如下:\n" + error_traceback)
+            return "数据获取失败"
 
     @tool
     async def update_platform_theta(new_theta: float, reason: str, net_pressure: float) -> bool | str:
         """
-        [Final Decision] Execute the new moderation threshold (new_theta). A decision reason must be provided. net_pressure (today's net pressure).
+        【最终决策】执行新的审核阈值(new_theta)。必须提供决策理由(reason)。net_pressure(今天的净压力)
         """
         try:
-            # --- 1. Execute raw operations ---
+                               
             old_theta = environment.platform.theta
             environment.platform.theta = new_theta
 
@@ -214,26 +218,26 @@ def create_platform_tools(environment: Environment) -> List[tool]:
                 {'day_time': environment.day_time, 'old_theta': old_theta, 'new_theta': new_theta, 'reason': reason,
                  'net_pressure': net_pressure})
 
-            # --- 2. Automatically record memory ---
+                               
             memory_content = (
-                f"On Day {environment.day_time}, I made the final decision and updated the moderation threshold."
-                f" My decision reason is: '{reason}'."
-                f" Threshold adjusted from {old_theta:.2f} to {new_theta:.2f}."
+                f"在第 {environment.day_time} 天，我做出了最终决策并更新了审核阈值。"
+                f" 我的决策理由是: '{reason}'。"
+                f" 阈值从 {old_theta:.2f} 调整为 {new_theta:.2f}。"
             )
 
             await environment.memories_store.add_memory(
-                persona_id=environment.platform.name,  # Fixed ID for platform agent
+                persona_id=environment.platform.name,              
                 content=memory_content,
                 day_time=environment.day_time,
                 memory_type=MemoryType.EXPERIENCE,
-                important_score=1.0  # Updating threshold is a top-priority action
+                important_score=1.0                 
             )
 
             return True
         except:
             error_traceback = traceback.format_exc()
-            log.error("Full stack trace is as follows:\n" + error_traceback)
-            return "Operation failed"
+            log.error("完整的堆栈跟踪信息如下:\n" + error_traceback)
+            return "操作失败"
 
     @tool
     async def get_memories(
@@ -241,30 +245,31 @@ def create_platform_tools(environment: Environment) -> List[tool]:
             top_k: int = 3
     ) -> List[str] | str:
         """
-        [Recall] Search memories based on a query.
+        【回忆】根据query搜索记忆。
         """
         try:
-            # Get current agent and time from environment
+                            
             memories_docs = await environment.memories_store.recall_memories(
                 persona_id=environment.platform.name,
                 query=query,
                 top_k=top_k,
                 memory_type=MemoryType.EXPERIENCE,
+                gamma=0.5,                     
             )
 
             if not memories_docs:
-                return [f"No memories related to '{query}' were found."]
+                return [f"没有找到与 '{query}' 相关的记忆。"]
 
-            # Format the returned Document objects into a string list friendly to the LLM
+                                             
             formatted_memories = [
-                f"Memory (from Day {doc.metadata.get('day_time', 'Unknown')}): {doc.page_content}"
+                f"记忆 (来自第 {doc.metadata.get('day_time', '未知')} 天): {doc.page_content}"
                 for doc in memories_docs
             ]
 
             return formatted_memories
         except:
             error_traceback = traceback.format_exc()
-            log.error("Full stack trace is as follows:\n" + error_traceback)
-            return "Data acquisition failed"
+            log.error("完整的堆栈跟踪信息如下:\n" + error_traceback)
+            return "数据获取失败"
 
     return [get_today_platform_data, update_platform_theta, get_memories]
