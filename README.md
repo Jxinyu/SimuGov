@@ -162,23 +162,23 @@ The recomputation pipeline checks:
 
 ## Artifact and DOI
 
-For the KDD 2026 camera-ready artifact, create a GitHub release and archive that release on Zenodo. After Zenodo generates a DOI, add the DOI to:
-
-- `CITATION.cff`
-- `artifact.md`
-- the camera-ready paper's Resource Availability statement
-
-Recommended release tag:
+The KDD 2026 camera-ready artifact release is archived on Zenodo:
 
 ```text
-v1.0.0-kdd2026
+https://doi.org/10.5281/zenodo.20267216
+```
+
+Archived GitHub release:
+
+```text
+v1.0.1-kdd2026
 ```
 
 See `RELEASE_CHECKLIST.md` for the full release checklist.
 
 ## Citation
 
-If you use this repository, please cite the KDD 2026 paper and the archived software artifact DOI once it is available. GitHub also reads the citation metadata from `CITATION.cff`.
+If you use this repository, please cite the KDD 2026 paper and the archived software artifact DOI. GitHub also reads the citation metadata from `CITATION.cff`.
 
 ## License
 

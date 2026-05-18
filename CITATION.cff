@@ -12,8 +12,9 @@ authors:
   - family-names: Zhu
     given-names: Feida
 repository-code: "https://github.com/Jxinyu/SimuGov"
+doi: "10.5281/zenodo.20267216"
 license: Apache-2.0
-version: "1.0.0-kdd2026"
+version: "1.0.1-kdd2026"
 date-released: "2026-05-18"
 preferred-citation:
   type: conference-paper
@@ -31,3 +32,4 @@ preferred-citation:
     name: "ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
   year: 2026
   collection-title: "Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
+  doi: "10.5281/zenodo.20267216"

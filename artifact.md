@@ -23,7 +23,7 @@ https://github.com/Jxinyu/SimuGov
 Artifact DOI:
 
 ```text
-To be filled after archiving the GitHub release on Zenodo.
+https://doi.org/10.5281/zenodo.20267216
 ```
 
 ## Quick Check
@@ -65,10 +65,10 @@ This artifact supports:
 
 ## Resource Availability Statement Template
 
-After Zenodo generates the release DOI, use the following camera-ready text and replace the placeholder DOI:
+Use the following camera-ready Resource Availability statement:
 
 ```latex
-\newcommand\kddavailabilityurl{https://doi.org/10.5281/zenodo.xxxxxxx}
+\newcommand\kddavailabilityurl{https://doi.org/10.5281/zenodo.20267216}
 \ifdefempty{\kddavailabilityurl}{}{
 \begingroup\small\noindent\raggedright\textbf{Resource Availability:}\\
 The source code and reproducibility artifact for this paper have been made publicly available at

@@ -1,6 +1,6 @@
 # KDD 2026 Artifact Release Checklist
 
-Use this checklist before creating the GitHub release and Zenodo DOI.
+Use this checklist before creating or updating the GitHub release and Zenodo DOI.
 
 ## Repository Readiness
 
@@ -30,27 +30,27 @@ python scripts/run_fast_check.py
 
 ## GitHub Release
 
-- [ ] Create a release tag, recommended:
+- [x] Create a release tag:
 
 ```text
-v1.0.0-kdd2026
+v1.0.1-kdd2026
 ```
 
-- [ ] Release title:
+- [x] Release title:
 
 ```text
 SimuGov KDD 2026 Camera-Ready Artifact
 ```
 
-- [ ] Release notes mention that the artifact accompanies the KDD 2026 AI4Sciences paper.
+- [x] Release notes mention that the artifact accompanies the KDD 2026 AI4Sciences paper.
 
 ## Zenodo DOI
 
-- [ ] Connect the GitHub repository to Zenodo.
-- [ ] Enable archiving for `Jxinyu/SimuGov`.
-- [ ] Publish or re-publish the GitHub release.
-- [ ] Copy the Zenodo release DOI.
-- [ ] Add the DOI to `README.md`, `CITATION.cff`, `artifact.md`, and the camera-ready paper.
+- [x] Connect the GitHub repository to Zenodo.
+- [x] Enable archiving for `Jxinyu/SimuGov`.
+- [x] Publish or re-publish the GitHub release.
+- [x] Copy the Zenodo release DOI: `https://doi.org/10.5281/zenodo.20267216`.
+- [x] Add the DOI to `README.md`, `CITATION.cff`, `artifact.md`, and the camera-ready paper.
 
 ## Camera-Ready Paper
 
