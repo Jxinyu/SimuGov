@@ -11,13 +11,29 @@ The repository includes:
 - Source code for running new SimuGov simulations and policy optimization.
 - Final-day raw simulation snapshots used to reproduce the reported paper results.
 - Scripts that rebuild compact paper data and recompute all reported metrics.
+- Artifact-review documentation for KDD 2026 reproducibility checks.
 
 The paper reproduction pipeline does not require LLM API keys. API keys are needed only for running new LLM-driven simulations.
 
 ## Quick Start
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-repro.txt
+python scripts/run_fast_check.py
+```
+
+This command rebuilds `paper_data/` and recomputes the reported paper metrics from the bundled archived snapshots.
+The fast-check outputs are written under `_artifact_check/` so the tracked reproduction package is not modified.
+
+The main verification report is written to:
+
+```text
+_artifact_check/paper_results/RECOMPUTED_CONSISTENCY_CHECK.md
+```
+
+The equivalent manual commands are:
+
+```bash
 python scripts/prepare_paper_data.py --raw-root raw_experiments --output paper_data
 python scripts/recompute_paper_results.py --data-root paper_data --output paper_results/recomputed
 ```
@@ -38,8 +54,20 @@ paper_results/recomputed/RECOMPUTED_CONSISTENCY_CHECK.md
 - `paper_results/`: derived reproduction outputs and consistency reports.
 - `scripts/`: data migration, preparation, collection, and recomputation utilities.
 - `data/`: lightweight auxiliary data used by the codebase.
+- `REPRODUCIBILITY.md`: detailed instructions for reproducing reported paper metrics.
+- `artifact.md`: concise artifact-review guide for KDD reviewers.
+- `RELEASE_CHECKLIST.md`: GitHub release and Zenodo DOI checklist.
+- `CITATION.cff`: machine-readable citation metadata.
 
 ## Install
+
+For paper-result recomputation only:
+
+```bash
+pip install -r requirements-repro.txt
+```
+
+For the full simulation environment:
 
 ```bash
 pip install -r requirements.txt
@@ -79,6 +107,8 @@ The main verification report is:
 paper_results/recomputed/RECOMPUTED_CONSISTENCY_CHECK.md
 ```
 
+For more detail, see `REPRODUCIBILITY.md`.
+
 ## Raw Data Migration
 
 The bundled `raw_experiments/` directory already contains the raw final-day snapshots needed for reproduction. If migrating again from an original full experiment archive, run:
@@ -114,6 +144,8 @@ python main_experiment.py optimize --population-size 10 --generations 1 --high-e
 
 Simulation outputs are written under `result_data/`.
 
+`result_data/` is intentionally ignored by git because it contains local runtime outputs.
+
 ## Verified Claims
 
 The recomputation pipeline checks:
@@ -127,6 +159,26 @@ The recomputation pipeline checks:
 - Sensitivity analysis
 
 `paper_results/` is derived output only and can be regenerated from `raw_experiments/`.
+
+## Artifact and DOI
+
+For the KDD 2026 camera-ready artifact, create a GitHub release and archive that release on Zenodo. After Zenodo generates a DOI, add the DOI to:
+
+- `CITATION.cff`
+- `artifact.md`
+- the camera-ready paper's Resource Availability statement
+
+Recommended release tag:
+
+```text
+v1.0.0-kdd2026
+```
+
+See `RELEASE_CHECKLIST.md` for the full release checklist.
+
+## Citation
+
+If you use this repository, please cite the KDD 2026 paper and the archived software artifact DOI once it is available. GitHub also reads the citation metadata from `CITATION.cff`.
 
 ## License
 

@@ -1,0 +1,7 @@
+# Minimal dependencies for KDD artifact-review recomputation.
+#
+# This no-key path runs:
+#   python scripts/run_fast_check.py
+
+numpy>=1.26.0
+scipy>=1.11.0

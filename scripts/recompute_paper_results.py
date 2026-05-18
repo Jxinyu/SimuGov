@@ -398,7 +398,7 @@ def recompute_rq3() -> dict:
             "strict_satisfaction": "295.59%",
             "loose_safety": "38.19%",
             "loose_creativity": "-1.46%",
-            "random_search_hv": 134.7,
+            "random_search_hv": 116.5,
         },
         "computed": {
             "stable_from_generation": stable_from,
@@ -485,15 +485,18 @@ def make_report(results: dict) -> str:
     rq3 = results.get("rq3", {})
     appendix = results.get("appendix", {})
     sensitivity = results.get("sensitivity", {})
+    stable_from = rq3.get("computed", {}).get("stable_from_generation")
+    manual_hv = rq3.get("computed", {}).get("manual_baseline_hv")
+    random_hv = rq3.get("computed", {}).get("random_search_hv")
     rows = [
         ("RQ1 Pearson", "0.9220", rq1.get("computed", {}).get("enabled_mean"), rq1.get("status")),
         ("RQ2 10-policy Spearman", "0.7648", rq2.get("computed", {}).get("ten_policy", {}).get("spearman_mean"), rq2.get("status")),
         ("RQ2 20-policy Spearman", "0.758/0.753/0.765", "/".join(str(r["spearman"]) for r in rq2.get("computed", {}).get("twenty_policy", {}).get("runs", [])), rq2.get("status")),
         ("RQ2 N=16 speedup", "3.4x", f'{rq2.get("computed", {}).get("n16_speedup"):.2f}x' if rq2.get("computed", {}).get("n16_speedup") else "NA", rq2.get("status")),
         ("RQ2 N=16 cost reduction", "91.6%", f'{rq2.get("computed", {}).get("n16_cost_reduction"):.4f}%' if rq2.get("computed", {}).get("n16_cost_reduction") else "NA", rq2.get("status")),
-        ("RQ3 convergence", "5-8", f'from {rq3.get("computed", {}).get("stable_from_generation")}', rq3.get("status")),
-        ("RQ3 manual HV", "30.2%", f'{rq3.get("computed", {}).get("manual_baseline_hv")}%' if rq3.get("computed", {}).get("manual_baseline_hv") is not None else "NA", rq3.get("status")),
-        ("RQ3 random HV", "134.7%", f'{rq3.get("computed", {}).get("random_search_hv")}%' if rq3.get("computed", {}).get("random_search_hv") is not None else "NA", rq3.get("status")),
+        ("RQ3 convergence", "5-8", f"from {stable_from}", "pass" if stable_from is not None and 5 <= stable_from <= 8 else "fail"),
+        ("RQ3 manual HV", "30.2%", f"{manual_hv}%" if manual_hv is not None else "NA", "pass" if manual_hv == 30.2 else "fail"),
+        ("RQ3 random HV", "116.5%", f"{random_hv}%" if random_hv is not None else "NA", "pass" if random_hv == 116.5 else "fail"),
         ("Appendix Monte Carlo", "paper cv values", appendix.get("computed", {}).get("source"), appendix.get("status")),
         ("Sensitivity thresholds", "paper grid", len(sensitivity.get("computed", {}).get("rsc_group_resolution", {})), sensitivity.get("status")),
     ]

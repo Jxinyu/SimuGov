@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the KDD 2026 paper and the archived software artifact."
+title: "SimuGov: A Simulation Optimization Framework for Generative AI Governance Strategy Design"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Bingxue
+  - family-names: Li
+    given-names: Jinbiao
+  - family-names: Tang
+    given-names: Qian
+  - family-names: Zhu
+    given-names: Feida
+repository-code: "https://github.com/Jxinyu/SimuGov"
+license: Apache-2.0
+version: "1.0.0-kdd2026"
+date-released: "2026-05-18"
+preferred-citation:
+  type: conference-paper
+  title: "SimuGov: A Simulation Optimization Framework for Generative AI Governance Strategy Design"
+  authors:
+    - family-names: Zhang
+      given-names: Bingxue
+    - family-names: Li
+      given-names: Jinbiao
+    - family-names: Tang
+      given-names: Qian
+    - family-names: Zhu
+      given-names: Feida
+  conference:
+    name: "ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
+  year: 2026
+  collection-title: "Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
